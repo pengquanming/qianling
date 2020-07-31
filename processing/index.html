@@ -351,7 +351,7 @@ if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
 <h1 id="FFmpeg"><a href="#FFmpeg" class="headerlink" title="FFmpeg"></a>FFmpeg</h1><p>格式转换<br>ffmpeg -i input.mkv -codec copy output.mp4<br>多声道转单声道<br>ffmpeg -i 1.aac -ac 1 -ab 320k 2.aac<br>合并音视频<br>ffmpeg -i 1.mp4 -i 2.aac -c copy output.mp4<br>截取片段<br>ffmpeg -ss 00:00:00 -t 00:11:00 -i Eating.ts -vcodec copy -acodec copy Eating2.ts</p>
 <h1 id="Pr-渲染"><a href="#Pr-渲染" class="headerlink" title="Pr 渲染"></a>Pr 渲染</h1><p>VBR 及 VBR 2 次在色彩变化丰富时容易花屏，改为 CBR</p>
 <p>码率过高常有花屏、跳帧，最大比特率设为 3 倍即可。</p>
-<p>压缩率太高时（低于5Mb/s），不宜使用 2-Pass，使用 VBR 1-pass 反而适合，因在流量不足的情况下，2-pass为了要努力在有限的空间内做更精准的压缩、尝试保留更多细节，反而会让颗粒过度明显。所以 2-Pass 不是万能，要使用 2-Pass，压缩率最好至少有 10Mbps 以上。</p>
+<p>压缩率太高时（低于 5Mb/s），不宜使用 2-Pass，使用 VBR 1-pass 反而适合，因在流量不足的情况下，2-pass 为在有限的空间内做更精准压缩、保留更多细节，反而会让颗粒过度明显。使用 2-Pass，压缩率最好至少有 10Mbps 以上。</p>
 <h1 id="OBS-录屏"><a href="#OBS-录屏" class="headerlink" title="OBS 录屏"></a>OBS 录屏</h1><p>视频参数：ABR 2000</p>
 <h1 id="音频后期"><a href="#音频后期" class="headerlink" title="音频后期"></a>音频后期</h1><p>场景变换后的声音也要变化，有空间感</p>
 <p>录音之后，就需要给 ADR 添加环境声，或者说是房间声（Room Tone）了。Room<br>Tone 可以理解为是在拍摄现场录制的环境底噪，用于填补空缺以保证对白声轨的连贯流<br>畅。（不要把 Room Tone 和 Backgrounds 相混淆！Room Tone 用于对白剪辑，只<br>具有保证对白声轨连贯的功能性；而 Backgrounds 则属于环境音效，是具有艺术表现力<br>的。 ）<br>最后，加上均衡与混响。许多工程师都会使用卷积混响（Convolution Reverb）以<br>获得更为真实的空间效果。</p>
@@ -494,7 +494,7 @@ if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">158</span>
+          <span class="site-state-item-count">159</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
