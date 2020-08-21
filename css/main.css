@@ -3385,7 +3385,7 @@ mark.search-keyword {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #c1ffbb;
+  background: #09d7ff;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -3924,7 +3924,9 @@ i.fa.fa-chevron-up:hover {
 .v .vwrap .vedit .vctrl span,
 .v .vlist .vcard .vh .vmeta .vat,
 .v .vlist .vcard .vhead .vnick,
-.v a {
+.v a,
+.v[data-class=v] .vcards .vcard .vh .vmeta .vat,
+.v[data-class=v] .vwrap .cancel-reply-btn {
   cursor: url("/images/cursor_link.cur"), auto !important;
 }
 .posts-expand .post-title {
@@ -3934,6 +3936,9 @@ div#valine-comments {
   background: rgba(255,255,255,0.46);
   margin: 0;
   padding: 0;
+}
+.v[data-class=v] .vcards {
+  padding: 10px;
 }
 .v p {
   margin-right: 20px;
