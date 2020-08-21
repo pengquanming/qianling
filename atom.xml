@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://qianling.pw/"/>
-  <updated>2020-08-19T06:11:00.000Z</updated>
+  <updated>2020-08-21T02:03:47.700Z</updated>
   <id>https://qianling.pw/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>《失控》书摘</title>
+    <link href="https://qianling.pw/out-of-control/"/>
+    <id>https://qianling.pw/out-of-control/</id>
+    <published>2020-08-20T00:49:39.000Z</published>
+    <updated>2020-08-21T02:03:47.700Z</updated>
+    
+    <content type="html"><![CDATA[<p><img data-src="/images/covers/220.jpg" alt=""></p><a id="more"></a><hr><p><strong><div class="center">失控：全人类的最终命运和结局 /（美）凯利（Kelly,K.）著；张行舟等译. — 北京：电子工业出版社，2016.1<br>书名原文：Out of Control:The New Biology of Machines,Social Systems,&amp; the Economic World<br>ISBN 978-7-121-27229-5</div></strong></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/images/covers/220.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="网络科学" scheme="https://qianling.pw/categories/%E7%BD%91%E7%BB%9C%E7%A7%91%E5%AD%A6/"/>
+    
+    
+      <category term="网络科学" scheme="https://qianling.pw/tags/%E7%BD%91%E7%BB%9C%E7%A7%91%E5%AD%A6/"/>
+    
+  </entry>
   
   <entry>
     <title>《复杂》书摘</title>
@@ -476,29 +499,6 @@
     
     
       <category term="艺术" scheme="https://qianling.pw/tags/%E8%89%BA%E6%9C%AF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>录屏损坏文件修复</title>
-    <link href="https://qianling.pw/recording-error/"/>
-    <id>https://qianling.pw/recording-error/</id>
-    <published>2020-05-25T02:04:42.000Z</published>
-    <updated>2020-07-17T04:10:32.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img data-src="/images/covers/196.jpg" alt=""></p><a id="more"></a><hr><p>建议使用 mkv 格式录制视频，以便在断电、蓝屏、程序崩溃时视频文件得以完整保留，而且修复起来十分简单，总时长不超过 3 分钟，后期可使用 FFmpeg 无损转码。</p><h2 id="mp4-文件修复"><a href="#mp4-文件修复" class="headerlink" title="mp4 文件修复"></a>mp4 文件修复</h2><ol><li>下载视频修复工具 <a href="https://qianling.coding.net/s/5856e332-c4ff-43ad-9575-3611efc997e2">recovery_MP4.exe</a>。</li><li>下载<code>FFmpeg</code>，用于合并音视频。（在<code>Program Files</code>文件夹内搜索<code>ffmpeg.exe</code>，能找到很多个，复制过来即可，不必另外下载了）</li><li>将损坏的 mp4 文件重命名为<code>bad.mp4</code></li><li>重新用相同参数录制一小段视频，录制内容任意，重命名为<code>good.mp4</code>（若已有有效文件，可重命名为<code>input.mp4</code>，用<code>ffmpeg -ss 00:00:00 -t 00:00:30 -i input.mp4 -vcodec copy -acodec copy good.mp4</code>分割出 30 秒的片段<code>good.mp4</code>）</li><li>将<code>bad.mp4</code>、<code>good.mp4</code>、<code>recovery_MP4.exe</code>、<code>ffmpeg.exe</code>放在同一文件夹中。</li><li>在文件夹内，按住<code>shift</code>并单击鼠标右键，选择<code>在此处打开命令窗口(W)</code>（若使用<code>PowerShell</code>需要在第七条的命令<code>recover_mp4.exe</code>和<code>ffmpeg.exe</code>前加上<code>./</code>）</li><li>输入<code>recover_mp4.exe good.mp4 --analyze</code>并回车执行，分析完后生成<code>video.hdr</code>、<code>audio.hdr</code></li><li>输入<code>recover_mp4.exe bad.mp4 recovered.h264 recovered.aac</code>并回车执行，将从<code>bad.mp4</code>中分离出视频流<code>recovered.h264</code>，音频流<code>recovered.aac</code></li><li>输入<code>ffmpeg.exe -r 30 -i recovered.h264 -i recovered.aac -bsf:a aac_adtstoasc -c:v copy -c:a copy recovered.mp4</code>并回车执行，合并流文件，成功后生成<code>recovery.mp4</code>。若失败可使用其他合并软件，经测试，失败的文件可用<code>小丸工具箱</code>成功封装。</li><li>实在无法自行恢复的重要文件，可在 <a href="https://restore.media/">Restore.Media</a> 付费恢复，1 分钟约 2 人民币元。</li></ol><h2 id="mkv-文件修复"><a href="#mkv-文件修复" class="headerlink" title="mkv 文件修复"></a>mkv 文件修复</h2><ol><li>下载<code>FFmpeg</code>（在<code>Program Files</code>文件夹内搜索<code>ffmpeg.exe</code>，能找到很多个，复制过来即可，不必另外下载了）</li><li>将损坏的 mkv 文件复制到<code>ffmpeg.exe</code>同一目录下，重命名为<code>bad.mkv</code>。</li><li>在<code>ffmpeg.exe</code>所在文件夹内，按住<code>shift</code>并单击鼠标右键，选择<code>在此处打开命令窗口(W)</code>（若使用<code>PowerShell</code>需要在第四条的命令<code>ffmpeg.exe</code>前加上<code>./</code>）</li><li>输入<code>ffmpeg -i bad.mkv -an -sn -c:v copy -y -map 0:v:0 good.mkv</code>并回车执行，抽取视频。</li><li>输入<code>ffmpeg -i bad.mkv -vn -sn -c:a copy -y -map 0:a:0 good.aac</code>并回车执行，抽取音频。</li><li>输入<code>ffmpeg -i good.mkv -i good.aac -c copy recovered.mkv</code>并回车执行，封装音视频，生成<code>recovered.mkv</code></li><li>以上步骤可用<code>小丸工具箱</code>代替。</li><li>无损转码为 mp4：<code>ffmpeg -i recovered.mkv -codec copy output.mp4</code>，生成<code>output.mp4</code></li></ol><br /><p>参考资料：<br><a href="https://blog.csdn.net/qq_38125626/article/details/90482994">mp4视频文件修复</a><br><a href="https://restore.media/blog/how-to-fix-corrupted-mp4-files">How to Fix Corrupted MP4 Files – The Definitive Guide</a></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;/images/covers/196.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="技巧" scheme="https://qianling.pw/categories/%E6%8A%80%E5%B7%A7/"/>
-    
-    
-      <category term="技巧" scheme="https://qianling.pw/tags/%E6%8A%80%E5%B7%A7/"/>
     
   </entry>
   
