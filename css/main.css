@@ -2802,6 +2802,44 @@ pre code {
     transform: rotateZ(-30deg);
   }
 }
+.followme {
+  align-items: center;
+  background: var(--card-bg-color);
+  border-left: 3px solid #ff2a2a;
+  color: #bbb;
+  margin: 2em 0 1em 0;
+  padding: 1em 1.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.followme .social-list {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+@media (max-width: 991px) {
+  .followme .social-list .social-item {
+    margin: 0.5em 0.75em;
+  }
+}
+.followme .social-list .social-item {
+  margin: 0.5em 2em;
+}
+.followme .social-list .social-link {
+  border: 0;
+  display: inline-block;
+  text-align: center;
+}
+.followme .social-list .social-link .icon {
+  font-size: 1.75em;
+  height: 1.75em;
+  width: 1.75em;
+}
+.followme .social-list .social-link .label {
+  display: block;
+  font-size: 14px;
+}
 .category-all-page .category-all-title {
   text-align: center;
 }
@@ -3347,7 +3385,7 @@ mark.search-keyword {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #e340ff;
+  background: #4f6aff;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -3646,6 +3684,10 @@ span#busuanzi_value_site_pv {
 }
 .sidebar-toggle:hover .toggle-line {
   background: rgba(255,255,255,0.6);
+}
+.followme {
+  background: none;
+  border-left: 0px solid #ff2a2a;
 }
 .links-of-author.motion-element {
   margin-top: 30px;
