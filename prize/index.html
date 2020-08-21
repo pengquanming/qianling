@@ -4,21 +4,25 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
+<meta name="generator" content="Hexo 5.0.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
 <link rel="stylesheet" href="/css/main.css">
 
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic|ZCOOL XiaoWei:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
-<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/5.10.0-11/css/all.min.css">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.css">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto+Serif+SC:300,300italic,400,400italic,700,700italic|ZCOOL+XiaoWei:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  
+  <link rel="stylesheet" href="/lib/animate-css/animate.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.min.css">
   <script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
 
-<script id="hexo-configurations">
+<script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"qianling.pw","root":"/","scheme":"Muse","version":"7.7.1","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"qianling.pw","root":"/","scheme":"Muse","version":"8.0.0-rc.5","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":true,"nav":null,"activeClass":"valine"},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"none","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"path":"search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true}};
   </script>
 
   <meta property="og:type" content="article">
@@ -37,19 +41,20 @@
 <link rel="canonical" href="https://qianling.pw/prize/">
 
 
-<script id="page-configurations">
+<script data-pjax class="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: false,
-    isPost: true
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
   };
 </script>
 
   <title>《我得奖了》--- 苦苓 | 千灵</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141264217-1"></script>
-    <script pjax>
+    <script data-pjax>
       if (CONFIG.hostname === location.hostname) {
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
@@ -59,7 +64,7 @@
     </script>
 
 
-  <script pjax>
+  <script data-pjax>
     var _hmt = _hmt || [];
     (function() {
       var hm = document.createElement("script");
@@ -74,24 +79,36 @@
 
   <noscript>
   <style>
-  .use-motion .brand,
+  body { margin-top: 2rem; }
+
   .use-motion .menu-item,
-  .sidebar-inner,
+  .use-motion .sidebar,
   .use-motion .post-block,
   .use-motion .pagination,
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
 
   .use-motion .site-title,
-  .use-motion .site-subtitle {
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
     opacity: initial;
     top: initial;
   }
 
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
   </style>
 </noscript>
 
@@ -102,67 +119,70 @@
   <div class="container use-motion">
     <div class="headband"></div>
 
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
+    <main class="main">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
     </div>
   </div>
 
   <div class="site-meta">
 
-    <div>
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">千灵</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">千灵</h1>
+      <i class="logo-line"></i>
+    </a>
   </div>
 
-  <div class="site-nav-right"></div>
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
 </div>
 
 
+
 <nav class="site-nav">
-  
-  <ul id="menu" class="menu">
+  <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-fw fa-star-half-alt"></i>首页</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-democrat"></i>归档</a>
+    <a href="/" rel="section"><i class="fa fa-star-half-alt fa-fw"></i>首页</a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-dove"></i>分类</a>
+    <a href="/categories/" rel="section"><i class="fa fa-dove fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-democrat fa-fw"></i>归档</a>
 
   </li>
         <li class="menu-item menu-item-daily">
 
-    <a href="/daily" rel="section"><i class="fa fa-fw fa-ghost"></i>碎念</a>
+    <a href="/daily" rel="section"><i class="fa fa-ghost fa-fw"></i>碎念</a>
 
   </li>
         <li class="menu-item menu-item-play">
 
-    <a href="/play" rel="section"><i class="fa fa-fw fa-fish"></i>游戏</a>
+    <a href="/play" rel="section"><i class="fa fa-fish fa-fw"></i>游戏</a>
 
   </li>
         <li class="menu-item menu-item-comments">
 
-    <a href="/comments" rel="section"><i class="fa fa-fw fa-dog"></i>留言</a>
+    <a href="/comments" rel="section"><i class="fa fa-dog fa-fw"></i>留言</a>
 
   </li>
         <li class="menu-item menu-item-about">
 
-    <a href="/about/" rel="section"><i class="fa fa-fw fa-carrot"></i>关于</a>
+    <a href="/about/" rel="section"><i class="fa fa-carrot fa-fw"></i>关于</a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -170,16 +190,18 @@
         </a>
       </li>
   </ul>
-
 </nav>
-  <div class="site-search">
+
+
+
+  <div class="search-pop-overlay">
     <div class="popup search-popup">
-    <div class="search-header">
+        <div class="search-header">
   <span class="search-icon">
     <i class="fa fa-search"></i>
   </span>
   <div class="search-input-container">
-    <input autocomplete="off" autocorrect="off" autocapitalize="off"
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
            placeholder="搜索..." spellcheck="false"
            type="search" class="search-input">
   </div>
@@ -187,12 +209,15 @@
     <i class="fa fa-times-circle"></i>
   </span>
 </div>
-<div id="search-result"></div>
-
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
 </div>
-<div class="search-pop-overlay"></div>
 
-  </div><script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+    </div>
+  </div>
+<script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
 <script src="/js/custom/custom.js"></script>
 
 <div class="top-scroll-bar"></div>
@@ -213,7 +238,7 @@ if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
 </script>
 <script type="text/javascript">
   $("body").backstretch([
-    "https://qianling-1254036047.cos.ap-chengdu.myqcloud.com/background/background%20(1).webp",
+    "/images/background/background (1).webp",
     "/images/background/background (2).webp",
     "/images/background/background (3).webp",
     "/images/background/background (4).webp",
@@ -248,199 +273,18 @@ if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
 </script>
 
 </div>
-    </header>
-
-    
-  <div class="back-to-top">
-    <i class="fa fa-chevron-up"></i>
-    <span>0%</span>
-  </div>
-
-
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-
-          <div class="content">
-            
-
-  <div class="posts-expand">
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://qianling.pw/prize/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="千灵夙赋">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="千灵">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          《我得奖了》--- 苦苓
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间 2019-10-08 21:00:20 / 修改时间 21:38:41" itemprop="dateCreated datePublished" datetime="2019-10-08T21:00:20+08:00">2019-10-08</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%96%87%E5%AD%A6/" itemprop="url" rel="index">
-                    <span itemprop="name">文学</span>
-                  </a>
-                </span>
-            </span>
-
-          
-            <span id="/prize/" class="post-meta-item leancloud_visitors" data-flag-title="《我得奖了》--- 苦苓" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数 </span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-  <i class="far fa-comment"></i>
-    <a title="valine" href="/prize/#valine-comments" itemprop="discussionUrl">
-     评论数
-      <span class="post-comments-count valine-comment-count" data-xid="/prize/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-        <p><img data-src="/images/covers/158.png" alt=""></p>
-<a id="more"></a>
-
-<hr>
-<p>　　今天已经是最后截稿日了，我非赶上最后一班邮件不可。<br>　　潦潦草草的抄完了最后几行字，我嘴里咬着信封，吃力地踩着脚踏车，追赶绝尘而去的邮务机车，「喂，等一等——」忽然一阵尖锐的煞车声，我猛然停住，一辆大卡车的车灯正贴着我的脸颊，「你要死了！」因祸得福，机车上的邮务士回头看看热闹时，我得以及时把稿件交给他，这时才察觉自己的衬衫早已湿透了。<br>　　接下来就是漫长而无止尽的等待了。也许为了写这篇小说，耗费了我太多心神，整个人觉得虚飘飘的，甚至也无心吃饭睡觉，脑中不断转着的，就是我获得这项文坛最高荣耀的景象。<br>　　的确是文坛最高的荣耀：这个文学奖和以往国内各种文学奖最大的不同，在于高达三百万元的奖金（照我现在每月的稿费收入，要写六百年），以及十二位全国公认文学大师的评审委员（我就是从小读他们作品长大的）；换句话说，任何人得了这个奖就是百分之百的名利双收，无怪乎主办的基金会宣称迄今已有一万多份稿件应征，而我更花费了整整一年修改自己作品中的每一个字，一切不都是为了这个号称「台湾诺贝尔」的超级大奖吗？<br>　　揭晓的日子终于到了！全国各报都公布了得奖人和作品，评审委员一致公认得奖的是「永恒而伟大」的作品，而这个作者——×的！竟然是一个连我都没听过名字的家伙！看看他写的是什么哗众取宠的玩意……我越看越熟悉，越看越惊心，这明明，这明明就是我寄去参加征文的那篇小说嘛！怎么会被改了题目？连作者也换了？我又兴奋又愤怒，拨电话给主办单位时，手指头一直忍不住颤抖。<br>　　「应该是我得奖，应该是我……」我在心中喃喃念着，一边以激动的语气检举这项天大的错误，不料接电话的小姐只「喂」了几声，根本不等我说完就挂了。也许这根本就是一个串通好的骗局，拿我最杰出的作品颁给早已内定的人，我全身热血沸腾，立刻出门跳上计程车直驶主办文学奖的基金会大楼；我咬牙切齿，誓死要夺回原来属于我的荣耀和……奖金。<br>　　盛大的颁奖典礼正在隆重进行，基金会董事长正在盛赞「永恒而伟大」的得奖作品时，我冲了进去，对着冠盖云集的满座嘉宾厉声高呼，声泪俱下的指出这个可怕的错误，控诉主办单位草率轻忽，平白牺牲了我这个照亮台湾文坛的杰出新锐，为了提出有力证明，我甚至将整篇小说倒背如流，（天晓得我呕尽了多少心血！）然而他们竟然充耳未闻，甚至没有人看我一眼，仿佛我根本不存在似的。这太可恨了！我早知文坛的功利现实，但至少他们该给我一个澄清事实的机会……我狠狠揪住基金会董事长的衣领，却被他像掸一阵灰似的，轻易把我赶了出来。<br>　　我跌坐人行道上，感觉空前的绝望与茫然，仿佛看见自己的一生就像天色一样暗淡下来，拾头看见斑驳的阅报栏上，一则醒目（有关自己的总是醒目的！）的旧消息：<br>　　<span style="font-size:1.1em">征文前夕罹难•作家壮志未酬</span><br>　　【本报讯】青年作家蒋学文车祸亡故，文坛伤悼新星殒落。据指出：这几年创作甚力的青年作家蒋学文，昨（十五）日于中山北路骑单车追赶邮务车时，不慎被一辆大卡车撞及，经送医后不治死亡，车祸现场只留下一个注明参加文学奖的信封，其中的稿件则已不知去向，全案正由中山分局调查中……<br>　　我忽然全身发冷，原来我早已经，早已经死了，可是我留下来的永恒而伟大的作品，以及那个因我的作品变成永恒而伟大的小偷兼骗子呢？</p>
-
-    </div>
-
-    
-    
-    
-      
-  <div class="popular-posts-header">相关文章</div>
-  <ul class="popular-posts">
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\how-to-read-ancient-book\" rel="bookmark">《怎样读古书》书摘</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\lenin's-kisses\" rel="bookmark">《受活》书摘</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\light\" rel="bookmark">《灯》修订版</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\norwegian-wood\" rel="bookmark">《挪威的森林》书摘</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\swallows\" rel="bookmark">《似曾相识燕归来》--- 王勇吉</a></div>
-    </li>
-  </ul>
-
-
-      <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/%E6%96%87%E5%AD%A6/" rel="tag"># 文学</a>
-          </div>
-
-        
-  <div class="post-widgets">
-    <div class="wp_rating">
-      <div id="wpac-rating"></div>
-    </div>
-  </div>
-
-
-        
-    <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/a-girl/" rel="prev" title="一个女孩">
-      <i class="fa fa-chevron-left"></i> 一个女孩
-    </a></div>
-      <div class="post-nav-item">
-    <a href="/swallows/" rel="next" title="《似曾相识燕归来》--- 王勇吉">
-      《似曾相识燕归来》--- 王勇吉 <i class="fa fa-chevron-right"></i>
-    </a></div>
-    </div>
-      </footer>
-    
-  </article>
-  
-  
-  
-
-  </div>
-
-
-          </div>
-          
-    <div class="comments" id="valine-comments"></div>
-
-<script>
-  window.addEventListener('tabs:register', () => {
-    let activeClass = CONFIG.comments.activeClass;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
-      }
-    }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
-    });
-  }
-</script>
-
-        </div>
           
   
   <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
   </div>
 
   <aside class="sidebar">
-    <div class="sidebar-inner">
 
-      <ul class="sidebar-nav motion-element">
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
         </li>
@@ -450,18 +294,18 @@ if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
       </ul>
 
       <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-      </div>
+      <section class="post-toc-wrap sidebar-panel">
+      </section>
       <!--/noindex-->
 
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="千灵夙赋"
       src="/images/avatar.png">
   <p class="site-author-name" itemprop="name">千灵夙赋</p>
   <div class="site-description" itemprop="description"></div>
 </div>
-<div class="site-state-wrap motion-element">
+<div class="site-state-wrap animated">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
@@ -483,16 +327,10 @@ if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
       </div>
   </nav>
 </div>
-  <div class="links-of-author motion-element">
-      <span class="links-of-author-item">
-        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
-      </span>
-  </div>
 
 
-  <div class="links-of-blogroll motion-element">
-    <div class="links-of-blogroll-title">
-      <i class="fa fa-fw fa-link"></i>
+  <div class="links-of-blogroll animated">
+    <div class="links-of-blogroll-title"><i class="link fa-fw"></i>
       Friends
     </div>
     <ul class="links-of-blogroll-list">
@@ -559,18 +397,196 @@ var ap = new APlayer({
   });
 </script>
 
-      </div>
-
+      </section>
     </div>
   </aside>
   <div id="sidebar-dimmer"></div>
 
+
+      </header>
+
+      
+  <div class="back-to-top">
+    <i class="fa fa-chevron-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div id="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+      <div class="main-inner">
+        
+
+        <div class="content post posts-expand">
+          
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://qianling.pw/prize/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="千灵夙赋">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="千灵">
+    </span>
+
+    
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          《我得奖了》--- 苦苓
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2019-10-08 21:00:20 / 修改时间：21:38:41" itemprop="dateCreated datePublished" datetime="2019-10-08T21:00:20+08:00">2019-10-08</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%96%87%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">文学</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/prize/" class="post-meta-item leancloud_visitors" data-flag-title="《我得奖了》--- 苦苓" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    <a title="valine" href="/prize/#valine-comments" itemprop="discussionUrl">
+    <i class="far fa-comment"></i>评论数
+      <span class="post-comments-count valine-comment-count" data-xid="/prize/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p><img data-src="/images/covers/158.png"></p>
+<a id="more"></a>
+
+<hr>
+<p>　　今天已经是最后截稿日了，我非赶上最后一班邮件不可。<br>　　潦潦草草的抄完了最后几行字，我嘴里咬着信封，吃力地踩着脚踏车，追赶绝尘而去的邮务机车，「喂，等一等——」忽然一阵尖锐的煞车声，我猛然停住，一辆大卡车的车灯正贴着我的脸颊，「你要死了！」因祸得福，机车上的邮务士回头看看热闹时，我得以及时把稿件交给他，这时才察觉自己的衬衫早已湿透了。<br>　　接下来就是漫长而无止尽的等待了。也许为了写这篇小说，耗费了我太多心神，整个人觉得虚飘飘的，甚至也无心吃饭睡觉，脑中不断转着的，就是我获得这项文坛最高荣耀的景象。<br>　　的确是文坛最高的荣耀：这个文学奖和以往国内各种文学奖最大的不同，在于高达三百万元的奖金（照我现在每月的稿费收入，要写六百年），以及十二位全国公认文学大师的评审委员（我就是从小读他们作品长大的）；换句话说，任何人得了这个奖就是百分之百的名利双收，无怪乎主办的基金会宣称迄今已有一万多份稿件应征，而我更花费了整整一年修改自己作品中的每一个字，一切不都是为了这个号称「台湾诺贝尔」的超级大奖吗？<br>　　揭晓的日子终于到了！全国各报都公布了得奖人和作品，评审委员一致公认得奖的是「永恒而伟大」的作品，而这个作者——×的！竟然是一个连我都没听过名字的家伙！看看他写的是什么哗众取宠的玩意……我越看越熟悉，越看越惊心，这明明，这明明就是我寄去参加征文的那篇小说嘛！怎么会被改了题目？连作者也换了？我又兴奋又愤怒，拨电话给主办单位时，手指头一直忍不住颤抖。<br>　　「应该是我得奖，应该是我……」我在心中喃喃念着，一边以激动的语气检举这项天大的错误，不料接电话的小姐只「喂」了几声，根本不等我说完就挂了。也许这根本就是一个串通好的骗局，拿我最杰出的作品颁给早已内定的人，我全身热血沸腾，立刻出门跳上计程车直驶主办文学奖的基金会大楼；我咬牙切齿，誓死要夺回原来属于我的荣耀和……奖金。<br>　　盛大的颁奖典礼正在隆重进行，基金会董事长正在盛赞「永恒而伟大」的得奖作品时，我冲了进去，对着冠盖云集的满座嘉宾厉声高呼，声泪俱下的指出这个可怕的错误，控诉主办单位草率轻忽，平白牺牲了我这个照亮台湾文坛的杰出新锐，为了提出有力证明，我甚至将整篇小说倒背如流，（天晓得我呕尽了多少心血！）然而他们竟然充耳未闻，甚至没有人看我一眼，仿佛我根本不存在似的。这太可恨了！我早知文坛的功利现实，但至少他们该给我一个澄清事实的机会……我狠狠揪住基金会董事长的衣领，却被他像掸一阵灰似的，轻易把我赶了出来。<br>　　我跌坐人行道上，感觉空前的绝望与茫然，仿佛看见自己的一生就像天色一样暗淡下来，拾头看见斑驳的阅报栏上，一则醒目（有关自己的总是醒目的！）的旧消息：<br>　　<span style="font-size:1.1em">征文前夕罹难•作家壮志未酬</span><br>　　【本报讯】青年作家蒋学文车祸亡故，文坛伤悼新星殒落。据指出：这几年创作甚力的青年作家蒋学文，昨（十五）日于中山北路骑单车追赶邮务车时，不慎被一辆大卡车撞及，经送医后不治死亡，车祸现场只留下一个注明参加文学奖的信封，其中的稿件则已不知去向，全案正由中山分局调查中……<br>　　我忽然全身发冷，原来我早已经，早已经死了，可是我留下来的永恒而伟大的作品，以及那个因我的作品变成永恒而伟大的小偷兼骗子呢？</p>
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\norwegian-wood\" rel="bookmark">《挪威的森林》书摘</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\swallows\" rel="bookmark">《似曾相识燕归来》--- 王勇吉</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\the-dandelion-girl\" rel="bookmark">《蒲公英女孩》</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\lenin's-kisses\" rel="bookmark">《受活》书摘</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\light\" rel="bookmark">《灯》修订版</a></div>
+    </li>
+  </ul>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%96%87%E5%AD%A6/" rel="tag"># 文学</a>
+          </div>
+
+        
+  <div class="post-widgets">
+    <div class="wp_rating">
+      <div id="wpac-rating"></div>
+    </div>
+  </div>
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/a-girl/" rel="prev" title="一个女孩">
+      <i class="fa fa-chevron-left"></i> 一个女孩
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/swallows/" rel="next" title="《似曾相识燕归来》--- 王勇吉">
+      《似曾相识燕归来》--- 王勇吉 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+        </div>
+        
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
 
       </div>
     </main>
 
     <footer class="footer">
       <div class="footer-inner">
+        
+
         
 
 <div class="copyright">
@@ -585,10 +601,10 @@ var ap = new APlayer({
 
         
 <div class="busuanzi-count">
-  <script pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
       <span class="post-meta-item-icon">
-        <i class="fa fa-"></i>你是第
+        <i class=""></i>你是第
       </span>
       <span class="site-uv" title="总访客量">
         <span id="busuanzi_value_site_uv"></span>位到访的小伙伴喔
@@ -597,7 +613,7 @@ var ap = new APlayer({
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
       <span class="post-meta-item-icon">
-        <i class="fa fa-"></i>本站已被访问
+        <i class=""></i>本站已被访问
       </span>
       <span class="site-pv" title="总访问量">
         <span id="busuanzi_value_site_pv"></span>次啦
@@ -610,30 +626,30 @@ var ap = new APlayer({
 
 
 
-  <script pjax>
-  function leancloudSelector(url) {
-    url = encodeURI(url);
-    return document.getElementById(url).querySelector('.leancloud-visitors-count');
-  }
-  if (CONFIG.page.isPost) {
-    function addCount(Counter) {
-      var visitors = document.querySelector('.leancloud_visitors');
-      var url = decodeURI(visitors.getAttribute('id'));
-      var title = visitors.getAttribute('data-flag-title');
+<script data-pjax>
+  (function() {
+    function leancloudSelector(url) {
+      url = encodeURI(url);
+      return document.getElementById(url).querySelector('.leancloud-visitors-count');
+    }
 
-      Counter('get', `/classes/Counter?where=${JSON.stringify({ url })}`)
+    function addCount(Counter) {
+      const visitors = document.querySelector('.leancloud_visitors');
+      const url = decodeURI(visitors.id);
+      const title = visitors.dataset.flagTitle;
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url })))
         .then(response => response.json())
         .then(({ results }) => {
           if (results.length > 0) {
-            var counter = results[0];
-              leancloudSelector(url).innerText = counter.time + 1;
+            const counter = results[0];
+            leancloudSelector(url).innerText = counter.time + 1;
             Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
-              .then(response => response.json())
               .catch(error => {
                 console.error('Failed to save visitor count', error);
-              })
+              });
           } else {
-              Counter('post', '/classes/Counter', { title: title, url: url, time: 1 })
+              Counter('post', '/classes/Counter', { title, url, time: 1 })
                 .then(response => response.json())
                 .then(() => {
                   leancloudSelector(url).innerText = 1;
@@ -647,48 +663,34 @@ var ap = new APlayer({
           console.error('LeanCloud Counter Error', error);
         });
     }
-  } else {
+
     function showTime(Counter) {
-      var visitors = document.querySelectorAll('.leancloud_visitors');
-      var entries = [...visitors].map(element => {
-        return decodeURI(element.getAttribute('id'));
+      const visitors = document.querySelectorAll('.leancloud_visitors');
+      const entries = [...visitors].map(element => {
+        return decodeURI(element.id);
       });
 
-      Counter('get', `/classes/Counter?where=${JSON.stringify({ url: { '$in': entries } })}`)
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url: { '$in': entries } })))
         .then(response => response.json())
         .then(({ results }) => {
-          if (results.length === 0) {
-            document.querySelectorAll('.leancloud_visitors .leancloud-visitors-count').forEach(element => {
-              element.innerText = 0;
-            });
-            return;
-          }
-          for (let item of results) {
-            let { url, time } = item;
-            leancloudSelector(url).innerText = time;
-          }
           for (let url of entries) {
-            var element = leancloudSelector(url);
-            if (element.innerText == '') {
-              element.innerText = 0;
-            }
+            let target = results.find(item => item.url === url);
+            leancloudSelector(url).innerText = target ? target.time : 0;
           }
         })
         .catch(error => {
           console.error('LeanCloud Counter Error', error);
         });
     }
-  }
 
-  fetch('https://app-router.leancloud.cn/2/route?appId=zulMeib4pyC6zB1a65OmVtHz-gzGzoHsz')
-    .then(response => response.json())
-    .then(({ api_server }) => {
-      var Counter = (method, url, data) => {
-        return fetch(`https://${api_server}/1.1${url}`, {
-          method: method,
+    let { app_id, app_key, server_url } = {"enable":true,"app_id":"zulMeib4pyC6zB1a65OmVtHz-gzGzoHsz","app_key":"TEjUlOUBz3KwSUmDQ35ROxpw","server_url":null,"security":false};
+    function fetchData(api_server) {
+      const Counter = (method, url, data) => {
+        return fetch(`${api_server}/1.1${url}`, {
+          method,
           headers: {
-            'X-LC-Id'     : 'zulMeib4pyC6zB1a65OmVtHz-gzGzoHsz',
-            'X-LC-Key'    : 'TEjUlOUBz3KwSUmDQ35ROxpw',
+            'X-LC-Id'     : app_id,
+            'X-LC-Key'    : app_key,
             'Content-Type': 'application/json',
           },
           body: JSON.stringify(data)
@@ -700,8 +702,21 @@ var ap = new APlayer({
       } else if (document.querySelectorAll('.post-title-link').length >= 1) {
         showTime(Counter);
       }
-    });
-  </script>
+    }
+
+    const api_server = app_id.slice(-9) !== '-MdYXbMMI' ? server_url : `https://${app_id.slice(0, 8).toLowerCase()}.api.lncldglobal.com`;
+
+    if (api_server) {
+      fetchData(api_server);
+    } else {
+      fetch('https://app-router.leancloud.cn/2/route?appId=' + app_id)
+        .then(response => response.json())
+        .then(({ api_server }) => {
+          fetchData('https://' + api_server);
+        });
+    }
+  })();
+</script>
 
 
       </div>
@@ -710,12 +725,10 @@ var ap = new APlayer({
 
   
   <script src="/lib/anime.min.js"></script>
-  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/next-theme/pjax@0/pjax.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
-  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
 
 <script src="/js/utils.js"></script>
 
@@ -731,47 +744,19 @@ var ap = new APlayer({
 var pjax = new Pjax({
   selectors: [
     'head title',
-    '#page-configurations',
-    '.content-wrap',
+    '.page-configurations',
+    '.main-inner',
     '.post-toc-wrap',
-    '#pjax'
+    '.languages',
+    '.pjax'
   ],
-  switches: {
-    '.post-toc-wrap': Pjax.switches.innerHTML
-  },
   analytics: false,
   cacheBust: false,
   scrollTo : !CONFIG.bookmark.enable
 });
 
-window.addEventListener('pjax:success', () => {
-  document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
-    var code = element.text || element.textContent || element.innerHTML || '';
-    var parent = element.parentNode;
-    parent.removeChild(element);
-    var script = document.createElement('script');
-    if (element.id) {
-      script.id = element.id;
-    }
-    if (element.className) {
-      script.className = element.className;
-    }
-    if (element.type) {
-      script.type = element.type;
-    }
-    if (element.src) {
-      script.src = element.src;
-      // Force synchronous loading of peripheral JS.
-      script.async = false;
-    }
-    if (element.getAttribute('pjax') !== null) {
-      script.setAttribute('pjax', '');
-    }
-    if (code !== '') {
-      script.appendChild(document.createTextNode(code));
-    }
-    parent.appendChild(script);
-  });
+document.addEventListener('pjax:success', () => {
+  pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
   NexT.boot.refresh();
   // Define Motion Sequence & Bootstrap Motion.
   if (CONFIG.motion.enable) {
@@ -781,27 +766,19 @@ window.addEventListener('pjax:success', () => {
       .add(NexT.motion.middleWares.postList)
       .bootstrap();
   }
+  const hasTOC = document.querySelector('.post-toc');
+  document.querySelector('.sidebar-inner').classList.toggle('sidebar-nav-active', hasTOC);
+  document.querySelector(hasTOC ? '.sidebar-nav-toc' : '.sidebar-nav-overview').click();
   NexT.utils.updateSidebarPosition();
 });
 </script>
 
 
-
-
   
-  <script pjax>
-    (function(){
-      var bp = document.createElement('script');
-      var curProtocol = window.location.protocol.split(':')[0];
-      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(bp, s);
-    })();
-  </script>
 
 
 
-  <script pjax>
+  <script data-pjax>
   if (CONFIG.page.isPost) {
     wpac_init = window.wpac_init || [];
     wpac_init.push({
@@ -837,46 +814,30 @@ window.addEventListener('pjax:success', () => {
 
 
 
-    <div id="pjax">
+    <div class="pjax">
   
 
   
-  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/quicklink@2/dist/quicklink.umd.js"></script>
   <script>
       window.addEventListener('load', () => {
-      quicklink({
-        timeout: 3000,
+      quicklink.listen({
+        timeout : 3000,
         priority: true,
-        ignores: [uri => uri.includes('#'),uri => uri == 'https://qianling.pw/prize/',]
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://qianling.pw/prize/',]
       });
       });
   </script>
 
 
 <script>
-NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
-  NexT.utils.getScript('https://qianling-1254036047.cos.ap-chengdu.myqcloud.com/js/Valine.min.js', () => {
-    var GUEST = ['nick', 'mail', 'link'];
-    var guest = 'nick,mail,link';
-    guest = guest.split(',').filter(item => {
-      return GUEST.includes(item);
-    });
-    new Valine({
-      el         : '#valine-comments',
-      verify     : false,
-      notify     : false,
-      appId      : 'zulMeib4pyC6zB1a65OmVtHz-gzGzoHsz',
-      appKey     : 'TEjUlOUBz3KwSUmDQ35ROxpw',
-      placeholder: "biu biu~　||ヽ(*￣▽￣*)ノミ|Ю",
-      avatar     : 'wavatar',
-      meta       : guest,
-      pageSize   : '10' || 10,
-      visitor    : false,
-      lang       : 'zh-cn' || 'zh-cn',
-      path       : location.pathname,
-      recordIP   : false,
-      serverURLs : ''
-    });
+NexT.utils.loadComments('#valine-comments', () => {
+  NexT.utils.getScript('/js/custom/Valine.min.js', () => {
+    new Valine(Object.assign({
+      el  : '#valine-comments',
+      path: location.pathname,
+    }, {"enable":true,"appId":"zulMeib4pyC6zB1a65OmVtHz-gzGzoHsz","appKey":"TEjUlOUBz3KwSUmDQ35ROxpw","placeholder":"biu biu~　||ヽ(*￣▽￣*)ノミ|Ю","avatar":"wavatar","meta":["nick","mail","link"],"pageSize":10,"language":"zh-cn","visitor":false,"comment_count":true,"recordIP":false,"serverURLs":null,"enableQQ":true,"requiredFields":[]}
+    ));
   }, window.Valine);
 });
 </script>

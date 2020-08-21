@@ -4,21 +4,25 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
+<meta name="generator" content="Hexo 5.0.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
 <link rel="stylesheet" href="/css/main.css">
 
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic|ZCOOL XiaoWei:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
-<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/5.10.0-11/css/all.min.css">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.css">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto+Serif+SC:300,300italic,400,400italic,700,700italic|ZCOOL+XiaoWei:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  
+  <link rel="stylesheet" href="/lib/animate-css/animate.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.min.css">
   <script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
 
-<script id="hexo-configurations">
+<script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"qianling.pw","root":"/","scheme":"Muse","version":"7.7.1","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"qianling.pw","root":"/","scheme":"Muse","version":"8.0.0-rc.5","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":true,"nav":null,"activeClass":"valine"},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"none","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"path":"search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true}};
   </script>
 
   <meta property="og:type" content="article">
@@ -38,19 +42,20 @@
 <link rel="canonical" href="https://qianling.pw/style/">
 
 
-<script id="page-configurations">
+<script data-pjax class="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: false,
-    isPost: true
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
   };
 </script>
 
   <title>样式汇总 | 千灵</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141264217-1"></script>
-    <script pjax>
+    <script data-pjax>
       if (CONFIG.hostname === location.hostname) {
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
@@ -60,7 +65,7 @@
     </script>
 
 
-  <script pjax>
+  <script data-pjax>
     var _hmt = _hmt || [];
     (function() {
       var hm = document.createElement("script");
@@ -75,24 +80,36 @@
 
   <noscript>
   <style>
-  .use-motion .brand,
+  body { margin-top: 2rem; }
+
   .use-motion .menu-item,
-  .sidebar-inner,
+  .use-motion .sidebar,
   .use-motion .post-block,
   .use-motion .pagination,
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
 
   .use-motion .site-title,
-  .use-motion .site-subtitle {
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
     opacity: initial;
     top: initial;
   }
 
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
   </style>
 </noscript>
 
@@ -103,67 +120,70 @@
   <div class="container use-motion">
     <div class="headband"></div>
 
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
+    <main class="main">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
     </div>
   </div>
 
   <div class="site-meta">
 
-    <div>
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">千灵</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">千灵</h1>
+      <i class="logo-line"></i>
+    </a>
   </div>
 
-  <div class="site-nav-right"></div>
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
 </div>
 
 
+
 <nav class="site-nav">
-  
-  <ul id="menu" class="menu">
+  <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-fw fa-star-half-alt"></i>首页</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-democrat"></i>归档</a>
+    <a href="/" rel="section"><i class="fa fa-star-half-alt fa-fw"></i>首页</a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-dove"></i>分类</a>
+    <a href="/categories/" rel="section"><i class="fa fa-dove fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-democrat fa-fw"></i>归档</a>
 
   </li>
         <li class="menu-item menu-item-daily">
 
-    <a href="/daily" rel="section"><i class="fa fa-fw fa-ghost"></i>碎念</a>
+    <a href="/daily" rel="section"><i class="fa fa-ghost fa-fw"></i>碎念</a>
 
   </li>
         <li class="menu-item menu-item-play">
 
-    <a href="/play" rel="section"><i class="fa fa-fw fa-fish"></i>游戏</a>
+    <a href="/play" rel="section"><i class="fa fa-fish fa-fw"></i>游戏</a>
 
   </li>
         <li class="menu-item menu-item-comments">
 
-    <a href="/comments" rel="section"><i class="fa fa-fw fa-dog"></i>留言</a>
+    <a href="/comments" rel="section"><i class="fa fa-dog fa-fw"></i>留言</a>
 
   </li>
         <li class="menu-item menu-item-about">
 
-    <a href="/about/" rel="section"><i class="fa fa-fw fa-carrot"></i>关于</a>
+    <a href="/about/" rel="section"><i class="fa fa-carrot fa-fw"></i>关于</a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -171,16 +191,18 @@
         </a>
       </li>
   </ul>
-
 </nav>
-  <div class="site-search">
+
+
+
+  <div class="search-pop-overlay">
     <div class="popup search-popup">
-    <div class="search-header">
+        <div class="search-header">
   <span class="search-icon">
     <i class="fa fa-search"></i>
   </span>
   <div class="search-input-container">
-    <input autocomplete="off" autocorrect="off" autocapitalize="off"
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
            placeholder="搜索..." spellcheck="false"
            type="search" class="search-input">
   </div>
@@ -188,12 +210,15 @@
     <i class="fa fa-times-circle"></i>
   </span>
 </div>
-<div id="search-result"></div>
-
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
 </div>
-<div class="search-pop-overlay"></div>
 
-  </div><script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+    </div>
+  </div>
+<script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
 <script src="/js/custom/custom.js"></script>
 
 <div class="top-scroll-bar"></div>
@@ -214,7 +239,7 @@ if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
 </script>
 <script type="text/javascript">
   $("body").backstretch([
-    "https://qianling-1254036047.cos.ap-chengdu.myqcloud.com/background/background%20(1).webp",
+    "/images/background/background (1).webp",
     "/images/background/background (2).webp",
     "/images/background/background (3).webp",
     "/images/background/background (4).webp",
@@ -249,325 +274,18 @@ if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
 </script>
 
 </div>
-    </header>
-
-    
-  <div class="back-to-top">
-    <i class="fa fa-chevron-up"></i>
-    <span>0%</span>
-  </div>
-
-
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-
-          <div class="content">
-            
-
-  <div class="posts-expand">
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://qianling.pw/style/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="千灵夙赋">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="千灵">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          样式汇总
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间 2017-07-30 16:57:13" itemprop="dateCreated datePublished" datetime="2017-07-30T16:57:13+08:00">2017-07-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间 2019-05-31 00:00:00" itemprop="dateModified" datetime="2019-05-31T00:00:00+08:00">2019-05-31</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">Hexo</span>
-                  </a>
-                </span>
-            </span>
-
-          
-            <span id="/style/" class="post-meta-item leancloud_visitors" data-flag-title="样式汇总" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数 </span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-  <i class="far fa-comment"></i>
-    <a title="valine" href="/style/#valine-comments" itemprop="discussionUrl">
-     评论数
-      <span class="post-comments-count valine-comment-count" data-xid="/style/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-        <p><img data-src="/images/covers/47.jpg" alt=""></p>
-<a id="more"></a>
-
-<hr>
-<h3 id="文本居中的引用"><a href="#文本居中的引用" class="headerlink" title="文本居中的引用"></a>文本居中的引用</h3><p>此标签将生成一个带上下分割线的引用，同时引用内文本将自动居中。 文本居中时，多行文本若长度不等，视觉上会显得不对称，因此建议在引用单行文本的场景下使用。 例如作为文章开篇引用 或者 结束语之前的总结引用。<br>使用方式：</p>
-<ul>
-<li>HTML方式：使用这种方式时，给 img 添加属性 class=”blockquote-center” 即可。</li>
-<li>标签方式：使用 centerquote 或者 简写 cq。</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- HTML方式: 直接在 Markdown 文件中编写 HTML 来调用 --&gt;</span><br><span class="line">&lt;!-- 其中 class&#x3D;&quot;blockquote-center&quot; 是必须的 --&gt;</span><br><span class="line">&lt;blockquote class&#x3D;&quot;blockquote-center&quot;&gt;blah blah blah&lt;&#x2F;blockquote&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 标签 方式，要求版本在0.4.5或以上 --&gt;</span><br><span class="line">&#123;% centerquote %&#125;blah blah blah&#123;% endcenterquote %&#125;</span><br><span class="line"></span><br><span class="line">&lt;!-- 标签别名 --&gt;</span><br><span class="line">&#123;% cq %&#125; blah blah blah &#123;% endcq %&#125;</span><br></pre></td></tr></table></figure>
-<blockquote class="blockquote-center"><span style="font-size:16px">人的一切痛苦，本质上都是对自己的无能的愤怒</span>
-
-<p><span style="font-weight:900;font-size:16px">王小波</span></blockquote></p>
-<h3 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">section</span> <span class="attr">class</span>=<span class="string">"link-braces"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>可后来有二天在医院里，托马斯正在<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>手术间休息<span class="tag">&lt;/<span class="name">a</span>&gt;</span>，护士告诉他有电话。他断到话筒里<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>传来特丽莎<span class="tag">&lt;/<span class="name">a</span>&gt;</span>的声音。电话是从车站打来的。他格外高兴，不幸的是他那天夜里有事，要到第二天才能请她上他家去。<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>放下电话<span class="tag">&lt;/<span class="name">a</span>&gt;</span>，他便责备自己没有叫她直接去他家，他毕竟有足够的时间来取消自已原来的计划！<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<section class="link-braces">
-<p>可后来有二天在医院里，托马斯正在<a href="#">手术间休息</a>，护士告诉他有电话。他断到话筒里<a href="#">传来特丽莎</a>的声音。电话是从车站打来的。他格外高兴，不幸的是他那天夜里有事，要到第二天才能请她上他家去。<a href="#">放下电话</a>，他便责备自己没有叫她直接去他家，他毕竟有足够的时间来取消自已原来的计划！</p>
-</section>
-
-<h3 id="Note-tag"><a href="#Note-tag" class="headerlink" title="Note tag"></a>Note tag</h3><p>使用方式：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% note class_name %&#125; Content (md partial supported) &#123;% endnote %&#125;</span><br></pre></td></tr></table></figure>
-
-<p>其中，class_name 可以是以下列表中的一个值：</p>
-<ul>
-<li>default</li>
-<li>primary</li>
-<li>success</li>
-<li>info</li>
-<li>warning</li>
-<li>danger</li>
-</ul>
-<p><code>\themes\next\_config.yml</code> 内可修改参数</p>
-<div class="note default">
-            <p>default </p>
-          </div>
-<div class="note primary">
-            <p>primary </p>
-          </div>
-<div class="note success">
-            <p>success </p>
-          </div>
-<div class="note info">
-            <p>info </p>
-          </div>
-<div class="note warning">
-            <p>warning </p>
-          </div>
-<div class="note danger">
-            <p>danger </p>
-          </div>
-
-<h3 id="Tab-tag"><a href="#Tab-tag" class="headerlink" title="Tab tag"></a>Tab tag</h3><div class="tabs" id="unique-name"><ul class="nav-tabs"><li class="tab active"><a href="#unique-name-1"><i class="fa fa-icon]"></i>[Tab caption] [</a></li><li class="tab"><a href="#unique-name-2"><i class="fa fa-icon]"></i>[Tab caption] [</a></li></ul><div class="tab-content"><div class="tab-pane active" id="unique-name-1"><p>Any content (support inline tags too).</p></div><div class="tab-pane" id="unique-name-2"><p>Any content (support inline tags too).</p></div></div></div>
-
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;% tabs Unique name, [index] %&#125;</span><br><span class="line"><span class="xml"><span class="comment">&lt;!-- tab [Tab caption] [@icon] --&gt;</span></span></span><br><span class="line">Any content (support inline tags too).</span><br><span class="line"><span class="xml"><span class="comment">&lt;!-- endtab --&gt;</span></span></span><br><span class="line"><span class="xml"><span class="comment">&lt;!-- tab [Tab caption] [@icon] --&gt;</span></span></span><br><span class="line">Any content (support inline tags too).</span><br><span class="line"><span class="xml"><span class="comment">&lt;!-- endtab --&gt;</span></span></span><br><span class="line">&#123;% endtabs %&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="链接框"><a href="#链接框" class="headerlink" title="链接框"></a>链接框</h3><p><a id="a1" href="http://www.qianling.pw">这是一个链接</a><code>&lt;a id=&quot;a1&quot; href=&quot;http://www.qianling.pw&quot;&gt;这是一个链接&lt;/a&gt;</code></p>
-<h3 id="TOC数字块"><a href="#TOC数字块" class="headerlink" title="TOC数字块"></a>TOC数字块</h3><p><span class="section-number">1.</span><code>&lt;span class=&quot;section-number&quot;&gt;1.&lt;/span&gt;</code></p>
-<h3 id="警告"><a href="#警告" class="headerlink" title="警告"></a>警告</h3><div class="alert alert-success"><i class="fa fa-lightbulb-o"></i> 本文旨在介绍样式的使用规则。</div>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class="alert alert-success"&gt;&lt;i class="fa fa-lightbulb-o"&gt;&lt;/i&gt; 本文旨在介绍样式的使用规则。&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-<div class="alert alert-info"><i class="fa fa-info"></i> 本文旨在介绍样式的使用规则。</div>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class="alert alert-info"&gt;&lt;i class="fa fa-info"&gt;&lt;/i&gt; 本文旨在介绍样式的使用规则。&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-<div class="alert alert-warning"><i class="fa fa-bell"></i> 本文旨在介绍样式的使用规则。</div>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class="alert alert-warning"&gt;&lt;i class="fa fa-info"&gt;&lt;/i&gt; 本文旨在介绍样式的使用规则。&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-<div class="alert alert-danger"><i class="fa fa-bug"></i> 本文旨在介绍样式的使用规则。</div>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class="alert alert-danger"&gt;&lt;i class="fa fa-bug"&gt;&lt;/i&gt; 本文旨在介绍样式的使用规则。&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="文字增加背景色块"><a href="#文字增加背景色块" class="headerlink" title="文字增加背景色块"></a>文字增加背景色块</h3><p><span id="inline-blue">站点配置文件</span><code>&lt;span id=&quot;inline-blue&quot;&gt;站点配置文件&lt;/span&gt;</code><br><span id="inline-purple">主题配置文件</span><code>&lt;span id=&quot;inline-purple&quot;&gt;主题配置文件&lt;/span&gt;</code><br><span id="inline-yellow">站点配置文件</span><code>&lt;span id=&quot;inline-yellow&quot;&gt;站点配置文件&lt;/span&gt;</code><br><span id="inline-green">主题配置文件</span><code>&lt;span id=&quot;inline-green&quot;&gt;主题配置文件&lt;/span&gt;</code></p>
-<h3 id="引用边框变色"><a href="#引用边框变色" class="headerlink" title="引用边框变色"></a>引用边框变色</h3><p id="div-border-left-red">且不问结果如何，尽自己之所能，积极的面对。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p id="div-border-left-red"&gt;且不问结果如何，尽自己之所能，积极的面对。&lt;/p&gt;</span><br></pre></td></tr></table></figure>
-<p id="div-border-left-yellow">且不问结果如何，尽自己之所能，积极的面对。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p id="div-border-left-yellow"&gt;且不问结果如何，尽自己之所能，积极的面对。&lt;/p&gt;</span><br></pre></td></tr></table></figure>
-<p id="div-border-left-green">且不问结果如何，尽自己之所能，积极的面对。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p id="div-border-left-green"&gt;且不问结果如何，尽自己之所能，积极的面对。&lt;/p&gt;</span><br></pre></td></tr></table></figure>
-<p id="div-border-left-blue">且不问结果如何，尽自己之所能，积极的面对。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p id="div-border-left-blue"&gt;且不问结果如何，尽自己之所能，积极的面对。&lt;/p&gt;</span><br></pre></td></tr></table></figure>
-<p id="div-border-left-purple">且不问结果如何，尽自己之所能，积极的面对。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p id="div-border-left-purple"&gt;且不问结果如何，尽自己之所能，积极的面对。&lt;/p&gt;</span><br></pre></td></tr></table></figure>
-
-<br/>
-
-<p id="div-border-right-red">且不问结果如何，尽自己之所能，积极的面对。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p id="div-border-right-red"&gt;且不问结果如何，尽自己之所能，积极的面对。&lt;/p&gt;</span><br></pre></td></tr></table></figure>
-<p id="div-border-right-yellow">且不问结果如何，尽自己之所能，积极的面对。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p id="div-border-right-yellow"&gt;且不问结果如何，尽自己之所能，积极的面对。&lt;/p&gt;</span><br></pre></td></tr></table></figure>
-<p id="div-border-right-green">且不问结果如何，尽自己之所能，积极的面对。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p id="div-border-right-green"&gt;且不问结果如何，尽自己之所能，积极的面对。&lt;/p&gt;</span><br></pre></td></tr></table></figure>
-<p id="div-border-right-blue">且不问结果如何，尽自己之所能，积极的面对。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p id="div-border-right-blue"&gt;且不问结果如何，尽自己之所能，积极的面对。&lt;/p&gt;</span><br></pre></td></tr></table></figure>
-<p id="div-border-right-purple">且不问结果如何，尽自己之所能，积极的面对。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p id="div-border-right-purple"&gt;且不问结果如何，尽自己之所能，积极的面对。&lt;/p&gt;</span><br></pre></td></tr></table></figure>
-
-<br/>
-
-<p id="div-border-top-red">且不问结果如何，尽自己之所能，积极的面对。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p id="div-border-top-red"&gt;且不问结果如何，尽自己之所能，积极的面对。&lt;/p&gt;</span><br></pre></td></tr></table></figure>
-<p id="div-border-top-yellow">且不问结果如何，尽自己之所能，积极的面对。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p id="div-border-top-yellow"&gt;且不问结果如何，尽自己之所能，积极的面对。&lt;/p&gt;</span><br></pre></td></tr></table></figure>
-<p id="div-border-top-green">且不问结果如何，尽自己之所能，积极的面对。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p id="div-border-top-green"&gt;且不问结果如何，尽自己之所能，积极的面对。&lt;/p&gt;</span><br></pre></td></tr></table></figure>
-<p id="div-border-top-blue">且不问结果如何，尽自己之所能，积极的面对。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p id="div-border-top-blue"&gt;且不问结果如何，尽自己之所能，积极的面对。&lt;/p&gt;</span><br></pre></td></tr></table></figure>
-<p id="div-border-top-purple">且不问结果如何，尽自己之所能，积极的面对。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p id="div-border-top-purple"&gt;且不问结果如何，尽自己之所能，积极的面对。&lt;/p&gt;</span><br></pre></td></tr></table></figure>
-
-<br/>
-
-<p id="div-border-bottom-red">且不问结果如何，尽自己之所能，积极的面对。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p id="div-border-bottom-red"&gt;且不问结果如何，尽自己之所能，积极的面对。&lt;/p&gt;</span><br></pre></td></tr></table></figure>
-<p id="div-border-bottom-yellow">且不问结果如何，尽自己之所能，积极的面对。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p id="div-border-bottom-yellow"&gt;且不问结果如何，尽自己之所能，积极的面对。&lt;/p&gt;</span><br></pre></td></tr></table></figure>
-<p id="div-border-bottom-green">且不问结果如何，尽自己之所能，积极的面对。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p id="div-border-bottom-green"&gt;且不问结果如何，尽自己之所能，积极的面对。&lt;/p&gt;</span><br></pre></td></tr></table></figure>
-<p id="div-border-bottom-blue">且不问结果如何，尽自己之所能，积极的面对。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p id="div-border-bottom-blue"&gt;且不问结果如何，尽自己之所能，积极的面对。&lt;/p&gt;</span><br></pre></td></tr></table></figure>
-<p id="div-border-bottom-purple">且不问结果如何，尽自己之所能，积极的面对。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p id="div-border-bottom-purple"&gt;且不问结果如何，尽自己之所能，积极的面对。&lt;/p&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="在文档中增加图标"><a href="#在文档中增加图标" class="headerlink" title="在文档中增加图标"></a>在文档中增加图标</h3><p><i class="fa fa-pencil"></i><code>&lt;i class=&quot;fa fa-pencil&quot;&gt;&lt;/i&gt;</code><br><i class="fa fa-cloud-upload"></i><code>&lt;i class=&quot;fa fa-cloud-upload&quot;&gt;&lt;/i&gt;</code><br><i class="fa fa-cog"></i><code>&lt;i class=&quot;fa fa-cog&quot;&gt;&lt;/i&gt;</code></p>
-<p><i class="fa fa-github"></i><code>&lt;i class=&quot;fa fa-github&quot;&gt;&lt;/i&gt;</code><br><i class="fa fa-github fa-lg"></i><code>&lt;i class=&quot;fa fa-github fa-lg&quot;&gt;&lt;/i&gt;</code><br><i class="fa fa-github fa-2x"></i><code>&lt;i class=&quot;fa fa-github fa-2x&quot;&gt;&lt;/i&gt;</code></p>
-<p><a id="download" href="https://git-scm.com/download/win"><i class="fa fa-download"></i><span> Download Now</span><br></a><code>&lt;a id=&quot;download&quot; href=&quot;https://git-scm.com/download/win&quot;&gt;&lt;i class=&quot;fa fa-download&quot;&gt;&lt;/i&gt;&lt;span&gt; Download Now&lt;/span&gt;
-&lt;/a&gt;</code></p>
-<p><a id="tube" href="https://www.youtube.com/watch?v=Gl23T9aOfoE"><i class="fa fa-youtube-play"></i><span> YouTube </span></p>
-<p><code>&lt;a id=&quot;tube&quot; href=&quot;https://www.youtube.com/watch?v=Gl23T9aOfoE&quot;&gt;&lt;i class=&quot;fa fa-youtube-play&quot;&gt;&lt;/i&gt;&lt;span&gt; YouTube &lt;/span&gt;</code></p>
-<h3 id="emoji"><a href="#emoji" class="headerlink" title="emoji"></a>emoji</h3><p>😙🍋🎱✊<br>https://www.emojicopy.com/</p>
-
-    </div>
-
-    
-    
-    
-      
-  <div class="popular-posts-header">相关文章</div>
-  <ul class="popular-posts">
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\grammar\" rel="bookmark">语法汇总</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\base64-fonts\" rel="bookmark">内联引入 base64 字体</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\changyan\" rel="bookmark">免备案使用畅言</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\custom-web-page\" rel="bookmark">Hexo 跳过渲染，创建自定义网页</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\error-launching-git\" rel="bookmark">关于 'error launching git' 的解决方法</a></div>
-    </li>
-  </ul>
-
-
-      <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/Hexo/" rel="tag"># Hexo</a>
-              <a href="/tags/%E6%B1%87%E6%80%BB/" rel="tag"># 汇总</a>
-          </div>
-
-        
-  <div class="post-widgets">
-    <div class="wp_rating">
-      <div id="wpac-rating"></div>
-    </div>
-  </div>
-
-
-        
-    <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/hexo-optimization/" rel="prev" title="Hexo 优化汇总">
-      <i class="fa fa-chevron-left"></i> Hexo 优化汇总
-    </a></div>
-      <div class="post-nav-item">
-    <a href="/chrome-https/" rel="next" title="Chrome 强制使用 HTTPS">
-      Chrome 强制使用 HTTPS <i class="fa fa-chevron-right"></i>
-    </a></div>
-    </div>
-      </footer>
-    
-  </article>
-  
-  
-  
-
-  </div>
-
-
-          </div>
-          
-    <div class="comments" id="valine-comments"></div>
-
-<script>
-  window.addEventListener('tabs:register', () => {
-    let activeClass = CONFIG.comments.activeClass;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
-      }
-    }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
-    });
-  }
-</script>
-
-        </div>
           
   
   <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
   </div>
 
   <aside class="sidebar">
-    <div class="sidebar-inner">
 
-      <ul class="sidebar-nav motion-element">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
         </li>
@@ -577,19 +295,19 @@ if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
       </ul>
 
       <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#文本居中的引用"><span class="nav-text">文本居中的引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#超链接"><span class="nav-text">超链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Note-tag"><span class="nav-text">Note tag</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tab-tag"><span class="nav-text">Tab tag</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#链接框"><span class="nav-text">链接框</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TOC数字块"><span class="nav-text">TOC数字块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#警告"><span class="nav-text">警告</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文字增加背景色块"><span class="nav-text">文字增加背景色块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引用边框变色"><span class="nav-text">引用边框变色</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在文档中增加图标"><span class="nav-text">在文档中增加图标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#emoji"><span class="nav-text">emoji</span></a></li></ol></div>
-      </div>
+      <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E6%9C%AC%E5%B1%85%E4%B8%AD%E7%9A%84%E5%BC%95%E7%94%A8"><span class="nav-text">文本居中的引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B6%85%E9%93%BE%E6%8E%A5"><span class="nav-text">超链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Note-tag"><span class="nav-text">Note tag</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tab-tag"><span class="nav-text">Tab tag</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%93%BE%E6%8E%A5%E6%A1%86"><span class="nav-text">链接框</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TOC%E6%95%B0%E5%AD%97%E5%9D%97"><span class="nav-text">TOC数字块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AD%A6%E5%91%8A"><span class="nav-text">警告</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E5%AD%97%E5%A2%9E%E5%8A%A0%E8%83%8C%E6%99%AF%E8%89%B2%E5%9D%97"><span class="nav-text">文字增加背景色块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%95%E7%94%A8%E8%BE%B9%E6%A1%86%E5%8F%98%E8%89%B2"><span class="nav-text">引用边框变色</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8%E6%96%87%E6%A1%A3%E4%B8%AD%E5%A2%9E%E5%8A%A0%E5%9B%BE%E6%A0%87"><span class="nav-text">在文档中增加图标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#emoji"><span class="nav-text">emoji</span></a></li></ol></div>
+      </section>
       <!--/noindex-->
 
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="千灵夙赋"
       src="/images/avatar.png">
   <p class="site-author-name" itemprop="name">千灵夙赋</p>
   <div class="site-description" itemprop="description"></div>
 </div>
-<div class="site-state-wrap motion-element">
+<div class="site-state-wrap animated">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
@@ -611,16 +329,10 @@ if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
       </div>
   </nav>
 </div>
-  <div class="links-of-author motion-element">
-      <span class="links-of-author-item">
-        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
-      </span>
-  </div>
 
 
-  <div class="links-of-blogroll motion-element">
-    <div class="links-of-blogroll-title">
-      <i class="fa fa-fw fa-link"></i>
+  <div class="links-of-blogroll animated">
+    <div class="links-of-blogroll-title"><i class="link fa-fw"></i>
       Friends
     </div>
     <ul class="links-of-blogroll-list">
@@ -687,18 +399,315 @@ var ap = new APlayer({
   });
 </script>
 
-      </div>
-
+      </section>
     </div>
   </aside>
   <div id="sidebar-dimmer"></div>
 
+
+      </header>
+
+      
+  <div class="back-to-top">
+    <i class="fa fa-chevron-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div id="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+      <div class="main-inner">
+        
+
+        <div class="content post posts-expand">
+          
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://qianling.pw/style/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="千灵夙赋">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="千灵">
+    </span>
+
+    
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          样式汇总
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2017-07-30 16:57:13" itemprop="dateCreated datePublished" datetime="2017-07-30T16:57:13+08:00">2017-07-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-05-31 00:00:00" itemprop="dateModified" datetime="2019-05-31T00:00:00+08:00">2019-05-31</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/style/" class="post-meta-item leancloud_visitors" data-flag-title="样式汇总" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    <a title="valine" href="/style/#valine-comments" itemprop="discussionUrl">
+    <i class="far fa-comment"></i>评论数
+      <span class="post-comments-count valine-comment-count" data-xid="/style/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p><img data-src="/images/covers/47.jpg"></p>
+<a id="more"></a>
+
+<hr>
+<h3 id="文本居中的引用"><a href="#文本居中的引用" class="headerlink" title="文本居中的引用"></a>文本居中的引用</h3><p>此标签将生成一个带上下分割线的引用，同时引用内文本将自动居中。 文本居中时，多行文本若长度不等，视觉上会显得不对称，因此建议在引用单行文本的场景下使用。 例如作为文章开篇引用 或者 结束语之前的总结引用。<br>使用方式：</p>
+<ul>
+<li>HTML方式：使用这种方式时，给 img 添加属性 class=”blockquote-center” 即可。</li>
+<li>标签方式：使用 centerquote 或者 简写 cq。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- HTML方式: 直接在 Markdown 文件中编写 HTML 来调用 --&gt;</span><br><span class="line">&lt;!-- 其中 class&#x3D;&quot;blockquote-center&quot; 是必须的 --&gt;</span><br><span class="line">&lt;blockquote class&#x3D;&quot;blockquote-center&quot;&gt;blah blah blah&lt;&#x2F;blockquote&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 标签 方式，要求版本在0.4.5或以上 --&gt;</span><br><span class="line">&#123;% centerquote %&#125;blah blah blah&#123;% endcenterquote %&#125;</span><br><span class="line"></span><br><span class="line">&lt;!-- 标签别名 --&gt;</span><br><span class="line">&#123;% cq %&#125; blah blah blah &#123;% endcq %&#125;</span><br></pre></td></tr></table></figure>
+<blockquote class="blockquote-center"><span style="font-size:16px">人的一切痛苦，本质上都是对自己的无能的愤怒</span>
+
+<p><span style="font-weight:900;font-size:16px">王小波</span></blockquote></p>
+<h3 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">section</span> <span class="attr">class</span>=<span class="string">&quot;link-braces&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>可后来有二天在医院里，托马斯正在<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>手术间休息<span class="tag">&lt;/<span class="name">a</span>&gt;</span>，护士告诉他有电话。他断到话筒里<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>传来特丽莎<span class="tag">&lt;/<span class="name">a</span>&gt;</span>的声音。电话是从车站打来的。他格外高兴，不幸的是他那天夜里有事，要到第二天才能请她上他家去。<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>放下电话<span class="tag">&lt;/<span class="name">a</span>&gt;</span>，他便责备自己没有叫她直接去他家，他毕竟有足够的时间来取消自已原来的计划！<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<section class="link-braces">
+<p>可后来有二天在医院里，托马斯正在<a href="#">手术间休息</a>，护士告诉他有电话。他断到话筒里<a href="#">传来特丽莎</a>的声音。电话是从车站打来的。他格外高兴，不幸的是他那天夜里有事，要到第二天才能请她上他家去。<a href="#">放下电话</a>，他便责备自己没有叫她直接去他家，他毕竟有足够的时间来取消自已原来的计划！</p>
+</section>
+
+<h3 id="Note-tag"><a href="#Note-tag" class="headerlink" title="Note tag"></a>Note tag</h3><p>使用方式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% note class_name %&#125; Content (md partial supported) &#123;% endnote %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>其中，class_name 可以是以下列表中的一个值：</p>
+<ul>
+<li>default</li>
+<li>primary</li>
+<li>success</li>
+<li>info</li>
+<li>warning</li>
+<li>danger</li>
+</ul>
+<p><code>\themes\next\_config.yml</code> 内可修改参数</p>
+<div class="note default"><p>default </p>
+</div>
+<div class="note primary"><p>primary </p>
+</div>
+<div class="note success"><p>success </p>
+</div>
+<div class="note info"><p>info </p>
+</div>
+<div class="note warning"><p>warning </p>
+</div>
+<div class="note danger"><p>danger </p>
+</div>
+
+<h3 id="Tab-tag"><a href="#Tab-tag" class="headerlink" title="Tab tag"></a>Tab tag</h3><div class="tabs" id="unique-name"><ul class="nav-tabs"><li class="tab active"><a href="#unique-name-1"><i class="fa fa-icon]"></i>[Tab caption] [</a></li><li class="tab"><a href="#unique-name-2"><i class="fa fa-icon]"></i>[Tab caption] [</a></li></ul><div class="tab-content"><div class="tab-pane active" id="unique-name-1"><p>Any content (support inline tags too).</p></div><div class="tab-pane" id="unique-name-2"><p>Any content (support inline tags too).</p></div></div></div>
+
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;% tabs Unique name, [index] %&#125;</span><br><span class="line"><span class="xml"><span class="comment">&lt;!-- tab [Tab caption] [@icon] --&gt;</span></span></span><br><span class="line">Any content (support inline tags too).</span><br><span class="line"><span class="xml"><span class="comment">&lt;!-- endtab --&gt;</span></span></span><br><span class="line"><span class="xml"><span class="comment">&lt;!-- tab [Tab caption] [@icon] --&gt;</span></span></span><br><span class="line">Any content (support inline tags too).</span><br><span class="line"><span class="xml"><span class="comment">&lt;!-- endtab --&gt;</span></span></span><br><span class="line">&#123;% endtabs %&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="链接框"><a href="#链接框" class="headerlink" title="链接框"></a>链接框</h3><p><a id="a1" href="http://www.qianling.pw">这是一个链接</a><code>&lt;a id=&quot;a1&quot; href=&quot;http://www.qianling.pw&quot;&gt;这是一个链接&lt;/a&gt;</code></p>
+<h3 id="TOC数字块"><a href="#TOC数字块" class="headerlink" title="TOC数字块"></a>TOC数字块</h3><p><span class="section-number">1.</span><code>&lt;span class=&quot;section-number&quot;&gt;1.&lt;/span&gt;</code></p>
+<h3 id="警告"><a href="#警告" class="headerlink" title="警告"></a>警告</h3><div class="alert alert-success"><i class="fa fa-lightbulb-o"></i> 本文旨在介绍样式的使用规则。</div>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;alert alert-success&quot;&gt;&lt;i class=&quot;fa fa-lightbulb-o&quot;&gt;&lt;/i&gt; 本文旨在介绍样式的使用规则。&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<div class="alert alert-info"><i class="fa fa-info"></i> 本文旨在介绍样式的使用规则。</div>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;alert alert-info&quot;&gt;&lt;i class=&quot;fa fa-info&quot;&gt;&lt;/i&gt; 本文旨在介绍样式的使用规则。&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<div class="alert alert-warning"><i class="fa fa-bell"></i> 本文旨在介绍样式的使用规则。</div>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;alert alert-warning&quot;&gt;&lt;i class=&quot;fa fa-info&quot;&gt;&lt;/i&gt; 本文旨在介绍样式的使用规则。&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<div class="alert alert-danger"><i class="fa fa-bug"></i> 本文旨在介绍样式的使用规则。</div>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;alert alert-danger&quot;&gt;&lt;i class=&quot;fa fa-bug&quot;&gt;&lt;/i&gt; 本文旨在介绍样式的使用规则。&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="文字增加背景色块"><a href="#文字增加背景色块" class="headerlink" title="文字增加背景色块"></a>文字增加背景色块</h3><p><span id="inline-blue">站点配置文件</span><code>&lt;span id=&quot;inline-blue&quot;&gt;站点配置文件&lt;/span&gt;</code><br><span id="inline-purple">主题配置文件</span><code>&lt;span id=&quot;inline-purple&quot;&gt;主题配置文件&lt;/span&gt;</code><br><span id="inline-yellow">站点配置文件</span><code>&lt;span id=&quot;inline-yellow&quot;&gt;站点配置文件&lt;/span&gt;</code><br><span id="inline-green">主题配置文件</span><code>&lt;span id=&quot;inline-green&quot;&gt;主题配置文件&lt;/span&gt;</code></p>
+<h3 id="引用边框变色"><a href="#引用边框变色" class="headerlink" title="引用边框变色"></a>引用边框变色</h3><p id="div-border-left-red">且不问结果如何，尽自己之所能，积极的面对。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p id=&quot;div-border-left-red&quot;&gt;且不问结果如何，尽自己之所能，积极的面对。&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<p id="div-border-left-yellow">且不问结果如何，尽自己之所能，积极的面对。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p id=&quot;div-border-left-yellow&quot;&gt;且不问结果如何，尽自己之所能，积极的面对。&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<p id="div-border-left-green">且不问结果如何，尽自己之所能，积极的面对。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p id=&quot;div-border-left-green&quot;&gt;且不问结果如何，尽自己之所能，积极的面对。&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<p id="div-border-left-blue">且不问结果如何，尽自己之所能，积极的面对。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p id=&quot;div-border-left-blue&quot;&gt;且不问结果如何，尽自己之所能，积极的面对。&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<p id="div-border-left-purple">且不问结果如何，尽自己之所能，积极的面对。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p id=&quot;div-border-left-purple&quot;&gt;且不问结果如何，尽自己之所能，积极的面对。&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+
+<br/>
+
+<p id="div-border-right-red">且不问结果如何，尽自己之所能，积极的面对。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p id=&quot;div-border-right-red&quot;&gt;且不问结果如何，尽自己之所能，积极的面对。&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<p id="div-border-right-yellow">且不问结果如何，尽自己之所能，积极的面对。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p id=&quot;div-border-right-yellow&quot;&gt;且不问结果如何，尽自己之所能，积极的面对。&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<p id="div-border-right-green">且不问结果如何，尽自己之所能，积极的面对。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p id=&quot;div-border-right-green&quot;&gt;且不问结果如何，尽自己之所能，积极的面对。&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<p id="div-border-right-blue">且不问结果如何，尽自己之所能，积极的面对。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p id=&quot;div-border-right-blue&quot;&gt;且不问结果如何，尽自己之所能，积极的面对。&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<p id="div-border-right-purple">且不问结果如何，尽自己之所能，积极的面对。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p id=&quot;div-border-right-purple&quot;&gt;且不问结果如何，尽自己之所能，积极的面对。&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+
+<br/>
+
+<p id="div-border-top-red">且不问结果如何，尽自己之所能，积极的面对。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p id=&quot;div-border-top-red&quot;&gt;且不问结果如何，尽自己之所能，积极的面对。&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<p id="div-border-top-yellow">且不问结果如何，尽自己之所能，积极的面对。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p id=&quot;div-border-top-yellow&quot;&gt;且不问结果如何，尽自己之所能，积极的面对。&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<p id="div-border-top-green">且不问结果如何，尽自己之所能，积极的面对。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p id=&quot;div-border-top-green&quot;&gt;且不问结果如何，尽自己之所能，积极的面对。&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<p id="div-border-top-blue">且不问结果如何，尽自己之所能，积极的面对。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p id=&quot;div-border-top-blue&quot;&gt;且不问结果如何，尽自己之所能，积极的面对。&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<p id="div-border-top-purple">且不问结果如何，尽自己之所能，积极的面对。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p id=&quot;div-border-top-purple&quot;&gt;且不问结果如何，尽自己之所能，积极的面对。&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+
+<br/>
+
+<p id="div-border-bottom-red">且不问结果如何，尽自己之所能，积极的面对。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p id=&quot;div-border-bottom-red&quot;&gt;且不问结果如何，尽自己之所能，积极的面对。&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<p id="div-border-bottom-yellow">且不问结果如何，尽自己之所能，积极的面对。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p id=&quot;div-border-bottom-yellow&quot;&gt;且不问结果如何，尽自己之所能，积极的面对。&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<p id="div-border-bottom-green">且不问结果如何，尽自己之所能，积极的面对。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p id=&quot;div-border-bottom-green&quot;&gt;且不问结果如何，尽自己之所能，积极的面对。&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<p id="div-border-bottom-blue">且不问结果如何，尽自己之所能，积极的面对。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p id=&quot;div-border-bottom-blue&quot;&gt;且不问结果如何，尽自己之所能，积极的面对。&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<p id="div-border-bottom-purple">且不问结果如何，尽自己之所能，积极的面对。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p id=&quot;div-border-bottom-purple&quot;&gt;且不问结果如何，尽自己之所能，积极的面对。&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="在文档中增加图标"><a href="#在文档中增加图标" class="headerlink" title="在文档中增加图标"></a>在文档中增加图标</h3><p><i class="fa fa-pencil"></i><code>&lt;i class=&quot;fa fa-pencil&quot;&gt;&lt;/i&gt;</code><br><i class="fa fa-cloud-upload"></i><code>&lt;i class=&quot;fa fa-cloud-upload&quot;&gt;&lt;/i&gt;</code><br><i class="fa fa-cog"></i><code>&lt;i class=&quot;fa fa-cog&quot;&gt;&lt;/i&gt;</code></p>
+<p><i class="fa fa-github"></i><code>&lt;i class=&quot;fa fa-github&quot;&gt;&lt;/i&gt;</code><br><i class="fa fa-github fa-lg"></i><code>&lt;i class=&quot;fa fa-github fa-lg&quot;&gt;&lt;/i&gt;</code><br><i class="fa fa-github fa-2x"></i><code>&lt;i class=&quot;fa fa-github fa-2x&quot;&gt;&lt;/i&gt;</code></p>
+<p><a id="download" href="https://git-scm.com/download/win"><i class="fa fa-download"></i><span> Download Now</span><br></a><code>&lt;a id=&quot;download&quot; href=&quot;https://git-scm.com/download/win&quot;&gt;&lt;i class=&quot;fa fa-download&quot;&gt;&lt;/i&gt;&lt;span&gt; Download Now&lt;/span&gt; &lt;/a&gt;</code></p>
+<p><a id="tube" href="https://www.youtube.com/watch?v=Gl23T9aOfoE"><i class="fa fa-youtube-play"></i><span> YouTube </span></p>
+<p><code>&lt;a id=&quot;tube&quot; href=&quot;https://www.youtube.com/watch?v=Gl23T9aOfoE&quot;&gt;&lt;i class=&quot;fa fa-youtube-play&quot;&gt;&lt;/i&gt;&lt;span&gt; YouTube &lt;/span&gt;</code></p>
+<h3 id="emoji"><a href="#emoji" class="headerlink" title="emoji"></a>emoji</h3><p>😙🍋🎱✊<br><a href="https://www.emojicopy.com/">https://www.emojicopy.com/</a></p>
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\grammar\" rel="bookmark">语法汇总</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\changyan\" rel="bookmark">免备案使用畅言</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\custom-web-page\" rel="bookmark">Hexo 跳过渲染，创建自定义网页</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\error-launching-git\" rel="bookmark">关于 'error launching git' 的解决方法</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\markdown-inserts-picture\" rel="bookmark">Markdown 插入图片代码</a></div>
+    </li>
+  </ul>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+              <a href="/tags/%E6%B1%87%E6%80%BB/" rel="tag"># 汇总</a>
+          </div>
+
+        
+  <div class="post-widgets">
+    <div class="wp_rating">
+      <div id="wpac-rating"></div>
+    </div>
+  </div>
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/hexo-optimization/" rel="prev" title="Hexo 优化汇总">
+      <i class="fa fa-chevron-left"></i> Hexo 优化汇总
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/chrome-https/" rel="next" title="Chrome 强制使用 HTTPS">
+      Chrome 强制使用 HTTPS <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+        </div>
+        
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
 
       </div>
     </main>
 
     <footer class="footer">
       <div class="footer-inner">
+        
+
         
 
 <div class="copyright">
@@ -713,10 +722,10 @@ var ap = new APlayer({
 
         
 <div class="busuanzi-count">
-  <script pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
       <span class="post-meta-item-icon">
-        <i class="fa fa-"></i>你是第
+        <i class=""></i>你是第
       </span>
       <span class="site-uv" title="总访客量">
         <span id="busuanzi_value_site_uv"></span>位到访的小伙伴喔
@@ -725,7 +734,7 @@ var ap = new APlayer({
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
       <span class="post-meta-item-icon">
-        <i class="fa fa-"></i>本站已被访问
+        <i class=""></i>本站已被访问
       </span>
       <span class="site-pv" title="总访问量">
         <span id="busuanzi_value_site_pv"></span>次啦
@@ -738,30 +747,30 @@ var ap = new APlayer({
 
 
 
-  <script pjax>
-  function leancloudSelector(url) {
-    url = encodeURI(url);
-    return document.getElementById(url).querySelector('.leancloud-visitors-count');
-  }
-  if (CONFIG.page.isPost) {
-    function addCount(Counter) {
-      var visitors = document.querySelector('.leancloud_visitors');
-      var url = decodeURI(visitors.getAttribute('id'));
-      var title = visitors.getAttribute('data-flag-title');
+<script data-pjax>
+  (function() {
+    function leancloudSelector(url) {
+      url = encodeURI(url);
+      return document.getElementById(url).querySelector('.leancloud-visitors-count');
+    }
 
-      Counter('get', `/classes/Counter?where=${JSON.stringify({ url })}`)
+    function addCount(Counter) {
+      const visitors = document.querySelector('.leancloud_visitors');
+      const url = decodeURI(visitors.id);
+      const title = visitors.dataset.flagTitle;
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url })))
         .then(response => response.json())
         .then(({ results }) => {
           if (results.length > 0) {
-            var counter = results[0];
-              leancloudSelector(url).innerText = counter.time + 1;
+            const counter = results[0];
+            leancloudSelector(url).innerText = counter.time + 1;
             Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
-              .then(response => response.json())
               .catch(error => {
                 console.error('Failed to save visitor count', error);
-              })
+              });
           } else {
-              Counter('post', '/classes/Counter', { title: title, url: url, time: 1 })
+              Counter('post', '/classes/Counter', { title, url, time: 1 })
                 .then(response => response.json())
                 .then(() => {
                   leancloudSelector(url).innerText = 1;
@@ -775,48 +784,34 @@ var ap = new APlayer({
           console.error('LeanCloud Counter Error', error);
         });
     }
-  } else {
+
     function showTime(Counter) {
-      var visitors = document.querySelectorAll('.leancloud_visitors');
-      var entries = [...visitors].map(element => {
-        return decodeURI(element.getAttribute('id'));
+      const visitors = document.querySelectorAll('.leancloud_visitors');
+      const entries = [...visitors].map(element => {
+        return decodeURI(element.id);
       });
 
-      Counter('get', `/classes/Counter?where=${JSON.stringify({ url: { '$in': entries } })}`)
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url: { '$in': entries } })))
         .then(response => response.json())
         .then(({ results }) => {
-          if (results.length === 0) {
-            document.querySelectorAll('.leancloud_visitors .leancloud-visitors-count').forEach(element => {
-              element.innerText = 0;
-            });
-            return;
-          }
-          for (let item of results) {
-            let { url, time } = item;
-            leancloudSelector(url).innerText = time;
-          }
           for (let url of entries) {
-            var element = leancloudSelector(url);
-            if (element.innerText == '') {
-              element.innerText = 0;
-            }
+            let target = results.find(item => item.url === url);
+            leancloudSelector(url).innerText = target ? target.time : 0;
           }
         })
         .catch(error => {
           console.error('LeanCloud Counter Error', error);
         });
     }
-  }
 
-  fetch('https://app-router.leancloud.cn/2/route?appId=zulMeib4pyC6zB1a65OmVtHz-gzGzoHsz')
-    .then(response => response.json())
-    .then(({ api_server }) => {
-      var Counter = (method, url, data) => {
-        return fetch(`https://${api_server}/1.1${url}`, {
-          method: method,
+    let { app_id, app_key, server_url } = {"enable":true,"app_id":"zulMeib4pyC6zB1a65OmVtHz-gzGzoHsz","app_key":"TEjUlOUBz3KwSUmDQ35ROxpw","server_url":null,"security":false};
+    function fetchData(api_server) {
+      const Counter = (method, url, data) => {
+        return fetch(`${api_server}/1.1${url}`, {
+          method,
           headers: {
-            'X-LC-Id'     : 'zulMeib4pyC6zB1a65OmVtHz-gzGzoHsz',
-            'X-LC-Key'    : 'TEjUlOUBz3KwSUmDQ35ROxpw',
+            'X-LC-Id'     : app_id,
+            'X-LC-Key'    : app_key,
             'Content-Type': 'application/json',
           },
           body: JSON.stringify(data)
@@ -828,8 +823,21 @@ var ap = new APlayer({
       } else if (document.querySelectorAll('.post-title-link').length >= 1) {
         showTime(Counter);
       }
-    });
-  </script>
+    }
+
+    const api_server = app_id.slice(-9) !== '-MdYXbMMI' ? server_url : `https://${app_id.slice(0, 8).toLowerCase()}.api.lncldglobal.com`;
+
+    if (api_server) {
+      fetchData(api_server);
+    } else {
+      fetch('https://app-router.leancloud.cn/2/route?appId=' + app_id)
+        .then(response => response.json())
+        .then(({ api_server }) => {
+          fetchData('https://' + api_server);
+        });
+    }
+  })();
+</script>
 
 
       </div>
@@ -838,12 +846,10 @@ var ap = new APlayer({
 
   
   <script src="/lib/anime.min.js"></script>
-  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/next-theme/pjax@0/pjax.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
-  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
 
 <script src="/js/utils.js"></script>
 
@@ -859,47 +865,19 @@ var ap = new APlayer({
 var pjax = new Pjax({
   selectors: [
     'head title',
-    '#page-configurations',
-    '.content-wrap',
+    '.page-configurations',
+    '.main-inner',
     '.post-toc-wrap',
-    '#pjax'
+    '.languages',
+    '.pjax'
   ],
-  switches: {
-    '.post-toc-wrap': Pjax.switches.innerHTML
-  },
   analytics: false,
   cacheBust: false,
   scrollTo : !CONFIG.bookmark.enable
 });
 
-window.addEventListener('pjax:success', () => {
-  document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
-    var code = element.text || element.textContent || element.innerHTML || '';
-    var parent = element.parentNode;
-    parent.removeChild(element);
-    var script = document.createElement('script');
-    if (element.id) {
-      script.id = element.id;
-    }
-    if (element.className) {
-      script.className = element.className;
-    }
-    if (element.type) {
-      script.type = element.type;
-    }
-    if (element.src) {
-      script.src = element.src;
-      // Force synchronous loading of peripheral JS.
-      script.async = false;
-    }
-    if (element.getAttribute('pjax') !== null) {
-      script.setAttribute('pjax', '');
-    }
-    if (code !== '') {
-      script.appendChild(document.createTextNode(code));
-    }
-    parent.appendChild(script);
-  });
+document.addEventListener('pjax:success', () => {
+  pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
   NexT.boot.refresh();
   // Define Motion Sequence & Bootstrap Motion.
   if (CONFIG.motion.enable) {
@@ -909,27 +887,19 @@ window.addEventListener('pjax:success', () => {
       .add(NexT.motion.middleWares.postList)
       .bootstrap();
   }
+  const hasTOC = document.querySelector('.post-toc');
+  document.querySelector('.sidebar-inner').classList.toggle('sidebar-nav-active', hasTOC);
+  document.querySelector(hasTOC ? '.sidebar-nav-toc' : '.sidebar-nav-overview').click();
   NexT.utils.updateSidebarPosition();
 });
 </script>
 
 
-
-
   
-  <script pjax>
-    (function(){
-      var bp = document.createElement('script');
-      var curProtocol = window.location.protocol.split(':')[0];
-      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(bp, s);
-    })();
-  </script>
 
 
 
-  <script pjax>
+  <script data-pjax>
   if (CONFIG.page.isPost) {
     wpac_init = window.wpac_init || [];
     wpac_init.push({
@@ -965,46 +935,30 @@ window.addEventListener('pjax:success', () => {
 
 
 
-    <div id="pjax">
+    <div class="pjax">
   
 
   
-  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/quicklink@2/dist/quicklink.umd.js"></script>
   <script>
       window.addEventListener('load', () => {
-      quicklink({
-        timeout: 3000,
+      quicklink.listen({
+        timeout : 3000,
         priority: true,
-        ignores: [uri => uri.includes('#'),uri => uri == 'https://qianling.pw/style/',]
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://qianling.pw/style/',]
       });
       });
   </script>
 
 
 <script>
-NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
-  NexT.utils.getScript('https://qianling-1254036047.cos.ap-chengdu.myqcloud.com/js/Valine.min.js', () => {
-    var GUEST = ['nick', 'mail', 'link'];
-    var guest = 'nick,mail,link';
-    guest = guest.split(',').filter(item => {
-      return GUEST.includes(item);
-    });
-    new Valine({
-      el         : '#valine-comments',
-      verify     : false,
-      notify     : false,
-      appId      : 'zulMeib4pyC6zB1a65OmVtHz-gzGzoHsz',
-      appKey     : 'TEjUlOUBz3KwSUmDQ35ROxpw',
-      placeholder: "biu biu~　||ヽ(*￣▽￣*)ノミ|Ю",
-      avatar     : 'wavatar',
-      meta       : guest,
-      pageSize   : '10' || 10,
-      visitor    : false,
-      lang       : 'zh-cn' || 'zh-cn',
-      path       : location.pathname,
-      recordIP   : false,
-      serverURLs : ''
-    });
+NexT.utils.loadComments('#valine-comments', () => {
+  NexT.utils.getScript('/js/custom/Valine.min.js', () => {
+    new Valine(Object.assign({
+      el  : '#valine-comments',
+      path: location.pathname,
+    }, {"enable":true,"appId":"zulMeib4pyC6zB1a65OmVtHz-gzGzoHsz","appKey":"TEjUlOUBz3KwSUmDQ35ROxpw","placeholder":"biu biu~　||ヽ(*￣▽￣*)ノミ|Ю","avatar":"wavatar","meta":["nick","mail","link"],"pageSize":10,"language":"zh-cn","visitor":false,"comment_count":true,"recordIP":false,"serverURLs":null,"enableQQ":true,"requiredFields":[]}
+    ));
   }, window.Valine);
 });
 </script>

@@ -4,21 +4,25 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
+<meta name="generator" content="Hexo 5.0.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
 <link rel="stylesheet" href="/css/main.css">
 
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic|ZCOOL XiaoWei:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
-<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/5.10.0-11/css/all.min.css">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.css">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto+Serif+SC:300,300italic,400,400italic,700,700italic|ZCOOL+XiaoWei:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  
+  <link rel="stylesheet" href="/lib/animate-css/animate.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.min.css">
   <script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
 
-<script id="hexo-configurations">
+<script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"qianling.pw","root":"/","scheme":"Muse","version":"7.7.1","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"qianling.pw","root":"/","scheme":"Muse","version":"8.0.0-rc.5","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":true,"nav":null,"activeClass":"valine"},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"none","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"path":"search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true}};
   </script>
 
   <meta property="og:type" content="article">
@@ -46,19 +50,20 @@
 <link rel="canonical" href="https://qianling.pw/broadcasting-and-hosting-training-methods/">
 
 
-<script id="page-configurations">
+<script data-pjax class="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: false,
-    isPost: true
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
   };
 </script>
 
   <title>《播音主持训练280法》书摘 | 千灵</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141264217-1"></script>
-    <script pjax>
+    <script data-pjax>
       if (CONFIG.hostname === location.hostname) {
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
@@ -68,7 +73,7 @@
     </script>
 
 
-  <script pjax>
+  <script data-pjax>
     var _hmt = _hmt || [];
     (function() {
       var hm = document.createElement("script");
@@ -83,24 +88,36 @@
 
   <noscript>
   <style>
-  .use-motion .brand,
+  body { margin-top: 2rem; }
+
   .use-motion .menu-item,
-  .sidebar-inner,
+  .use-motion .sidebar,
   .use-motion .post-block,
   .use-motion .pagination,
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
 
   .use-motion .site-title,
-  .use-motion .site-subtitle {
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
     opacity: initial;
     top: initial;
   }
 
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
   </style>
 </noscript>
 
@@ -111,67 +128,70 @@
   <div class="container use-motion">
     <div class="headband"></div>
 
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
+    <main class="main">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
     </div>
   </div>
 
   <div class="site-meta">
 
-    <div>
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">千灵</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">千灵</h1>
+      <i class="logo-line"></i>
+    </a>
   </div>
 
-  <div class="site-nav-right"></div>
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
 </div>
 
 
+
 <nav class="site-nav">
-  
-  <ul id="menu" class="menu">
+  <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-fw fa-star-half-alt"></i>首页</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-democrat"></i>归档</a>
+    <a href="/" rel="section"><i class="fa fa-star-half-alt fa-fw"></i>首页</a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-dove"></i>分类</a>
+    <a href="/categories/" rel="section"><i class="fa fa-dove fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-democrat fa-fw"></i>归档</a>
 
   </li>
         <li class="menu-item menu-item-daily">
 
-    <a href="/daily" rel="section"><i class="fa fa-fw fa-ghost"></i>碎念</a>
+    <a href="/daily" rel="section"><i class="fa fa-ghost fa-fw"></i>碎念</a>
 
   </li>
         <li class="menu-item menu-item-play">
 
-    <a href="/play" rel="section"><i class="fa fa-fw fa-fish"></i>游戏</a>
+    <a href="/play" rel="section"><i class="fa fa-fish fa-fw"></i>游戏</a>
 
   </li>
         <li class="menu-item menu-item-comments">
 
-    <a href="/comments" rel="section"><i class="fa fa-fw fa-dog"></i>留言</a>
+    <a href="/comments" rel="section"><i class="fa fa-dog fa-fw"></i>留言</a>
 
   </li>
         <li class="menu-item menu-item-about">
 
-    <a href="/about/" rel="section"><i class="fa fa-fw fa-carrot"></i>关于</a>
+    <a href="/about/" rel="section"><i class="fa fa-carrot fa-fw"></i>关于</a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -179,16 +199,18 @@
         </a>
       </li>
   </ul>
-
 </nav>
-  <div class="site-search">
+
+
+
+  <div class="search-pop-overlay">
     <div class="popup search-popup">
-    <div class="search-header">
+        <div class="search-header">
   <span class="search-icon">
     <i class="fa fa-search"></i>
   </span>
   <div class="search-input-container">
-    <input autocomplete="off" autocorrect="off" autocapitalize="off"
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
            placeholder="搜索..." spellcheck="false"
            type="search" class="search-input">
   </div>
@@ -196,12 +218,15 @@
     <i class="fa fa-times-circle"></i>
   </span>
 </div>
-<div id="search-result"></div>
-
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
 </div>
-<div class="search-pop-overlay"></div>
 
-  </div><script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+    </div>
+  </div>
+<script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
 <script src="/js/custom/custom.js"></script>
 
 <div class="top-scroll-bar"></div>
@@ -222,7 +247,7 @@ if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
 </script>
 <script type="text/javascript">
   $("body").backstretch([
-    "https://qianling-1254036047.cos.ap-chengdu.myqcloud.com/background/background%20(1).webp",
+    "/images/background/background (1).webp",
     "/images/background/background (2).webp",
     "/images/background/background (3).webp",
     "/images/background/background (4).webp",
@@ -257,28 +282,160 @@ if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
 </script>
 
 </div>
-    </header>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
 
-    
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E7%AF%87-%E8%AF%AD%E8%A8%80%E8%A1%A8%E8%BE%BE%E5%9F%BA%E7%A1%80%E8%AE%AD%E7%BB%83"><span class="nav-text">第一篇　语言表达基础训练</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E5%8F%91%E5%A3%B0%E5%90%90%E5%AD%97%E8%AE%AD%E7%BB%83"><span class="nav-text">第一章　发声吐字训练</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%91%BC%E5%90%B8%E7%BB%83%E4%B9%A0%E7%9A%84%E5%87%86%E5%A4%87"><span class="nav-text">1　呼吸练习的准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E4%B8%BA%E5%8F%91%E5%A3%B0%E8%80%8C%E5%90%B8%E6%B0%94"><span class="nav-text">2　为发声而吸气</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%91%BC%E6%B0%94%E7%9B%B8%E5%AF%B9%E4%BF%9D%E6%8C%81%E5%90%B8%E6%B0%94%E6%97%B6%E7%9A%84%E6%84%9F%E8%A7%89"><span class="nav-text">3　呼气相对保持吸气时的感觉</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E5%88%9D%E6%AD%A5%E5%8F%91%E5%A3%B0"><span class="nav-text">4　初步发声</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E2%80%9C%E7%AE%A1%E5%AD%90%E2%80%9D%E7%9A%84%E6%84%8F%E8%AF%86"><span class="nav-text">5　“管子”的意识</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-%E8%85%B0%E9%83%A8%E7%A8%B3%E5%AE%9A"><span class="nav-text">6　腰部稳定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-%E6%AD%A3%E7%A1%AE%E5%94%87%E5%BD%A2"><span class="nav-text">7　正确唇形</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-%E6%89%93%E5%BC%80%E5%8F%A3%E8%85%94"><span class="nav-text">8　打开口腔</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-%E5%8F%91%E5%A5%BD-%C9%91-%E9%9F%B3"><span class="nav-text">9　发好 ɑ 音</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-%E5%A3%B0%E9%9F%B3%E5%9C%A8%E5%8F%A3%E8%85%94%E4%B8%AD%E7%9A%84%E8%B7%AF%E7%BA%BF"><span class="nav-text">10　声音在口腔中的路线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-%E5%9C%A8-%C9%91-%E7%9A%84%E5%9F%BA%E7%A1%80%E4%B8%8A%E5%8F%91%E5%A5%BD-i%EF%BC%8Cu%EF%BC%8Ce%EF%BC%8Cu"><span class="nav-text">11　在 ɑ 的基础上发好 i，u，e，ü</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-%E5%8F%A3%E8%85%94%E9%87%8C%E7%9A%84%E7%8F%A0%E7%90%83%E6%84%9F"><span class="nav-text">12　口腔里的珠球感</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-%E4%B8%8A%E4%B8%8B%E6%89%A9%E5%B1%95%E9%9F%B3%E5%9F%9F"><span class="nav-text">13　上下扩展音域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#14-%E4%B8%B9%E7%94%B0%E7%9A%84%E6%84%8F%E8%AF%86"><span class="nav-text">14　丹田的意识</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#15-%E8%83%B8%E9%83%A8%E6%94%AF%E7%82%B9%E7%9A%84%E6%84%8F%E8%AF%86"><span class="nav-text">15　胸部支点的意识</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#16-%E9%98%B2%E6%AD%A2%E8%82%9A%E8%84%90%E4%B8%AD%E5%BF%83"><span class="nav-text">16　防止肚脐中心</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#17-%E5%A3%B0%E8%B0%83%E8%BF%90%E5%8A%A8"><span class="nav-text">17　声调运动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#18-%E5%90%90%E5%AD%97%E8%A6%81%E9%A2%86"><span class="nav-text">18　吐字要领</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#19-%E5%A3%B0%E4%B8%8E%E5%AD%97%EF%BC%8C%E8%85%B0%E8%85%B9%E4%B8%8E%E5%8F%A3%E8%85%94"><span class="nav-text">19　声与字，腰腹与口腔</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#20-%E7%81%B5%E5%B7%A7%E7%9A%84%E8%88%8C%E5%A4%B4"><span class="nav-text">20　灵巧的舌头</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#21-%E8%83%B8%E8%85%94%E5%85%B1%E9%B8%A3%E7%9A%84%E7%82%B9%E4%B8%8E%E9%9D%A2"><span class="nav-text">21　胸腔共鸣的点与面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#22-%E9%BC%BB%E8%85%94%E5%85%B1%E9%B8%A3"><span class="nav-text">22　鼻腔共鸣</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#23-%E5%85%83%E9%9F%B3-%C9%91-%E5%92%8C-e-%E7%9A%84%E4%BD%8D%E7%BD%AE%E5%8F%98%E5%8C%96"><span class="nav-text">23　元音 ɑ 和 e 的位置变化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#24-%E5%8F%91%E5%A5%BD%E5%A4%8D%E5%90%88%E9%9F%B3"><span class="nav-text">24　发好复合音</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#25-%E5%8F%91%E5%A5%BD-iou%EF%BC%88iu%EF%BC%89%E3%80%81uei%EF%BC%88ui%EF%BC%89%E3%80%81uen%EF%BC%88un%EF%BC%89"><span class="nav-text">25　发好 iou（iu）、uei（ui）、uen（un）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#26-%E5%8F%91%E5%A5%BD-b-%E5%92%8C-p"><span class="nav-text">26　发好 b 和 p</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#27-%E5%8F%91%E5%A5%BD-d-%E5%92%8C-t"><span class="nav-text">27　发好 d 和 t</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#28-%E5%8F%91%E5%A5%BD-n-%E5%92%8C-l"><span class="nav-text">28　发好 n 和 l</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#29-%E5%8F%91%E5%A5%BD-g-%E7%BB%84%E7%9A%84%E8%BE%85%E9%9F%B3"><span class="nav-text">29　发好 g 组的辅音</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#30-%E5%8F%91%E5%A5%BD-j-%E7%BB%84%E7%9A%84%E8%BE%85%E9%9F%B3"><span class="nav-text">30　发好 j 组的辅音</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#31-%E5%8F%91%E5%A5%BD-zh-%E7%BB%84%E7%9A%84%E8%BE%85%E9%9F%B3"><span class="nav-text">31　发好 zh 组的辅音</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#32-%E5%8F%91%E5%A5%BD-z-%E7%BB%84%E7%9A%84%E8%BE%85%E9%9F%B3"><span class="nav-text">32　发好 z 组的辅音</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#33-%E5%8F%91%E5%A5%BD-m%E3%80%81n-%E5%92%8C-ng"><span class="nav-text">33　发好 m、n 和 ng</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#34-%E9%80%81%E6%B0%94%E9%9F%B3%E8%A6%81%E7%94%A8%E5%90%B8%E6%B0%94%E7%9A%84%E6%84%9F%E8%A7%89%E5%8F%91%E9%9F%B3"><span class="nav-text">34　送气音要用吸气的感觉发音</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#35-%E7%94%A8%E8%AF%8D%E5%85%B8%E5%B8%AE%E5%8A%A9%E7%BA%A0%E6%AD%A3%E8%AF%AD%E9%9F%B3%E9%94%99%E8%AF%AF"><span class="nav-text">35　用词典帮助纠正语音错误</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#36-%E7%BB%95%E5%8F%A3%E4%BB%A4"><span class="nav-text">36　绕口令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#37-%E7%BB%83%E5%A3%B0%E8%A6%81%E6%8C%89%E8%AE%A1%E5%88%92%E8%BF%9B%E8%A1%8C"><span class="nav-text">37　练声要按计划进行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#38-%E7%BB%83%E5%A5%BD%E4%B8%8D%E7%BB%83%E5%9D%8F%EF%BC%8C%E7%BB%83%E6%85%A2%E4%B8%8D%E7%BB%83%E5%BF%AB"><span class="nav-text">38　练好不练坏，练慢不练快</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#39-%E7%BB%83%E5%A3%B0%E8%A6%81%E7%BB%83%E8%AF%8D%E5%92%8C%E5%8F%A5"><span class="nav-text">39　练声要练词和句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#40-%E7%BB%83%E5%A3%B0%E4%B8%8E%E5%88%9B%E4%BD%9C%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="nav-text">40　练声与创作之间的关系</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E8%AF%AD%E8%A8%80%E5%BF%83%E7%90%86%E8%AE%AD%E7%BB%83"><span class="nav-text">第二章　语言心理训练</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#41-%E5%85%8B%E6%9C%8D%E7%B4%A7%E5%BC%A0"><span class="nav-text">41　克服紧张</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#42-%E6%8A%8A%E6%8F%A1%E7%A8%BF%E4%BB%B6"><span class="nav-text">42　把握稿件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#43-%E6%84%9F%E5%8F%97"><span class="nav-text">43　感受</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#44-%E5%BD%A2%E8%B1%A1%E6%84%9F%E5%8F%97"><span class="nav-text">44　形象感受</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#45-%E9%9B%86%E5%90%88%E6%8A%BD%E8%B1%A1%E6%84%9F%E5%8F%97"><span class="nav-text">45　集合抽象感受</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#46-%E6%97%B6%E7%A9%BA%E6%84%9F%E5%8F%97"><span class="nav-text">46　时空感受</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#46-%E6%97%B6%E7%A9%BA%E6%84%9F%E5%8F%97-1"><span class="nav-text">46　时空感受</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#47-%E9%80%BB%E8%BE%91%E6%84%9F%E5%8F%97"><span class="nav-text">47　逻辑感受</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#48-%E6%84%9F%E5%8F%97%E7%9A%84%E7%BB%BC%E5%90%88"><span class="nav-text">48　感受的综合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#49-%E6%84%9F%E5%8F%97%E7%9A%84%E4%B8%BB%E8%A7%82%E6%80%A7"><span class="nav-text">49　感受的主观性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#50-%E6%83%85%E6%84%9F%E6%98%AF%E8%AF%84%E4%BB%B7%E7%9A%84%E4%BD%93%E9%AA%8C"><span class="nav-text">50　情感是评价的体验</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#51-%E8%AF%AD%E8%A8%80%E7%9A%84%E6%83%85%E6%84%9F%E7%8A%B6%E6%80%81%E7%A6%BB%E4%B8%8D%E5%BC%80%E6%95%B4%E4%BD%93"><span class="nav-text">51　语言的情感状态离不开整体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#52-%E5%86%85%E5%BF%83%E7%9C%9F%E5%AE%9E%E6%9C%80%E9%87%8D%E8%A6%81"><span class="nav-text">52　内心真实最重要</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#53-%E5%86%85%E5%9C%A8%E8%AF%AD%E4%BD%BF%E8%A1%A8%E9%9D%A2%E8%AF%AD%E7%9A%84%E6%84%8F%E4%B9%89%E6%9B%B4%E4%B8%B0%E5%AF%8C"><span class="nav-text">53　内在语使表面语的意义更丰富</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#54-%E5%8F%8D%E5%90%91%E5%86%85%E5%9C%A8%E8%AF%AD"><span class="nav-text">54　反向内在语</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#55-%E5%86%85%E5%9C%A8%E8%AF%AD%E7%9A%84%E9%93%BE%E7%8E%AF%E4%BD%9C%E7%94%A8"><span class="nav-text">55　内在语的链环作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#56-%E5%86%85%E5%9C%A8%E8%AF%AD%E7%9A%84%E5%BC%95%E5%AF%BC%E4%BD%9C%E7%94%A8"><span class="nav-text">56　内在语的引导作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#57-%E5%86%85%E5%9C%A8%E8%AF%AD%E7%9A%84%E8%87%AA%E6%88%91%E6%8F%90%E7%A4%BA"><span class="nav-text">57　内在语的自我提示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#58-%E5%AF%BB%E6%89%BE%E5%90%91%E4%BA%BA%E8%AF%B4%E8%AF%9D%E7%9A%84%E6%84%9F%E8%A7%89"><span class="nav-text">58　寻找向人说话的感觉</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#59-%E5%AF%B9%E5%A4%9A%E5%B0%91%E4%BA%BA%E8%AF%B4"><span class="nav-text">59　对多少人说</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#60-%E6%83%B3%E5%83%8F%E5%90%AC%E8%AF%9D%E4%BA%BA%E7%9A%84%E5%8F%8D%E5%BA%94"><span class="nav-text">60　想像听话人的反应</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#61-%E4%BD%BF%E5%AF%B9%E8%B1%A1%E6%84%9F%E4%B9%A0%E6%83%AF%E6%88%90%E8%87%AA%E7%84%B6"><span class="nav-text">61　使对象感习惯成自然</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E8%AF%AD%E8%A8%80%E5%BD%A2%E6%80%81%E8%AE%AD%E7%BB%83"><span class="nav-text">第三章　语言形态训练</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#62-%E4%B8%BB%E6%AC%A1%E5%85%B3%E7%B3%BB"><span class="nav-text">62　主次关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#63-%E9%87%8D%E9%9F%B3"><span class="nav-text">63　重音</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#64-%E6%80%8E%E6%A0%B7%E5%88%A4%E6%96%AD%E9%87%8D%E9%9F%B3"><span class="nav-text">64　怎样判断重音</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#65-%E5%AF%BB%E6%89%BE%E9%87%8D%E9%9F%B3"><span class="nav-text">65　寻找重音</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#66-%E5%8F%8D%E4%B9%89%E9%87%8D%E9%9F%B3"><span class="nav-text">66　反义重音</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#67-%E9%87%8D%E9%9F%B3%E8%AF%8D%E8%AF%AD%E4%B8%8E%E9%9D%9E%E9%87%8D%E9%9F%B3%E8%AF%8D%E8%AF%AD%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="nav-text">67　重音词语与非重音词语之间的关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#68-%E9%87%8D%E9%9F%B3%E7%9A%84%E8%A1%A8%E8%BE%BE"><span class="nav-text">68　重音的表达</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#69-%E8%AF%AD%E4%B9%89%E9%9C%80%E8%A6%81%E7%9A%84%E5%81%9C%E9%A1%BF"><span class="nav-text">69　语义需要的停顿</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#70-%E8%A1%A8%E7%8E%B0%E8%BF%87%E7%A8%8B%E7%9A%84%E5%81%9C%E9%A1%BF"><span class="nav-text">70　表现过程的停顿</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#71-%E8%A1%A8%E7%8E%B0%E5%BF%83%E7%90%86%E6%B4%BB%E5%8A%A8%E7%9A%84%E5%81%9C%E9%A1%BF"><span class="nav-text">71　表现心理活动的停顿</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#72-%E6%83%85%E6%84%9F%E5%BB%B6%E7%BB%AD%E5%92%8C%E8%93%84%E7%A7%AF%E7%9A%84%E5%81%9C%E9%A1%BF"><span class="nav-text">72　情感延续和蓄积的停顿</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#73-%E5%88%B6%E9%80%A0%E6%82%AC%E5%BF%B5%E7%9A%84%E5%81%9C%E9%A1%BF"><span class="nav-text">73　制造悬念的停顿</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#74-%E5%BC%BA%E8%B0%83%E6%80%A7%E5%81%9C%E9%A1%BF"><span class="nav-text">74　强调性停顿</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#75-%E6%89%AC%E5%81%9C%E4%B8%8E%E8%90%BD%E5%81%9C"><span class="nav-text">75　扬停与落停</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#76-%E5%81%9C%E9%A1%BF%E6%97%B6%E9%97%B4"><span class="nav-text">76　停顿时间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#77-%E4%BC%BC%E5%81%9C%E9%9D%9E%E5%81%9C-%E9%9D%9E%E5%81%9C%E4%BC%BC%E5%81%9C"><span class="nav-text">77　似停非停　非停似停</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#78-%E5%85%8B%E6%9C%8D%E5%8D%8A%E5%8F%A5%E5%81%9C%E9%A1%BF"><span class="nav-text">78　克服半句停顿</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#79-%E4%B8%8D%E8%83%BD%E5%81%9C%E9%A1%BF%E7%9A%84%E4%BD%8D%E7%BD%AE"><span class="nav-text">79　不能停顿的位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#80-%E8%A1%A8%E7%8E%B0%E6%80%A5%E7%BC%93%E6%83%85%E6%84%9F%E7%9A%84%E8%BF%9E%E4%B8%8E%E5%81%9C"><span class="nav-text">80　表现急缓情感的连与停</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#81-%E8%AF%AD%E5%8F%A5%E6%B3%A2%E5%BD%A2%E7%9A%84%E5%8F%98%E5%8C%96"><span class="nav-text">81　语句波形的变化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#82-%E8%AF%AD%E5%8F%A5%E6%B3%A2%E5%BD%A2%E7%9A%84%E2%80%9C%E4%B8%89%E5%BF%8C%E2%80%9D"><span class="nav-text">82　语句波形的“三忌”</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#83-%E8%AF%AD%E5%8F%A5%E8%89%B2%E5%BD%A9%E4%B8%8E%E5%91%BC%E5%90%B8"><span class="nav-text">83　语句色彩与呼吸</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#84-%E8%AF%AD%E6%B0%94%E5%BC%BA%E5%BC%B1%E3%80%81%E5%88%9A%E6%9F%94%E7%9A%84%E5%88%86%E7%BA%A7%E7%BB%83%E4%B9%A0"><span class="nav-text">84　语气强弱、刚柔的分级练习</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#85-%E5%8F%A5%E5%AD%90%E7%9A%84%E8%8A%82%E6%8B%8D"><span class="nav-text">85　句子的节拍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#86-%E5%A4%9A%E8%AF%8D%E9%95%BF%E5%8F%A5%E7%9A%84%E5%88%86%E7%BB%84%E5%A4%84%E7%90%86"><span class="nav-text">86　多词长句的分组处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#87-%E8%AE%A4%E8%AF%86%E8%8A%82%E5%A5%8F"><span class="nav-text">87　认识节奏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#88-%E8%8A%82%E5%A5%8F%E5%8F%98%E5%8C%96%E7%9A%84%E5%8E%9F%E5%88%99"><span class="nav-text">88　节奏变化的原则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#89-%E6%83%85%E6%84%9F%E8%89%B2%E5%BD%A9%E5%BD%A2%E6%88%90%E8%8A%82%E5%A5%8F"><span class="nav-text">89　情感色彩形成节奏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#90-%E4%B8%BB%E6%AC%A1%E5%85%B3%E7%B3%BB%E5%BD%A2%E6%88%90%E8%8A%82%E5%A5%8F"><span class="nav-text">90　主次关系形成节奏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#91-%E6%97%B6%E7%A9%BA%E5%8F%98%E6%8D%A2%E5%BD%A2%E6%88%90%E8%8A%82%E5%A5%8F"><span class="nav-text">91　时空变换形成节奏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#92-%E5%BD%A2%E8%B1%A1%E4%B9%8B%E9%97%B4%E6%9E%84%E6%88%90%E8%8A%82%E5%A5%8F"><span class="nav-text">92　形象之间构成节奏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#93-%E8%AF%AD%E8%A8%80%E8%8A%82%E5%A5%8F%E4%B8%8E%E7%AD%8B%E9%AA%A8%E5%BC%A0%E5%BC%9B"><span class="nav-text">93　语言节奏与筋骨张弛</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#94-%E8%AF%8D%E8%AF%AD%E7%9A%84%E6%A0%BC%E5%BC%8F"><span class="nav-text">94　词语的格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#95-%E5%A4%9A%E8%AF%8D%E7%BB%84%E5%90%88%E5%90%8D%E8%AF%8D%E7%9A%84%E8%AF%BB%E6%B3%95"><span class="nav-text">95　多词组合名词的读法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#96-%E9%A2%97%E7%B2%92%E4%B8%8E%E8%AF%AD%E6%B5%81"><span class="nav-text">96　颗粒与语流</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#97-%E6%8B%AC%E5%8F%B7%E5%92%8C%E5%BC%95%E5%8F%B7%E4%B8%AD%E5%86%85%E5%AE%B9%E7%9A%84%E8%A1%A8%E8%BE%BE"><span class="nav-text">97　括号和引号中内容的表达</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E7%AF%87-%E6%92%AD%E9%9F%B3%E8%AE%AD%E7%BB%83"><span class="nav-text">第二篇　播音训练</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E6%96%B0%E9%97%BB%E6%92%AD%E9%9F%B3"><span class="nav-text">第四章　新闻播音</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#98-%E5%AF%BB%E6%89%BE%E6%96%B0%E9%97%BB%E7%9A%84%E6%96%B0%E9%B2%9C%E7%82%B9"><span class="nav-text">98　寻找新闻的新鲜点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#99-%E6%92%AD%E5%89%8D%E5%BC%84%E6%98%8E%E7%99%BD%E5%90%8D%E8%AF%8D%E6%A6%82%E5%BF%B5"><span class="nav-text">99　播前弄明白名词概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#100-%E8%AF%B4%E6%B8%85%E4%BA%8B%E5%AE%9E"><span class="nav-text">100　说清事实</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#101-%E8%AF%B4%E6%98%8E%E7%9B%AE%E7%9A%84"><span class="nav-text">101　说明目的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#102-%E5%88%86%E5%AF%B8%E5%BE%97%E5%BD%93"><span class="nav-text">102　分寸得当</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#103-%E6%9C%B4%E5%AE%9E"><span class="nav-text">103　朴实</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#104-%E5%BF%AB%E9%80%9F"><span class="nav-text">104　快速</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#105-%E6%B5%81%E7%95%85"><span class="nav-text">105　流畅</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#106-%E5%B9%B3%E5%BF%83%E9%9D%99%E6%B0%94"><span class="nav-text">106　平心静气</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#107-%E8%BD%BB%E5%B7%A7%E7%9A%84%E5%8F%91%E5%A3%B0%E5%90%90%E5%AD%97"><span class="nav-text">107　轻巧的发声吐字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#108-%E5%BC%80%E5%9C%BA%E7%99%BD%E4%B8%8E%E7%BB%93%E6%9D%9F%E8%AF%AD"><span class="nav-text">108　开场白与结束语</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#109-%E5%AF%BC%E8%AF%AD"><span class="nav-text">109　导语</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#110-%E5%B0%BE%E8%AF%AD"><span class="nav-text">110　尾语</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#111-%E9%95%BF%E5%8F%A5%E5%A4%84%E7%90%86"><span class="nav-text">111　长句处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#112-%E6%97%B6%E9%97%B4%E8%A6%81%E7%B4%A0%E7%9A%84%E8%A1%A8%E8%BE%BE"><span class="nav-text">112　时间要素的表达</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#113-%E6%96%B0%E9%97%BB%E4%B8%AD%E6%95%B0%E5%AD%97%E7%9A%84%E8%A1%A8%E8%BE%BE"><span class="nav-text">113　新闻中数字的表达</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#114-%E6%96%B0%E9%97%BB%E8%8A%82%E7%9B%AE%E7%9A%84%E8%8A%82%E5%A5%8F"><span class="nav-text">114　新闻节目的节奏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#115-%E6%96%B0%E9%97%BB%E6%92%AD%E9%9F%B3%E7%9A%84%E4%BA%BA%E6%A0%BC%E5%BD%A2%E8%B1%A1"><span class="nav-text">115　新闻播音的人格形象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#116-%E5%A3%B0%E9%9F%B3%E5%BD%A2%E8%B1%A1"><span class="nav-text">116　声音形象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#117-%E4%BD%93%E6%80%81%E5%BD%A2%E8%B1%A1"><span class="nav-text">117　体态形象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#118-%E5%8F%A3%E5%BD%A2"><span class="nav-text">118　口形</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#119-%E7%9C%BC%E7%A5%9E%E4%B8%8E%E8%A7%86%E7%BA%BF"><span class="nav-text">119　眼神与视线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#120-%E8%A1%A8%E6%83%85"><span class="nav-text">120　表情</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#121-%E5%8C%96%E5%A6%86"><span class="nav-text">121　化妆</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#122-%E6%9C%8D%E8%A3%85"><span class="nav-text">122　服装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#123-%E5%8F%91%E5%9E%8B"><span class="nav-text">123　发型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#124-%E8%A3%85%E9%A5%B0%E5%93%81%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-text">124　装饰品的问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#125-%E8%AE%B2%E6%96%B0%E9%97%BB"><span class="nav-text">125　讲新闻</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#126-%E6%96%B0%E9%97%BB%E6%92%AD%E9%9F%B3%E7%9A%84%E8%BF%BD%E6%B1%82"><span class="nav-text">126　新闻播音的追求</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%BA%94%E7%AB%A0-%E8%AF%84%E8%AE%BA%E6%92%AD%E9%9F%B3"><span class="nav-text">第五章　评论播音</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#127-%E7%AA%81%E5%87%BA%E8%AE%BA%E7%82%B9"><span class="nav-text">127　突出论点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#128-%E9%80%BB%E8%BE%91%E4%B8%A5%E5%AF%86"><span class="nav-text">128　逻辑严密</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#129-%E5%88%86%E9%87%8F%E5%BE%97%E5%BD%93"><span class="nav-text">129　分量得当</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#130-%E9%81%93%E7%90%86%E4%B8%8E%E4%BA%8B%E5%AE%9E"><span class="nav-text">130　道理与事实</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#131-%E8%83%B8%E6%80%80%E5%AE%BD%E9%98%94"><span class="nav-text">131　胸怀宽阔</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#132-%E6%92%AD%E8%AF%BB%E6%96%87%E4%BB%B6"><span class="nav-text">132　播读文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E5%85%AD%E7%AB%A0-%E9%80%9A%E8%AE%AF%E6%92%AD%E9%9F%B3"><span class="nav-text">第六章　通讯播音</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#133-%E8%AE%A4%E8%AF%86%E9%80%9A%E8%AE%AF%E6%92%AD%E9%9F%B3"><span class="nav-text">133　认识通讯播音</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#134-%E9%98%85%E8%AF%BB%E9%80%9A%E8%AE%AF%E7%A8%BF"><span class="nav-text">134　阅读通讯稿</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#135-%E5%AF%B9%E6%AF%94%E8%AE%BE%E8%AE%A1"><span class="nav-text">135　对比设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#136-%E5%83%8F%E8%AF%B4%E8%AF%9D%E9%82%A3%E6%A0%B7%E6%92%AD%E8%AE%B2%E9%80%9A%E8%AE%AF"><span class="nav-text">136　像说话那样播讲通讯</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#137-%E4%BA%BA%E7%89%A9%E8%AF%AD%E8%A8%80"><span class="nav-text">137　人物语言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#138-%E7%94%A8%E8%AF%AD%E8%A8%80%E6%8F%8F%E7%BB%98%E7%8E%AF%E5%A2%83%E5%9C%BA%E9%9D%A2"><span class="nav-text">138　用语言描绘环境场面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#139-%E5%8A%A8%E4%BD%9C%E6%84%9F%E5%BC%BA"><span class="nav-text">139　动作感强</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#140-%E6%8A%92%E6%83%85%E8%AE%AE%E8%AE%BA"><span class="nav-text">140　抒情议论</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#141-%E8%A1%A8%E7%8E%B0%E6%97%B6%E7%A9%BA"><span class="nav-text">141　表现时空</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%83%E7%AB%A0-%E7%94%B5%E8%A7%86%E7%89%87%E8%A7%A3%E8%AF%B4"><span class="nav-text">第七章　电视片解说</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#142-%E7%94%B5%E8%A7%86%E7%89%87%E8%A7%A3%E8%AF%B4%E7%9A%84%E5%87%86%E5%A4%87"><span class="nav-text">142　电视片解说的准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#143-%E8%A7%A3%E8%AF%B4%E5%A4%84%E4%BA%8E%E2%80%9C%E4%BE%A7%E9%9D%A2%E2%80%9D%E4%BD%8D%E7%BD%AE"><span class="nav-text">143　解说处于“侧面”位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#144-%E8%A7%A3%E8%AF%B4%E7%9A%84%E4%B8%BB%E8%A7%82%E8%89%B2%E5%BD%A9"><span class="nav-text">144　解说的主观色彩</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#145-%E4%B8%8D%E7%94%A9%E4%B8%8D%E5%94%B1"><span class="nav-text">145　不甩不唱</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#146-%E8%A7%A3%E8%AF%B4%E4%B8%8E%E7%94%BB%E9%9D%A2%E5%AF%B9%E4%BD%8D"><span class="nav-text">146　解说与画面对位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#147-%E6%A0%B9%E6%8D%AE%E7%94%BB%E9%9D%A2%E7%A1%AE%E5%AE%9A%E9%87%8D%E9%9F%B3"><span class="nav-text">147　根据画面确定重音</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#148-%E5%85%A8%E7%89%87%E8%BF%9E%E8%B4%AF"><span class="nav-text">148　全片连贯</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#149-%E5%A4%84%E7%90%86%E5%A5%BD%E4%B8%8E%E5%90%8C%E6%9C%9F%E5%A3%B0%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="nav-text">149　处理好与同期声的关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#150-%E5%BC%80%E5%9C%BA%E5%92%8C%E7%BB%93%E5%B0%BE%E7%9A%84%E8%AF%AD%E5%8F%A5%E5%A4%84%E7%90%86"><span class="nav-text">150　开场和结尾的语句处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#151-%E8%AF%B4%E6%98%8E%E4%BA%A4%E4%BB%A3%E8%AF%AD%E5%8F%A5%E7%9A%84%E8%A1%A8%E8%BE%BE"><span class="nav-text">151　说明交代语句的表达</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#152-%E6%A6%82%E8%BF%B0%E8%AF%AD%E5%8F%A5%E7%9A%84%E8%A1%A8%E8%BE%BE"><span class="nav-text">152　概述语句的表达</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#153-%E6%83%85%E8%8A%82%E5%8F%99%E8%BF%B0%E7%9A%84%E8%A1%A8%E8%BE%BE"><span class="nav-text">153　情节叙述的表达</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#154-%E6%AF%94%E5%96%BB%E3%80%81%E6%AF%94%E6%8B%9F%E8%AF%AD%E5%8F%A5%E7%9A%84%E8%A1%A8%E8%BE%BE"><span class="nav-text">154　比喻、比拟语句的表达</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#155-%E6%8A%92%E6%83%85%E8%AF%AD%E5%8F%A5%E7%9A%84%E8%A1%A8%E8%BE%BE"><span class="nav-text">155　抒情语句的表达</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#156-%E8%AE%AE%E8%AE%BA%E8%AF%B4%E7%90%86%E8%AF%AD%E5%8F%A5%E7%9A%84%E8%A1%A8%E8%BE%BE"><span class="nav-text">156　议论说理语句的表达</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#157-%E8%AD%A6%E5%8F%A5%E3%80%81%E6%A0%BC%E8%A8%80%E7%9A%84%E8%A1%A8%E8%BE%BE"><span class="nav-text">157　警句、格言的表达</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#158-%E4%B8%A4%E4%BA%BA%E5%AF%B9%E6%92%AD"><span class="nav-text">158　两人对播</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#159-%E5%AF%B9%E6%92%AD%E8%AF%AD%E6%B0%94%E8%B4%AF%E9%80%9A"><span class="nav-text">159　对播语气贯通</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#160-%E5%AF%B9%E6%92%AD%E8%AF%AD%E9%9F%B3%E5%92%8C%E8%B0%90"><span class="nav-text">160　对播语音和谐</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E5%85%AB%E7%AB%A0-%E5%B9%BF%E5%91%8A%E6%92%AD%E9%9F%B3"><span class="nav-text">第八章　广告播音</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#161-%E5%B9%BF%E5%91%8A%E6%92%AD%E9%9F%B3%E7%9A%84%E7%89%B9%E7%82%B9"><span class="nav-text">161　广告播音的特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#162-%E5%B9%BF%E5%91%8A%E6%92%AD%E9%9F%B3%E5%BD%A2%E8%B1%A1%E7%9A%84%E5%BC%BA%E7%83%88%E4%B8%AA%E6%80%A7"><span class="nav-text">162　广告播音形象的强烈个性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#163-%E5%85%85%E5%88%86%E7%9A%84%E5%BF%83%E7%90%86%E5%87%86%E5%A4%87"><span class="nav-text">163　充分的心理准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#164-%E5%86%99%E5%AE%9E%E9%A3%8E%E6%A0%BC%E7%9A%84%E5%B9%BF%E5%91%8A%E8%AF%AD%E8%A8%80%E5%BD%A2%E8%B1%A1"><span class="nav-text">164　写实风格的广告语言形象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#165-%E5%86%99%E6%84%8F%E5%A4%B8%E5%BC%A0%E9%A3%8E%E6%A0%BC%E7%9A%84%E5%B9%BF%E5%91%8A%E8%AF%AD%E8%A8%80%E5%BD%A2%E8%B1%A1"><span class="nav-text">165　写意夸张风格的广告语言形象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#166-%E5%91%BC%E5%94%A4%E6%8B%9B%E6%8F%BD%E5%BC%8F"><span class="nav-text">166　呼唤招揽式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#167-%E4%BE%83%E4%BE%83%E8%AF%89%E8%AF%B4%E5%BC%8F"><span class="nav-text">167　侃侃诉说式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#168-%E6%9C%97%E8%AF%BB%E6%9C%97%E8%AF%B5%E5%BC%8F"><span class="nav-text">168　朗读朗诵式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#169-%E6%83%85%E8%8A%82%E5%8F%99%E8%BF%B0%E5%BC%8F"><span class="nav-text">169　情节叙述式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#170-%E7%83%AD%E6%83%85%E8%B5%9E%E9%A2%82%E5%BC%8F"><span class="nav-text">170　热情赞颂式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#171-%E8%A7%92%E8%89%B2%E5%AF%B9%E8%AF%9D%E5%BC%8F"><span class="nav-text">171　角色对话式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#172-%E8%AF%B4%E6%98%8E%E8%AE%B2%E8%A7%A3%E5%BC%8F"><span class="nav-text">172　说明讲解式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#173-%E6%8E%A8%E7%90%86%E8%AE%BA%E8%AF%81%E5%BC%8F"><span class="nav-text">173　推理论证式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#174-%E6%93%8D%E4%BD%9C%E5%B1%95%E7%A4%BA%E5%BC%8F"><span class="nav-text">174　操作展示式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#175-%E4%B8%A4%E4%BA%BA%E5%AF%B9%E6%92%AD%E5%BC%8F"><span class="nav-text">175　两人对播式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#176-%E5%AF%B9%E6%AF%94%E4%B8%8E%E5%B1%82%E6%AC%A1"><span class="nav-text">176　对比与层次</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#177-%E4%B8%8E%E5%B9%BF%E5%91%8A%E4%B8%AD%E7%9A%84%E5%AD%97%E5%B9%95%E5%91%BC%E5%BA%94"><span class="nav-text">177　与广告中的字幕呼应</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#178-%E5%B9%BF%E5%91%8A%E6%92%AD%E9%9F%B3%E4%B8%8E%E7%94%BB%E9%9D%A2%E4%B8%80%E8%87%B4"><span class="nav-text">178　广告播音与画面一致</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#179-%E4%B8%8E%E7%94%BB%E9%9D%A2%E4%B8%AD%E7%9A%84%E4%BA%BA%E7%89%A9%E5%8A%A8%E4%BD%9C%E5%8D%8F%E8%B0%83"><span class="nav-text">179　与画面中的人物动作协调</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#180-%E5%B9%BF%E5%91%8A%E6%92%AD%E9%9F%B3%E4%B8%8E%E9%9F%B3%E4%B9%90%E6%AD%8C%E6%9B%B2%E7%9A%84%E7%BB%93%E5%90%88"><span class="nav-text">180　广告播音与音乐歌曲的结合</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E7%AF%87-%E4%B8%BB%E6%8C%81%E4%BA%BA%E8%AF%AD%E8%A8%80%E8%A1%A8%E8%BE%BE%E8%AE%AD%E7%BB%83"><span class="nav-text">第三篇　主持人语言表达训练</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B9%9D%E7%AB%A0-%E4%B8%BB%E6%8C%81%E4%BA%BA%E4%B8%80%E8%88%AC%E8%A1%A8%E8%BE%BE"><span class="nav-text">第九章　主持人一般表达</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#181-%E4%B8%BB%E6%8C%81%E4%BA%BA%E5%9C%A8%E8%8A%82%E7%9B%AE%E4%B8%AD%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-text">181　主持人在节目中的作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#182-%E4%B8%BB%E6%8C%81%E4%BA%BA%E8%AF%AD%E8%A8%80%E7%89%B9%E7%82%B9"><span class="nav-text">182　主持人语言特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#183-%E4%B8%BB%E6%8C%81%E4%BA%BA%E8%AF%AD%E8%A8%80%E9%A3%8E%E6%A0%BC%E8%A6%81%E4%B8%AA%E6%80%A7%E5%8C%96"><span class="nav-text">183　主持人语言风格要个性化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#184-%E4%B8%BB%E6%8C%81%E4%BA%BA%E6%98%AF%E8%B0%81"><span class="nav-text">184　主持人是谁</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#185-%E4%B8%AA%E6%80%A7%E2%80%94%E2%80%94%E7%9F%A5%E8%AF%86%E5%92%8C%E8%83%BD%E5%8A%9B"><span class="nav-text">185　个性——知识和能力</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#186-%E4%B8%AA%E6%80%A7%E2%80%94%E2%80%94%E5%AE%A1%E7%BE%8E%E6%83%85%E8%B6%A3"><span class="nav-text">186　个性——审美情趣</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#187-%E4%B8%AA%E6%80%A7%E2%80%94%E2%80%94%E6%80%A7%E6%A0%BC"><span class="nav-text">187　个性——性格</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#188-%E4%B8%AA%E6%80%A7%E2%80%94%E2%80%94%E9%9F%B3%E8%89%B2%E5%92%8C%E8%85%94%E8%B0%83"><span class="nav-text">188　个性——音色和腔调</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#189-%E4%B8%AA%E6%80%A7%E2%80%94%E2%80%94%E5%B9%B4%E9%BE%84"><span class="nav-text">189　个性——年龄</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#190-%E4%B8%AA%E6%80%A7%E2%80%94%E2%80%94%E8%AF%AD%E8%A8%80%E8%8A%82%E5%A5%8F%E5%9E%8B"><span class="nav-text">190　个性——语言节奏型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#191-%E4%B8%AA%E6%80%A7%E2%80%94%E2%80%94%E4%BD%93%E6%80%81%E4%B8%BE%E6%AD%A2"><span class="nav-text">191　个性——体态举止</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#192-%E4%B8%AA%E6%80%A7%E2%80%94%E2%80%94%E8%A1%A8%E6%83%85%E5%92%8C%E7%9C%BC%E7%A5%9E"><span class="nav-text">192　个性——表情和眼神</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#193-%E4%B8%AA%E6%80%A7%E2%80%94%E2%80%94%E4%BF%AE%E8%BE%9E%E7%89%B9%E5%BE%81"><span class="nav-text">193　个性——修辞特征</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#194-%E5%B8%B8%E8%AF%B4%E7%9A%84%E8%AF%9D%E8%A6%81%E5%B8%B8%E8%AE%B2%E5%B8%B8%E6%96%B0"><span class="nav-text">194　常说的话要常讲常新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#195-%E4%B8%8E%E5%90%AC%E4%BC%97%E8%A7%82%E4%BC%97%E2%80%9C%E4%B8%80%E5%90%8C%E2%80%9D%E5%90%AC%E7%9C%8B%E8%8A%82%E7%9B%AE"><span class="nav-text">195　与听众观众“一同”听看节目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#196-%E2%80%9C%E4%B8%89%E7%82%B9%E5%8F%8C%E6%96%B9%E2%80%9D%E7%9A%84%E4%BA%A4%E6%B5%81"><span class="nav-text">196　“三点双方”的交流</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#197-%E7%9C%9F%E5%90%AC%E7%9C%9F%E6%83%B3%E7%9C%9F%E9%97%AE%E7%9C%9F%E7%AD%94"><span class="nav-text">197　真听真想真问真答</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#198-%E4%B8%A4%E5%90%8D%E4%B8%BB%E6%8C%81%E4%BA%BA%E7%9A%84%E8%AF%AD%E8%A8%80%E8%AE%BE%E8%AE%A1"><span class="nav-text">198　两名主持人的语言设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#199-%E4%B8%BB%E6%8C%81%E4%BA%BA%E7%9A%84%E5%B9%BD%E9%BB%98"><span class="nav-text">199　主持人的幽默</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#200-%E6%8E%A9%E9%A5%B0%E9%94%99%E8%AF%AF%E8%80%8C%E4%B8%8D%E6%98%AF%E5%BC%BA%E8%B0%83%E9%94%99%E8%AF%AF"><span class="nav-text">200　掩饰错误而不是强调错误</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#201-%E9%9A%8F%E6%9C%BA%E5%BA%94%E5%8F%98"><span class="nav-text">201　随机应变</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#202-%E5%B0%BD%E5%BF%AB%E8%AE%B0%E4%BD%8F%E4%B8%BB%E6%8C%81%E8%AF%8D"><span class="nav-text">202　尽快记住主持词</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E5%8D%81%E7%AB%A0-%E4%B8%BB%E6%8C%81%E5%90%84%E7%B1%BB%E8%8A%82%E7%9B%AE"><span class="nav-text">第十章　主持各类节目</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#203-%E6%96%B0%E9%97%BB%E7%B1%BB%E4%B8%93%E6%A0%8F%E8%8A%82%E7%9B%AE%E4%B8%AD%E4%B8%BB%E6%8C%81%E4%BA%BA%E8%AF%84%E8%AF%B4"><span class="nav-text">203　新闻类专栏节目中主持人评说</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#204-%E9%AB%98%E5%BA%A6%E8%B4%A3%E4%BB%BB%E6%84%9F%E5%92%8C%E5%BC%BA%E7%83%88%E7%9A%84%E8%89%AF%E7%9F%A5"><span class="nav-text">204　高度责任感和强烈的良知</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#205-%E5%85%B7%E6%9C%89%E8%AE%B0%E8%80%85%E7%BC%96%E8%BE%91%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8A%9F"><span class="nav-text">205　具有记者编辑的基本功</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#206-%E8%AF%B4%E5%A5%BD%E8%87%AA%E5%B7%B1%E7%9A%84%E8%AF%9D"><span class="nav-text">206　说好自己的话</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#207-%E5%B0%8F%E6%9C%8B%E5%8F%8B%E7%9A%84%E5%A4%A7%E6%9C%8B%E5%8F%8B"><span class="nav-text">207　小朋友的大朋友</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#208-%E6%B2%89%E6%B5%B8%E5%9C%A8%E7%AB%A5%E5%BF%83%E9%87%8C%E9%9D%A2"><span class="nav-text">208　沉浸在童心里面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#209-%E5%84%BF%E7%AB%A5%E6%95%99%E8%82%B2%E5%BF%83%E7%90%86%E5%AD%A6%E7%9A%84%E4%B8%93%E5%AE%B6"><span class="nav-text">209　儿童教育心理学的专家</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#210-%E7%9F%A5%E8%AF%86%E7%AB%9E%E8%B5%9B%E4%B8%AD%E7%9A%84%E4%B8%80%E8%88%AC%E6%8F%90%E9%97%AE%E6%96%B9%E5%BC%8F"><span class="nav-text">210　知识竞赛中的一般提问方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#211-%E6%8A%A2%E7%AD%94%E9%A2%98%E7%9A%84%E6%8F%90%E9%97%AE%E6%96%B9%E5%BC%8F"><span class="nav-text">211　抢答题的提问方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#212-%E6%80%8E%E6%A0%B7%E5%88%A4%E6%96%AD%E7%9F%A5%E8%AF%86%E7%AB%9E%E8%B5%9B%E7%9A%84%E7%AD%94%E6%A1%88"><span class="nav-text">212　怎样判断知识竞赛的答案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#213-%E7%9F%A5%E8%AF%86%E7%AB%9E%E8%B5%9B%E7%9A%84%E8%AF%AD%E8%A8%80%E8%89%B2%E5%BD%A9%E5%8C%BA%E5%88%AB"><span class="nav-text">213　知识竞赛的语言色彩区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#214-%E5%91%BC%E5%94%A4%E5%9C%BA%E4%B8%8A%E7%9A%84%E8%8A%82%E5%A5%8F%E6%B3%A2%E6%BE%9C"><span class="nav-text">214　呼唤场上的节奏波澜</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#215-%E6%8A%8A%E6%8F%A1%E5%85%A8%E5%9C%BA%E8%8A%82%E5%A5%8F"><span class="nav-text">215　把握全场节奏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#216-%E7%9F%A5%E8%AF%86%E7%AB%9E%E8%B5%9B%E5%9C%BA%E4%B8%8A%E7%9A%84%E6%AD%A5%E4%BC%90"><span class="nav-text">216　知识竞赛场上的步伐</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#217-%E4%B8%BB%E6%8C%81%E7%BB%BC%E8%89%BA%E8%8A%82%E7%9B%AE%E7%9A%84%E6%AC%A2%E4%B9%90%E5%BF%83%E6%83%85"><span class="nav-text">217　主持综艺节目的欢乐心情</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#218-%E5%85%BC%E9%A1%BE%E7%8E%B0%E5%9C%BA%E8%A7%82%E4%BC%97%E5%92%8C%E7%94%B5%E8%A7%86%E6%9C%BA%E5%89%8D%E8%A7%82%E4%BC%97"><span class="nav-text">218　兼顾现场观众和电视机前观众</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#219-%E5%B8%A6%E9%A2%86%E8%A7%82%E4%BC%97%E7%9A%84%E6%83%85%E7%BB%AA%E5%92%8C%E6%B0%94%E6%B0%9B"><span class="nav-text">219　带领观众的情绪和气氛</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#220-%E6%96%87%E8%89%BA%E4%B8%BB%E6%8C%81%E4%BA%BA%E7%9A%84%E7%90%86%E8%AE%BA%E4%BF%AE%E5%85%BB"><span class="nav-text">220　文艺主持人的理论修养</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#221-%E6%96%87%E8%89%BA%E8%8A%82%E7%9B%AE%E4%B8%BB%E6%8C%81%E4%BA%BA%E7%9A%84%E5%BD%A2%E4%BD%93%E8%AE%AD%E7%BB%83"><span class="nav-text">221　文艺节目主持人的形体训练</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#222-%E6%B7%B1%E5%88%BB%E7%8B%AC%E5%88%B0%E7%9A%84%E4%BD%93%E8%82%B2%E8%A7%81%E8%A7%A3"><span class="nav-text">222　深刻独到的体育见解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#223-%E5%8D%B3%E5%85%B4%E7%BB%84%E7%BB%87%E8%AF%AD%E8%A8%80%E7%9A%84%E5%8A%9F%E5%A4%AB"><span class="nav-text">223　即兴组织语言的功夫</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#224-%E5%88%9B%E9%80%A0%E5%A4%9A%E7%A7%8D%E4%BD%93%E8%82%B2%E8%A7%A3%E8%AF%B4%E9%A3%8E%E6%A0%BC"><span class="nav-text">224　创造多种体育解说风格</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#225-%E4%BD%93%E8%82%B2%E7%B2%BE%E7%A5%9E%E7%9A%84%E4%BD%93%E7%8E%B0"><span class="nav-text">225　体育精神的体现</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0-%E4%B8%BB%E6%8C%81%E4%BA%BA%E7%8E%B0%E5%9C%BA%E9%87%87%E8%AE%BF"><span class="nav-text">第十一章　主持人现场采访</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#226-%E5%B9%BF%E6%92%AD%E7%94%B5%E8%A7%86%E9%87%87%E8%AE%BF%E7%9A%84%E7%89%B9%E5%BE%81"><span class="nav-text">226　广播电视采访的特征</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#227-%E5%B9%BF%E6%92%AD%E7%8E%B0%E5%9C%BA%E6%8A%A5%E9%81%93%E9%87%87%E5%BD%95%E9%9F%B3%E5%93%8D%E8%A1%A8%E7%8E%B0%E7%8E%B0%E5%9C%BA"><span class="nav-text">227　广播现场报道采录音响表现现场</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#228-%E7%94%B5%E8%A7%86%E4%B8%BB%E6%8C%81%E4%BA%BA%E6%9B%BF%E8%A7%82%E4%BC%97%E6%84%9F%E7%9F%A5%E7%8E%B0%E5%9C%BA"><span class="nav-text">228　电视主持人替观众感知现场</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#229-%E9%87%87%E8%AE%BF%E6%8F%90%E9%97%AE%E8%A6%81%E6%9C%89%E6%98%8E%E7%A1%AE%E7%9A%84%E6%80%9D%E8%B7%AF"><span class="nav-text">229　采访提问要有明确的思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#230-%E6%8B%93%E5%B1%95%E6%80%9D%E8%B7%AF"><span class="nav-text">230　拓展思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#231-%E5%8F%8A%E6%97%B6%E8%B0%83%E6%95%B4%E6%80%9D%E8%B7%AF"><span class="nav-text">231　及时调整思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#232-%E9%9D%A2%E5%AF%B9%E8%A2%AB%E9%87%87%E8%AE%BF%E4%BA%BA"><span class="nav-text">232　面对被采访人</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#233-%E5%B0%86%E6%80%9D%E8%B7%AF%E5%88%86%E8%A7%A3%E4%B8%BA%E5%85%B7%E4%BD%93%E9%97%AE%E9%A2%98"><span class="nav-text">233　将思路分解为具体问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#234-%E5%9B%B4%E7%BB%95%E6%96%B0%E9%97%BB%E8%A6%81%E7%B4%A0%E6%8F%90%E9%97%AE"><span class="nav-text">234　围绕新闻要素提问</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#235-%E5%9B%B4%E7%BB%95%E4%B8%BB%E9%A2%98%E5%92%8C%E7%9B%AE%E7%9A%84%E6%8F%90%E9%97%AE"><span class="nav-text">235　围绕主题和目的提问</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#236-%E9%98%B2%E6%AD%A2%E8%AF%B1%E4%BE%9B%E5%BC%8F%E6%8F%90%E9%97%AE"><span class="nav-text">236　防止诱供式提问</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#237-%E7%94%A8%E9%80%BB%E8%BE%91%E6%8E%A8%E7%90%86%E5%BC%95%E5%AF%BC%E9%87%87%E8%AE%BF%E6%B7%B1%E5%85%A5"><span class="nav-text">237　用逻辑推理引导采访深入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#238-%E4%BB%8E%E4%B8%80%E8%88%AC%E9%97%AE%E4%B8%AA%E5%88%AB%EF%BC%8C%E4%BB%8E%E4%B8%AA%E5%88%AB%E9%97%AE%E4%B8%80%E8%88%AC"><span class="nav-text">238　从一般问个别，从个别问一般</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#239-%E6%BC%94%E7%BB%8E%E6%8E%A8%E7%90%86%E5%BC%95%E5%AF%BC%E9%87%87%E8%AE%BF"><span class="nav-text">239　演绎推理引导采访</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#240-%E5%BD%92%E7%BA%B3%E6%8E%A8%E7%90%86%E5%BC%95%E5%AF%BC%E9%87%87%E8%AE%BF"><span class="nav-text">240　归纳推理引导采访</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#241-%E7%B1%BB%E6%AF%94%E6%8E%A8%E7%90%86%E5%BC%95%E5%AF%BC%E9%87%87%E8%AE%BF"><span class="nav-text">241　类比推理引导采访</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#242-%E4%BB%A5%E6%B1%82%E8%AF%81%E7%9A%84%E6%96%B9%E5%BC%8F%E5%BC%95%E5%AF%BC%E9%87%87%E8%AE%BF"><span class="nav-text">242　以求证的方式引导采访</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#243-%E5%9C%A8%E5%AF%B9%E6%AF%94%E4%B8%AD%E6%8C%96%E6%8E%98%E6%96%B0%E9%97%BB%E4%BA%8B%E5%AE%9E"><span class="nav-text">243　在对比中挖掘新闻事实</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#244-%E5%BC%80%E6%94%BE%E4%B8%8E%E9%97%AD%E5%90%88%E9%97%AE%E9%A2%98"><span class="nav-text">244　开放与闭合问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#245-%E5%8D%8A%E5%BC%80%E6%94%BE%E5%BC%8F%E5%92%8C%E5%8D%8A%E9%97%AD%E5%90%88%E5%BC%8F%E9%97%AE%E9%A2%98"><span class="nav-text">245　半开放式和半闭合式问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#246-%E5%88%92%E5%88%86%E5%BC%8F%E6%8F%90%E9%97%AE"><span class="nav-text">246　划分式提问</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#247-%E8%AE%BE%E5%AE%9A"><span class="nav-text">247　设定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#248-%E5%8F%8A%E6%97%B6%E8%BF%BD%E9%97%AE"><span class="nav-text">248　及时追问</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#249-%E8%95%B4%E5%90%AB%E5%91%BD%E9%A2%98%E7%9A%84%E6%8F%90%E9%97%AE"><span class="nav-text">249　蕴含命题的提问</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#250-%E9%80%9A%E7%94%A8%E9%97%AE%E9%A2%98"><span class="nav-text">250　通用问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#251-%E6%8F%90%E9%97%AE%E7%9A%84%E9%93%BA%E5%9E%AB"><span class="nav-text">251　提问的铺垫</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#252-%E9%87%87%E8%AE%BF%E4%B8%AD%E7%9A%84%E8%BF%87%E6%B8%A1"><span class="nav-text">252　采访中的过渡</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#253-%E7%8E%B0%E5%9C%BA%E6%8A%A5%E9%81%93%E4%B8%AD%E7%9A%84%E8%AF%9D%E7%AD%92%E4%BD%BF%E7%94%A8"><span class="nav-text">253　现场报道中的话筒使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#254-%E4%B8%8E%E6%91%84%E5%83%8F%E5%B8%88%E5%BD%A2%E6%88%90%E9%BB%98%E5%A5%91"><span class="nav-text">254　与摄像师形成默契</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E5%8D%81%E4%BA%8C%E7%AB%A0-%E4%B8%BB%E6%8C%81%E4%BA%BA%E8%AE%BF%E8%B0%88"><span class="nav-text">第十二章　主持人访谈</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#255-%E5%85%85%E5%88%86%E7%9A%84%E8%B0%88%E8%AF%9D%E5%87%86%E5%A4%87"><span class="nav-text">255　充分的谈话准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#256-%E8%AE%BE%E8%AE%A1%E5%A5%BD%E9%A6%96%E9%97%AE"><span class="nav-text">256　设计好首问</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#257-%E2%80%9C%E6%8C%91%E6%88%98%E2%80%9D%E5%92%8C%E2%80%9C%E5%B0%96%E9%94%90%E2%80%9D%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-text">257　“挑战”和“尖锐”的问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#258-%E8%B0%88%E8%AF%9D%E8%8A%82%E7%9B%AE%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98%E2%80%9C%E8%81%9A%E7%84%A6%E2%80%9D"><span class="nav-text">258　谈话节目中的问题“聚焦”</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#259-%E6%8F%90%E9%97%AE%E7%9A%84%E5%A4%9A%E6%A0%B7%E6%80%A7"><span class="nav-text">259　提问的多样性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#260-%E8%B0%88%E8%AF%9D%E8%8A%82%E7%9B%AE%E4%B8%AD%E7%9A%84%E4%B8%A4%E9%9A%BE%E9%97%AE%E9%A2%98"><span class="nav-text">260　谈话节目中的两难问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#261-%E5%BB%BA%E7%AB%8B%E6%80%9D%E7%BB%B4%E7%AB%8B%E4%BD%93%E7%A9%BA%E9%97%B4"><span class="nav-text">261　建立思维立体空间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#262-%E8%BD%AF%E5%8C%96%E9%97%AE%E9%A2%98%E4%B8%8E%E7%A1%AC%E5%8C%96%E9%97%AE%E9%A2%98"><span class="nav-text">262　软化问题与硬化问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#263-%E4%B8%8D%E8%A6%81%E5%BF%98%E8%AE%B0%E5%AF%B9%E4%B8%AA%E4%BA%BA%E5%91%BD%E8%BF%90%E6%8F%90%E9%97%AE"><span class="nav-text">263　不要忘记对个人命运提问</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#264-%E9%97%AE%E9%A2%98%E9%A1%BA%E5%BA%8F%E7%9A%84%E8%8A%82%E5%A5%8F"><span class="nav-text">264　问题顺序的节奏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#265-%E6%AF%8F%E4%B8%80%E5%9C%BA%E8%AE%BF%E8%B0%88%E9%83%BD%E8%A6%81%E6%9C%89%E7%89%B9%E8%89%B2"><span class="nav-text">265　每一场访谈都要有特色</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#266-%E5%88%AB%E8%AE%A9%E5%AF%B9%E6%96%B9%E9%80%83%E8%84%B1"><span class="nav-text">266　别让对方逃脱</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#267-%E6%89%A9%E5%B1%95%E8%B0%88%E8%AF%9D%E9%A2%86%E5%9F%9F"><span class="nav-text">267　扩展谈话领域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#268-%E4%B8%BB%E6%8C%81%E4%BA%BA%E7%9A%84%E5%BC%95%E5%AF%BC%E5%92%8C%E6%8E%A7%E5%88%B6"><span class="nav-text">268　主持人的引导和控制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#269-%E4%B8%BB%E6%8C%81%E4%BA%BA%E7%9A%84%E5%80%BE%E5%90%AC%E5%BA%94%E7%AD%94"><span class="nav-text">269　主持人的倾听应答</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#270-%E8%B0%88%E8%AF%9D%E6%97%B6%E7%9A%84%E6%8E%A5%E8%AF%AD%E6%8F%90%E7%A4%BA"><span class="nav-text">270　谈话时的接语提示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#271-%E8%AF%AD%E8%A8%80%E4%BA%A4%E6%B5%81%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E6%9C%9F%E5%BE%85"><span class="nav-text">271　语言交流过程中的期待</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#272-%E6%90%AD%E8%AF%9D"><span class="nav-text">272　搭话</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#273-%E7%94%A8%E8%A1%A5%E5%85%85%E6%9D%A5%E7%BA%A0%E6%AD%A3%E7%89%87%E9%9D%A2"><span class="nav-text">273　用补充来纠正片面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#274-%E6%9A%97%E7%A4%BA%E5%BC%95%E5%AF%BC%E8%B0%88%E8%AF%9D%E7%9A%84%E8%B5%B0%E5%90%91"><span class="nav-text">274　暗示引导谈话的走向</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#275-%E6%8F%90%E7%A4%BA%E8%A6%81%E7%82%B9%E7%9A%84%E5%BD%92%E7%BA%B3%E6%96%B9%E6%B3%95"><span class="nav-text">275　提示要点的归纳方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#276-%E9%87%8D%E5%A4%8D%E4%B8%8E%E8%A7%A3%E9%87%8A"><span class="nav-text">276　重复与解释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#277-%E4%B8%BB%E6%8C%81%E4%BA%BA%E7%9A%84%E8%AF%84%E8%AE%AE"><span class="nav-text">277　主持人的评议</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#278-%E6%8A%BD%E5%B1%89%E6%B3%95%E5%88%99"><span class="nav-text">278　抽屉法则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#279-%E6%8E%A7%E5%88%B6%E6%97%B6%E9%97%B4"><span class="nav-text">279　控制时间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#280-%E7%BC%9D%E5%90%88%E4%B8%A5%E5%AF%86"><span class="nav-text">280　缝合严密</span></a></li></ol></li></ol></li></ol></div>
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="千灵夙赋"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">千灵夙赋</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">166</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">37</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">46</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+  <div class="links-of-blogroll animated">
+    <div class="links-of-blogroll-title"><i class="link fa-fw"></i>
+      Friends
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://myloveru.cn/" title="http:&#x2F;&#x2F;myloveru.cn&#x2F;" rel="noopener" target="_blank">梦想博客</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://meow3.family.blog/" title="https:&#x2F;&#x2F;meow3.family.blog&#x2F;" rel="noopener" target="_blank">恶魔菌の记事簿</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://tding.top/" title="https:&#x2F;&#x2F;tding.top&#x2F;" rel="noopener" target="_blank">小丁的个人博客</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.julydate.com/" title="https:&#x2F;&#x2F;www.julydate.com&#x2F;" rel="noopener" target="_blank">七夏浅笑</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://raspii.tech/" title="https:&#x2F;&#x2F;raspii.tech&#x2F;" rel="noopener" target="_blank">无用挂件</a>
+        </li>
+    </ul>
+  </div>
+<div id="aplayer" class="aplayer"></div>
+<script>
+if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
+  document.write('<script type="text/javascript" src="/js/custom/APlayer.min.js"><\/script>');
+}
+</script>
+<script type="text/javascript">
+var ap = new APlayer({
+    element: document.getElementById('aplayer'),                       // Optional, player element
+    narrow: false,                                                     // Optional, narrow style
+    autoplay: false,                                                    // Optional, autoplay song(s), not supported by mobile browsers
+    showlrc: 0,                                                        // Optional, show lrc, can be 0, 1, 2, see: ###With lrc
+    mutex: true,                                                       // Optional, pause other players when this player playing
+    theme: '#e6d0b2',                                                  // Optional, theme color, default: #b7daff
+    mode: 'random',                                                    // Optional, play mode, can be `random` `single` `circulation`(loop) `order`(no loop), default: `circulation`
+    preload: 'metadata',                                               // Optional, the way to load music, can be 'none' 'metadata' 'auto', default: 'auto'
+    listmaxheight: '513px',                                             // Optional, max height of play list
+    music: [{
+      title: '世末歌者',
+      author: '双笙 囧菌',
+      url: '/music/%E5%8F%8C%E7%AC%99%20%E5%9B%A7%E8%8F%8C%20-%20%E4%B8%96%E6%9C%AB%E6%AD%8C%E8%80%85.mp3',
+      pic: '/images/aplayer/双笙　囧菌 - 世末歌者.webp',
+    }, {
+      title: '幹物女(WeiWei)',
+      author: '封茗囧菌',
+      url: '/music/%E5%B0%81%E8%8C%97%E5%9B%A7%E8%8F%8C%20-%20%E5%B9%B9%E7%89%A9%E5%A5%B3(WeiWei).mp3',
+      pic: '/images/aplayer/封茗囧菌 - 幹物女(WeiWei).webp',
+    }, {
+      title: '东京不太热',
+      author: '封茗囧菌',
+      url: '/music/%E5%B0%81%E8%8C%97%E5%9B%A7%E8%8F%8C%20-%20%E4%B8%9C%E4%BA%AC%E4%B8%8D%E5%A4%AA%E7%83%AD.mp3',
+      pic: '/images/aplayer/封茗囧菌 - 东京不太热.webp',
+    }, {
+      title: '有故事的小仙女（Cover 初音ミク）',
+      author: '井宿',
+      url: '/music/%E4%BA%95%E5%AE%BF%20-%20%E6%9C%89%E6%95%85%E4%BA%8B%E7%9A%84%E5%B0%8F%E4%BB%99%E5%A5%B3%EF%BC%88Cover%20%E5%88%9D%E9%9F%B3%E3%83%9F%E3%82%AF%EF%BC%89.mp3',
+      pic: '/images/aplayer/井宿 - 有故事的小仙女（Cover 初音ミク）.webp',
+    }, {
+      title: '拼凑的断音（Cover 洛天依）',
+      author: '泡泡Hansy',
+      url: '/music/%E6%B3%A1%E6%B3%A1Hansy%20-%20%E6%8B%BC%E5%87%91%E7%9A%84%E6%96%AD%E9%9F%B3%EF%BC%88Cover%20%E6%B4%9B%E5%A4%A9%E4%BE%9D%EF%BC%89.mp3',
+      pic: '/images/aplayer/泡泡Hansy - 拼凑的断音（Cover 洛天依）.webp',
+    }]
+  });
+</script>
+
+      </section>
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </header>
+
+      
   <div class="back-to-top">
     <i class="fa fa-chevron-up"></i>
     <span>0%</span>
   </div>
 
+<noscript>
+  <div id="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
 
-    <main class="main">
+
       <div class="main-inner">
-        <div class="content-wrap">
+        
+
+        <div class="content post posts-expand">
           
 
-          <div class="content">
-            
-
-  <div class="posts-expand">
-        
+    
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://qianling.pw/broadcasting-and-hosting-training-methods/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -290,6 +447,8 @@ if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="千灵">
     </span>
+
+    
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           《播音主持训练280法》书摘
@@ -298,28 +457,26 @@ if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间 2019-09-15 21:42:04" itemprop="dateCreated datePublished" datetime="2019-09-15T21:42:04+08:00">2019-09-15</time>
+              <time title="创建时间：2019-09-15 21:42:04" itemprop="dateCreated datePublished" datetime="2019-09-15T21:42:04+08:00">2019-09-15</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间 2019-10-11 12:27:51" itemprop="dateModified" datetime="2019-10-11T12:27:51+08:00">2019-10-11</time>
+                <time title="修改时间：2019-10-11 12:27:51" itemprop="dateModified" datetime="2019-10-11T12:27:51+08:00">2019-10-11</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
+                <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%92%AD%E9%9F%B3%E4%B8%8E%E4%B8%BB%E6%8C%81%E8%89%BA%E6%9C%AF/" itemprop="url" rel="index">
-                    <span itemprop="name">播音与主持艺术</span>
-                  </a>
+                  <a href="/categories/%E6%92%AD%E9%9F%B3%E4%B8%8E%E4%B8%BB%E6%8C%81%E8%89%BA%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">播音与主持艺术</span></a>
                 </span>
             </span>
 
@@ -328,14 +485,13 @@ if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
-              <span class="post-meta-item-text">阅读次数 </span>
+              <span class="post-meta-item-text">阅读次数</span>
               <span class="leancloud-visitors-count"></span>
             </span>
   
   <span class="post-meta-item">
-  <i class="far fa-comment"></i>
     <a title="valine" href="/broadcasting-and-hosting-training-methods/#valine-comments" itemprop="discussionUrl">
-     评论数
+    <i class="far fa-comment"></i>评论数
       <span class="post-comments-count valine-comment-count" data-xid="/broadcasting-and-hosting-training-methods/" itemprop="commentCount"></span>
     </a>
   </span>
@@ -349,9 +505,7 @@ if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
-        <p><img data-src="/images/covers/152.png" alt=""></p>
+        <p><img data-src="/images/covers/152.png"></p>
 <a id="more"></a>
 
 <hr>
@@ -385,7 +539,7 @@ if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
 <h3 id="24-发好复合音"><a href="#24-发好复合音" class="headerlink" title="24　发好复合音"></a>24　发好复合音</h3><p>　　复合音包括复合元音和复合鼻尾音，也就是复韵母和鼻韵母。<br>　　复合音是由两个以上的音素组成的。复合元音是两个以上的元音组成，发音时从一个元音经过一系列元音滑到另一个元音。复合鼻尾音是由一个或两个元音再加鼻音 n 或者 ng 组成，发音时由元音过度到鼻音。<br>　　复合元音里面有的音开口大，有的音开口小。我们把开口大的在前面的称为前响音，有 ɑi、ɑo、ei、ou；把开口大的在后面的称为后响音，有 iɑ、 ie、uɑ 、uo、üe；把三个元音组成的复合元音称为中响音，有 iɑo、iou、uɑi、uei。<br>　　复合鼻尾音也有这样的特点，也可以把他们看作是前响和中响的复合音。前响的音有 ɑn、ɑng、en、eng、in、ing、ong、ün、iong；中响的音有 iɑn、iɑng、uɑn、uɑng、uen、ueng、üɑn。复合音有两点要说明的是，iong 实际上是接近 üng，应该视为前响音；ong 和 ɑo、iɑo 中的 o，实际应该发 u 或者接近 u 的音。发前响的复合音时，前面那个开口大的音，发的时间要长一点，发响亮，后面的音要短一点，不能太完整，中间的过渡要快。发后响音时，前面的元音要发得短一点，尽快过渡到后面的音上，后面开口大的元音要发得响亮。发中响音时，中间的元音要开口大，时间稍长一点，前后的过渡要快。</p>
 <h3 id="25-发好-iou（iu）、uei（ui）、uen（un）"><a href="#25-发好-iou（iu）、uei（ui）、uen（un）" class="headerlink" title="25　发好 iou（iu）、uei（ui）、uen（un）"></a>25　发好 iou（iu）、uei（ui）、uen（un）</h3><p>　　有三个原是中响音的复合音：iou、uei、uen，实际发音情况是复杂的。<br>　　中间的元音有的时候要发成中响，有的时候就不能发成中响，这个元音弱化，或者几乎消失。它们的变化与声调有关。在声调为阴平（第一声）、阳平（第二声）的时候，中间的那个元音在发音时或者变小，或者几乎没有发音；而在声调为上声（第三声）、去声（第四声）时，中间的元音要发音，或者较小，或者较亮。<br>　　中间元音的变化还与前面的声母有关。<br>　　具体请看下面的表：</p>
 <div><div class="fold_hider"><div class="close hider_title">展开图片</div></div><div class="fold">
-<p><img data-src="/images/posts/broadcasting-and-hosting-training-methods/broadcasting-and-hosting-training-methods-1.png" alt=""><br><img data-src="/images/posts/broadcasting-and-hosting-training-methods/broadcasting-and-hosting-training-methods-2.png" alt=""></p>
+<p><img data-src="/images/posts/broadcasting-and-hosting-training-methods/broadcasting-and-hosting-training-methods-1.png"><br><img data-src="/images/posts/broadcasting-and-hosting-training-methods/broadcasting-and-hosting-training-methods-2.png"></p>
 
 </div></div>
 
@@ -409,14 +563,14 @@ if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
 <h3 id="41-克服紧张"><a href="#41-克服紧张" class="headerlink" title="41　克服紧张"></a>41　克服紧张</h3><p>　　对于初学者来说，紧张是最容易出现的情况，克服紧张是第一步。什么是紧张？就是过多地注意别人对自己的注意。消除紧张的办法有很多，都是转移这种不必要的过多的注意，见自己的注意力集中在稿件上，也就是集中在要说的内容上。比如，把注意力集中在小注意圈内，即在一个台灯照射的范围内，忽略圈外的情况，就可能释放紧张。再如，全神贯注于稿件，努力思索着要说的话，也可能将其他事物连同紧张一起放置在一旁。<br>　　消除播音和主持的紧张，根本的办法是熟悉工作和环境，工作量积累到一定的程度，经历得多了，也就无所谓紧张不紧张了。无数次反复的重复，对于工作的程序，场上可能发生的一切及其结果都心中有数，就不会有太多的不适应，从而也就不会有什么紧张了。从这个意义上说，<strong>心理承受能力，是与心理的历程成正比的。</strong></p>
 <h3 id="42-把握稿件"><a href="#42-把握稿件" class="headerlink" title="42　把握稿件"></a>42　把握稿件</h3><p>　　播音员在工作之前要了解稿件的内容，理解和领会稿件的精神，做到心中有数。要从结构、主题、背景、目的、主次、基调几个方面入手：<br>　　<strong>结构</strong>——从总体上逐层分解稿件的结构，在心目中建立对稿件的框架性理解。<br>　　结构分析示意如下：</p>
 <div><div class="fold_hider"><div class="close hider_title">展开图片</div></div><div class="fold">
-<p><img data-src="/images/posts/broadcasting-and-hosting-training-methods/broadcasting-and-hosting-training-methods-3.png" alt=""></p>
+<p><img data-src="/images/posts/broadcasting-and-hosting-training-methods/broadcasting-and-hosting-training-methods-3.png"></p>
 
 </div></div>
 
 <p>　　<strong>主题</strong>——知道了稿件的结构、内容，进一步的思考就是稿件的主题。要考虑稿件说明了什么样的思想，什么样的观点。<br>　　<strong>背景</strong>——每一篇稿件都有其播出的具体背景。也就是说，就稿件所涉及的事物范围，从过去到当前的情况如何？在这个方面面临着哪些需要解决的问题？<br>　　<strong>目的</strong>——是指稿件对社会生活的指向性。知道播出的背景，就能明白本篇稿件对那些需要解决的问题的针对性。可能是为了说明、证明，可能是树立榜样，可能是借以警醒，……<br>　　<strong>重点</strong>——知道了主题，目的，就不难知道全篇的重点在何处了。直接说明主题目的的语句，或者与主题目的关系密切的语句，就是稿件的重点。重点语句在全篇的布局情况各种各样，但是把他们单独列出来，就会看出其中的联系。<br>　　<strong>基调</strong>——指全篇稿件播音整体的情感格调，基本色彩。基调是在前面分析领会的基础上把握的，与稿件内容、体裁风格有着密切的关系。如：某篇稿件通篇播得喜悦、明快；或者朴实、含蓄；或者严肃批评，等等。</p>
 <h3 id="43-感受"><a href="#43-感受" class="headerlink" title="43　感受"></a>43　感受</h3><p>　　感受是播音创作中的核心环节。也是人类语言表达的基本规律之一。<br>　　现实中人对客观世界会产生许许多多的感觉知觉。当人们在另一场合向他人诉说的时候，在说话的人身上会呈现出一种与原来真实的感觉、知觉类似的、微弱的内心和身体相关部位的反应，伴随着所说的话。聆听的人也有可能被引发出相似的内心活动。<br>　　这种非现实的由语言信号系统呼唤产生的内心和身体相关部位的反应被称为“感受”。生活中大多数的言语表达都是在这样规律之中的。<br>　　<strong>播音、主持时的语言表达一定要有相应的感受，才能刺激大脑带动人体的发音系统产生反应，才有可能使说出的话生动、形象，有感染力。</strong>很多人企图在一个个字音上用力来实现表达的效果，事实上不能奏效。<strong>而感受引起的声音色彩的变化才是真正能打动人的。</strong><br>　　由此可见，播音工作和主持工作不只是用声音工作，而是用身心工作，以自己的身心与听众观众交流。</p>
 <div><div class="fold_hider"><div class="close hider_title">展开图片</div></div><div class="fold">
-<p><img data-src="/images/posts/broadcasting-and-hosting-training-methods/broadcasting-and-hosting-training-methods-4.png" alt=""></p>
+<p><img data-src="/images/posts/broadcasting-and-hosting-training-methods/broadcasting-and-hosting-training-methods-4.png"></p>
 
 </div></div>
 
@@ -462,7 +616,7 @@ if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
 <h3 id="80-表现急缓情感的连与停"><a href="#80-表现急缓情感的连与停" class="headerlink" title="80　表现急缓情感的连与停"></a>80　表现急缓情感的连与停</h3><p>　　语言表达中，停和连是一对矛盾。<strong>停得短或者不停，相对正常的停顿来说，就是连。</strong>停短停长都要根据表达的需要来决定。<br>　　停和连还有表现急缓的特殊“功能”。<br>　　表现时间和情势的紧急，需要加快语速，但是，句子内部语速加快是有限的。<strong>如果把上句的句尾与下一句的句首连在一起，句子之间没有停顿，连上三四句，紧张的气氛就能显现出来。</strong><br>　　相反，如果句子之间的停顿从容，就不会产生急切的气氛。这一方法对于字数较多而又要求限时播完的稿件很有帮助。<strong>虽然将句子读得很快，甚至几个句子之间一口气说下来，只要在应该停顿的主要地方停得充分，仍然会产生从容不迫的稳步感觉，不使人感到急促。</strong>一次新闻节目做下来，能比正常播音多播一两条消息。</p>
 <h3 id="81-语句波形的变化"><a href="#81-语句波形的变化" class="headerlink" title="81　语句波形的变化"></a>81　语句波形的变化</h3><p>　　人们说话，是一字一字先后说出来的，字连起来就形成一条条的线，这些线总是高高低低地变化，形成了一种起伏的波形。不管说话人是否自觉，这样的波形都是存在着的。说出的话千差万别，由话语而形成的波形也是千差万别的。<br>　　波形与重音的表达有一定的关系。重音的地方往往是波形的高峰处，非重音的地方常常是波形的低谷，然而，这并不绝对。况且重音与重音的情况也不尽相同，波形变化也就千差万别了。波形还与停顿时的“扬停”和“落停”有关。<br>　　波形的变化还应该有声音的强弱轻重的变化，单线的波形表示坚柔、虚实就有一定的困难。如果一定要表现的话，就要把线条画成有粗有细的样子，有厚薄变化中的起落、有虚实相间里的攀俯，有细柔地飘过、有凝重地顿住、有尖巧地甩出……<br>　　波形线条的起伏，主要显示语句的音高音低的变化，这是在这一节练习中认识和掌握的重点。词语的快慢不同和强弱轻重的变化，虽然也可以在波形中得到显示，但不作为波形练习的重点，可以通过语气和节奏方面的练习解决。<br>　　虽然说波形多种多样，但是，归纳起来我们可以把它看作两个基本要素，即上升和下降。多种多样的上升和下降的组合，就构成了形态各异的波形。</p>
 <div><div class="fold_hider"><div class="close hider_title">展开图片</div></div><div class="fold">
-<p><img data-src="/images/posts/broadcasting-and-hosting-training-methods/broadcasting-and-hosting-training-methods-5.png" alt=""></p>
+<p><img data-src="/images/posts/broadcasting-and-hosting-training-methods/broadcasting-and-hosting-training-methods-5.png"></p>
 
 </div></div>
 
@@ -471,13 +625,13 @@ if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
 <h3 id="83-语句色彩与呼吸"><a href="#83-语句色彩与呼吸" class="headerlink" title="83　语句色彩与呼吸"></a>83　语句色彩与呼吸</h3><p>　　语句色彩是看不见，摸不着的。但是我们是能够辩认的，有一位表演艺术家说，“山”这个字，直白地说是一种说法。如果这座山很险峻；如果这座山很平缓；如果这座山摔死过人；如果这座山拣到过金子，那么这个“山”字的色彩就会说得很不相同。语句更是如此。<br>　　怎样来掌握和表现语句的感情色彩呢？呼吸可以作为标志。张颂教授的《朗读学》书中有明确的论述。我们抄录如下：<br>　　爱的语气一般是“气徐声柔”，<br>　　憎的语气一般是“气足声硬”，<br>　　悲的语气一般是“气沉声缓”，<br>　　喜的语气一般是“气满声高”，<br>　　惧的语气一般是“气提声凝”，<br>　　欲的语气一般是“气多声放”，<br>　　急的语气一般是“气短声促”，<br>　　<strong>冷的语气一般是“气少声平”，</strong><br>　　怒的语气一般是“气粗声重”，<br>　　疑的语气一般是“气细声粘（niɑ́n）”。<br>　　请大家从每一位优秀的播音员和主持人表达中体会这些语句色彩中的呼吸状态。看看他们是如何在呼吸的变化中表现出感情的意味。<br>　　当然，语句的色彩不只是以上这些，比如，诚恳的语气、感慨的语气，赞美的语气，等等，似乎都没有包括进去，需要我们自己进一步探索语气色彩的种类和发展。<br>　　特别提醒的是，造成语气变化的呼吸变化，来源于真实情感的变化。当我们呼唤语气的色彩变化时，不要忘记它的来源——自己内心的真情实感。</p>
 <h3 id="84-语气强弱、刚柔的分级练习"><a href="#84-语气强弱、刚柔的分级练习" class="headerlink" title="84　语气强弱、刚柔的分级练习"></a>84　语气强弱、刚柔的分级练习</h3><p>　　同一句话，同一类波形，同一种感情色彩，其感情色彩的强弱、刚柔可以有多种情况。可以按不同的情况来分级。<br>　　初学的练习可以暂时分为 5 个等级，练习各种不同情感的不同级别的语气。要以第 3 级为正常的语气，向下减弱，向上加强进行练习。低的级别语气是很淡的，高的级别语气十分强烈。<br>　　当 5 个级别的练习熟练之后，可以进行更细的分级练习。练习 8 个级别，练习 10 个级别。<br>　　这一练习也是一种存储，<strong>当我们的不同程度的语气存储多了，就可以随心所欲地调用，</strong>以最恰当的程度表达出来所需要的语气。<br>　　例如：美丽的春天走来了。（见附图）</p>
 <div><div class="fold_hider"><div class="close hider_title">展开图片</div></div><div class="fold">
-<p><img data-src="/images/posts/broadcasting-and-hosting-training-methods/broadcasting-and-hosting-training-methods-6.png" alt=""></p>
+<p><img data-src="/images/posts/broadcasting-and-hosting-training-methods/broadcasting-and-hosting-training-methods-6.png"></p>
 
 </div></div>
 
 <h3 id="85-句子的节拍"><a href="#85-句子的节拍" class="headerlink" title="85　句子的节拍"></a>85　句子的节拍</h3><p>　　音乐是有节拍的，也就是重复出现的音的长短强弱关系。语言中的节拍没有音乐中那样严格的规定，但也是有一定规律可循的。这里介绍两种情况。<br>　　＊ 句首第一个字说出的两种类型<br>　　强拍起说出和后半拍起说出（也就是弱起）。后半拍起方式用的较少。这两种方式都要掌握。根据具体表达的需要熟练运用。<br>　　＊ 节拍的变换<br>　　比如：“山西省太原市六味斋酱肉店门市部<br>……”。在这句话中，如果前面的每个三字词都用大约 2/4 的节拍说出来，就很不舒服。如果根据文义，“六味斋”三个字用 3/4 的节拍说出来，就改变了单调的节拍。丰富的节拍变化合理运用于播音和主持的语言中，将会增添语言的美感。<br>　　有时，在适当的地方，在某一拍中，从每拍两字改变为每拍三、四个字，然后又回到每拍两字。这样的变化也会有形式美感。</p>
 <div><div class="fold_hider"><div class="close hider_title">展开图片</div></div><div class="fold">
-<p><img data-src="/images/posts/broadcasting-and-hosting-training-methods/broadcasting-and-hosting-training-methods-7.png" alt=""></p>
+<p><img data-src="/images/posts/broadcasting-and-hosting-training-methods/broadcasting-and-hosting-training-methods-7.png"></p>
 
 </div></div>
 
@@ -621,7 +775,7 @@ if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
 <h3 id="213-知识竞赛的语言色彩区别"><a href="#213-知识竞赛的语言色彩区别" class="headerlink" title="213　知识竞赛的语言色彩区别"></a>213　知识竞赛的语言色彩区别</h3><p>　　知识竞赛节目中，主持人始终是场上的主角。语言量很大，不同语句要采用不同的色彩。<br>　　知识竞赛节目中主持人的话语有三个类型，要将三种类型的话语分别采用不同语气色彩区别开：<br>　　1. 竞赛的正式问题。问题题面的语句要以朗读的语气读出来。但是注意不要装腔作势。<br>　　2. 讲解规则的话。这样的话要以比较正式的口吻说出来。<br>　　3. 其他解释性的话，说明性的话，这一部分要比较轻松随意地说，千万不要一字一板地说。<br>　　三种语句，三种色彩，加上选手回答问题的声音色彩，构成了知识竞赛场上语言错落有致的色彩节奏。</p>
 <h3 id="214-呼唤场上的节奏波澜"><a href="#214-呼唤场上的节奏波澜" class="headerlink" title="214　呼唤场上的节奏波澜"></a>214　呼唤场上的节奏波澜</h3><p>　　无论选手回答问题的语调是什么样的，或高或低，或快或慢，当他回答正确的时候。主持人要给予肯定判断。选手回答的语调可能很高也可能很低，主持人判断语的语调要比选手回答的语调高一点。无论选手的声调高低，主持人接话的声调音高要与之衔接。尔后，主持人宣布加分的语调要再加高一点，并且扬起，呼唤场上的掌声。<br>　　主持人提问——选手回答——主持人判断——主持人宣布加分——观众掌声，这是一阶一阶的起伏波澜。知识竞赛的每一个问题都有这样一个波澜，就形成了全场的层层波澜。偶有回答不正确的遗憾，又给全场波澜添加了低回的节奏变换。</p>
 <div><div class="fold_hider"><div class="close hider_title">展开图片</div></div><div class="fold">
-<p><img data-src="/images/posts/broadcasting-and-hosting-training-methods/broadcasting-and-hosting-training-methods-3.png" alt=""></p>
+<p><img data-src="/images/posts/broadcasting-and-hosting-training-methods/broadcasting-and-hosting-training-methods-3.png"></p>
 
 </div></div>
 
@@ -749,10 +903,10 @@ if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
       <div class="popular-posts-title"><a href="\broadcasting-announcing-courses\" rel="bookmark">普通话考试及播音主持入门</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\mandarin\" rel="bookmark">《普通话语音》辅修笔记</a></div>
+      <div class="popular-posts-title"><a href="\pai\" rel="bookmark">从《圆桌派：菜市——食过返寻味》看谈话节目主持</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\pai\" rel="bookmark">从《圆桌派：菜市——食过返寻味》看谈话节目主持</a></div>
+      <div class="popular-posts-title"><a href="\reading-art\" rel="bookmark">《朗读艺术入门》笔记</a></div>
     </li>
   </ul>
 
@@ -789,16 +943,15 @@ if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
   
   
 
-  </div>
 
 
-          </div>
-          
+        </div>
+        
     <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
-    let activeClass = CONFIG.comments.activeClass;
+    let { activeClass } = CONFIG.comments;
     if (CONFIG.comments.storage) {
       activeClass = localStorage.getItem('comments_active') || activeClass;
     }
@@ -818,150 +971,13 @@ if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
   }
 </script>
 
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          文章目录
-        </li>
-        <li class="sidebar-nav-overview">
-          站点概览
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第一篇-语言表达基础训练"><span class="nav-text">第一篇　语言表达基础训练</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一章-发声吐字训练"><span class="nav-text">第一章　发声吐字训练</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-呼吸练习的准备"><span class="nav-text">1　呼吸练习的准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-为发声而吸气"><span class="nav-text">2　为发声而吸气</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-呼气相对保持吸气时的感觉"><span class="nav-text">3　呼气相对保持吸气时的感觉</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-初步发声"><span class="nav-text">4　初步发声</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-“管子”的意识"><span class="nav-text">5　“管子”的意识</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-腰部稳定"><span class="nav-text">6　腰部稳定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-正确唇形"><span class="nav-text">7　正确唇形</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-打开口腔"><span class="nav-text">8　打开口腔</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-发好-ɑ-音"><span class="nav-text">9　发好 ɑ 音</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-声音在口腔中的路线"><span class="nav-text">10　声音在口腔中的路线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-在-ɑ-的基础上发好-i，u，e，u"><span class="nav-text">11　在 ɑ 的基础上发好 i，u，e，ü</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-口腔里的珠球感"><span class="nav-text">12　口腔里的珠球感</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-上下扩展音域"><span class="nav-text">13　上下扩展音域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#14-丹田的意识"><span class="nav-text">14　丹田的意识</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#15-胸部支点的意识"><span class="nav-text">15　胸部支点的意识</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#16-防止肚脐中心"><span class="nav-text">16　防止肚脐中心</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#17-声调运动"><span class="nav-text">17　声调运动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#18-吐字要领"><span class="nav-text">18　吐字要领</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#19-声与字，腰腹与口腔"><span class="nav-text">19　声与字，腰腹与口腔</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#20-灵巧的舌头"><span class="nav-text">20　灵巧的舌头</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#21-胸腔共鸣的点与面"><span class="nav-text">21　胸腔共鸣的点与面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#22-鼻腔共鸣"><span class="nav-text">22　鼻腔共鸣</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#23-元音-ɑ-和-e-的位置变化"><span class="nav-text">23　元音 ɑ 和 e 的位置变化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#24-发好复合音"><span class="nav-text">24　发好复合音</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#25-发好-iou（iu）、uei（ui）、uen（un）"><span class="nav-text">25　发好 iou（iu）、uei（ui）、uen（un）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#26-发好-b-和-p"><span class="nav-text">26　发好 b 和 p</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#27-发好-d-和-t"><span class="nav-text">27　发好 d 和 t</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#28-发好-n-和-l"><span class="nav-text">28　发好 n 和 l</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#29-发好-g-组的辅音"><span class="nav-text">29　发好 g 组的辅音</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#30-发好-j-组的辅音"><span class="nav-text">30　发好 j 组的辅音</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#31-发好-zh-组的辅音"><span class="nav-text">31　发好 zh 组的辅音</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#32-发好-z-组的辅音"><span class="nav-text">32　发好 z 组的辅音</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#33-发好-m、n-和-ng"><span class="nav-text">33　发好 m、n 和 ng</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#34-送气音要用吸气的感觉发音"><span class="nav-text">34　送气音要用吸气的感觉发音</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#35-用词典帮助纠正语音错误"><span class="nav-text">35　用词典帮助纠正语音错误</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#36-绕口令"><span class="nav-text">36　绕口令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#37-练声要按计划进行"><span class="nav-text">37　练声要按计划进行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#38-练好不练坏，练慢不练快"><span class="nav-text">38　练好不练坏，练慢不练快</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#39-练声要练词和句"><span class="nav-text">39　练声要练词和句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#40-练声与创作之间的关系"><span class="nav-text">40　练声与创作之间的关系</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二章-语言心理训练"><span class="nav-text">第二章　语言心理训练</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#41-克服紧张"><span class="nav-text">41　克服紧张</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#42-把握稿件"><span class="nav-text">42　把握稿件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#43-感受"><span class="nav-text">43　感受</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#44-形象感受"><span class="nav-text">44　形象感受</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#45-集合抽象感受"><span class="nav-text">45　集合抽象感受</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#46-时空感受"><span class="nav-text">46　时空感受</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#46-时空感受-1"><span class="nav-text">46　时空感受</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#47-逻辑感受"><span class="nav-text">47　逻辑感受</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#48-感受的综合"><span class="nav-text">48　感受的综合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#49-感受的主观性"><span class="nav-text">49　感受的主观性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#50-情感是评价的体验"><span class="nav-text">50　情感是评价的体验</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#51-语言的情感状态离不开整体"><span class="nav-text">51　语言的情感状态离不开整体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#52-内心真实最重要"><span class="nav-text">52　内心真实最重要</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#53-内在语使表面语的意义更丰富"><span class="nav-text">53　内在语使表面语的意义更丰富</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#54-反向内在语"><span class="nav-text">54　反向内在语</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#55-内在语的链环作用"><span class="nav-text">55　内在语的链环作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#56-内在语的引导作用"><span class="nav-text">56　内在语的引导作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#57-内在语的自我提示"><span class="nav-text">57　内在语的自我提示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#58-寻找向人说话的感觉"><span class="nav-text">58　寻找向人说话的感觉</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#59-对多少人说"><span class="nav-text">59　对多少人说</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#60-想像听话人的反应"><span class="nav-text">60　想像听话人的反应</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#61-使对象感习惯成自然"><span class="nav-text">61　使对象感习惯成自然</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三章-语言形态训练"><span class="nav-text">第三章　语言形态训练</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#62-主次关系"><span class="nav-text">62　主次关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#63-重音"><span class="nav-text">63　重音</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#64-怎样判断重音"><span class="nav-text">64　怎样判断重音</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#65-寻找重音"><span class="nav-text">65　寻找重音</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#66-反义重音"><span class="nav-text">66　反义重音</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#67-重音词语与非重音词语之间的关系"><span class="nav-text">67　重音词语与非重音词语之间的关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#68-重音的表达"><span class="nav-text">68　重音的表达</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#69-语义需要的停顿"><span class="nav-text">69　语义需要的停顿</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#70-表现过程的停顿"><span class="nav-text">70　表现过程的停顿</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#71-表现心理活动的停顿"><span class="nav-text">71　表现心理活动的停顿</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#72-情感延续和蓄积的停顿"><span class="nav-text">72　情感延续和蓄积的停顿</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#73-制造悬念的停顿"><span class="nav-text">73　制造悬念的停顿</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#74-强调性停顿"><span class="nav-text">74　强调性停顿</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#75-扬停与落停"><span class="nav-text">75　扬停与落停</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#76-停顿时间"><span class="nav-text">76　停顿时间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#77-似停非停-非停似停"><span class="nav-text">77　似停非停　非停似停</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#78-克服半句停顿"><span class="nav-text">78　克服半句停顿</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#79-不能停顿的位置"><span class="nav-text">79　不能停顿的位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#80-表现急缓情感的连与停"><span class="nav-text">80　表现急缓情感的连与停</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#81-语句波形的变化"><span class="nav-text">81　语句波形的变化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#82-语句波形的“三忌”"><span class="nav-text">82　语句波形的“三忌”</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#83-语句色彩与呼吸"><span class="nav-text">83　语句色彩与呼吸</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#84-语气强弱、刚柔的分级练习"><span class="nav-text">84　语气强弱、刚柔的分级练习</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#85-句子的节拍"><span class="nav-text">85　句子的节拍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#86-多词长句的分组处理"><span class="nav-text">86　多词长句的分组处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#87-认识节奏"><span class="nav-text">87　认识节奏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#88-节奏变化的原则"><span class="nav-text">88　节奏变化的原则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#89-情感色彩形成节奏"><span class="nav-text">89　情感色彩形成节奏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#90-主次关系形成节奏"><span class="nav-text">90　主次关系形成节奏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#91-时空变换形成节奏"><span class="nav-text">91　时空变换形成节奏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#92-形象之间构成节奏"><span class="nav-text">92　形象之间构成节奏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#93-语言节奏与筋骨张弛"><span class="nav-text">93　语言节奏与筋骨张弛</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#94-词语的格式"><span class="nav-text">94　词语的格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#95-多词组合名词的读法"><span class="nav-text">95　多词组合名词的读法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#96-颗粒与语流"><span class="nav-text">96　颗粒与语流</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#97-括号和引号中内容的表达"><span class="nav-text">97　括号和引号中内容的表达</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第二篇-播音训练"><span class="nav-text">第二篇　播音训练</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第四章-新闻播音"><span class="nav-text">第四章　新闻播音</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#98-寻找新闻的新鲜点"><span class="nav-text">98　寻找新闻的新鲜点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#99-播前弄明白名词概念"><span class="nav-text">99　播前弄明白名词概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#100-说清事实"><span class="nav-text">100　说清事实</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#101-说明目的"><span class="nav-text">101　说明目的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#102-分寸得当"><span class="nav-text">102　分寸得当</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#103-朴实"><span class="nav-text">103　朴实</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#104-快速"><span class="nav-text">104　快速</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#105-流畅"><span class="nav-text">105　流畅</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#106-平心静气"><span class="nav-text">106　平心静气</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#107-轻巧的发声吐字"><span class="nav-text">107　轻巧的发声吐字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#108-开场白与结束语"><span class="nav-text">108　开场白与结束语</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#109-导语"><span class="nav-text">109　导语</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#110-尾语"><span class="nav-text">110　尾语</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#111-长句处理"><span class="nav-text">111　长句处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#112-时间要素的表达"><span class="nav-text">112　时间要素的表达</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#113-新闻中数字的表达"><span class="nav-text">113　新闻中数字的表达</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#114-新闻节目的节奏"><span class="nav-text">114　新闻节目的节奏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#115-新闻播音的人格形象"><span class="nav-text">115　新闻播音的人格形象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#116-声音形象"><span class="nav-text">116　声音形象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#117-体态形象"><span class="nav-text">117　体态形象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#118-口形"><span class="nav-text">118　口形</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#119-眼神与视线"><span class="nav-text">119　眼神与视线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#120-表情"><span class="nav-text">120　表情</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#121-化妆"><span class="nav-text">121　化妆</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#122-服装"><span class="nav-text">122　服装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#123-发型"><span class="nav-text">123　发型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#124-装饰品的问题"><span class="nav-text">124　装饰品的问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#125-讲新闻"><span class="nav-text">125　讲新闻</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#126-新闻播音的追求"><span class="nav-text">126　新闻播音的追求</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第五章-评论播音"><span class="nav-text">第五章　评论播音</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#127-突出论点"><span class="nav-text">127　突出论点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#128-逻辑严密"><span class="nav-text">128　逻辑严密</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#129-分量得当"><span class="nav-text">129　分量得当</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#130-道理与事实"><span class="nav-text">130　道理与事实</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#131-胸怀宽阔"><span class="nav-text">131　胸怀宽阔</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#132-播读文件"><span class="nav-text">132　播读文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第六章-通讯播音"><span class="nav-text">第六章　通讯播音</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#133-认识通讯播音"><span class="nav-text">133　认识通讯播音</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#134-阅读通讯稿"><span class="nav-text">134　阅读通讯稿</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#135-对比设计"><span class="nav-text">135　对比设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#136-像说话那样播讲通讯"><span class="nav-text">136　像说话那样播讲通讯</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#137-人物语言"><span class="nav-text">137　人物语言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#138-用语言描绘环境场面"><span class="nav-text">138　用语言描绘环境场面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#139-动作感强"><span class="nav-text">139　动作感强</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#140-抒情议论"><span class="nav-text">140　抒情议论</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#141-表现时空"><span class="nav-text">141　表现时空</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第七章-电视片解说"><span class="nav-text">第七章　电视片解说</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#142-电视片解说的准备"><span class="nav-text">142　电视片解说的准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#143-解说处于“侧面”位置"><span class="nav-text">143　解说处于“侧面”位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#144-解说的主观色彩"><span class="nav-text">144　解说的主观色彩</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#145-不甩不唱"><span class="nav-text">145　不甩不唱</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#146-解说与画面对位"><span class="nav-text">146　解说与画面对位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#147-根据画面确定重音"><span class="nav-text">147　根据画面确定重音</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#148-全片连贯"><span class="nav-text">148　全片连贯</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#149-处理好与同期声的关系"><span class="nav-text">149　处理好与同期声的关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#150-开场和结尾的语句处理"><span class="nav-text">150　开场和结尾的语句处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#151-说明交代语句的表达"><span class="nav-text">151　说明交代语句的表达</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#152-概述语句的表达"><span class="nav-text">152　概述语句的表达</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#153-情节叙述的表达"><span class="nav-text">153　情节叙述的表达</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#154-比喻、比拟语句的表达"><span class="nav-text">154　比喻、比拟语句的表达</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#155-抒情语句的表达"><span class="nav-text">155　抒情语句的表达</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#156-议论说理语句的表达"><span class="nav-text">156　议论说理语句的表达</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#157-警句、格言的表达"><span class="nav-text">157　警句、格言的表达</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#158-两人对播"><span class="nav-text">158　两人对播</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#159-对播语气贯通"><span class="nav-text">159　对播语气贯通</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#160-对播语音和谐"><span class="nav-text">160　对播语音和谐</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第八章-广告播音"><span class="nav-text">第八章　广告播音</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#161-广告播音的特点"><span class="nav-text">161　广告播音的特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#162-广告播音形象的强烈个性"><span class="nav-text">162　广告播音形象的强烈个性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#163-充分的心理准备"><span class="nav-text">163　充分的心理准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#164-写实风格的广告语言形象"><span class="nav-text">164　写实风格的广告语言形象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#165-写意夸张风格的广告语言形象"><span class="nav-text">165　写意夸张风格的广告语言形象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#166-呼唤招揽式"><span class="nav-text">166　呼唤招揽式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#167-侃侃诉说式"><span class="nav-text">167　侃侃诉说式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#168-朗读朗诵式"><span class="nav-text">168　朗读朗诵式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#169-情节叙述式"><span class="nav-text">169　情节叙述式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#170-热情赞颂式"><span class="nav-text">170　热情赞颂式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#171-角色对话式"><span class="nav-text">171　角色对话式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#172-说明讲解式"><span class="nav-text">172　说明讲解式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#173-推理论证式"><span class="nav-text">173　推理论证式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#174-操作展示式"><span class="nav-text">174　操作展示式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#175-两人对播式"><span class="nav-text">175　两人对播式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#176-对比与层次"><span class="nav-text">176　对比与层次</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#177-与广告中的字幕呼应"><span class="nav-text">177　与广告中的字幕呼应</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#178-广告播音与画面一致"><span class="nav-text">178　广告播音与画面一致</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#179-与画面中的人物动作协调"><span class="nav-text">179　与画面中的人物动作协调</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#180-广告播音与音乐歌曲的结合"><span class="nav-text">180　广告播音与音乐歌曲的结合</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第三篇-主持人语言表达训练"><span class="nav-text">第三篇　主持人语言表达训练</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第九章-主持人一般表达"><span class="nav-text">第九章　主持人一般表达</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#181-主持人在节目中的作用"><span class="nav-text">181　主持人在节目中的作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#182-主持人语言特点"><span class="nav-text">182　主持人语言特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#183-主持人语言风格要个性化"><span class="nav-text">183　主持人语言风格要个性化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#184-主持人是谁"><span class="nav-text">184　主持人是谁</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#185-个性——知识和能力"><span class="nav-text">185　个性——知识和能力</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#186-个性——审美情趣"><span class="nav-text">186　个性——审美情趣</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#187-个性——性格"><span class="nav-text">187　个性——性格</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#188-个性——音色和腔调"><span class="nav-text">188　个性——音色和腔调</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#189-个性——年龄"><span class="nav-text">189　个性——年龄</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#190-个性——语言节奏型"><span class="nav-text">190　个性——语言节奏型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#191-个性——体态举止"><span class="nav-text">191　个性——体态举止</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#192-个性——表情和眼神"><span class="nav-text">192　个性——表情和眼神</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#193-个性——修辞特征"><span class="nav-text">193　个性——修辞特征</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#194-常说的话要常讲常新"><span class="nav-text">194　常说的话要常讲常新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#195-与听众观众“一同”听看节目"><span class="nav-text">195　与听众观众“一同”听看节目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#196-“三点双方”的交流"><span class="nav-text">196　“三点双方”的交流</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#197-真听真想真问真答"><span class="nav-text">197　真听真想真问真答</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#198-两名主持人的语言设计"><span class="nav-text">198　两名主持人的语言设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#199-主持人的幽默"><span class="nav-text">199　主持人的幽默</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#200-掩饰错误而不是强调错误"><span class="nav-text">200　掩饰错误而不是强调错误</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#201-随机应变"><span class="nav-text">201　随机应变</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#202-尽快记住主持词"><span class="nav-text">202　尽快记住主持词</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第十章-主持各类节目"><span class="nav-text">第十章　主持各类节目</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#203-新闻类专栏节目中主持人评说"><span class="nav-text">203　新闻类专栏节目中主持人评说</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#204-高度责任感和强烈的良知"><span class="nav-text">204　高度责任感和强烈的良知</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#205-具有记者编辑的基本功"><span class="nav-text">205　具有记者编辑的基本功</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#206-说好自己的话"><span class="nav-text">206　说好自己的话</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#207-小朋友的大朋友"><span class="nav-text">207　小朋友的大朋友</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#208-沉浸在童心里面"><span class="nav-text">208　沉浸在童心里面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#209-儿童教育心理学的专家"><span class="nav-text">209　儿童教育心理学的专家</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#210-知识竞赛中的一般提问方式"><span class="nav-text">210　知识竞赛中的一般提问方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#211-抢答题的提问方式"><span class="nav-text">211　抢答题的提问方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#212-怎样判断知识竞赛的答案"><span class="nav-text">212　怎样判断知识竞赛的答案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#213-知识竞赛的语言色彩区别"><span class="nav-text">213　知识竞赛的语言色彩区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#214-呼唤场上的节奏波澜"><span class="nav-text">214　呼唤场上的节奏波澜</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#215-把握全场节奏"><span class="nav-text">215　把握全场节奏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#216-知识竞赛场上的步伐"><span class="nav-text">216　知识竞赛场上的步伐</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#217-主持综艺节目的欢乐心情"><span class="nav-text">217　主持综艺节目的欢乐心情</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#218-兼顾现场观众和电视机前观众"><span class="nav-text">218　兼顾现场观众和电视机前观众</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#219-带领观众的情绪和气氛"><span class="nav-text">219　带领观众的情绪和气氛</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#220-文艺主持人的理论修养"><span class="nav-text">220　文艺主持人的理论修养</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#221-文艺节目主持人的形体训练"><span class="nav-text">221　文艺节目主持人的形体训练</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#222-深刻独到的体育见解"><span class="nav-text">222　深刻独到的体育见解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#223-即兴组织语言的功夫"><span class="nav-text">223　即兴组织语言的功夫</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#224-创造多种体育解说风格"><span class="nav-text">224　创造多种体育解说风格</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#225-体育精神的体现"><span class="nav-text">225　体育精神的体现</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第十一章-主持人现场采访"><span class="nav-text">第十一章　主持人现场采访</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#226-广播电视采访的特征"><span class="nav-text">226　广播电视采访的特征</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#227-广播现场报道采录音响表现现场"><span class="nav-text">227　广播现场报道采录音响表现现场</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#228-电视主持人替观众感知现场"><span class="nav-text">228　电视主持人替观众感知现场</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#229-采访提问要有明确的思路"><span class="nav-text">229　采访提问要有明确的思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#230-拓展思路"><span class="nav-text">230　拓展思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#231-及时调整思路"><span class="nav-text">231　及时调整思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#232-面对被采访人"><span class="nav-text">232　面对被采访人</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#233-将思路分解为具体问题"><span class="nav-text">233　将思路分解为具体问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#234-围绕新闻要素提问"><span class="nav-text">234　围绕新闻要素提问</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#235-围绕主题和目的提问"><span class="nav-text">235　围绕主题和目的提问</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#236-防止诱供式提问"><span class="nav-text">236　防止诱供式提问</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#237-用逻辑推理引导采访深入"><span class="nav-text">237　用逻辑推理引导采访深入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#238-从一般问个别，从个别问一般"><span class="nav-text">238　从一般问个别，从个别问一般</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#239-演绎推理引导采访"><span class="nav-text">239　演绎推理引导采访</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#240-归纳推理引导采访"><span class="nav-text">240　归纳推理引导采访</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#241-类比推理引导采访"><span class="nav-text">241　类比推理引导采访</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#242-以求证的方式引导采访"><span class="nav-text">242　以求证的方式引导采访</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#243-在对比中挖掘新闻事实"><span class="nav-text">243　在对比中挖掘新闻事实</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#244-开放与闭合问题"><span class="nav-text">244　开放与闭合问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#245-半开放式和半闭合式问题"><span class="nav-text">245　半开放式和半闭合式问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#246-划分式提问"><span class="nav-text">246　划分式提问</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#247-设定"><span class="nav-text">247　设定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#248-及时追问"><span class="nav-text">248　及时追问</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#249-蕴含命题的提问"><span class="nav-text">249　蕴含命题的提问</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#250-通用问题"><span class="nav-text">250　通用问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#251-提问的铺垫"><span class="nav-text">251　提问的铺垫</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#252-采访中的过渡"><span class="nav-text">252　采访中的过渡</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#253-现场报道中的话筒使用"><span class="nav-text">253　现场报道中的话筒使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#254-与摄像师形成默契"><span class="nav-text">254　与摄像师形成默契</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第十二章-主持人访谈"><span class="nav-text">第十二章　主持人访谈</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#255-充分的谈话准备"><span class="nav-text">255　充分的谈话准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#256-设计好首问"><span class="nav-text">256　设计好首问</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#257-“挑战”和“尖锐”的问题"><span class="nav-text">257　“挑战”和“尖锐”的问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#258-谈话节目中的问题“聚焦”"><span class="nav-text">258　谈话节目中的问题“聚焦”</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#259-提问的多样性"><span class="nav-text">259　提问的多样性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#260-谈话节目中的两难问题"><span class="nav-text">260　谈话节目中的两难问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#261-建立思维立体空间"><span class="nav-text">261　建立思维立体空间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#262-软化问题与硬化问题"><span class="nav-text">262　软化问题与硬化问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#263-不要忘记对个人命运提问"><span class="nav-text">263　不要忘记对个人命运提问</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#264-问题顺序的节奏"><span class="nav-text">264　问题顺序的节奏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#265-每一场访谈都要有特色"><span class="nav-text">265　每一场访谈都要有特色</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#266-别让对方逃脱"><span class="nav-text">266　别让对方逃脱</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#267-扩展谈话领域"><span class="nav-text">267　扩展谈话领域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#268-主持人的引导和控制"><span class="nav-text">268　主持人的引导和控制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#269-主持人的倾听应答"><span class="nav-text">269　主持人的倾听应答</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#270-谈话时的接语提示"><span class="nav-text">270　谈话时的接语提示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#271-语言交流过程中的期待"><span class="nav-text">271　语言交流过程中的期待</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#272-搭话"><span class="nav-text">272　搭话</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#273-用补充来纠正片面"><span class="nav-text">273　用补充来纠正片面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#274-暗示引导谈话的走向"><span class="nav-text">274　暗示引导谈话的走向</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#275-提示要点的归纳方法"><span class="nav-text">275　提示要点的归纳方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#276-重复与解释"><span class="nav-text">276　重复与解释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#277-主持人的评议"><span class="nav-text">277　主持人的评议</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#278-抽屉法则"><span class="nav-text">278　抽屉法则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#279-控制时间"><span class="nav-text">279　控制时间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#280-缝合严密"><span class="nav-text">280　缝合严密</span></a></li></ol></li></ol></li></ol></div>
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="千灵夙赋"
-      src="/images/avatar.png">
-  <p class="site-author-name" itemprop="name">千灵夙赋</p>
-  <div class="site-description" itemprop="description"></div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives/">
-        
-          <span class="site-state-item-count">166</span>
-          <span class="site-state-item-name">日志</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-            <a href="/categories/">
-          
-        <span class="site-state-item-count">37</span>
-        <span class="site-state-item-name">分类</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/tags/">
-        <span class="site-state-item-count">46</span>
-        <span class="site-state-item-name">标签</span></a>
-      </div>
-  </nav>
-</div>
-  <div class="links-of-author motion-element">
-      <span class="links-of-author-item">
-        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
-      </span>
-  </div>
-
-
-  <div class="links-of-blogroll motion-element">
-    <div class="links-of-blogroll-title">
-      <i class="fa fa-fw fa-link"></i>
-      Friends
-    </div>
-    <ul class="links-of-blogroll-list">
-        <li class="links-of-blogroll-item">
-          <a href="http://myloveru.cn/" title="http:&#x2F;&#x2F;myloveru.cn&#x2F;" rel="noopener" target="_blank">梦想博客</a>
-        </li>
-        <li class="links-of-blogroll-item">
-          <a href="https://meow3.family.blog/" title="https:&#x2F;&#x2F;meow3.family.blog&#x2F;" rel="noopener" target="_blank">恶魔菌の记事簿</a>
-        </li>
-        <li class="links-of-blogroll-item">
-          <a href="https://tding.top/" title="https:&#x2F;&#x2F;tding.top&#x2F;" rel="noopener" target="_blank">小丁的个人博客</a>
-        </li>
-        <li class="links-of-blogroll-item">
-          <a href="https://www.julydate.com/" title="https:&#x2F;&#x2F;www.julydate.com&#x2F;" rel="noopener" target="_blank">七夏浅笑</a>
-        </li>
-        <li class="links-of-blogroll-item">
-          <a href="https://raspii.tech/" title="https:&#x2F;&#x2F;raspii.tech&#x2F;" rel="noopener" target="_blank">无用挂件</a>
-        </li>
-    </ul>
-  </div>
-<div id="aplayer" class="aplayer"></div>
-<script>
-if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
-  document.write('<script type="text/javascript" src="/js/custom/APlayer.min.js"><\/script>');
-}
-</script>
-<script type="text/javascript">
-var ap = new APlayer({
-    element: document.getElementById('aplayer'),                       // Optional, player element
-    narrow: false,                                                     // Optional, narrow style
-    autoplay: false,                                                    // Optional, autoplay song(s), not supported by mobile browsers
-    showlrc: 0,                                                        // Optional, show lrc, can be 0, 1, 2, see: ###With lrc
-    mutex: true,                                                       // Optional, pause other players when this player playing
-    theme: '#e6d0b2',                                                  // Optional, theme color, default: #b7daff
-    mode: 'random',                                                    // Optional, play mode, can be `random` `single` `circulation`(loop) `order`(no loop), default: `circulation`
-    preload: 'metadata',                                               // Optional, the way to load music, can be 'none' 'metadata' 'auto', default: 'auto'
-    listmaxheight: '513px',                                             // Optional, max height of play list
-    music: [{
-      title: '世末歌者',
-      author: '双笙 囧菌',
-      url: '/music/%E5%8F%8C%E7%AC%99%20%E5%9B%A7%E8%8F%8C%20-%20%E4%B8%96%E6%9C%AB%E6%AD%8C%E8%80%85.mp3',
-      pic: '/images/aplayer/双笙　囧菌 - 世末歌者.webp',
-    }, {
-      title: '幹物女(WeiWei)',
-      author: '封茗囧菌',
-      url: '/music/%E5%B0%81%E8%8C%97%E5%9B%A7%E8%8F%8C%20-%20%E5%B9%B9%E7%89%A9%E5%A5%B3(WeiWei).mp3',
-      pic: '/images/aplayer/封茗囧菌 - 幹物女(WeiWei).webp',
-    }, {
-      title: '东京不太热',
-      author: '封茗囧菌',
-      url: '/music/%E5%B0%81%E8%8C%97%E5%9B%A7%E8%8F%8C%20-%20%E4%B8%9C%E4%BA%AC%E4%B8%8D%E5%A4%AA%E7%83%AD.mp3',
-      pic: '/images/aplayer/封茗囧菌 - 东京不太热.webp',
-    }, {
-      title: '有故事的小仙女（Cover 初音ミク）',
-      author: '井宿',
-      url: '/music/%E4%BA%95%E5%AE%BF%20-%20%E6%9C%89%E6%95%85%E4%BA%8B%E7%9A%84%E5%B0%8F%E4%BB%99%E5%A5%B3%EF%BC%88Cover%20%E5%88%9D%E9%9F%B3%E3%83%9F%E3%82%AF%EF%BC%89.mp3',
-      pic: '/images/aplayer/井宿 - 有故事的小仙女（Cover 初音ミク）.webp',
-    }, {
-      title: '拼凑的断音（Cover 洛天依）',
-      author: '泡泡Hansy',
-      url: '/music/%E6%B3%A1%E6%B3%A1Hansy%20-%20%E6%8B%BC%E5%87%91%E7%9A%84%E6%96%AD%E9%9F%B3%EF%BC%88Cover%20%E6%B4%9B%E5%A4%A9%E4%BE%9D%EF%BC%89.mp3',
-      pic: '/images/aplayer/泡泡Hansy - 拼凑的断音（Cover 洛天依）.webp',
-    }]
-  });
-</script>
-
-      </div>
-
-    </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
       </div>
     </main>
 
     <footer class="footer">
       <div class="footer-inner">
+        
+
         
 
 <div class="copyright">
@@ -976,10 +992,10 @@ var ap = new APlayer({
 
         
 <div class="busuanzi-count">
-  <script pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
       <span class="post-meta-item-icon">
-        <i class="fa fa-"></i>你是第
+        <i class=""></i>你是第
       </span>
       <span class="site-uv" title="总访客量">
         <span id="busuanzi_value_site_uv"></span>位到访的小伙伴喔
@@ -988,7 +1004,7 @@ var ap = new APlayer({
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
       <span class="post-meta-item-icon">
-        <i class="fa fa-"></i>本站已被访问
+        <i class=""></i>本站已被访问
       </span>
       <span class="site-pv" title="总访问量">
         <span id="busuanzi_value_site_pv"></span>次啦
@@ -1001,30 +1017,30 @@ var ap = new APlayer({
 
 
 
-  <script pjax>
-  function leancloudSelector(url) {
-    url = encodeURI(url);
-    return document.getElementById(url).querySelector('.leancloud-visitors-count');
-  }
-  if (CONFIG.page.isPost) {
-    function addCount(Counter) {
-      var visitors = document.querySelector('.leancloud_visitors');
-      var url = decodeURI(visitors.getAttribute('id'));
-      var title = visitors.getAttribute('data-flag-title');
+<script data-pjax>
+  (function() {
+    function leancloudSelector(url) {
+      url = encodeURI(url);
+      return document.getElementById(url).querySelector('.leancloud-visitors-count');
+    }
 
-      Counter('get', `/classes/Counter?where=${JSON.stringify({ url })}`)
+    function addCount(Counter) {
+      const visitors = document.querySelector('.leancloud_visitors');
+      const url = decodeURI(visitors.id);
+      const title = visitors.dataset.flagTitle;
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url })))
         .then(response => response.json())
         .then(({ results }) => {
           if (results.length > 0) {
-            var counter = results[0];
-              leancloudSelector(url).innerText = counter.time + 1;
+            const counter = results[0];
+            leancloudSelector(url).innerText = counter.time + 1;
             Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
-              .then(response => response.json())
               .catch(error => {
                 console.error('Failed to save visitor count', error);
-              })
+              });
           } else {
-              Counter('post', '/classes/Counter', { title: title, url: url, time: 1 })
+              Counter('post', '/classes/Counter', { title, url, time: 1 })
                 .then(response => response.json())
                 .then(() => {
                   leancloudSelector(url).innerText = 1;
@@ -1038,48 +1054,34 @@ var ap = new APlayer({
           console.error('LeanCloud Counter Error', error);
         });
     }
-  } else {
+
     function showTime(Counter) {
-      var visitors = document.querySelectorAll('.leancloud_visitors');
-      var entries = [...visitors].map(element => {
-        return decodeURI(element.getAttribute('id'));
+      const visitors = document.querySelectorAll('.leancloud_visitors');
+      const entries = [...visitors].map(element => {
+        return decodeURI(element.id);
       });
 
-      Counter('get', `/classes/Counter?where=${JSON.stringify({ url: { '$in': entries } })}`)
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url: { '$in': entries } })))
         .then(response => response.json())
         .then(({ results }) => {
-          if (results.length === 0) {
-            document.querySelectorAll('.leancloud_visitors .leancloud-visitors-count').forEach(element => {
-              element.innerText = 0;
-            });
-            return;
-          }
-          for (let item of results) {
-            let { url, time } = item;
-            leancloudSelector(url).innerText = time;
-          }
           for (let url of entries) {
-            var element = leancloudSelector(url);
-            if (element.innerText == '') {
-              element.innerText = 0;
-            }
+            let target = results.find(item => item.url === url);
+            leancloudSelector(url).innerText = target ? target.time : 0;
           }
         })
         .catch(error => {
           console.error('LeanCloud Counter Error', error);
         });
     }
-  }
 
-  fetch('https://app-router.leancloud.cn/2/route?appId=zulMeib4pyC6zB1a65OmVtHz-gzGzoHsz')
-    .then(response => response.json())
-    .then(({ api_server }) => {
-      var Counter = (method, url, data) => {
-        return fetch(`https://${api_server}/1.1${url}`, {
-          method: method,
+    let { app_id, app_key, server_url } = {"enable":true,"app_id":"zulMeib4pyC6zB1a65OmVtHz-gzGzoHsz","app_key":"TEjUlOUBz3KwSUmDQ35ROxpw","server_url":null,"security":false};
+    function fetchData(api_server) {
+      const Counter = (method, url, data) => {
+        return fetch(`${api_server}/1.1${url}`, {
+          method,
           headers: {
-            'X-LC-Id'     : 'zulMeib4pyC6zB1a65OmVtHz-gzGzoHsz',
-            'X-LC-Key'    : 'TEjUlOUBz3KwSUmDQ35ROxpw',
+            'X-LC-Id'     : app_id,
+            'X-LC-Key'    : app_key,
             'Content-Type': 'application/json',
           },
           body: JSON.stringify(data)
@@ -1091,8 +1093,21 @@ var ap = new APlayer({
       } else if (document.querySelectorAll('.post-title-link').length >= 1) {
         showTime(Counter);
       }
-    });
-  </script>
+    }
+
+    const api_server = app_id.slice(-9) !== '-MdYXbMMI' ? server_url : `https://${app_id.slice(0, 8).toLowerCase()}.api.lncldglobal.com`;
+
+    if (api_server) {
+      fetchData(api_server);
+    } else {
+      fetch('https://app-router.leancloud.cn/2/route?appId=' + app_id)
+        .then(response => response.json())
+        .then(({ api_server }) => {
+          fetchData('https://' + api_server);
+        });
+    }
+  })();
+</script>
 
 
       </div>
@@ -1101,12 +1116,10 @@ var ap = new APlayer({
 
   
   <script src="/lib/anime.min.js"></script>
-  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/next-theme/pjax@0/pjax.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
-  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
 
 <script src="/js/utils.js"></script>
 
@@ -1122,47 +1135,19 @@ var ap = new APlayer({
 var pjax = new Pjax({
   selectors: [
     'head title',
-    '#page-configurations',
-    '.content-wrap',
+    '.page-configurations',
+    '.main-inner',
     '.post-toc-wrap',
-    '#pjax'
+    '.languages',
+    '.pjax'
   ],
-  switches: {
-    '.post-toc-wrap': Pjax.switches.innerHTML
-  },
   analytics: false,
   cacheBust: false,
   scrollTo : !CONFIG.bookmark.enable
 });
 
-window.addEventListener('pjax:success', () => {
-  document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
-    var code = element.text || element.textContent || element.innerHTML || '';
-    var parent = element.parentNode;
-    parent.removeChild(element);
-    var script = document.createElement('script');
-    if (element.id) {
-      script.id = element.id;
-    }
-    if (element.className) {
-      script.className = element.className;
-    }
-    if (element.type) {
-      script.type = element.type;
-    }
-    if (element.src) {
-      script.src = element.src;
-      // Force synchronous loading of peripheral JS.
-      script.async = false;
-    }
-    if (element.getAttribute('pjax') !== null) {
-      script.setAttribute('pjax', '');
-    }
-    if (code !== '') {
-      script.appendChild(document.createTextNode(code));
-    }
-    parent.appendChild(script);
-  });
+document.addEventListener('pjax:success', () => {
+  pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
   NexT.boot.refresh();
   // Define Motion Sequence & Bootstrap Motion.
   if (CONFIG.motion.enable) {
@@ -1172,27 +1157,19 @@ window.addEventListener('pjax:success', () => {
       .add(NexT.motion.middleWares.postList)
       .bootstrap();
   }
+  const hasTOC = document.querySelector('.post-toc');
+  document.querySelector('.sidebar-inner').classList.toggle('sidebar-nav-active', hasTOC);
+  document.querySelector(hasTOC ? '.sidebar-nav-toc' : '.sidebar-nav-overview').click();
   NexT.utils.updateSidebarPosition();
 });
 </script>
 
 
-
-
   
-  <script pjax>
-    (function(){
-      var bp = document.createElement('script');
-      var curProtocol = window.location.protocol.split(':')[0];
-      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(bp, s);
-    })();
-  </script>
 
 
 
-  <script pjax>
+  <script data-pjax>
   if (CONFIG.page.isPost) {
     wpac_init = window.wpac_init || [];
     wpac_init.push({
@@ -1228,46 +1205,30 @@ window.addEventListener('pjax:success', () => {
 
 
 
-    <div id="pjax">
+    <div class="pjax">
   
 
   
-  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/quicklink@2/dist/quicklink.umd.js"></script>
   <script>
       window.addEventListener('load', () => {
-      quicklink({
-        timeout: 3000,
+      quicklink.listen({
+        timeout : 3000,
         priority: true,
-        ignores: [uri => uri.includes('#'),uri => uri == 'https://qianling.pw/broadcasting-and-hosting-training-methods/',]
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://qianling.pw/broadcasting-and-hosting-training-methods/',]
       });
       });
   </script>
 
 
 <script>
-NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
-  NexT.utils.getScript('https://qianling-1254036047.cos.ap-chengdu.myqcloud.com/js/Valine.min.js', () => {
-    var GUEST = ['nick', 'mail', 'link'];
-    var guest = 'nick,mail,link';
-    guest = guest.split(',').filter(item => {
-      return GUEST.includes(item);
-    });
-    new Valine({
-      el         : '#valine-comments',
-      verify     : false,
-      notify     : false,
-      appId      : 'zulMeib4pyC6zB1a65OmVtHz-gzGzoHsz',
-      appKey     : 'TEjUlOUBz3KwSUmDQ35ROxpw',
-      placeholder: "biu biu~　||ヽ(*￣▽￣*)ノミ|Ю",
-      avatar     : 'wavatar',
-      meta       : guest,
-      pageSize   : '10' || 10,
-      visitor    : false,
-      lang       : 'zh-cn' || 'zh-cn',
-      path       : location.pathname,
-      recordIP   : false,
-      serverURLs : ''
-    });
+NexT.utils.loadComments('#valine-comments', () => {
+  NexT.utils.getScript('/js/custom/Valine.min.js', () => {
+    new Valine(Object.assign({
+      el  : '#valine-comments',
+      path: location.pathname,
+    }, {"enable":true,"appId":"zulMeib4pyC6zB1a65OmVtHz-gzGzoHsz","appKey":"TEjUlOUBz3KwSUmDQ35ROxpw","placeholder":"biu biu~　||ヽ(*￣▽￣*)ノミ|Ю","avatar":"wavatar","meta":["nick","mail","link"],"pageSize":10,"language":"zh-cn","visitor":false,"comment_count":true,"recordIP":false,"serverURLs":null,"enableQQ":true,"requiredFields":[]}
+    ));
   }, window.Valine);
 });
 </script>

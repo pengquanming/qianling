@@ -4,21 +4,25 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
+<meta name="generator" content="Hexo 5.0.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
 <link rel="stylesheet" href="/css/main.css">
 
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic|ZCOOL XiaoWei:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
-<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/5.10.0-11/css/all.min.css">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.css">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto+Serif+SC:300,300italic,400,400italic,700,700italic|ZCOOL+XiaoWei:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  
+  <link rel="stylesheet" href="/lib/animate-css/animate.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.min.css">
   <script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
 
-<script id="hexo-configurations">
+<script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"qianling.pw","root":"/","scheme":"Muse","version":"7.7.1","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"qianling.pw","root":"/","scheme":"Muse","version":"8.0.0-rc.5","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":true,"nav":null,"activeClass":"valine"},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"none","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"path":"search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true}};
   </script>
 
   <meta property="og:type" content="article">
@@ -31,27 +35,27 @@
 <meta property="article:published_time" content="2018-03-30T05:47:07.000Z">
 <meta property="article:modified_time" content="2018-08-11T16:00:00.000Z">
 <meta property="article:author" content="千灵夙赋">
-<meta property="article:tag" content="&#x2F;system&#x2F;vendor&#x2F;etc">
-<meta property="article:tag" content="小米5去除底噪">
+<meta property="article:tag" content="Android">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://qianling.pw/images/covers/124.webp">
 
 <link rel="canonical" href="https://qianling.pw/miui-noise/">
 
 
-<script id="page-configurations">
+<script data-pjax class="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: false,
-    isPost: true
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
   };
 </script>
 
   <title>去除 MIUI 底噪 | 千灵</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141264217-1"></script>
-    <script pjax>
+    <script data-pjax>
       if (CONFIG.hostname === location.hostname) {
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
@@ -61,7 +65,7 @@
     </script>
 
 
-  <script pjax>
+  <script data-pjax>
     var _hmt = _hmt || [];
     (function() {
       var hm = document.createElement("script");
@@ -76,24 +80,36 @@
 
   <noscript>
   <style>
-  .use-motion .brand,
+  body { margin-top: 2rem; }
+
   .use-motion .menu-item,
-  .sidebar-inner,
+  .use-motion .sidebar,
   .use-motion .post-block,
   .use-motion .pagination,
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
 
   .use-motion .site-title,
-  .use-motion .site-subtitle {
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
     opacity: initial;
     top: initial;
   }
 
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
   </style>
 </noscript>
 
@@ -104,67 +120,70 @@
   <div class="container use-motion">
     <div class="headband"></div>
 
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
+    <main class="main">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
     </div>
   </div>
 
   <div class="site-meta">
 
-    <div>
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">千灵</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">千灵</h1>
+      <i class="logo-line"></i>
+    </a>
   </div>
 
-  <div class="site-nav-right"></div>
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
 </div>
 
 
+
 <nav class="site-nav">
-  
-  <ul id="menu" class="menu">
+  <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-fw fa-star-half-alt"></i>首页</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-democrat"></i>归档</a>
+    <a href="/" rel="section"><i class="fa fa-star-half-alt fa-fw"></i>首页</a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-dove"></i>分类</a>
+    <a href="/categories/" rel="section"><i class="fa fa-dove fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-democrat fa-fw"></i>归档</a>
 
   </li>
         <li class="menu-item menu-item-daily">
 
-    <a href="/daily" rel="section"><i class="fa fa-fw fa-ghost"></i>碎念</a>
+    <a href="/daily" rel="section"><i class="fa fa-ghost fa-fw"></i>碎念</a>
 
   </li>
         <li class="menu-item menu-item-play">
 
-    <a href="/play" rel="section"><i class="fa fa-fw fa-fish"></i>游戏</a>
+    <a href="/play" rel="section"><i class="fa fa-fish fa-fw"></i>游戏</a>
 
   </li>
         <li class="menu-item menu-item-comments">
 
-    <a href="/comments" rel="section"><i class="fa fa-fw fa-dog"></i>留言</a>
+    <a href="/comments" rel="section"><i class="fa fa-dog fa-fw"></i>留言</a>
 
   </li>
         <li class="menu-item menu-item-about">
 
-    <a href="/about/" rel="section"><i class="fa fa-fw fa-carrot"></i>关于</a>
+    <a href="/about/" rel="section"><i class="fa fa-carrot fa-fw"></i>关于</a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -172,16 +191,18 @@
         </a>
       </li>
   </ul>
-
 </nav>
-  <div class="site-search">
+
+
+
+  <div class="search-pop-overlay">
     <div class="popup search-popup">
-    <div class="search-header">
+        <div class="search-header">
   <span class="search-icon">
     <i class="fa fa-search"></i>
   </span>
   <div class="search-input-container">
-    <input autocomplete="off" autocorrect="off" autocapitalize="off"
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
            placeholder="搜索..." spellcheck="false"
            type="search" class="search-input">
   </div>
@@ -189,12 +210,15 @@
     <i class="fa fa-times-circle"></i>
   </span>
 </div>
-<div id="search-result"></div>
-
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
 </div>
-<div class="search-pop-overlay"></div>
 
-  </div><script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+    </div>
+  </div>
+<script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
 <script src="/js/custom/custom.js"></script>
 
 <div class="top-scroll-bar"></div>
@@ -215,7 +239,7 @@ if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
 </script>
 <script type="text/javascript">
   $("body").backstretch([
-    "https://qianling-1254036047.cos.ap-chengdu.myqcloud.com/background/background%20(1).webp",
+    "/images/background/background (1).webp",
     "/images/background/background (2).webp",
     "/images/background/background (3).webp",
     "/images/background/background (4).webp",
@@ -250,229 +274,18 @@ if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
 </script>
 
 </div>
-    </header>
-
-    
-  <div class="back-to-top">
-    <i class="fa fa-chevron-up"></i>
-    <span>0%</span>
-  </div>
-
-
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-
-          <div class="content">
-            
-
-  <div class="posts-expand">
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://qianling.pw/miui-noise/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="千灵夙赋">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="千灵">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          去除 MIUI 底噪
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间 2018-03-30 13:47:07" itemprop="dateCreated datePublished" datetime="2018-03-30T13:47:07+08:00">2018-03-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间 2018-08-12 00:00:00" itemprop="dateModified" datetime="2018-08-12T00:00:00+08:00">2018-08-12</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
-                  </a>
-                </span>
-            </span>
-
-          
-            <span id="/miui-noise/" class="post-meta-item leancloud_visitors" data-flag-title="去除 MIUI 底噪" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数 </span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-  <i class="far fa-comment"></i>
-    <a title="valine" href="/miui-noise/#valine-comments" itemprop="discussionUrl">
-     评论数
-      <span class="post-comments-count valine-comment-count" data-xid="/miui-noise/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-        <p><img data-src="/images/covers/124.webp" alt=""></p>
-<a id="more"></a>
-
-<hr>
-<h1 id="需求描述"><a href="#需求描述" class="headerlink" title="需求描述"></a>需求描述</h1><p>似乎小米手机普遍存在底噪问题</p>
-<p>本以为是<code>VSD 2S</code>的灵敏度有点儿高，谁知<code>AH-MM400</code>人声也有底噪，录音的时候受不了了…<br><br /></p>
-<h1 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h1><p>　<br>手机型号 MI 5<br>MIUI 版本 9.8.3.27<br>Android 版本 8.0.0<br><br /></p>
-<h1 id="实现思路"><a href="#实现思路" class="headerlink" title="实现思路"></a>实现思路</h1><p>参考 MIUI 国际版 mixer_paths_tasha.xml 文件中控制耳机口的代码，添加至当前版本文件中</p>
-<p>Google 启动了 Treble 计划，对 system 分区和 vendor 分区进行严格的分离，相关文件移动至了 vendor 分区</p>
-<p>Android O 路径变为：<code>/system/vendor/etc</code><br><br /></p>
-<h1 id="实现过程"><a href="#实现过程" class="headerlink" title="实现过程"></a>实现过程</h1><p><strong>请使用支持搜索的文本编辑器</strong></p>
-<p>取得完整 <strong>root</strong> 权限后</p>
-<p><span style="color:#3a87ad;font-weight:600">打开　</span><code>/system/vendor/etc/mixer_paths_tasha.xml</code></p>
-<p><span style="color:#3a87ad;font-weight:600">查找</span>　<code>&lt;path name=&quot;headphones&quot;&gt;</code></p>
-<p><span style="color:#3a87ad;font-weight:600">在<code>&lt;/path&gt;</code>前添加</span></p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ctl</span> <span class="attr">name</span>=<span class="string">"COMP1 Switch"</span> <span class="attr">value</span>=<span class="string">"0"</span> /&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">ctl</span> <span class="attr">name</span>=<span class="string">"COMP2 Switch"</span> <span class="attr">value</span>=<span class="string">"0"</span> /&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">ctl</span> <span class="attr">name</span>=<span class="string">"HPHL Volume"</span> <span class="attr">value</span>=<span class="string">"11"</span> /&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">ctl</span> <span class="attr">name</span>=<span class="string">"HPHR Volume"</span> <span class="attr">value</span>=<span class="string">"11"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p><span style="color:#3a87ad;font-weight:600">查找</span>　<code>&lt;path name=&quot;headphones-44.1&quot;&gt;</code></p>
-<p><span style="color:#3a87ad;font-weight:600">在<code>&lt;/path&gt;</code>前添加</span></p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ctl</span> <span class="attr">name</span>=<span class="string">"COMP1 Switch"</span> <span class="attr">value</span>=<span class="string">"0"</span> /&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">ctl</span> <span class="attr">name</span>=<span class="string">"COMP2 Switch"</span> <span class="attr">value</span>=<span class="string">"0"</span> /&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">ctl</span> <span class="attr">name</span>=<span class="string">"HPHL Volume"</span> <span class="attr">value</span>=<span class="string">"11"</span> /&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">ctl</span> <span class="attr">name</span>=<span class="string">"HPHR Volume"</span> <span class="attr">value</span>=<span class="string">"11"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p><span style="color:#3a87ad;font-weight:600">保存并修改权限 rw-r–r–</span></p>
-<p><img data-src="/images/posts/miui-noise/miui-noise.png" alt=""></p>
-<p>你也可以直接下载现成的文件，但可能会因不兼容而声音变小　<a href="https://pan.baidu.com/s/1oWivs7UXSDUW0XGzjNxIRw/">mixer_paths_tasha.xml</a></p>
-<p><span style="color:#3a87ad;font-weight:600">替换至　</span><code>/system/vendor/etc/mixer_paths_tasha.xml</code>（Android O+）</p>
-<p><span style="color:#3a87ad;font-weight:600">或　</span><code>/system/etc/mixer_paths_tasha.xml</code>（Android N-）<br><br /></p>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://www.coolapk.com/feed/4455814/">酷安原文：</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">Fan1ess</span><br><span class="line">2017-10-21</span><br><span class="line">【小米5刷类原生后底噪大解决方法2.0】</span><br><span class="line">已测试，游戏、通话声音正常</span><br><span class="line">只想看解决方法的可直接拉到底↓↓↓</span><br><span class="line"></span><br><span class="line">大约一周前我分享了小米5底噪大的解决方法(可看我之前的动态)，但这个解决办法并不完美，只解决了听歌时的底噪问题，同时简单粗暴的文件替换还导致了游戏和通话时耳机没有声音，严重影响了日常使用。</span><br><span class="line">之后我在贴吧原帖中看到了有不替换文件、只添加相关代码的方案，不过当时不到周末没有时间，一直没有进行尝试。</span><br><span class="line">终于到了周末，今天下午按照原帖中的方法提取了官方MIUI和Mokee的mixer_paths_tasha.xml文件进行对比。按照原帖中楼主所说，应该是只有8行代码不同，但我对比的结果却是十几处一百多行的不同。#(阴险)</span><br><span class="line">图一是原帖中楼主发出的对比图(注意图中被选中的代码)，图二是我提取的文件对应处的情况，可以看到我提取的两个mixer_paths_tasha.xml文件在此处并没有不同，而是都没有图一中4行代码。</span><br><span class="line">再看原帖，发现楼主用的是老版本的MIUI，对比的是稍早的国际版，而我是最新的(20171019)国际版与类原生相比，所以差异较大。</span><br><span class="line">此时问题的解决陷入了僵局[w思考]，不过经过我的一番分析，认为还是不能替换文件，只能在原文件的基础上修改，以减小影响。至于怎么修改，我参考原帖楼主指出的控制耳机孔声音的8行代码，直接将它们复制到类原生中提取的mixer_paths_tasha.xml文件的对应位置，然后保存替换重启，最终成功解决。</span><br><span class="line"></span><br><span class="line">【解决方法】</span><br><span class="line">*****************************************</span><br><span class="line">贴吧原帖：http:&#x2F;&#x2F;tieba.baidu.com&#x2F;p&#x2F;5302897446?pn&#x3D;0&amp;&amp;red_tag&#x3D;b3310793627</span><br><span class="line"></span><br><span class="line">找到&#x2F;system&#x2F;etc&#x2F;mixer_paths_tasha.xml这个文件（图三）复制出来</span><br><span class="line">找到合适的XML编辑器打开，在两个对应位置各加上4行代码(图四图五)</span><br><span class="line">代码如下：</span><br><span class="line"></span><br><span class="line">&lt;ctl name&#x3D;&quot;COMP1 Switch&quot; value&#x3D;&quot;0&quot; &#x2F;&gt; </span><br><span class="line">&lt;ctl name&#x3D;&quot;COMP2 Switch&quot; value&#x3D;&quot;0&quot; &#x2F;&gt; </span><br><span class="line">&lt;ctl name&#x3D;&quot;HPHL Volume&quot; value&#x3D;&quot;11&quot; &#x2F;&gt; </span><br><span class="line">&lt;ctl name&#x3D;&quot;HPHR Volume&quot; value&#x3D;&quot;11&quot; &#x2F;&gt;</span><br><span class="line"></span><br><span class="line">修改完后保存，再替换原来的文件，重启即可摆脱底噪。</span><br><span class="line">经测试，网易云&#x2F;bilibili均正常，耳机通话正常，游戏只测试了碧蓝航线，正常。</span><br><span class="line">!!!!!! WARNING!!!!!!</span><br><span class="line"></span><br><span class="line">此方法我只在刷了魔趣的小米5测试过，刷了其他类原生(7.1.2)的小米5应该通用，其他小米机型可自行摸索尝试(后果自负)，非小米机型最好不要作死。</span><br><span class="line"></span><br><span class="line">最后，@茶杯 @梨子 @八百标兵 @酷安小编 @侧脸君 ，求PY#(滑稽)</span><br></pre></td></tr></table></figure>
-
-
-    </div>
-
-    
-    
-    
-      
-  <div class="popular-posts-header">相关文章</div>
-  <ul class="popular-posts">
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\9008\" rel="bookmark">小米 5 退出高通 9008 模式</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\android-n-xposed\" rel="bookmark">Android N Xposed</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\google-setup\" rel="bookmark">跳过 Google 开机向导</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\magisk-manager\" rel="bookmark">Magisk Manager 闪退解决方法</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\open-hi-fi\" rel="bookmark">高通处理器强制开启 Hi-Fi</a></div>
-    </li>
-  </ul>
-
-
-      <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/Android/" rel="tag"># Android</a>
-          </div>
-
-        
-  <div class="post-widgets">
-    <div class="wp_rating">
-      <div id="wpac-rating"></div>
-    </div>
-  </div>
-
-
-        
-    <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/compositions/" rel="prev" title="作文">
-      <i class="fa fa-chevron-left"></i> 作文
-    </a></div>
-      <div class="post-nav-item">
-    <a href="/the-silence/" rel="next" title="沉静如海">
-      沉静如海 <i class="fa fa-chevron-right"></i>
-    </a></div>
-    </div>
-      </footer>
-    
-  </article>
-  
-  
-  
-
-  </div>
-
-
-          </div>
-          
-    <div class="comments" id="valine-comments"></div>
-
-<script>
-  window.addEventListener('tabs:register', () => {
-    let activeClass = CONFIG.comments.activeClass;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
-      }
-    }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
-    });
-  }
-</script>
-
-        </div>
           
   
   <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
   </div>
 
   <aside class="sidebar">
-    <div class="sidebar-inner">
 
-      <ul class="sidebar-nav motion-element">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
         </li>
@@ -482,19 +295,19 @@ if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
       </ul>
 
       <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#需求描述"><span class="nav-text">需求描述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参数"><span class="nav-text">参数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实现思路"><span class="nav-text">实现思路</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实现过程"><span class="nav-text">实现过程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-text">参考</span></a></li></ol></div>
-      </div>
+      <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9C%80%E6%B1%82%E6%8F%8F%E8%BF%B0"><span class="nav-text">需求描述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E6%95%B0"><span class="nav-text">参数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E6%80%9D%E8%B7%AF"><span class="nav-text">实现思路</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E8%BF%87%E7%A8%8B"><span class="nav-text">实现过程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-text">参考</span></a></li></ol></div>
+      </section>
       <!--/noindex-->
 
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="千灵夙赋"
       src="/images/avatar.png">
   <p class="site-author-name" itemprop="name">千灵夙赋</p>
   <div class="site-description" itemprop="description"></div>
 </div>
-<div class="site-state-wrap motion-element">
+<div class="site-state-wrap animated">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
@@ -516,16 +329,10 @@ if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
       </div>
   </nav>
 </div>
-  <div class="links-of-author motion-element">
-      <span class="links-of-author-item">
-        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
-      </span>
-  </div>
 
 
-  <div class="links-of-blogroll motion-element">
-    <div class="links-of-blogroll-title">
-      <i class="fa fa-fw fa-link"></i>
+  <div class="links-of-blogroll animated">
+    <div class="links-of-blogroll-title"><i class="link fa-fw"></i>
       Friends
     </div>
     <ul class="links-of-blogroll-list">
@@ -592,18 +399,226 @@ var ap = new APlayer({
   });
 </script>
 
-      </div>
-
+      </section>
     </div>
   </aside>
   <div id="sidebar-dimmer"></div>
 
+
+      </header>
+
+      
+  <div class="back-to-top">
+    <i class="fa fa-chevron-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div id="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+      <div class="main-inner">
+        
+
+        <div class="content post posts-expand">
+          
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://qianling.pw/miui-noise/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="千灵夙赋">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="千灵">
+    </span>
+
+    
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          去除 MIUI 底噪
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-03-30 13:47:07" itemprop="dateCreated datePublished" datetime="2018-03-30T13:47:07+08:00">2018-03-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2018-08-12 00:00:00" itemprop="dateModified" datetime="2018-08-12T00:00:00+08:00">2018-08-12</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/miui-noise/" class="post-meta-item leancloud_visitors" data-flag-title="去除 MIUI 底噪" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    <a title="valine" href="/miui-noise/#valine-comments" itemprop="discussionUrl">
+    <i class="far fa-comment"></i>评论数
+      <span class="post-comments-count valine-comment-count" data-xid="/miui-noise/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p><img data-src="/images/covers/124.webp"></p>
+<a id="more"></a>
+
+<hr>
+<h1 id="需求描述"><a href="#需求描述" class="headerlink" title="需求描述"></a>需求描述</h1><p>似乎小米手机普遍存在底噪问题</p>
+<p>本以为是<code>VSD 2S</code>的灵敏度有点儿高，谁知<code>AH-MM400</code>人声也有底噪，录音的时候受不了了…<br><br /></p>
+<h1 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h1><p>　<br>手机型号 MI 5<br>MIUI 版本 9.8.3.27<br>Android 版本 8.0.0<br><br /></p>
+<h1 id="实现思路"><a href="#实现思路" class="headerlink" title="实现思路"></a>实现思路</h1><p>参考 MIUI 国际版 mixer_paths_tasha.xml 文件中控制耳机口的代码，添加至当前版本文件中</p>
+<p>Google 启动了 Treble 计划，对 system 分区和 vendor 分区进行严格的分离，相关文件移动至了 vendor 分区</p>
+<p>Android O 路径变为：<code>/system/vendor/etc</code><br><br /></p>
+<h1 id="实现过程"><a href="#实现过程" class="headerlink" title="实现过程"></a>实现过程</h1><p><strong>请使用支持搜索的文本编辑器</strong></p>
+<p>取得完整 <strong>root</strong> 权限后</p>
+<p><span style="color:#3a87ad;font-weight:600">打开　</span><code>/system/vendor/etc/mixer_paths_tasha.xml</code></p>
+<p><span style="color:#3a87ad;font-weight:600">查找</span>　<code>&lt;path name=&quot;headphones&quot;&gt;</code></p>
+<p><span style="color:#3a87ad;font-weight:600">在<code>&lt;/path&gt;</code>前添加</span></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ctl</span> <span class="attr">name</span>=<span class="string">&quot;COMP1 Switch&quot;</span> <span class="attr">value</span>=<span class="string">&quot;0&quot;</span> /&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">ctl</span> <span class="attr">name</span>=<span class="string">&quot;COMP2 Switch&quot;</span> <span class="attr">value</span>=<span class="string">&quot;0&quot;</span> /&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">ctl</span> <span class="attr">name</span>=<span class="string">&quot;HPHL Volume&quot;</span> <span class="attr">value</span>=<span class="string">&quot;11&quot;</span> /&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">ctl</span> <span class="attr">name</span>=<span class="string">&quot;HPHR Volume&quot;</span> <span class="attr">value</span>=<span class="string">&quot;11&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><span style="color:#3a87ad;font-weight:600">查找</span>　<code>&lt;path name=&quot;headphones-44.1&quot;&gt;</code></p>
+<p><span style="color:#3a87ad;font-weight:600">在<code>&lt;/path&gt;</code>前添加</span></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ctl</span> <span class="attr">name</span>=<span class="string">&quot;COMP1 Switch&quot;</span> <span class="attr">value</span>=<span class="string">&quot;0&quot;</span> /&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">ctl</span> <span class="attr">name</span>=<span class="string">&quot;COMP2 Switch&quot;</span> <span class="attr">value</span>=<span class="string">&quot;0&quot;</span> /&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">ctl</span> <span class="attr">name</span>=<span class="string">&quot;HPHL Volume&quot;</span> <span class="attr">value</span>=<span class="string">&quot;11&quot;</span> /&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">ctl</span> <span class="attr">name</span>=<span class="string">&quot;HPHR Volume&quot;</span> <span class="attr">value</span>=<span class="string">&quot;11&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><span style="color:#3a87ad;font-weight:600">保存并修改权限 rw-r–r–</span></p>
+<p><img data-src="/images/posts/miui-noise/miui-noise.png"></p>
+<p>你也可以直接下载现成的文件，但可能会因不兼容而声音变小　<a href="https://pan.baidu.com/s/1oWivs7UXSDUW0XGzjNxIRw/">mixer_paths_tasha.xml</a></p>
+<p><span style="color:#3a87ad;font-weight:600">替换至　</span><code>/system/vendor/etc/mixer_paths_tasha.xml</code>（Android O+）</p>
+<p><span style="color:#3a87ad;font-weight:600">或　</span><code>/system/etc/mixer_paths_tasha.xml</code>（Android N-）<br><br /></p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://www.coolapk.com/feed/4455814/">酷安原文：</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">Fan1ess</span><br><span class="line">2017-10-21</span><br><span class="line">【小米5刷类原生后底噪大解决方法2.0】</span><br><span class="line">已测试，游戏、通话声音正常</span><br><span class="line">只想看解决方法的可直接拉到底↓↓↓</span><br><span class="line"></span><br><span class="line">大约一周前我分享了小米5底噪大的解决方法(可看我之前的动态)，但这个解决办法并不完美，只解决了听歌时的底噪问题，同时简单粗暴的文件替换还导致了游戏和通话时耳机没有声音，严重影响了日常使用。</span><br><span class="line">之后我在贴吧原帖中看到了有不替换文件、只添加相关代码的方案，不过当时不到周末没有时间，一直没有进行尝试。</span><br><span class="line">终于到了周末，今天下午按照原帖中的方法提取了官方MIUI和Mokee的mixer_paths_tasha.xml文件进行对比。按照原帖中楼主所说，应该是只有8行代码不同，但我对比的结果却是十几处一百多行的不同。#(阴险)</span><br><span class="line">图一是原帖中楼主发出的对比图(注意图中被选中的代码)，图二是我提取的文件对应处的情况，可以看到我提取的两个mixer_paths_tasha.xml文件在此处并没有不同，而是都没有图一中4行代码。</span><br><span class="line">再看原帖，发现楼主用的是老版本的MIUI，对比的是稍早的国际版，而我是最新的(20171019)国际版与类原生相比，所以差异较大。</span><br><span class="line">此时问题的解决陷入了僵局[w思考]，不过经过我的一番分析，认为还是不能替换文件，只能在原文件的基础上修改，以减小影响。至于怎么修改，我参考原帖楼主指出的控制耳机孔声音的8行代码，直接将它们复制到类原生中提取的mixer_paths_tasha.xml文件的对应位置，然后保存替换重启，最终成功解决。</span><br><span class="line"></span><br><span class="line">【解决方法】</span><br><span class="line">*****************************************</span><br><span class="line">贴吧原帖：http:&#x2F;&#x2F;tieba.baidu.com&#x2F;p&#x2F;5302897446?pn&#x3D;0&amp;&amp;red_tag&#x3D;b3310793627</span><br><span class="line"></span><br><span class="line">找到&#x2F;system&#x2F;etc&#x2F;mixer_paths_tasha.xml这个文件（图三）复制出来</span><br><span class="line">找到合适的XML编辑器打开，在两个对应位置各加上4行代码(图四图五)</span><br><span class="line">代码如下：</span><br><span class="line"></span><br><span class="line">&lt;ctl name&#x3D;&quot;COMP1 Switch&quot; value&#x3D;&quot;0&quot; &#x2F;&gt; </span><br><span class="line">&lt;ctl name&#x3D;&quot;COMP2 Switch&quot; value&#x3D;&quot;0&quot; &#x2F;&gt; </span><br><span class="line">&lt;ctl name&#x3D;&quot;HPHL Volume&quot; value&#x3D;&quot;11&quot; &#x2F;&gt; </span><br><span class="line">&lt;ctl name&#x3D;&quot;HPHR Volume&quot; value&#x3D;&quot;11&quot; &#x2F;&gt;</span><br><span class="line"></span><br><span class="line">修改完后保存，再替换原来的文件，重启即可摆脱底噪。</span><br><span class="line">经测试，网易云&#x2F;bilibili均正常，耳机通话正常，游戏只测试了碧蓝航线，正常。</span><br><span class="line">!!!!!! WARNING!!!!!!</span><br><span class="line"></span><br><span class="line">此方法我只在刷了魔趣的小米5测试过，刷了其他类原生(7.1.2)的小米5应该通用，其他小米机型可自行摸索尝试(后果自负)，非小米机型最好不要作死。</span><br><span class="line"></span><br><span class="line">最后，@茶杯 @梨子 @八百标兵 @酷安小编 @侧脸君 ，求PY#(滑稽)</span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\9008\" rel="bookmark">小米 5 退出高通 9008 模式</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\android-n-xposed\" rel="bookmark">Android N Xposed</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\google-setup\" rel="bookmark">跳过 Google 开机向导</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\magisk-manager\" rel="bookmark">Magisk Manager 闪退解决方法</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\open-hi-fi\" rel="bookmark">高通处理器强制开启 Hi-Fi</a></div>
+    </li>
+  </ul>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Android/" rel="tag"># Android</a>
+          </div>
+
+        
+  <div class="post-widgets">
+    <div class="wp_rating">
+      <div id="wpac-rating"></div>
+    </div>
+  </div>
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/compositions/" rel="prev" title="作文">
+      <i class="fa fa-chevron-left"></i> 作文
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/the-silence/" rel="next" title="沉静如海">
+      沉静如海 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+        </div>
+        
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
 
       </div>
     </main>
 
     <footer class="footer">
       <div class="footer-inner">
+        
+
         
 
 <div class="copyright">
@@ -618,10 +633,10 @@ var ap = new APlayer({
 
         
 <div class="busuanzi-count">
-  <script pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
       <span class="post-meta-item-icon">
-        <i class="fa fa-"></i>你是第
+        <i class=""></i>你是第
       </span>
       <span class="site-uv" title="总访客量">
         <span id="busuanzi_value_site_uv"></span>位到访的小伙伴喔
@@ -630,7 +645,7 @@ var ap = new APlayer({
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
       <span class="post-meta-item-icon">
-        <i class="fa fa-"></i>本站已被访问
+        <i class=""></i>本站已被访问
       </span>
       <span class="site-pv" title="总访问量">
         <span id="busuanzi_value_site_pv"></span>次啦
@@ -643,30 +658,30 @@ var ap = new APlayer({
 
 
 
-  <script pjax>
-  function leancloudSelector(url) {
-    url = encodeURI(url);
-    return document.getElementById(url).querySelector('.leancloud-visitors-count');
-  }
-  if (CONFIG.page.isPost) {
-    function addCount(Counter) {
-      var visitors = document.querySelector('.leancloud_visitors');
-      var url = decodeURI(visitors.getAttribute('id'));
-      var title = visitors.getAttribute('data-flag-title');
+<script data-pjax>
+  (function() {
+    function leancloudSelector(url) {
+      url = encodeURI(url);
+      return document.getElementById(url).querySelector('.leancloud-visitors-count');
+    }
 
-      Counter('get', `/classes/Counter?where=${JSON.stringify({ url })}`)
+    function addCount(Counter) {
+      const visitors = document.querySelector('.leancloud_visitors');
+      const url = decodeURI(visitors.id);
+      const title = visitors.dataset.flagTitle;
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url })))
         .then(response => response.json())
         .then(({ results }) => {
           if (results.length > 0) {
-            var counter = results[0];
-              leancloudSelector(url).innerText = counter.time + 1;
+            const counter = results[0];
+            leancloudSelector(url).innerText = counter.time + 1;
             Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
-              .then(response => response.json())
               .catch(error => {
                 console.error('Failed to save visitor count', error);
-              })
+              });
           } else {
-              Counter('post', '/classes/Counter', { title: title, url: url, time: 1 })
+              Counter('post', '/classes/Counter', { title, url, time: 1 })
                 .then(response => response.json())
                 .then(() => {
                   leancloudSelector(url).innerText = 1;
@@ -680,48 +695,34 @@ var ap = new APlayer({
           console.error('LeanCloud Counter Error', error);
         });
     }
-  } else {
+
     function showTime(Counter) {
-      var visitors = document.querySelectorAll('.leancloud_visitors');
-      var entries = [...visitors].map(element => {
-        return decodeURI(element.getAttribute('id'));
+      const visitors = document.querySelectorAll('.leancloud_visitors');
+      const entries = [...visitors].map(element => {
+        return decodeURI(element.id);
       });
 
-      Counter('get', `/classes/Counter?where=${JSON.stringify({ url: { '$in': entries } })}`)
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url: { '$in': entries } })))
         .then(response => response.json())
         .then(({ results }) => {
-          if (results.length === 0) {
-            document.querySelectorAll('.leancloud_visitors .leancloud-visitors-count').forEach(element => {
-              element.innerText = 0;
-            });
-            return;
-          }
-          for (let item of results) {
-            let { url, time } = item;
-            leancloudSelector(url).innerText = time;
-          }
           for (let url of entries) {
-            var element = leancloudSelector(url);
-            if (element.innerText == '') {
-              element.innerText = 0;
-            }
+            let target = results.find(item => item.url === url);
+            leancloudSelector(url).innerText = target ? target.time : 0;
           }
         })
         .catch(error => {
           console.error('LeanCloud Counter Error', error);
         });
     }
-  }
 
-  fetch('https://app-router.leancloud.cn/2/route?appId=zulMeib4pyC6zB1a65OmVtHz-gzGzoHsz')
-    .then(response => response.json())
-    .then(({ api_server }) => {
-      var Counter = (method, url, data) => {
-        return fetch(`https://${api_server}/1.1${url}`, {
-          method: method,
+    let { app_id, app_key, server_url } = {"enable":true,"app_id":"zulMeib4pyC6zB1a65OmVtHz-gzGzoHsz","app_key":"TEjUlOUBz3KwSUmDQ35ROxpw","server_url":null,"security":false};
+    function fetchData(api_server) {
+      const Counter = (method, url, data) => {
+        return fetch(`${api_server}/1.1${url}`, {
+          method,
           headers: {
-            'X-LC-Id'     : 'zulMeib4pyC6zB1a65OmVtHz-gzGzoHsz',
-            'X-LC-Key'    : 'TEjUlOUBz3KwSUmDQ35ROxpw',
+            'X-LC-Id'     : app_id,
+            'X-LC-Key'    : app_key,
             'Content-Type': 'application/json',
           },
           body: JSON.stringify(data)
@@ -733,8 +734,21 @@ var ap = new APlayer({
       } else if (document.querySelectorAll('.post-title-link').length >= 1) {
         showTime(Counter);
       }
-    });
-  </script>
+    }
+
+    const api_server = app_id.slice(-9) !== '-MdYXbMMI' ? server_url : `https://${app_id.slice(0, 8).toLowerCase()}.api.lncldglobal.com`;
+
+    if (api_server) {
+      fetchData(api_server);
+    } else {
+      fetch('https://app-router.leancloud.cn/2/route?appId=' + app_id)
+        .then(response => response.json())
+        .then(({ api_server }) => {
+          fetchData('https://' + api_server);
+        });
+    }
+  })();
+</script>
 
 
       </div>
@@ -743,12 +757,10 @@ var ap = new APlayer({
 
   
   <script src="/lib/anime.min.js"></script>
-  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/next-theme/pjax@0/pjax.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
-  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
 
 <script src="/js/utils.js"></script>
 
@@ -764,47 +776,19 @@ var ap = new APlayer({
 var pjax = new Pjax({
   selectors: [
     'head title',
-    '#page-configurations',
-    '.content-wrap',
+    '.page-configurations',
+    '.main-inner',
     '.post-toc-wrap',
-    '#pjax'
+    '.languages',
+    '.pjax'
   ],
-  switches: {
-    '.post-toc-wrap': Pjax.switches.innerHTML
-  },
   analytics: false,
   cacheBust: false,
   scrollTo : !CONFIG.bookmark.enable
 });
 
-window.addEventListener('pjax:success', () => {
-  document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
-    var code = element.text || element.textContent || element.innerHTML || '';
-    var parent = element.parentNode;
-    parent.removeChild(element);
-    var script = document.createElement('script');
-    if (element.id) {
-      script.id = element.id;
-    }
-    if (element.className) {
-      script.className = element.className;
-    }
-    if (element.type) {
-      script.type = element.type;
-    }
-    if (element.src) {
-      script.src = element.src;
-      // Force synchronous loading of peripheral JS.
-      script.async = false;
-    }
-    if (element.getAttribute('pjax') !== null) {
-      script.setAttribute('pjax', '');
-    }
-    if (code !== '') {
-      script.appendChild(document.createTextNode(code));
-    }
-    parent.appendChild(script);
-  });
+document.addEventListener('pjax:success', () => {
+  pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
   NexT.boot.refresh();
   // Define Motion Sequence & Bootstrap Motion.
   if (CONFIG.motion.enable) {
@@ -814,27 +798,19 @@ window.addEventListener('pjax:success', () => {
       .add(NexT.motion.middleWares.postList)
       .bootstrap();
   }
+  const hasTOC = document.querySelector('.post-toc');
+  document.querySelector('.sidebar-inner').classList.toggle('sidebar-nav-active', hasTOC);
+  document.querySelector(hasTOC ? '.sidebar-nav-toc' : '.sidebar-nav-overview').click();
   NexT.utils.updateSidebarPosition();
 });
 </script>
 
 
-
-
   
-  <script pjax>
-    (function(){
-      var bp = document.createElement('script');
-      var curProtocol = window.location.protocol.split(':')[0];
-      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(bp, s);
-    })();
-  </script>
 
 
 
-  <script pjax>
+  <script data-pjax>
   if (CONFIG.page.isPost) {
     wpac_init = window.wpac_init || [];
     wpac_init.push({
@@ -870,46 +846,30 @@ window.addEventListener('pjax:success', () => {
 
 
 
-    <div id="pjax">
+    <div class="pjax">
   
 
   
-  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/quicklink@2/dist/quicklink.umd.js"></script>
   <script>
       window.addEventListener('load', () => {
-      quicklink({
-        timeout: 3000,
+      quicklink.listen({
+        timeout : 3000,
         priority: true,
-        ignores: [uri => uri.includes('#'),uri => uri == 'https://qianling.pw/miui-noise/',]
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://qianling.pw/miui-noise/',]
       });
       });
   </script>
 
 
 <script>
-NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
-  NexT.utils.getScript('https://qianling-1254036047.cos.ap-chengdu.myqcloud.com/js/Valine.min.js', () => {
-    var GUEST = ['nick', 'mail', 'link'];
-    var guest = 'nick,mail,link';
-    guest = guest.split(',').filter(item => {
-      return GUEST.includes(item);
-    });
-    new Valine({
-      el         : '#valine-comments',
-      verify     : false,
-      notify     : false,
-      appId      : 'zulMeib4pyC6zB1a65OmVtHz-gzGzoHsz',
-      appKey     : 'TEjUlOUBz3KwSUmDQ35ROxpw',
-      placeholder: "biu biu~　||ヽ(*￣▽￣*)ノミ|Ю",
-      avatar     : 'wavatar',
-      meta       : guest,
-      pageSize   : '10' || 10,
-      visitor    : false,
-      lang       : 'zh-cn' || 'zh-cn',
-      path       : location.pathname,
-      recordIP   : false,
-      serverURLs : ''
-    });
+NexT.utils.loadComments('#valine-comments', () => {
+  NexT.utils.getScript('/js/custom/Valine.min.js', () => {
+    new Valine(Object.assign({
+      el  : '#valine-comments',
+      path: location.pathname,
+    }, {"enable":true,"appId":"zulMeib4pyC6zB1a65OmVtHz-gzGzoHsz","appKey":"TEjUlOUBz3KwSUmDQ35ROxpw","placeholder":"biu biu~　||ヽ(*￣▽￣*)ノミ|Ю","avatar":"wavatar","meta":["nick","mail","link"],"pageSize":10,"language":"zh-cn","visitor":false,"comment_count":true,"recordIP":false,"serverURLs":null,"enableQQ":true,"requiredFields":[]}
+    ));
   }, window.Valine);
 });
 </script>

@@ -4,21 +4,25 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
+<meta name="generator" content="Hexo 5.0.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
 <link rel="stylesheet" href="/css/main.css">
 
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic|ZCOOL XiaoWei:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
-<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/5.10.0-11/css/all.min.css">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.css">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto+Serif+SC:300,300italic,400,400italic,700,700italic|ZCOOL+XiaoWei:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  
+  <link rel="stylesheet" href="/lib/animate-css/animate.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.min.css">
   <script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
 
-<script id="hexo-configurations">
+<script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"qianling.pw","root":"/","scheme":"Muse","version":"7.7.1","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"qianling.pw","root":"/","scheme":"Muse","version":"8.0.0-rc.5","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":true,"nav":null,"activeClass":"valine"},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"none","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"path":"search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true}};
   </script>
 
   <meta property="og:type" content="article">
@@ -38,19 +42,20 @@
 <link rel="canonical" href="https://qianling.pw/learned-optimism/">
 
 
-<script id="page-configurations">
+<script data-pjax class="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: false,
-    isPost: true
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
   };
 </script>
 
   <title>《活出最乐观的自己》书摘 | 千灵</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141264217-1"></script>
-    <script pjax>
+    <script data-pjax>
       if (CONFIG.hostname === location.hostname) {
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
@@ -60,7 +65,7 @@
     </script>
 
 
-  <script pjax>
+  <script data-pjax>
     var _hmt = _hmt || [];
     (function() {
       var hm = document.createElement("script");
@@ -75,24 +80,36 @@
 
   <noscript>
   <style>
-  .use-motion .brand,
+  body { margin-top: 2rem; }
+
   .use-motion .menu-item,
-  .sidebar-inner,
+  .use-motion .sidebar,
   .use-motion .post-block,
   .use-motion .pagination,
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
 
   .use-motion .site-title,
-  .use-motion .site-subtitle {
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
     opacity: initial;
     top: initial;
   }
 
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
   </style>
 </noscript>
 
@@ -103,67 +120,70 @@
   <div class="container use-motion">
     <div class="headband"></div>
 
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
+    <main class="main">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
     </div>
   </div>
 
   <div class="site-meta">
 
-    <div>
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">千灵</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">千灵</h1>
+      <i class="logo-line"></i>
+    </a>
   </div>
 
-  <div class="site-nav-right"></div>
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
 </div>
 
 
+
 <nav class="site-nav">
-  
-  <ul id="menu" class="menu">
+  <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-fw fa-star-half-alt"></i>首页</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-democrat"></i>归档</a>
+    <a href="/" rel="section"><i class="fa fa-star-half-alt fa-fw"></i>首页</a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-dove"></i>分类</a>
+    <a href="/categories/" rel="section"><i class="fa fa-dove fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-democrat fa-fw"></i>归档</a>
 
   </li>
         <li class="menu-item menu-item-daily">
 
-    <a href="/daily" rel="section"><i class="fa fa-fw fa-ghost"></i>碎念</a>
+    <a href="/daily" rel="section"><i class="fa fa-ghost fa-fw"></i>碎念</a>
 
   </li>
         <li class="menu-item menu-item-play">
 
-    <a href="/play" rel="section"><i class="fa fa-fw fa-fish"></i>游戏</a>
+    <a href="/play" rel="section"><i class="fa fa-fish fa-fw"></i>游戏</a>
 
   </li>
         <li class="menu-item menu-item-comments">
 
-    <a href="/comments" rel="section"><i class="fa fa-fw fa-dog"></i>留言</a>
+    <a href="/comments" rel="section"><i class="fa fa-dog fa-fw"></i>留言</a>
 
   </li>
         <li class="menu-item menu-item-about">
 
-    <a href="/about/" rel="section"><i class="fa fa-fw fa-carrot"></i>关于</a>
+    <a href="/about/" rel="section"><i class="fa fa-carrot fa-fw"></i>关于</a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -171,16 +191,18 @@
         </a>
       </li>
   </ul>
-
 </nav>
-  <div class="site-search">
+
+
+
+  <div class="search-pop-overlay">
     <div class="popup search-popup">
-    <div class="search-header">
+        <div class="search-header">
   <span class="search-icon">
     <i class="fa fa-search"></i>
   </span>
   <div class="search-input-container">
-    <input autocomplete="off" autocorrect="off" autocapitalize="off"
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
            placeholder="搜索..." spellcheck="false"
            type="search" class="search-input">
   </div>
@@ -188,12 +210,15 @@
     <i class="fa fa-times-circle"></i>
   </span>
 </div>
-<div id="search-result"></div>
-
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
 </div>
-<div class="search-pop-overlay"></div>
 
-  </div><script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+    </div>
+  </div>
+<script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
 <script src="/js/custom/custom.js"></script>
 
 <div class="top-scroll-bar"></div>
@@ -214,7 +239,7 @@ if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
 </script>
 <script type="text/javascript">
   $("body").backstretch([
-    "https://qianling-1254036047.cos.ap-chengdu.myqcloud.com/background/background%20(1).webp",
+    "/images/background/background (1).webp",
     "/images/background/background (2).webp",
     "/images/background/background (3).webp",
     "/images/background/background (4).webp",
@@ -249,28 +274,160 @@ if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
 </script>
 
 </div>
-    </header>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
 
-    
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%B6%8A%E6%9D%A5%E8%B6%8A%E6%8A%91%E9%83%81"><span class="nav-text">为什么越来越抑郁</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%B0%8A%E4%B8%AD%E7%9A%84%E6%8A%91%E9%83%81%E4%B8%8E%E6%9A%B4%E5%8A%9B"><span class="nav-text">自尊中的抑郁与暴力</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%88%98%E8%83%9C%E2%80%9C%E9%AD%94%E5%85%BD%E2%80%9D%E7%9A%84%E4%B8%96%E7%BA%AA%E4%B9%8B%E5%89%91"><span class="nav-text">战胜“魔兽”的世纪之剑</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86-%E4%BB%80%E4%B9%88%E6%98%AF%E6%82%B2%E8%A7%82%EF%BC%8C%E4%BB%80%E4%B9%88%E6%98%AF%E4%B9%90%E8%A7%82"><span class="nav-text">第一部分　什么是悲观，什么是乐观</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC-1-%E7%AB%A0-%E6%82%B2%E8%A7%82%E8%80%85%E4%B8%8E%E4%B9%90%E8%A7%82%E8%80%85%E7%9A%84%E7%94%BB%E5%83%8F"><span class="nav-text">第 1 章　悲观者与乐观者的画像</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BA%AB%E8%BE%B9%E7%9A%84%E6%82%B2%E5%96%9C%E6%95%85%E4%BA%8B"><span class="nav-text">身边的悲喜故事</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%A0%E5%8A%A9%E6%98%AF%E6%88%91%E4%BB%AC%E4%BA%BA%E7%94%9F%E7%9A%84%E5%BC%80%E5%A7%8B"><span class="nav-text">无助是我们人生的开始</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%82%B2%E8%A7%82%E6%AF%81%E6%8E%89%E4%BA%86%E5%A5%B9%E7%9A%84%E4%B8%80%E7%94%9F"><span class="nav-text">悲观毁掉了她的一生</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%88%91%E4%BB%AC%E4%B8%8D%E5%86%8D%E6%98%AF%E7%8E%AF%E5%A2%83%E7%9A%84%E5%82%80%E5%84%A1"><span class="nav-text">我们不再是环境的傀儡</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%91%E9%83%81%E7%9A%84%E6%97%B6%E4%BB%A3%EF%BC%8C%E6%82%B2%E8%A7%82%E7%9A%84%E8%87%AA%E6%88%91"><span class="nav-text">抑郁的时代，悲观的自我</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%88%90%E5%8A%9F%E4%B8%8E%E5%81%A5%E5%BA%B7%E7%9A%84%E5%85%B3%E9%94%AE"><span class="nav-text">成功与健康的关键</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%BA%E4%BA%BA%E9%83%BD%E8%83%BD%E5%AD%A6%E4%BC%9A%E4%B9%90%E8%A7%82"><span class="nav-text">人人都能学会乐观</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A1%9E%E5%88%A9%E6%A0%BC%E6%9B%BC%E7%9A%84%E4%B9%90%E8%A7%82%E7%AE%B4%E8%A8%80"><span class="nav-text">塞利格曼的乐观箴言</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC-2-%E7%AB%A0-%E6%82%B2%E8%A7%82%E8%80%85%E7%9A%84%E6%97%A0%E5%8A%A9%E6%84%9F%E6%BA%90%E8%87%AA%E4%BD%95%E5%A4%84"><span class="nav-text">第 2 章　悲观者的无助感源自何处</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BA%E4%BA%86%E4%BA%BA%EF%BC%8C%E5%BA%94%E8%AF%A5%E7%89%BA%E7%89%B2%E7%8B%97%E5%90%97"><span class="nav-text">为了人，应该牺牲狗吗</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A1%9E%E5%88%A9%E6%A0%BC%E6%9B%BC%E7%9A%84%E4%B9%90%E8%A7%82%E7%AE%B4%E8%A8%80-1"><span class="nav-text">塞利格曼的乐观箴言</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC-3-%E7%AB%A0-%E6%82%B2%E8%A7%82%E8%80%85%E7%9C%BC%E4%B8%AD%E7%9A%84%E6%8C%AB%E6%8A%98"><span class="nav-text">第 3 章　悲观者眼中的挫折</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%8B%E6%B5%8B%E4%BD%A0%E6%9C%89%E5%A4%9A%E4%B9%90%E8%A7%82"><span class="nav-text">测测你有多乐观</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B0%81%E6%B0%B8%E4%B8%8D%E6%94%BE%E5%BC%83"><span class="nav-text">谁永不放弃</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B0%B8%E8%BF%9C%E5%88%B0%E5%BA%95%E6%9C%89%E5%A4%9A%E8%BF%9C"><span class="nav-text">永远到底有多远</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%93%E5%87%BB%E9%9D%A2%E7%9A%84%E5%A4%A7%E5%B0%8F"><span class="nav-text">打击面的大小</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%8C%E6%9C%9B%E4%B8%8E%E7%BB%9D%E6%9C%9B"><span class="nav-text">希望与绝望</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%83%BD%E6%98%AF%E6%88%91%E7%9A%84%E9%94%99"><span class="nav-text">都是我的错</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8D%E6%98%AF%E9%80%83%E9%81%BF%E8%B4%A3%E4%BB%BB%E7%9A%84%E5%80%9F%E5%8F%A3"><span class="nav-text">不是逃避责任的借口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%81%87%E5%A6%82%E4%BD%A0%E6%98%AF%E4%B8%80%E4%B8%AA%E6%82%B2%E8%A7%82%E8%80%85"><span class="nav-text">假如你是一个悲观者</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A1%9E%E5%88%A9%E6%A0%BC%E6%9B%BC%E7%9A%84%E4%B9%90%E8%A7%82%E7%AE%B4%E8%A8%80-2"><span class="nav-text">塞利格曼的乐观箴言</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC-4-%E7%AB%A0-%E4%BB%8E%E6%82%B2%E8%A7%82%E6%BB%91%E5%90%91%E6%8A%91%E9%83%81"><span class="nav-text">第 4 章　从悲观滑向抑郁</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BA%AB%E8%BE%B9%E7%9A%84%E6%82%B2%E5%96%9C%E6%95%85%E4%BA%8B-1"><span class="nav-text">身边的悲喜故事</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%84%E4%B8%AA%E6%96%B9%E9%9D%A2%E9%83%BD%E4%B8%8D%E5%AF%B9%E5%8A%B2%E4%BA%86"><span class="nav-text">各个方面都不对劲了</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%A0%E7%9C%9F%E7%9A%84%E6%8A%91%E9%83%81%E5%90%97"><span class="nav-text">你真的抑郁吗</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%91%E9%83%81%E7%97%87%E6%98%AF%E4%B8%80%E7%A7%8D%E6%B5%81%E8%A1%8C%E7%97%85"><span class="nav-text">抑郁症是一种流行病</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8D%E8%A6%81%E8%BD%BB%E8%A7%86%E4%BD%A0%E7%9A%84%E6%97%A0%E5%8A%A9%E6%84%9F"><span class="nav-text">不要轻视你的无助感</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A1%9E%E5%88%A9%E6%A0%BC%E6%9B%BC%E7%9A%84%E4%B9%90%E8%A7%82%E7%AE%B4%E8%A8%80-3"><span class="nav-text">塞利格曼的乐观箴言</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC-5-%E7%AB%A0-%E6%83%B3%E6%B3%95%E5%86%B3%E5%AE%9A%E6%82%B2%E5%96%9C%E4%BA%BA%E7%94%9F"><span class="nav-text">第 5 章　想法决定悲喜人生</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%8E%E8%81%8A%E5%A4%A9%E3%80%81%E5%90%83%E8%8D%AF%E5%88%B0%E6%94%B9%E5%8F%98%E6%80%9D%E7%BB%B4"><span class="nav-text">从聊天、吃药到改变思维</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%A0%E6%98%AF%E6%82%B2%E8%A7%82%E7%9A%84%E5%8F%8D%E5%88%8D%E8%80%85%E5%90%97"><span class="nav-text">你是悲观的反刍者吗</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A5%B3%E4%BA%BA%E6%8A%91%E9%83%81-VS-%E7%94%B7%E4%BA%BA%E6%8A%91%E9%83%81"><span class="nav-text">女人抑郁 VS 男人抑郁</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B7%9F%E6%8A%91%E9%83%81%E8%AF%B4%E6%8B%9C%E6%8B%9C"><span class="nav-text">跟抑郁说拜拜</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%94%E8%AE%B0%E9%87%8D%E6%8B%B3%E6%89%93%E7%A2%8E%E6%8A%91%E9%83%81"><span class="nav-text">五记重拳打碎抑郁</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A1%9E%E5%88%A9%E6%A0%BC%E6%9B%BC%E7%9A%84%E4%B9%90%E8%A7%82%E7%AE%B4%E8%A8%80-4"><span class="nav-text">塞利格曼的乐观箴言</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86-%E4%B9%90%E8%A7%82%E7%9A%84%E4%BA%BA%E7%94%9F%E4%B8%BA%E4%BB%80%E4%B9%88%E7%B2%BE%E5%BD%A9"><span class="nav-text">第二部分　乐观的人生为什么精彩</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC-6-%E7%AB%A0-%E4%B9%90%E8%A7%82%E5%A5%A0%E5%AE%9A%E6%88%90%E5%8A%9F%E7%9A%84%E4%BA%8B%E4%B8%9A"><span class="nav-text">第 6 章　乐观奠定成功的事业</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B0%81%E6%98%AF%E6%9C%80%E5%90%88%E9%80%82%E7%9A%84%E4%BF%9D%E9%99%A9%E4%B8%9A%E5%8A%A1%E5%91%98"><span class="nav-text">谁是最合适的保险业务员</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%88%90%E5%8A%9F%E7%9A%84%E9%87%91%E4%B8%89%E8%A7%92"><span class="nav-text">成功的金三角</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%AA%E5%BD%95%E7%94%A8%E6%9C%80%E4%B9%90%E8%A7%82%E7%9A%84%E4%BA%BA"><span class="nav-text">只录用最乐观的人</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%92%E9%99%A9%E7%9A%84%E6%94%B6%E8%8E%B7"><span class="nav-text">冒险的收获</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%96%E6%82%B2%E8%A7%82%E4%B8%BA%E4%B9%90%E8%A7%82"><span class="nav-text">化悲观为乐观</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E6%82%B2%E8%A7%82"><span class="nav-text">为什么会悲观</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%94%B6%E6%94%AF%E5%B9%B3%E8%A1%A1%EF%BC%9A%E4%B9%90%E8%A7%82-VS-%E6%82%B2%E8%A7%82"><span class="nav-text">收支平衡：乐观 VS 悲观</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A1%9E%E5%88%A9%E6%A0%BC%E6%9B%BC%E7%9A%84%E4%B9%90%E8%A7%82%E7%AE%B4%E8%A8%80-5"><span class="nav-text">塞利格曼的乐观箴言</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC-7-%E7%AB%A0-%E5%AD%A9%E5%AD%90%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E6%82%B2%E8%A7%82"><span class="nav-text">第 7 章　孩子为什么会悲观</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BA%AB%E8%BE%B9%E7%9A%84%E6%82%B2%E5%96%9C%E6%95%85%E4%BA%8B-2"><span class="nav-text">身边的悲喜故事</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%A0%E7%9A%84%E5%AD%A9%E5%AD%90%E4%B9%90%E8%A7%82%E5%90%97"><span class="nav-text">你的孩子乐观吗</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%A9%E5%AD%90%E4%B8%8D%E4%BC%9A%E7%BB%9D%E6%9C%9B"><span class="nav-text">孩子不会绝望</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%A9%E5%AD%90%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E6%82%B2%E8%A7%82"><span class="nav-text">孩子为什么会悲观</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A6%88%E5%A6%88%E7%9A%84%E5%BD%B1%E5%93%8D%E5%8A%9B"><span class="nav-text">妈妈的影响力</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%80%81%E5%B8%88%E5%92%8C%E7%88%B6%E6%AF%8D%E7%9A%84%E6%89%B9%E8%AF%84"><span class="nav-text">老师和父母的批评</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AD%A9%E5%AD%90%E7%94%9F%E5%91%BD%E4%B8%AD%E7%9A%84%E5%8D%B1%E6%9C%BA"><span class="nav-text">孩子生命中的危机</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A1%9E%E5%88%A9%E6%A0%BC%E6%9B%BC%E7%9A%84%E4%B9%90%E8%A7%82%E7%AE%B4%E8%A8%80-6"><span class="nav-text">塞利格曼的乐观箴言</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC-8-%E7%AB%A0-%E4%B9%90%E8%A7%82%E7%9A%84%E5%AD%A9%E5%AD%90%E6%88%90%E7%BB%A9%E5%A5%BD"><span class="nav-text">第 8 章　乐观的孩子成绩好</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A5%BD%E6%88%90%E7%BB%A9%EF%BC%8C%E5%9D%8F%E6%88%90%E7%BB%A9"><span class="nav-text">好成绩，坏成绩</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%A0%E7%9A%84%E5%AD%A9%E5%AD%90%E6%8A%91%E9%83%81%E5%90%97"><span class="nav-text">你的孩子抑郁吗</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E6%88%90%E7%BB%A9%E5%B7%AE"><span class="nav-text">为什么会成绩差</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A7%A3%E9%87%8A%E9%A3%8E%E6%A0%BC"><span class="nav-text">解释风格</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%8D%E5%B9%B8%E7%9A%84%E9%81%AD%E9%81%87"><span class="nav-text">不幸的遭遇</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%99%E5%AD%A9%E5%AD%90%E4%B8%80%E4%B8%AA%E5%92%8C%E8%B0%90%E7%9A%84%E5%AE%B6"><span class="nav-text">给孩子一个和谐的家</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%B7%E5%AD%A9-VS-%E5%A5%B3%E5%AD%A9"><span class="nav-text">男孩 VS 女孩</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B0%81%E6%98%AF%E5%90%88%E6%A0%BC%E7%9A%84%E5%A4%A7%E5%AD%A6%E7%94%9F"><span class="nav-text">谁是合格的大学生</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%AA%E6%9C%89%E8%81%AA%E6%98%8E%E6%98%AF%E4%B8%8D%E5%A4%9F%E7%9A%84"><span class="nav-text">只有聪明是不够的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A1%9E%E5%88%A9%E6%A0%BC%E6%9B%BC%E7%9A%84%E4%B9%90%E8%A7%82%E7%AE%B4%E8%A8%80-7"><span class="nav-text">塞利格曼的乐观箴言</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC-9-%E7%AB%A0-%E4%B9%90%E8%A7%82%E9%80%A0%E5%B0%B1%E8%B5%9B%E5%9C%BA%E5%86%A0%E5%86%9B"><span class="nav-text">第 9 章　乐观造就赛场冠军</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%AF%E5%85%8B%E5%88%A9%E7%9A%84%E6%B8%B8%E6%B3%B3%E9%98%9F"><span class="nav-text">伯克利的游泳队</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%99%E7%BB%83%E5%BF%85%E9%A1%BB%E7%9F%A5%E9%81%93%E7%9A%84%E4%BA%8B"><span class="nav-text">教练必须知道的事</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A1%9E%E5%88%A9%E6%A0%BC%E6%9B%BC%E7%9A%84%E4%B9%90%E8%A7%82%E7%AE%B4%E8%A8%80-8"><span class="nav-text">塞利格曼的乐观箴言</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC-10-%E7%AB%A0-%E4%B9%90%E8%A7%82%E7%9A%84%E8%BA%AB%E4%BD%93%E4%B8%8D%E7%94%9F%E7%97%85"><span class="nav-text">第 10 章　乐观的身体不生病</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%88%91%E4%BB%AC%E9%83%BD%E9%9C%80%E8%A6%81%E6%8E%A7%E5%88%B6%E6%9D%83"><span class="nav-text">我们都需要控制权</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BF%83%E8%BA%AB%E7%9A%84%E7%BA%A0%E7%BB%93"><span class="nav-text">心身的纠结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B9%90%E8%A7%82%E8%80%85%E6%9B%B4%E5%81%A5%E5%BA%B7"><span class="nav-text">为什么乐观者更健康</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%82%B2%E8%A7%82%C2%B7%E4%B8%8D%E5%81%A5%E5%BA%B7%C2%B7%E7%99%8C%E7%97%87"><span class="nav-text">悲观·不健康·癌症</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%8D%E7%96%AB%E7%B3%BB%E7%BB%9F"><span class="nav-text">免疫系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%93%88%E4%BD%9B%E9%AB%98%E6%9D%90%E7%94%9F%E7%9A%84%E7%94%9F%E6%B4%BB"><span class="nav-text">哈佛高材生的生活</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B5%B6%E8%B5%B0%E4%BD%A0%E7%9A%84%E6%8A%91%E9%83%81"><span class="nav-text">赶走你的抑郁</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A1%9E%E5%88%A9%E6%A0%BC%E6%9B%BC%E7%9A%84%E4%B9%90%E8%A7%82%E7%AE%B4%E8%A8%80-9"><span class="nav-text">塞利格曼的乐观箴言</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC-11-%E7%AB%A0-%E4%B9%90%E8%A7%82%E7%9A%84%E9%A2%86%E8%A2%96%E5%BE%97%E6%B0%91%E5%BF%83"><span class="nav-text">第 11 章　乐观的领袖得民心</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E7%BB%9F%E5%A4%A7%E9%80%89%EF%BC%9A1948%E2%80%941984"><span class="nav-text">总统大选：1948—1984</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E9%83%A8%E5%88%86-%E5%A6%82%E4%BD%95%E6%B4%BB%E5%87%BA%E6%9C%80%E4%B9%90%E8%A7%82%E7%9A%84%E8%87%AA%E5%B7%B1"><span class="nav-text">第三部分　如何活出最乐观的自己</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC-12-%E7%AB%A0-%E4%B9%90%E6%B4%BB%E4%BA%BA%E7%94%9F%E7%9A%84-ABCDE"><span class="nav-text">第 12 章　乐活人生的 ABCDE</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BA%AB%E8%BE%B9%E7%9A%84%E6%82%B2%E5%96%9C%E6%95%85%E4%BA%8B-3"><span class="nav-text">身边的悲喜故事</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E8%AF%A5%E4%B9%90%E8%A7%82"><span class="nav-text">什么时候该乐观</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A9%E8%87%AA%E5%B7%B1%E4%B9%90%E8%A7%82%E7%9A%84-ABC"><span class="nav-text">让自己乐观的 ABC</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A1%AE%E8%AE%A4-ABC"><span class="nav-text">确认 ABC</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%A0%E7%9A%84-ABC-%E8%AE%B0%E5%BD%95"><span class="nav-text">你的 ABC 记录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%8D%E9%A9%B3%E5%92%8C%E8%BD%AC%E7%A7%BB%E6%B3%A8%E6%84%8F"><span class="nav-text">反驳和转移注意</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BD%AC%E7%A7%BB%E6%B3%A8%E6%84%8F"><span class="nav-text">转移注意</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%8D%E9%A9%B3"><span class="nav-text">反驳</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BF%9D%E6%8C%81%E8%B7%9D%E7%A6%BB"><span class="nav-text">保持距离</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%A6%E4%B9%A0%E4%B8%8E%E8%87%AA%E5%B7%B1%E4%BA%89%E8%BE%A9"><span class="nav-text">学习与自己争辩</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AF%81%E6%8D%AE"><span class="nav-text">证据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E5%8F%AF%E8%83%BD%E6%80%A7"><span class="nav-text">其他可能性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9A%97%E7%A4%BA"><span class="nav-text">暗示</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%A8%E5%A4%84"><span class="nav-text">用处</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%A0%E7%9A%84%E5%8F%8D%E9%A9%B3%E8%AE%B0%E5%BD%95"><span class="nav-text">你的反驳记录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%A7%E5%A3%B0%E8%AF%B4%E5%87%BA%E4%BD%A0%E7%9A%84%E6%83%B3%E6%B3%95"><span class="nav-text">大声说出你的想法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%83%E4%B9%A0%E3%80%81%E7%BB%83%E4%B9%A0%E3%80%81%E5%86%8D%E7%BB%83%E4%B9%A0"><span class="nav-text">练习、练习、再练习</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A1%9E%E5%88%A9%E6%A0%BC%E6%9B%BC%E7%9A%84%E4%B9%90%E8%A7%82%E7%AE%B4%E8%A8%80-10"><span class="nav-text">塞利格曼的乐观箴言</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC-14-%E7%AB%A0-%E7%BB%84%E7%BB%87%E9%9C%80%E8%A6%81%E6%80%8E%E6%A0%B7%E7%9A%84%E4%B9%90%E8%A7%82"><span class="nav-text">第 14 章　组织需要怎样的乐观</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BA%AB%E8%BE%B9%E7%9A%84%E6%82%B2%E5%96%9C%E6%95%85%E4%BA%8B-4"><span class="nav-text">身边的悲喜故事</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%81%8C%E5%9C%BA%E4%B8%AD%E7%9A%84%E4%B9%90%E8%A7%82"><span class="nav-text">职场中的乐观</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%8D%E9%A9%B3%E8%87%AA%E5%B7%B1%E7%9A%84%E6%83%B3%E6%B3%95"><span class="nav-text">反驳自己的想法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%B7%B3%E5%A2%99%E6%B8%B8%E6%88%8F"><span class="nav-text">跳墙游戏</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%8D%E9%A9%B3-1"><span class="nav-text">反驳</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8B%AF%E6%95%91%E5%9D%8F%E5%BF%83%E6%83%85"><span class="nav-text">拯救坏心情</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AF%81%E6%8D%AE-1"><span class="nav-text">证据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E5%8F%AF%E8%83%BD%E6%80%A7-1"><span class="nav-text">其他可能性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9A%97%E7%A4%BA-1"><span class="nav-text">暗示</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%A8%E5%A4%84-1"><span class="nav-text">用处</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%83%E4%B9%A0%E3%80%81%E7%BB%83%E4%B9%A0%E3%80%81%E5%86%8D%E7%BB%83%E4%B9%A0-1"><span class="nav-text">练习、练习、再练习</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A1%9E%E5%88%A9%E6%A0%BC%E6%9B%BC%E7%9A%84%E4%B9%90%E8%A7%82%E7%AE%B4%E8%A8%80-11"><span class="nav-text">塞利格曼的乐观箴言</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC-15-%E7%AB%A0-%E4%B9%90%E8%A7%82%E5%8F%AF%E4%BB%A5%E6%9C%89%E5%BC%B9%E6%80%A7"><span class="nav-text">第 15 章　乐观可以有弹性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BA%AB%E8%BE%B9%E7%9A%84%E6%82%B2%E5%96%9C%E6%95%85%E4%BA%8B-5"><span class="nav-text">身边的悲喜故事</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%80%9C%E7%89%B9%E5%A4%A7%E5%8F%B7%E2%80%9D%E7%9A%84%E8%87%AA%E6%88%91"><span class="nav-text">“特大号”的自我</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%81%97%E5%A4%B1%E7%9A%84%E7%B2%BE%E7%A5%9E%E5%AE%B6%E5%9B%AD"><span class="nav-text">遗失的精神家园</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%96%E8%88%8D%E4%B9%8B%E9%97%B4"><span class="nav-text">取舍之间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%B9%E5%A4%A7%E5%8F%B7%E8%87%AA%E6%88%91%E7%9A%84%E5%AE%9D%E8%97%8F"><span class="nav-text">特大号自我的宝藏</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%81%93%E5%BE%B7%E6%85%A2%E8%B7%91"><span class="nav-text">道德慢跑</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AD%A6%E4%BC%9A%E4%B9%90%E8%A7%82"><span class="nav-text">学会乐观</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%B9%E6%80%A7%E7%9A%84%E4%B9%90%E8%A7%82%E4%B8%BB%E4%B9%89"><span class="nav-text">弹性的乐观主义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A1%9E%E5%88%A9%E6%A0%BC%E6%9B%BC%E7%9A%84%E4%B9%90%E8%A7%82%E7%AE%B4%E8%A8%80-12"><span class="nav-text">塞利格曼的乐观箴言</span></a></li></ol></li></ol></li></ol></div>
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="千灵夙赋"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">千灵夙赋</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">166</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">37</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">46</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+  <div class="links-of-blogroll animated">
+    <div class="links-of-blogroll-title"><i class="link fa-fw"></i>
+      Friends
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://myloveru.cn/" title="http:&#x2F;&#x2F;myloveru.cn&#x2F;" rel="noopener" target="_blank">梦想博客</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://meow3.family.blog/" title="https:&#x2F;&#x2F;meow3.family.blog&#x2F;" rel="noopener" target="_blank">恶魔菌の记事簿</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://tding.top/" title="https:&#x2F;&#x2F;tding.top&#x2F;" rel="noopener" target="_blank">小丁的个人博客</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.julydate.com/" title="https:&#x2F;&#x2F;www.julydate.com&#x2F;" rel="noopener" target="_blank">七夏浅笑</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://raspii.tech/" title="https:&#x2F;&#x2F;raspii.tech&#x2F;" rel="noopener" target="_blank">无用挂件</a>
+        </li>
+    </ul>
+  </div>
+<div id="aplayer" class="aplayer"></div>
+<script>
+if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
+  document.write('<script type="text/javascript" src="/js/custom/APlayer.min.js"><\/script>');
+}
+</script>
+<script type="text/javascript">
+var ap = new APlayer({
+    element: document.getElementById('aplayer'),                       // Optional, player element
+    narrow: false,                                                     // Optional, narrow style
+    autoplay: false,                                                    // Optional, autoplay song(s), not supported by mobile browsers
+    showlrc: 0,                                                        // Optional, show lrc, can be 0, 1, 2, see: ###With lrc
+    mutex: true,                                                       // Optional, pause other players when this player playing
+    theme: '#e6d0b2',                                                  // Optional, theme color, default: #b7daff
+    mode: 'random',                                                    // Optional, play mode, can be `random` `single` `circulation`(loop) `order`(no loop), default: `circulation`
+    preload: 'metadata',                                               // Optional, the way to load music, can be 'none' 'metadata' 'auto', default: 'auto'
+    listmaxheight: '513px',                                             // Optional, max height of play list
+    music: [{
+      title: '世末歌者',
+      author: '双笙 囧菌',
+      url: '/music/%E5%8F%8C%E7%AC%99%20%E5%9B%A7%E8%8F%8C%20-%20%E4%B8%96%E6%9C%AB%E6%AD%8C%E8%80%85.mp3',
+      pic: '/images/aplayer/双笙　囧菌 - 世末歌者.webp',
+    }, {
+      title: '幹物女(WeiWei)',
+      author: '封茗囧菌',
+      url: '/music/%E5%B0%81%E8%8C%97%E5%9B%A7%E8%8F%8C%20-%20%E5%B9%B9%E7%89%A9%E5%A5%B3(WeiWei).mp3',
+      pic: '/images/aplayer/封茗囧菌 - 幹物女(WeiWei).webp',
+    }, {
+      title: '东京不太热',
+      author: '封茗囧菌',
+      url: '/music/%E5%B0%81%E8%8C%97%E5%9B%A7%E8%8F%8C%20-%20%E4%B8%9C%E4%BA%AC%E4%B8%8D%E5%A4%AA%E7%83%AD.mp3',
+      pic: '/images/aplayer/封茗囧菌 - 东京不太热.webp',
+    }, {
+      title: '有故事的小仙女（Cover 初音ミク）',
+      author: '井宿',
+      url: '/music/%E4%BA%95%E5%AE%BF%20-%20%E6%9C%89%E6%95%85%E4%BA%8B%E7%9A%84%E5%B0%8F%E4%BB%99%E5%A5%B3%EF%BC%88Cover%20%E5%88%9D%E9%9F%B3%E3%83%9F%E3%82%AF%EF%BC%89.mp3',
+      pic: '/images/aplayer/井宿 - 有故事的小仙女（Cover 初音ミク）.webp',
+    }, {
+      title: '拼凑的断音（Cover 洛天依）',
+      author: '泡泡Hansy',
+      url: '/music/%E6%B3%A1%E6%B3%A1Hansy%20-%20%E6%8B%BC%E5%87%91%E7%9A%84%E6%96%AD%E9%9F%B3%EF%BC%88Cover%20%E6%B4%9B%E5%A4%A9%E4%BE%9D%EF%BC%89.mp3',
+      pic: '/images/aplayer/泡泡Hansy - 拼凑的断音（Cover 洛天依）.webp',
+    }]
+  });
+</script>
+
+      </section>
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </header>
+
+      
   <div class="back-to-top">
     <i class="fa fa-chevron-up"></i>
     <span>0%</span>
   </div>
 
+<noscript>
+  <div id="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
 
-    <main class="main">
+
       <div class="main-inner">
-        <div class="content-wrap">
+        
+
+        <div class="content post posts-expand">
           
 
-          <div class="content">
-            
-
-  <div class="posts-expand">
-        
+    
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://qianling.pw/learned-optimism/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -282,6 +439,8 @@ if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="千灵">
     </span>
+
+    
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           《活出最乐观的自己》书摘
@@ -290,28 +449,26 @@ if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间 2019-10-21 22:10:40" itemprop="dateCreated datePublished" datetime="2019-10-21T22:10:40+08:00">2019-10-21</time>
+              <time title="创建时间：2019-10-21 22:10:40" itemprop="dateCreated datePublished" datetime="2019-10-21T22:10:40+08:00">2019-10-21</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间 2019-10-25 08:57:41" itemprop="dateModified" datetime="2019-10-25T08:57:41+08:00">2019-10-25</time>
+                <time title="修改时间：2019-10-25 08:57:41" itemprop="dateModified" datetime="2019-10-25T08:57:41+08:00">2019-10-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
+                <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%BF%83%E7%90%86%E5%AD%A6/" itemprop="url" rel="index">
-                    <span itemprop="name">心理学</span>
-                  </a>
+                  <a href="/categories/%E5%BF%83%E7%90%86%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">心理学</span></a>
                 </span>
             </span>
 
@@ -320,14 +477,13 @@ if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
-              <span class="post-meta-item-text">阅读次数 </span>
+              <span class="post-meta-item-text">阅读次数</span>
               <span class="leancloud-visitors-count"></span>
             </span>
   
   <span class="post-meta-item">
-  <i class="far fa-comment"></i>
     <a title="valine" href="/learned-optimism/#valine-comments" itemprop="discussionUrl">
-     评论数
+    <i class="far fa-comment"></i>评论数
       <span class="post-comments-count valine-comment-count" data-xid="/learned-optimism/" itemprop="commentCount"></span>
     </a>
   </span>
@@ -341,9 +497,7 @@ if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
-        <p><img data-src="/images/covers/164.png" alt=""></p>
+        <p><img data-src="/images/covers/164.png"></p>
 <a id="more"></a>
 
 <hr>
@@ -564,7 +718,7 @@ if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
 <h4 id="孩子生命中的危机"><a href="#孩子生命中的危机" class="headerlink" title="孩子生命中的危机"></a>孩子生命中的危机</h4><p>　　1981 年在德国海德堡，我听到著名的社会学家艾尔德（Glen Elder）有关孩子在极端恶劣的环境下成长的研究报告。在美国经济大萧条之前，一些有远见的科学家开始了一个有关儿童成长的研究。这个研究持续了 60 年，被试是美国加州伯克利和奥克兰的儿童，目前他们都已经是七八十岁的老人了。他们接受了详细的测试和面谈，以了解他们心理的优势与不足。这是一个人生发展的研究，它不但包括这些儿童，还包括他们的孩子，现在他们的孙子也参与了这项研究。<br>　　艾尔德谈到了什么样的人安然无事地度过了经济大萧条，什么样的人从此一蹶不振。他谈到一些中产阶级的女孩虽在童年遭受了家庭失去财富的打击，但在中年早期就基本上从心理的创伤中恢复过来了，而且进入老年期时心理和生理都很健康。和中产阶级的女孩一样，较低阶层的女孩在20世纪30年代也很遭遇了贫困，但她们一直没能再站起来。到了中年晚期，她们崩溃了。她们的晚年是凄凉的，生理和心理都不健康。<br>　　艾尔德推测原因如下。<br>　　“我认为那些晚年过得很好的女人从她们童年期的经济大萧条中学到厄运是可以克服的。毕竟大多数她们的家庭在20世纪30年代末和40年代初就恢复了经济地位，这让她们学到了乐观，塑造了她们对不幸事件的暂时的、特定的和外在的解释风格。当她们年事已高，她们的好朋友去世时，她们会想‘我还可以交到新朋友’。这种乐观的看法帮助她们维持健康，并积极面对变老。”<br>　　“相反，绝大多数低阶层女孩的家庭没有从经济大萧条中恢复过来。她们在大萧条之前就比较穷，之后仍然是穷的，她们学会的是悲观。她们的解释风格是绝望的，当她们的朋友去世时，她们想‘我再也交不到朋友了’。这种在童年期学会的悲观，影响了她们对每一个新危机的看法，瓦解了她们的健康、她们的成就以及她们的幸福感。”<br>　　“当然，这只是一个推测，”艾尔德在演讲结束时这么说，“50年前没有人想到解释风格这个词，所以没有去测量它。可惜我们没有时间机器，否则我真想回到20世纪30年代去看看我的推测是否是对的。”<br>　　那天晚上，我不能入睡，一直想着“可惜我们没有时间机器”这句话。清晨五点，我去敲艾尔德的房门。<br>　　“艾尔德，醒醒，我有话要跟你说，我有办法弄到时间机器！”<br>　　我把艾尔德从床上拖起来，去散步。<br>　　“去年我接到一位了不起的年轻社会心理学家彼得森（Chris Peterson）的来信。他写道：‘我在一所小学院里，一年要教八门课，我的创意都被抹杀了。我很有创意，愿意出差。’我把他找到宾州大学，跟我做了两年的研究，他真的很有创意。”<br>　　彼得森最有创意的地方是确定那些不肯接受解释风格测验的人的解释风格，这些人包括体育明星、总统、电影明星等。彼得森每天很仔细地读体育版，每当他在报上看到某位体育明星说了一句有因果关系的话时，他就把它当成这个明星回答了解释风格问卷上的一个题目。例如，一个足球运动员说他因为“风向不利”而没射进球时，彼得森就把它放在永久性、普遍性以及人格化的维度上来评分。分值为1～7，“风向不利”在永久性上得1分，因为这根本不具永久性；在普遍性上得1分，因为风向只会影响你踢球，不会影响你的爱情生活；在人格化上得1分，因为风向并不是球员可以控制的，不是他的错。这句“风向不利”是球员对一个不好的事的非常乐观的解释。<br>　　彼得森由此就能得出这名球员的解释风格了，而不需要通过问卷测试。下一步，我们证明了这样得来的解释风格跟实际回答问卷得来的解释风格非常相似。我们把这种方法叫做逐字解释内容分析法（content analysis of verbatim explanation, 简称 CAVE）。<br>　　“艾尔德，”我继续说：“CAVE 的方法就是时间机器，我们不但可以将它应用到当代不肯做问卷的人身上，我们也可以把它用到以前不能做问卷的人身上。”<br>　　“这就是我为什么要把你叫起来的原因了，你的前辈研究者有没有留下当年在伯克利和奥克兰面谈的原始资料？”<br>　　艾尔德想了一下：“那时录音机还没有被广泛使用，但我记得面谈者好像用速记的方式做了记录，我可以回去找找看。”<br>　　“假如我们还有原始资料，”我说，“我们可以用 CAVE 的方式来给他们评分，看他们的乐观程度。这样，我们就能知道 50 年前每个孩子的解释风格了，我们就能证明你的推测是否正确。”<br>　　艾尔德果然回去查了伯克利的档案，他发现有完整的面谈记录，而且是从小女孩到少女、到母亲、到祖母的完整记录。我们取得资料后，将记录中所有有关因果的谈话摘录出来，让不知道资料来源的评分者根据普遍性、永久性及人格化三个维度进行评分。<br>　　艾尔德的推测大致是正确的。顺利进入老年期的中产阶级妇女大多是乐观者，晚景凄凉的下层妇女大多是悲观者。<br>　　第一次使用这个时间机器让我们有三个收获。<br>　　第一，证明这个时间机器的方法确实是一个强有力的工具。我们可以用这个方法测知那些不愿意做问卷的人的乐观程度，只要我们有他们的谈话记录。CAVE适用的范围非常广，记者招待会、日记、心理治疗时的笔记、前线的来信、遗嘱等，所有的话都可以用来做解释风格的分析。我们也可以用这种方法测出年龄太小，还不能做儿童归因风格问卷的孩子的解释风格。<br>　　第二，这个时间机器带给我们新的证据，以证明我们的解释风格来自我们的母亲。在 1970 年，对当年那批伯克利、奥克兰的女孩（她们已经是祖母了）又进行了一次面谈。这次面谈还包括她们的孩子（现在也做了妈妈）。我们把这次面谈的资料拿来做CAVE，结果发现母亲和女儿的悲观程度具有相似性。这就像上面我们说的一样，孩子聆听母亲解释生活中发生的事件，从而学会了乐观与悲观。<br>　　第三，时间机器提供给我们第一个证据，证明孩提时代所经历的危机会影响我们的乐观性。安然度过经济大萧条的女孩相信厄运是可以克服的，是暂时的。那些被经济大萧条击倒，一蹶不振的女孩则认为厄运是命中注定，逃不掉的。所以我们童年期的危机就像是做饼干的模型，把我们塑造成以后的那个样子，我们用童年的解释风格来解释新的危机。<br>　　除了艾尔德的研究外，还有其他证据支持儿童会从危机中提炼出他们的解释风格。这个证据由英国的布朗（George Brown）教授提出。在我初次见到他时，布朗已经花了 10 年的时间研究伦敦南部最穷困的家庭，与 400 多位家庭主妇面谈，寻找防治抑郁症的方法。在他面谈的家庭主妇中，有 20% 是抑郁的，这里面有一半有心理疾病。他想知道在这么恶劣的环境中，究竟是什么因素影响了是否得抑郁症？<br>　　他得出了三个保护因素。人们只要具备三者之一，就不会得抑郁症，即使物质非常匮乏，损失非常惨重都没有关系。第一个保护因素就是与配偶或情人有非常亲密、无话不谈的关系。第二个因素是外出工作。第三个因素是家中 14 岁以下的孩子少于 3 个（含 3 个）。<br>　　除了这三个保护因素以外，布朗还得出两个导致抑郁症的重要因素：一个是刚刚发生的离别（丈夫的死亡，儿子的移民），另一个是母亲在她们进入青春期之前就去世了，后者对发病的影响远超过前者。<br>　　“假如你的母亲在你很小的时候就去世了，”布朗解释道，“你对以后发生的挫折都是以最绝望的态度去看待”。<br>　　对女孩来说，母亲的死亡的确是永久的和普遍的失落。女孩的成长非常需要妈妈，在青春期以前尤其如此；进入青春期后，她们的同龄人会部分替代父母的地位。如果早期的重大损失会塑造我们对以后损失的看法的话，布朗的发现应该是正确的。这些不幸的孩子就如同大萧条时低阶层的女孩一样，学会了离别是永久的、普遍的。对以后生活中发生的离别，她们的解释会是：他死了，他永远不再回来了，我没办法再生活下去了。</p>
 <h3 id="塞利格曼的乐观箴言-6"><a href="#塞利格曼的乐观箴言-6" class="headerlink" title="塞利格曼的乐观箴言"></a>塞利格曼的乐观箴言</h3><p>　　★ 孩子 8 岁时，乐观或悲观的解释风格就基本定型了。<br>　　★ 孩子的解释风格会受到三种因素的影响。<br>　　1. 孩子每天从父母身上学到各种事件的因果分析，尤其是妈妈的。如果你是乐观的，孩子也会是乐观的。<br>　　2. 孩子听到的批评方式也会影响他的解释风格，如果这些批评是永久的、普遍的、内在的，那么他对自己的看法就会转向悲观。<br>　　3. 孩子早期生活经验中的生离死别和巨大变故。如果这些事件好转了，他会比较乐观；如果这个变故是永久的和普遍的，那么绝望的种子将深埋在孩子的心中。</p>
 <h2 id="第-8-章-乐观的孩子成绩好"><a href="#第-8-章-乐观的孩子成绩好" class="headerlink" title="第 8 章　乐观的孩子成绩好"></a>第 8 章　乐观的孩子成绩好</h2><h3 id="好成绩，坏成绩"><a href="#好成绩，坏成绩" class="headerlink" title="好成绩，坏成绩"></a>好成绩，坏成绩</h3><p>　　孩子的解释风格如何影响他在学校里的表现以及学习成绩？<br>　　让我们先回溯一下基本的理论。当我们失败时，我们都会有一阵子觉得无助或抑郁。我们不会像以前那样主动去做一些事，即使勉强做了，可能也不会持久。如你前面所读到的，解释风格是习得性无助的核心。乐观的人能够很快从这个短暂的无助状态中恢复过来。对他们来说，失败仅是个挑战，是走向胜利的道路上的一些障碍。他们把挫折看成是暂时的、特定的。<br>　　悲观的人沉溺在失败中，因为他们把失败看成是永久的、普遍的。他们变得很抑郁，而且停留在无助中。一点小挫折在他们看来就是大失败，而一处失败就认为会满盘皆输，自己先竖白旗投降了。他们可能要几个星期甚至几个月后才能恢复，而且再有一点挫折，他们又会进入无助的深渊里。<br>　　这个理论很明白地预测说，在教室中、在运动场上，聪明的不一定就是成功的。成功属于足够聪明又乐观的人。<br>　　这个预测正确吗？当你的孩子在学校表现不好时，老师或家长很容易作出错误的判断，认为这个孩子不够聪明，甚至是愚笨的。你的孩子可能变得抑郁，而这种状态会让他不去尽力，不去坚持，使他不敢冒险达到他潜能的上限。更糟的是，如果你认为愚笨或是不够聪明是他成绩不好的原因的话，你的孩子会把你的想法纳入他对自己的看法中去，他的解释会越变越糟，而他的坏成绩慢慢就变成了习惯。</p>
-<h3 id="你的孩子抑郁吗"><a href="#你的孩子抑郁吗" class="headerlink" title="你的孩子抑郁吗"></a>你的孩子抑郁吗</h3><p>　　怎么知道孩子是否抑郁？<br>　　除非带他去看心理医生，否则你没办法知道。但是你如果只是想大略了解一下，只要给你的孩子做下面的测验就可以了。这个测验是在第4章测验的基础上修订的，叫做CES–DC（Center for Epidemiological Studies-Depression Child）。修订者为国家心理健康研究所流行病学研究中心的韦斯曼（Myrna Weissman）、奥瓦雪（Helen Orvaschell）和帕迪恩（N.Padian）。<br>　　下面是简单的指导语，请你读给孩子听。<br>　　“我最近在看一本有关儿童如何感觉的书，我很想知道你最近心里在想什么，有的时候小孩很难找到合适的话来描述他的感觉，所以我想给你看一些表达感觉的方法。下面每个句子有4个选择，你要仔细读这些句子，然后从4个答案中选出最能代表你上个星期心情的选项。这些选择没有对错之分。”<br>　　在过去的一个星期（节录部分以供搜索）<br>　　1. 以前不会担心的事现在开始令我忧心。<br>　　一点都没有<strong><strong>偶尔或很少</strong></strong>有时<strong><strong>很多时候</strong></strong><br>　　…<br>　　20. 开始去做一件事对我来说很困难。<br>　　一点都没有<strong><strong>偶尔或很少</strong></strong>有时<strong><strong>很多时候</strong></strong></p>
+<h3 id="你的孩子抑郁吗"><a href="#你的孩子抑郁吗" class="headerlink" title="你的孩子抑郁吗"></a>你的孩子抑郁吗</h3><p>　　怎么知道孩子是否抑郁？<br>　　除非带他去看心理医生，否则你没办法知道。但是你如果只是想大略了解一下，只要给你的孩子做下面的测验就可以了。这个测验是在第4章测验的基础上修订的，叫做CES–DC（Center for Epidemiological Studies-Depression Child）。修订者为国家心理健康研究所流行病学研究中心的韦斯曼（Myrna Weissman）、奥瓦雪（Helen Orvaschell）和帕迪恩（N.Padian）。<br>　　下面是简单的指导语，请你读给孩子听。<br>　　“我最近在看一本有关儿童如何感觉的书，我很想知道你最近心里在想什么，有的时候小孩很难找到合适的话来描述他的感觉，所以我想给你看一些表达感觉的方法。下面每个句子有4个选择，你要仔细读这些句子，然后从4个答案中选出最能代表你上个星期心情的选项。这些选择没有对错之分。”<br>　　在过去的一个星期（节录部分以供搜索）<br>　　1. 以前不会担心的事现在开始令我忧心。<br>　　一点都没有<strong><strong>偶尔或很少____有时____很多时候</strong></strong><br>　　…<br>　　20. 开始去做一件事对我来说很困难。<br>　　一点都没有<strong><strong>偶尔或很少____有时____很多时候</strong></strong></p>
 <p>　　计分很简单，“一点都没有”是 0 分，“偶尔或很少”是 1 分，“有时”是 2 分，“很多时候”是 3 分。把全部的分数加起来，如果你的孩子选了两项，取分数高的那一项。<br>　　下面是分数的意义：如果孩子的分数为 0～9，那他不抑郁；如果他的分数为 10～15，他有轻微的抑郁；如果他的分数在 15 分以上，那他有相当程度的抑郁；16～24 分代表中度抑郁；而 24 分以上就是严重抑郁了。不过这种测验不能等同于心理医生的诊断，因为纸笔测验最容易犯两个错误，你应该小心。第一是很多小孩会隐藏他们真实的感受，尤其不愿在父母面前透露。第二，有些分数高的孩子的问题可能不是来自抑郁。<br>　　如果你的孩子的分数在 10 分以上，而他在学校的成绩很不好的话，那么他功课不好的原因很可能是因为心情不好，而不是因为功课不好引起心情不佳。我们研究四年纪的小学生发现，抑郁分数越高的儿童，他们在做字谜题和智力测验上的表现就越差，学习成绩也越差。<br>　　所以，假如你的孩子连续两个星期的分数都在 15 分以上的话，你应该带他去看医生。假如你孩子的分数在 9 分以上，而且他说他想自杀，你也应该带他去看医生，“认知-行为”派的治疗师应该对他很有帮助。</p>
 <h3 id="为什么会成绩差"><a href="#为什么会成绩差" class="headerlink" title="为什么会成绩差"></a>为什么会成绩差</h3><h4 id="解释风格"><a href="#解释风格" class="headerlink" title="解释风格"></a>解释风格</h4><p>　　悲观的解释风格对儿童非常不利。如果你的孩子在三年级时，儿童归因风格问卷的分数就显示他是悲观的，那他以后得抑郁症的几率就很大。我们将儿童区分为抑郁随着时间变轻和变重的两组，解释风格又将这两组儿童分为下列四种倾向。</p>
 <ul>
@@ -647,7 +801,7 @@ if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
 </ul>
 <p>　　使用乐观技术的基本原则就是先问，在某一个特定情况下失败的代价是什么。如果失败的代价很高，那么就不应该乐观。在飞机驾驶舱里的驾驶员决定要不要再除一次冰时、在酒会中喝了酒的人决定要不要酒后开车时，或是一个婚姻不如意的人决定要不要搞外遇时，都不应该用乐观。因为这时失败的代价是死亡、车祸和离婚。反过来说，如果失败的代价很低，你就应该采用乐观的态度。推销员在决定是否再打一次电话时，失败的代价只是他的时间；一个害羞的人决定要不要上前与人攀谈时，失败的代价只是被拒绝，有些难堪而已，在这些情况下都应该用乐观技术。<br>　　本章教给你在日常生活中将悲观改变为乐观的基本原则。它不像其他励志方法，它经过了谨慎严密的研究，几千个人已经用过它，并永远地改变了他们的解释风格。</p>
 <h3 id="让自己乐观的-ABC"><a href="#让自己乐观的-ABC" class="headerlink" title="让自己乐观的 ABC"></a>让自己乐观的 ABC</h3><p>　　凯蒂已经节食两个星期了。今天下班后，她和同事出去喝酒，吃了点炸土豆片和鸡翅，吃了以后，她立刻感到自己破坏了节食计划，前功尽弃了。<br>　　她对自己说：“凯蒂，今晚你的节食努力都报销了。你真是不可思议的软弱，只要和朋友去酒吧就会受不了诱惑而大吃大喝。他们一定认为你是个笨蛋，唉！既然过去的节食都毁了，你干脆把冰箱中的蛋糕拿出来，痛快地大吃一顿算了。”<br>　　凯蒂打开一盒巧克力蛋糕把它吃得精光。她的节食计划真的前功尽弃了。<br>　　其实凯蒂吃一点炸土豆片和鸡翅和后来的大吃并没有必然的联系，真正把这两件事联系起来的是她对自己为什么吃炸土豆片的解释。她的解释风格非常悲观——“不可思议的软弱”，她的结论也很悲观——“节食努力都报销了”。事实上她的节食并没有前功尽弃，但是她的永久性、普遍性及人格化的解释使她放弃了。<br>　　如果凯蒂可以反驳她自己的自动化的解释的话，这件事可以有个完全不同的结局。<br>　　她可以对自己说：“等一下，凯蒂，我在酒吧并没有大吃大喝，我喝了两杯淡啤酒，吃了两个鸡翅和一些土豆片，但我没吃晚餐，所以平均起来，我可能只比食谱允许的热量多吃了一点。只有一个晚上多吃一点并不表示我意志薄弱，想想看，我坚持了两个星期，这证明我很坚强。此外，没有人会注意计算我吃了什么，事实上，好几个人都说我看起来瘦了。最重要的是，即使我吃了我不应该吃的东西，我也不应该继续破坏我的节食计划，这样做是没有意义的。最好的方式是不再去想这次犯的错，继续努力节食。”<br>　　这就是所谓的 ABC 模式。在这三章中，我引用了心理学家埃利斯所开发的 ABC 模式：当我们碰到不好的事件（adversity）时，我们最自然的反应就是不断想它，这些思绪很快凝聚成想法（belief），这些思绪会变成习惯，我们不会意识到我们的这些想法。这些想法并不是待在那儿不动的，它们会引起后果（consequence），我们的所作所为就是这些想法直接的后果。它是我们放弃、颓丧或是振作、再尝试的关键。</p>
-<h4 id="确认-ABC"><a href="#确认-ABC" class="headerlink" title="确认 ABC"></a>确认 ABC</h4><p>　　1. A 一个人抢先停进你正要停的车位。<br>　　B 你想<strong><strong><strong>____</strong></strong></strong>。<br>　　C 你很生气，摇下车窗，对那个人破口大骂。<br>　　2. A 孩子没有做功课，你大声责骂他。<br>　　B 你想“我是个很差劲的母亲”。<br>　　C 你觉得（或你做了）<strong><strong><strong>____</strong></strong></strong>。<br>　　3. A 你最好的朋友没有回你的电话。<br>　　B 你想<strong><strong><strong>____</strong></strong></strong>。<br>　　C 你一整天都心情低落。<br>　　4. A 你最好的朋友没有回你的电话。<br>　　B 你想<strong><strong><strong>____</strong></strong></strong>。<br>　　C 你没有因此而不快，继续过你的日子。<br>　　5. A 你跟你的配偶吵架了。<br>　　B 你想“我总是做不对”。<br>　　C 你觉得（或你做了）<strong><strong><strong>____</strong></strong></strong>。<br>　　6. A 你跟你的配偶吵架了。<br>　　B 你想“他今天脾气真坏”。<br>　　C 你觉得（或你做了）<strong><strong><strong>____</strong></strong></strong>。<br>　　7. A 你跟你的配偶吵架了。<br>　　B 你想“我一向可以化解误会”。<br>　　C 你觉得（或你做了）<strong><strong><strong>____</strong></strong></strong>。</p>
+<h4 id="确认-ABC"><a href="#确认-ABC" class="headerlink" title="确认 ABC"></a>确认 ABC</h4><p>　　1. A 一个人抢先停进你正要停的车位。<br>　　B 你想________________。<br>　　C 你很生气，摇下车窗，对那个人破口大骂。<br>　　2. A 孩子没有做功课，你大声责骂他。<br>　　B 你想“我是个很差劲的母亲”。<br>　　C 你觉得（或你做了）________________。<br>　　3. A 你最好的朋友没有回你的电话。<br>　　B 你想________________。<br>　　C 你一整天都心情低落。<br>　　4. A 你最好的朋友没有回你的电话。<br>　　B 你想________________。<br>　　C 你没有因此而不快，继续过你的日子。<br>　　5. A 你跟你的配偶吵架了。<br>　　B 你想“我总是做不对”。<br>　　C 你觉得（或你做了）________________。<br>　　6. A 你跟你的配偶吵架了。<br>　　B 你想“他今天脾气真坏”。<br>　　C 你觉得（或你做了）________________。<br>　　7. A 你跟你的配偶吵架了。<br>　　B 你想“我一向可以化解误会”。<br>　　C 你觉得（或你做了）________________。</p>
 <p>　　现在让我们来看一下这 7 个情境，看看这些元素是如何相互影响的。<br>　　在第 1 个例子中，受侵犯的思想使你愤怒：“那个家伙抢了我的位子。”“这真是自私又粗鲁的行为。”<br>　　在第 2 个例子中，当你把你对孩子的态度解释成“我是个很差劲的母亲”时，你会觉得悲伤，不想再去叫他们做功课。当我们把一件不好的事解释成永久性的、普遍性的和人格化的时候，颓丧和放弃就紧跟而来了。<br>　　在第 3 和第 4 个例子中，你最好的朋友不回你的电话时，如果你像第 3 个例子那样有永久性和普遍性的想法（例如我总是有些自私，不替别人着想），那你就会抑郁；但是假如你是像第 4 个例子那样，想“她这两天加班”，或是“她最近心情不好”，你的解释风格就是暂时性、特定性以及外在化的，所以你就不会心情不好。<br>　　在第 5、6 和第 7 个例子中，当你和配偶吵架时又是怎样的情形呢？假如你像第 5 个例子那样，“我总是做不对”（永久性、普遍性及人格化），那你就会抑郁，不会想办法去弥补裂痕。假如你像第 6 个例子，想“他今天脾气真坏”，你会觉得有些愤怒，有些颓丧，但这只是暂时性的，当这种情绪过去后，你可能会去做一些弥补的工作。假如你像第 7 个例子，想“我一向可以化解误会”，你可能会马上去补救，很快你就会觉得心情愉快，充满了活力。</p>
 <h3 id="你的-ABC-记录"><a href="#你的-ABC-记录" class="headerlink" title="你的 ABC 记录"></a>你的 ABC 记录</h3><p>　　要找出这些 ABC 如何在你日常生活中运作，最好的方法是写日记，把每天发生的事记录下来。这个日记不必很长，只要花一两天，记录 5 个 ABC 的案例就可以了。<br>　　要做到这点，第一就是要去注意你平常没有注意的、你对自己说的话。你注意一下一些小事情以及它们所引起的情绪，例如你在电话里跟朋友聊天，她好像等不及要挂掉（一种不愉快的小经验），你发现自己后来心情很不好（引起的情绪结果），这种小事就是你要记录的 ABC 事件。<br>　　<strong>你</strong>的记录要分三个部分。<br>　　第一个部分“不好的事”，几乎可以是任何事情——水管漏了、朋友皱眉头、一直哭的孩子、大额账单、配偶对你的忽视。尽量客观地记录下实际情况，而不是你对这个情况的评估。所以假如你跟你的配偶吵架了，你应该写下他对你说的或做的感到不快，而不是记录“他不公平”，因为这是一个推论，你可以把它记录在第二部分“想法”中，但是不应该记录为“不好的事”。你的“想法”是你对不好的事的解释。请注意要把你的想法跟你的感觉分开（感觉属于第三部分“后果”）。“我刚刚毁了我的节食计划”以及“我觉得自己很无能”是想法，我们可以评估这些想法是否正确。 “我觉得很悲伤”是一种感觉。<br>　　“后果”这个部分要记录你的感觉和行为。大多数时候你的感觉会不只一种，写下你所有的感觉以及你的所作所为。 “我觉得很疲倦，没有力气。”“我要让他向我道歉！”“我又回去睡觉了。”等都是行为。<br>　　在你正式开始之前，下面有些例子来帮助你分类。</p>
 <p>　　<strong>不好的事</strong>：我老公本来应该帮孩子洗澡，带他们睡觉，但是当我开完会回家，却发现他们全都在看电视。<br>　　<strong>想法</strong>：他为什么连这一点小事都做不好？难道给孩子洗澡，带他们上床睡觉有这么困难吗？现在我要让他们立刻关掉电视去睡觉。<br>　　<strong>后果</strong>：我对他非常生气，所以一回家就立刻对他大叫，没给他解释的机会。我连招呼都没打就直接走到电视机前面把它关掉，我看起来像个悍妇。</p>
@@ -796,8 +950,8 @@ if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
       <i class="fa fa-chevron-left"></i> 《受活》书摘
     </a></div>
       <div class="post-nav-item">
-    <a href="/the-dandelion-girl/" rel="next" title="《蒲公英女孩》--- 罗伯特·富兰克林·杨">
-      《蒲公英女孩》--- 罗伯特·富兰克林·杨 <i class="fa fa-chevron-right"></i>
+    <a href="/the-dandelion-girl/" rel="next" title="《蒲公英女孩》">
+      《蒲公英女孩》 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -807,16 +961,15 @@ if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
   
   
 
-  </div>
 
 
-          </div>
-          
+        </div>
+        
     <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
-    let activeClass = CONFIG.comments.activeClass;
+    let { activeClass } = CONFIG.comments;
     if (CONFIG.comments.storage) {
       activeClass = localStorage.getItem('comments_active') || activeClass;
     }
@@ -836,150 +989,13 @@ if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
   }
 </script>
 
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          文章目录
-        </li>
-        <li class="sidebar-nav-overview">
-          站点概览
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么越来越抑郁"><span class="nav-text">为什么越来越抑郁</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自尊中的抑郁与暴力"><span class="nav-text">自尊中的抑郁与暴力</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#战胜“魔兽”的世纪之剑"><span class="nav-text">战胜“魔兽”的世纪之剑</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第一部分-什么是悲观，什么是乐观"><span class="nav-text">第一部分　什么是悲观，什么是乐观</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第-1-章-悲观者与乐观者的画像"><span class="nav-text">第 1 章　悲观者与乐观者的画像</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#身边的悲喜故事"><span class="nav-text">身边的悲喜故事</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#无助是我们人生的开始"><span class="nav-text">无助是我们人生的开始</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#悲观毁掉了她的一生"><span class="nav-text">悲观毁掉了她的一生</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#我们不再是环境的傀儡"><span class="nav-text">我们不再是环境的傀儡</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#抑郁的时代，悲观的自我"><span class="nav-text">抑郁的时代，悲观的自我</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#成功与健康的关键"><span class="nav-text">成功与健康的关键</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#人人都能学会乐观"><span class="nav-text">人人都能学会乐观</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#塞利格曼的乐观箴言"><span class="nav-text">塞利格曼的乐观箴言</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第-2-章-悲观者的无助感源自何处"><span class="nav-text">第 2 章　悲观者的无助感源自何处</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#为了人，应该牺牲狗吗"><span class="nav-text">为了人，应该牺牲狗吗</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#塞利格曼的乐观箴言-1"><span class="nav-text">塞利格曼的乐观箴言</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第-3-章-悲观者眼中的挫折"><span class="nav-text">第 3 章　悲观者眼中的挫折</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#测测你有多乐观"><span class="nav-text">测测你有多乐观</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#谁永不放弃"><span class="nav-text">谁永不放弃</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#永远到底有多远"><span class="nav-text">永远到底有多远</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#打击面的大小"><span class="nav-text">打击面的大小</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#希望与绝望"><span class="nav-text">希望与绝望</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#都是我的错"><span class="nav-text">都是我的错</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#不是逃避责任的借口"><span class="nav-text">不是逃避责任的借口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#假如你是一个悲观者"><span class="nav-text">假如你是一个悲观者</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#塞利格曼的乐观箴言-2"><span class="nav-text">塞利格曼的乐观箴言</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第-4-章-从悲观滑向抑郁"><span class="nav-text">第 4 章　从悲观滑向抑郁</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#身边的悲喜故事-1"><span class="nav-text">身边的悲喜故事</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#各个方面都不对劲了"><span class="nav-text">各个方面都不对劲了</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#你真的抑郁吗"><span class="nav-text">你真的抑郁吗</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#抑郁症是一种流行病"><span class="nav-text">抑郁症是一种流行病</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#不要轻视你的无助感"><span class="nav-text">不要轻视你的无助感</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#塞利格曼的乐观箴言-3"><span class="nav-text">塞利格曼的乐观箴言</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第-5-章-想法决定悲喜人生"><span class="nav-text">第 5 章　想法决定悲喜人生</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#从聊天、吃药到改变思维"><span class="nav-text">从聊天、吃药到改变思维</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#你是悲观的反刍者吗"><span class="nav-text">你是悲观的反刍者吗</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#女人抑郁-VS-男人抑郁"><span class="nav-text">女人抑郁 VS 男人抑郁</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#跟抑郁说拜拜"><span class="nav-text">跟抑郁说拜拜</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五记重拳打碎抑郁"><span class="nav-text">五记重拳打碎抑郁</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#塞利格曼的乐观箴言-4"><span class="nav-text">塞利格曼的乐观箴言</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第二部分-乐观的人生为什么精彩"><span class="nav-text">第二部分　乐观的人生为什么精彩</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第-6-章-乐观奠定成功的事业"><span class="nav-text">第 6 章　乐观奠定成功的事业</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#谁是最合适的保险业务员"><span class="nav-text">谁是最合适的保险业务员</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#成功的金三角"><span class="nav-text">成功的金三角</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#只录用最乐观的人"><span class="nav-text">只录用最乐观的人</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#冒险的收获"><span class="nav-text">冒险的收获</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#化悲观为乐观"><span class="nav-text">化悲观为乐观</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么会悲观"><span class="nav-text">为什么会悲观</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#收支平衡：乐观-VS-悲观"><span class="nav-text">收支平衡：乐观 VS 悲观</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#塞利格曼的乐观箴言-5"><span class="nav-text">塞利格曼的乐观箴言</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第-7-章-孩子为什么会悲观"><span class="nav-text">第 7 章　孩子为什么会悲观</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#身边的悲喜故事-2"><span class="nav-text">身边的悲喜故事</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#你的孩子乐观吗"><span class="nav-text">你的孩子乐观吗</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#孩子不会绝望"><span class="nav-text">孩子不会绝望</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#孩子为什么会悲观"><span class="nav-text">孩子为什么会悲观</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#妈妈的影响力"><span class="nav-text">妈妈的影响力</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#老师和父母的批评"><span class="nav-text">老师和父母的批评</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#孩子生命中的危机"><span class="nav-text">孩子生命中的危机</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#塞利格曼的乐观箴言-6"><span class="nav-text">塞利格曼的乐观箴言</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第-8-章-乐观的孩子成绩好"><span class="nav-text">第 8 章　乐观的孩子成绩好</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#好成绩，坏成绩"><span class="nav-text">好成绩，坏成绩</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#你的孩子抑郁吗"><span class="nav-text">你的孩子抑郁吗</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么会成绩差"><span class="nav-text">为什么会成绩差</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#解释风格"><span class="nav-text">解释风格</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#不幸的遭遇"><span class="nav-text">不幸的遭遇</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#给孩子一个和谐的家"><span class="nav-text">给孩子一个和谐的家</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#男孩-VS-女孩"><span class="nav-text">男孩 VS 女孩</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#谁是合格的大学生"><span class="nav-text">谁是合格的大学生</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#只有聪明是不够的"><span class="nav-text">只有聪明是不够的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#塞利格曼的乐观箴言-7"><span class="nav-text">塞利格曼的乐观箴言</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第-9-章-乐观造就赛场冠军"><span class="nav-text">第 9 章　乐观造就赛场冠军</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#伯克利的游泳队"><span class="nav-text">伯克利的游泳队</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#教练必须知道的事"><span class="nav-text">教练必须知道的事</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#塞利格曼的乐观箴言-8"><span class="nav-text">塞利格曼的乐观箴言</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第-10-章-乐观的身体不生病"><span class="nav-text">第 10 章　乐观的身体不生病</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#我们都需要控制权"><span class="nav-text">我们都需要控制权</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#心身的纠结"><span class="nav-text">心身的纠结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么乐观者更健康"><span class="nav-text">为什么乐观者更健康</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#悲观·不健康·癌症"><span class="nav-text">悲观·不健康·癌症</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#免疫系统"><span class="nav-text">免疫系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#哈佛高材生的生活"><span class="nav-text">哈佛高材生的生活</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#赶走你的抑郁"><span class="nav-text">赶走你的抑郁</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#塞利格曼的乐观箴言-9"><span class="nav-text">塞利格曼的乐观箴言</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第-11-章-乐观的领袖得民心"><span class="nav-text">第 11 章　乐观的领袖得民心</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#总统大选：1948—1984"><span class="nav-text">总统大选：1948—1984</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第三部分-如何活出最乐观的自己"><span class="nav-text">第三部分　如何活出最乐观的自己</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第-12-章-乐活人生的-ABCDE"><span class="nav-text">第 12 章　乐活人生的 ABCDE</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#身边的悲喜故事-3"><span class="nav-text">身边的悲喜故事</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么时候该乐观"><span class="nav-text">什么时候该乐观</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#让自己乐观的-ABC"><span class="nav-text">让自己乐观的 ABC</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#确认-ABC"><span class="nav-text">确认 ABC</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#你的-ABC-记录"><span class="nav-text">你的 ABC 记录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#反驳和转移注意"><span class="nav-text">反驳和转移注意</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#转移注意"><span class="nav-text">转移注意</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#反驳"><span class="nav-text">反驳</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#保持距离"><span class="nav-text">保持距离</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#学习与自己争辩"><span class="nav-text">学习与自己争辩</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#证据"><span class="nav-text">证据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其他可能性"><span class="nav-text">其他可能性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#暗示"><span class="nav-text">暗示</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#用处"><span class="nav-text">用处</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#你的反驳记录"><span class="nav-text">你的反驳记录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#大声说出你的想法"><span class="nav-text">大声说出你的想法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#练习、练习、再练习"><span class="nav-text">练习、练习、再练习</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#塞利格曼的乐观箴言-10"><span class="nav-text">塞利格曼的乐观箴言</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第-14-章-组织需要怎样的乐观"><span class="nav-text">第 14 章　组织需要怎样的乐观</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#身边的悲喜故事-4"><span class="nav-text">身边的悲喜故事</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#职场中的乐观"><span class="nav-text">职场中的乐观</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#反驳自己的想法"><span class="nav-text">反驳自己的想法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#跳墙游戏"><span class="nav-text">跳墙游戏</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#反驳-1"><span class="nav-text">反驳</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#拯救坏心情"><span class="nav-text">拯救坏心情</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#证据-1"><span class="nav-text">证据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其他可能性-1"><span class="nav-text">其他可能性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#暗示-1"><span class="nav-text">暗示</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#用处-1"><span class="nav-text">用处</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#练习、练习、再练习-1"><span class="nav-text">练习、练习、再练习</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#塞利格曼的乐观箴言-11"><span class="nav-text">塞利格曼的乐观箴言</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第-15-章-乐观可以有弹性"><span class="nav-text">第 15 章　乐观可以有弹性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#身边的悲喜故事-5"><span class="nav-text">身边的悲喜故事</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#“特大号”的自我"><span class="nav-text">“特大号”的自我</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#遗失的精神家园"><span class="nav-text">遗失的精神家园</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#取舍之间"><span class="nav-text">取舍之间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特大号自我的宝藏"><span class="nav-text">特大号自我的宝藏</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#道德慢跑"><span class="nav-text">道德慢跑</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#学会乐观"><span class="nav-text">学会乐观</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#弹性的乐观主义"><span class="nav-text">弹性的乐观主义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#塞利格曼的乐观箴言-12"><span class="nav-text">塞利格曼的乐观箴言</span></a></li></ol></li></ol></li></ol></div>
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="千灵夙赋"
-      src="/images/avatar.png">
-  <p class="site-author-name" itemprop="name">千灵夙赋</p>
-  <div class="site-description" itemprop="description"></div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives/">
-        
-          <span class="site-state-item-count">166</span>
-          <span class="site-state-item-name">日志</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-            <a href="/categories/">
-          
-        <span class="site-state-item-count">37</span>
-        <span class="site-state-item-name">分类</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/tags/">
-        <span class="site-state-item-count">46</span>
-        <span class="site-state-item-name">标签</span></a>
-      </div>
-  </nav>
-</div>
-  <div class="links-of-author motion-element">
-      <span class="links-of-author-item">
-        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
-      </span>
-  </div>
-
-
-  <div class="links-of-blogroll motion-element">
-    <div class="links-of-blogroll-title">
-      <i class="fa fa-fw fa-link"></i>
-      Friends
-    </div>
-    <ul class="links-of-blogroll-list">
-        <li class="links-of-blogroll-item">
-          <a href="http://myloveru.cn/" title="http:&#x2F;&#x2F;myloveru.cn&#x2F;" rel="noopener" target="_blank">梦想博客</a>
-        </li>
-        <li class="links-of-blogroll-item">
-          <a href="https://meow3.family.blog/" title="https:&#x2F;&#x2F;meow3.family.blog&#x2F;" rel="noopener" target="_blank">恶魔菌の记事簿</a>
-        </li>
-        <li class="links-of-blogroll-item">
-          <a href="https://tding.top/" title="https:&#x2F;&#x2F;tding.top&#x2F;" rel="noopener" target="_blank">小丁的个人博客</a>
-        </li>
-        <li class="links-of-blogroll-item">
-          <a href="https://www.julydate.com/" title="https:&#x2F;&#x2F;www.julydate.com&#x2F;" rel="noopener" target="_blank">七夏浅笑</a>
-        </li>
-        <li class="links-of-blogroll-item">
-          <a href="https://raspii.tech/" title="https:&#x2F;&#x2F;raspii.tech&#x2F;" rel="noopener" target="_blank">无用挂件</a>
-        </li>
-    </ul>
-  </div>
-<div id="aplayer" class="aplayer"></div>
-<script>
-if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
-  document.write('<script type="text/javascript" src="/js/custom/APlayer.min.js"><\/script>');
-}
-</script>
-<script type="text/javascript">
-var ap = new APlayer({
-    element: document.getElementById('aplayer'),                       // Optional, player element
-    narrow: false,                                                     // Optional, narrow style
-    autoplay: false,                                                    // Optional, autoplay song(s), not supported by mobile browsers
-    showlrc: 0,                                                        // Optional, show lrc, can be 0, 1, 2, see: ###With lrc
-    mutex: true,                                                       // Optional, pause other players when this player playing
-    theme: '#e6d0b2',                                                  // Optional, theme color, default: #b7daff
-    mode: 'random',                                                    // Optional, play mode, can be `random` `single` `circulation`(loop) `order`(no loop), default: `circulation`
-    preload: 'metadata',                                               // Optional, the way to load music, can be 'none' 'metadata' 'auto', default: 'auto'
-    listmaxheight: '513px',                                             // Optional, max height of play list
-    music: [{
-      title: '世末歌者',
-      author: '双笙 囧菌',
-      url: '/music/%E5%8F%8C%E7%AC%99%20%E5%9B%A7%E8%8F%8C%20-%20%E4%B8%96%E6%9C%AB%E6%AD%8C%E8%80%85.mp3',
-      pic: '/images/aplayer/双笙　囧菌 - 世末歌者.webp',
-    }, {
-      title: '幹物女(WeiWei)',
-      author: '封茗囧菌',
-      url: '/music/%E5%B0%81%E8%8C%97%E5%9B%A7%E8%8F%8C%20-%20%E5%B9%B9%E7%89%A9%E5%A5%B3(WeiWei).mp3',
-      pic: '/images/aplayer/封茗囧菌 - 幹物女(WeiWei).webp',
-    }, {
-      title: '东京不太热',
-      author: '封茗囧菌',
-      url: '/music/%E5%B0%81%E8%8C%97%E5%9B%A7%E8%8F%8C%20-%20%E4%B8%9C%E4%BA%AC%E4%B8%8D%E5%A4%AA%E7%83%AD.mp3',
-      pic: '/images/aplayer/封茗囧菌 - 东京不太热.webp',
-    }, {
-      title: '有故事的小仙女（Cover 初音ミク）',
-      author: '井宿',
-      url: '/music/%E4%BA%95%E5%AE%BF%20-%20%E6%9C%89%E6%95%85%E4%BA%8B%E7%9A%84%E5%B0%8F%E4%BB%99%E5%A5%B3%EF%BC%88Cover%20%E5%88%9D%E9%9F%B3%E3%83%9F%E3%82%AF%EF%BC%89.mp3',
-      pic: '/images/aplayer/井宿 - 有故事的小仙女（Cover 初音ミク）.webp',
-    }, {
-      title: '拼凑的断音（Cover 洛天依）',
-      author: '泡泡Hansy',
-      url: '/music/%E6%B3%A1%E6%B3%A1Hansy%20-%20%E6%8B%BC%E5%87%91%E7%9A%84%E6%96%AD%E9%9F%B3%EF%BC%88Cover%20%E6%B4%9B%E5%A4%A9%E4%BE%9D%EF%BC%89.mp3',
-      pic: '/images/aplayer/泡泡Hansy - 拼凑的断音（Cover 洛天依）.webp',
-    }]
-  });
-</script>
-
-      </div>
-
-    </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
       </div>
     </main>
 
     <footer class="footer">
       <div class="footer-inner">
+        
+
         
 
 <div class="copyright">
@@ -994,10 +1010,10 @@ var ap = new APlayer({
 
         
 <div class="busuanzi-count">
-  <script pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
       <span class="post-meta-item-icon">
-        <i class="fa fa-"></i>你是第
+        <i class=""></i>你是第
       </span>
       <span class="site-uv" title="总访客量">
         <span id="busuanzi_value_site_uv"></span>位到访的小伙伴喔
@@ -1006,7 +1022,7 @@ var ap = new APlayer({
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
       <span class="post-meta-item-icon">
-        <i class="fa fa-"></i>本站已被访问
+        <i class=""></i>本站已被访问
       </span>
       <span class="site-pv" title="总访问量">
         <span id="busuanzi_value_site_pv"></span>次啦
@@ -1019,30 +1035,30 @@ var ap = new APlayer({
 
 
 
-  <script pjax>
-  function leancloudSelector(url) {
-    url = encodeURI(url);
-    return document.getElementById(url).querySelector('.leancloud-visitors-count');
-  }
-  if (CONFIG.page.isPost) {
-    function addCount(Counter) {
-      var visitors = document.querySelector('.leancloud_visitors');
-      var url = decodeURI(visitors.getAttribute('id'));
-      var title = visitors.getAttribute('data-flag-title');
+<script data-pjax>
+  (function() {
+    function leancloudSelector(url) {
+      url = encodeURI(url);
+      return document.getElementById(url).querySelector('.leancloud-visitors-count');
+    }
 
-      Counter('get', `/classes/Counter?where=${JSON.stringify({ url })}`)
+    function addCount(Counter) {
+      const visitors = document.querySelector('.leancloud_visitors');
+      const url = decodeURI(visitors.id);
+      const title = visitors.dataset.flagTitle;
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url })))
         .then(response => response.json())
         .then(({ results }) => {
           if (results.length > 0) {
-            var counter = results[0];
-              leancloudSelector(url).innerText = counter.time + 1;
+            const counter = results[0];
+            leancloudSelector(url).innerText = counter.time + 1;
             Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
-              .then(response => response.json())
               .catch(error => {
                 console.error('Failed to save visitor count', error);
-              })
+              });
           } else {
-              Counter('post', '/classes/Counter', { title: title, url: url, time: 1 })
+              Counter('post', '/classes/Counter', { title, url, time: 1 })
                 .then(response => response.json())
                 .then(() => {
                   leancloudSelector(url).innerText = 1;
@@ -1056,48 +1072,34 @@ var ap = new APlayer({
           console.error('LeanCloud Counter Error', error);
         });
     }
-  } else {
+
     function showTime(Counter) {
-      var visitors = document.querySelectorAll('.leancloud_visitors');
-      var entries = [...visitors].map(element => {
-        return decodeURI(element.getAttribute('id'));
+      const visitors = document.querySelectorAll('.leancloud_visitors');
+      const entries = [...visitors].map(element => {
+        return decodeURI(element.id);
       });
 
-      Counter('get', `/classes/Counter?where=${JSON.stringify({ url: { '$in': entries } })}`)
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url: { '$in': entries } })))
         .then(response => response.json())
         .then(({ results }) => {
-          if (results.length === 0) {
-            document.querySelectorAll('.leancloud_visitors .leancloud-visitors-count').forEach(element => {
-              element.innerText = 0;
-            });
-            return;
-          }
-          for (let item of results) {
-            let { url, time } = item;
-            leancloudSelector(url).innerText = time;
-          }
           for (let url of entries) {
-            var element = leancloudSelector(url);
-            if (element.innerText == '') {
-              element.innerText = 0;
-            }
+            let target = results.find(item => item.url === url);
+            leancloudSelector(url).innerText = target ? target.time : 0;
           }
         })
         .catch(error => {
           console.error('LeanCloud Counter Error', error);
         });
     }
-  }
 
-  fetch('https://app-router.leancloud.cn/2/route?appId=zulMeib4pyC6zB1a65OmVtHz-gzGzoHsz')
-    .then(response => response.json())
-    .then(({ api_server }) => {
-      var Counter = (method, url, data) => {
-        return fetch(`https://${api_server}/1.1${url}`, {
-          method: method,
+    let { app_id, app_key, server_url } = {"enable":true,"app_id":"zulMeib4pyC6zB1a65OmVtHz-gzGzoHsz","app_key":"TEjUlOUBz3KwSUmDQ35ROxpw","server_url":null,"security":false};
+    function fetchData(api_server) {
+      const Counter = (method, url, data) => {
+        return fetch(`${api_server}/1.1${url}`, {
+          method,
           headers: {
-            'X-LC-Id'     : 'zulMeib4pyC6zB1a65OmVtHz-gzGzoHsz',
-            'X-LC-Key'    : 'TEjUlOUBz3KwSUmDQ35ROxpw',
+            'X-LC-Id'     : app_id,
+            'X-LC-Key'    : app_key,
             'Content-Type': 'application/json',
           },
           body: JSON.stringify(data)
@@ -1109,8 +1111,21 @@ var ap = new APlayer({
       } else if (document.querySelectorAll('.post-title-link').length >= 1) {
         showTime(Counter);
       }
-    });
-  </script>
+    }
+
+    const api_server = app_id.slice(-9) !== '-MdYXbMMI' ? server_url : `https://${app_id.slice(0, 8).toLowerCase()}.api.lncldglobal.com`;
+
+    if (api_server) {
+      fetchData(api_server);
+    } else {
+      fetch('https://app-router.leancloud.cn/2/route?appId=' + app_id)
+        .then(response => response.json())
+        .then(({ api_server }) => {
+          fetchData('https://' + api_server);
+        });
+    }
+  })();
+</script>
 
 
       </div>
@@ -1119,12 +1134,10 @@ var ap = new APlayer({
 
   
   <script src="/lib/anime.min.js"></script>
-  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/next-theme/pjax@0/pjax.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
-  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
 
 <script src="/js/utils.js"></script>
 
@@ -1140,47 +1153,19 @@ var ap = new APlayer({
 var pjax = new Pjax({
   selectors: [
     'head title',
-    '#page-configurations',
-    '.content-wrap',
+    '.page-configurations',
+    '.main-inner',
     '.post-toc-wrap',
-    '#pjax'
+    '.languages',
+    '.pjax'
   ],
-  switches: {
-    '.post-toc-wrap': Pjax.switches.innerHTML
-  },
   analytics: false,
   cacheBust: false,
   scrollTo : !CONFIG.bookmark.enable
 });
 
-window.addEventListener('pjax:success', () => {
-  document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
-    var code = element.text || element.textContent || element.innerHTML || '';
-    var parent = element.parentNode;
-    parent.removeChild(element);
-    var script = document.createElement('script');
-    if (element.id) {
-      script.id = element.id;
-    }
-    if (element.className) {
-      script.className = element.className;
-    }
-    if (element.type) {
-      script.type = element.type;
-    }
-    if (element.src) {
-      script.src = element.src;
-      // Force synchronous loading of peripheral JS.
-      script.async = false;
-    }
-    if (element.getAttribute('pjax') !== null) {
-      script.setAttribute('pjax', '');
-    }
-    if (code !== '') {
-      script.appendChild(document.createTextNode(code));
-    }
-    parent.appendChild(script);
-  });
+document.addEventListener('pjax:success', () => {
+  pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
   NexT.boot.refresh();
   // Define Motion Sequence & Bootstrap Motion.
   if (CONFIG.motion.enable) {
@@ -1190,27 +1175,19 @@ window.addEventListener('pjax:success', () => {
       .add(NexT.motion.middleWares.postList)
       .bootstrap();
   }
+  const hasTOC = document.querySelector('.post-toc');
+  document.querySelector('.sidebar-inner').classList.toggle('sidebar-nav-active', hasTOC);
+  document.querySelector(hasTOC ? '.sidebar-nav-toc' : '.sidebar-nav-overview').click();
   NexT.utils.updateSidebarPosition();
 });
 </script>
 
 
-
-
   
-  <script pjax>
-    (function(){
-      var bp = document.createElement('script');
-      var curProtocol = window.location.protocol.split(':')[0];
-      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(bp, s);
-    })();
-  </script>
 
 
 
-  <script pjax>
+  <script data-pjax>
   if (CONFIG.page.isPost) {
     wpac_init = window.wpac_init || [];
     wpac_init.push({
@@ -1246,46 +1223,30 @@ window.addEventListener('pjax:success', () => {
 
 
 
-    <div id="pjax">
+    <div class="pjax">
   
 
   
-  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/quicklink@2/dist/quicklink.umd.js"></script>
   <script>
       window.addEventListener('load', () => {
-      quicklink({
-        timeout: 3000,
+      quicklink.listen({
+        timeout : 3000,
         priority: true,
-        ignores: [uri => uri.includes('#'),uri => uri == 'https://qianling.pw/learned-optimism/',]
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://qianling.pw/learned-optimism/',]
       });
       });
   </script>
 
 
 <script>
-NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
-  NexT.utils.getScript('https://qianling-1254036047.cos.ap-chengdu.myqcloud.com/js/Valine.min.js', () => {
-    var GUEST = ['nick', 'mail', 'link'];
-    var guest = 'nick,mail,link';
-    guest = guest.split(',').filter(item => {
-      return GUEST.includes(item);
-    });
-    new Valine({
-      el         : '#valine-comments',
-      verify     : false,
-      notify     : false,
-      appId      : 'zulMeib4pyC6zB1a65OmVtHz-gzGzoHsz',
-      appKey     : 'TEjUlOUBz3KwSUmDQ35ROxpw',
-      placeholder: "biu biu~　||ヽ(*￣▽￣*)ノミ|Ю",
-      avatar     : 'wavatar',
-      meta       : guest,
-      pageSize   : '10' || 10,
-      visitor    : false,
-      lang       : 'zh-cn' || 'zh-cn',
-      path       : location.pathname,
-      recordIP   : false,
-      serverURLs : ''
-    });
+NexT.utils.loadComments('#valine-comments', () => {
+  NexT.utils.getScript('/js/custom/Valine.min.js', () => {
+    new Valine(Object.assign({
+      el  : '#valine-comments',
+      path: location.pathname,
+    }, {"enable":true,"appId":"zulMeib4pyC6zB1a65OmVtHz-gzGzoHsz","appKey":"TEjUlOUBz3KwSUmDQ35ROxpw","placeholder":"biu biu~　||ヽ(*￣▽￣*)ノミ|Ю","avatar":"wavatar","meta":["nick","mail","link"],"pageSize":10,"language":"zh-cn","visitor":false,"comment_count":true,"recordIP":false,"serverURLs":null,"enableQQ":true,"requiredFields":[]}
+    ));
   }, window.Valine);
 });
 </script>

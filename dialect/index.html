@@ -4,21 +4,25 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
+<meta name="generator" content="Hexo 5.0.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
 <link rel="stylesheet" href="/css/main.css">
 
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic|ZCOOL XiaoWei:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
-<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/5.10.0-11/css/all.min.css">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.css">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto+Serif+SC:300,300italic,400,400italic,700,700italic|ZCOOL+XiaoWei:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  
+  <link rel="stylesheet" href="/lib/animate-css/animate.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.min.css">
   <script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
 
-<script id="hexo-configurations">
+<script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"qianling.pw","root":"/","scheme":"Muse","version":"7.7.1","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"qianling.pw","root":"/","scheme":"Muse","version":"8.0.0-rc.5","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":true,"nav":null,"activeClass":"valine"},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"none","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"path":"search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true}};
   </script>
 
   <meta property="og:type" content="article">
@@ -37,19 +41,20 @@
 <link rel="canonical" href="https://qianling.pw/dialect/">
 
 
-<script id="page-configurations">
+<script data-pjax class="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: false,
-    isPost: true
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
   };
 </script>
 
   <title>乡音渐稀 | 千灵</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141264217-1"></script>
-    <script pjax>
+    <script data-pjax>
       if (CONFIG.hostname === location.hostname) {
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
@@ -59,7 +64,7 @@
     </script>
 
 
-  <script pjax>
+  <script data-pjax>
     var _hmt = _hmt || [];
     (function() {
       var hm = document.createElement("script");
@@ -74,24 +79,36 @@
 
   <noscript>
   <style>
-  .use-motion .brand,
+  body { margin-top: 2rem; }
+
   .use-motion .menu-item,
-  .sidebar-inner,
+  .use-motion .sidebar,
   .use-motion .post-block,
   .use-motion .pagination,
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
 
   .use-motion .site-title,
-  .use-motion .site-subtitle {
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
     opacity: initial;
     top: initial;
   }
 
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
   </style>
 </noscript>
 
@@ -102,67 +119,70 @@
   <div class="container use-motion">
     <div class="headband"></div>
 
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
+    <main class="main">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
     </div>
   </div>
 
   <div class="site-meta">
 
-    <div>
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">千灵</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">千灵</h1>
+      <i class="logo-line"></i>
+    </a>
   </div>
 
-  <div class="site-nav-right"></div>
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
 </div>
 
 
+
 <nav class="site-nav">
-  
-  <ul id="menu" class="menu">
+  <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-fw fa-star-half-alt"></i>首页</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-democrat"></i>归档</a>
+    <a href="/" rel="section"><i class="fa fa-star-half-alt fa-fw"></i>首页</a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-dove"></i>分类</a>
+    <a href="/categories/" rel="section"><i class="fa fa-dove fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-democrat fa-fw"></i>归档</a>
 
   </li>
         <li class="menu-item menu-item-daily">
 
-    <a href="/daily" rel="section"><i class="fa fa-fw fa-ghost"></i>碎念</a>
+    <a href="/daily" rel="section"><i class="fa fa-ghost fa-fw"></i>碎念</a>
 
   </li>
         <li class="menu-item menu-item-play">
 
-    <a href="/play" rel="section"><i class="fa fa-fw fa-fish"></i>游戏</a>
+    <a href="/play" rel="section"><i class="fa fa-fish fa-fw"></i>游戏</a>
 
   </li>
         <li class="menu-item menu-item-comments">
 
-    <a href="/comments" rel="section"><i class="fa fa-fw fa-dog"></i>留言</a>
+    <a href="/comments" rel="section"><i class="fa fa-dog fa-fw"></i>留言</a>
 
   </li>
         <li class="menu-item menu-item-about">
 
-    <a href="/about/" rel="section"><i class="fa fa-fw fa-carrot"></i>关于</a>
+    <a href="/about/" rel="section"><i class="fa fa-carrot fa-fw"></i>关于</a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -170,16 +190,18 @@
         </a>
       </li>
   </ul>
-
 </nav>
-  <div class="site-search">
+
+
+
+  <div class="search-pop-overlay">
     <div class="popup search-popup">
-    <div class="search-header">
+        <div class="search-header">
   <span class="search-icon">
     <i class="fa fa-search"></i>
   </span>
   <div class="search-input-container">
-    <input autocomplete="off" autocorrect="off" autocapitalize="off"
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
            placeholder="搜索..." spellcheck="false"
            type="search" class="search-input">
   </div>
@@ -187,12 +209,15 @@
     <i class="fa fa-times-circle"></i>
   </span>
 </div>
-<div id="search-result"></div>
-
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
 </div>
-<div class="search-pop-overlay"></div>
 
-  </div><script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+    </div>
+  </div>
+<script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
 <script src="/js/custom/custom.js"></script>
 
 <div class="top-scroll-bar"></div>
@@ -213,7 +238,7 @@ if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
 </script>
 <script type="text/javascript">
   $("body").backstretch([
-    "https://qianling-1254036047.cos.ap-chengdu.myqcloud.com/background/background%20(1).webp",
+    "/images/background/background (1).webp",
     "/images/background/background (2).webp",
     "/images/background/background (3).webp",
     "/images/background/background (4).webp",
@@ -248,202 +273,18 @@ if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
 </script>
 
 </div>
-    </header>
-
-    
-  <div class="back-to-top">
-    <i class="fa fa-chevron-up"></i>
-    <span>0%</span>
-  </div>
-
-
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-
-          <div class="content">
-            
-
-  <div class="posts-expand">
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://qianling.pw/dialect/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="千灵夙赋">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="千灵">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          乡音渐稀
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间 2020-04-29 09:41:21 / 修改时间 09:45:53" itemprop="dateCreated datePublished" datetime="2020-04-29T09:41:21+08:00">2020-04-29</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AF%AD%E8%A8%80%E5%AD%A6/" itemprop="url" rel="index">
-                    <span itemprop="name">语言学</span>
-                  </a>
-                </span>
-            </span>
-
-          
-            <span id="/dialect/" class="post-meta-item leancloud_visitors" data-flag-title="乡音渐稀" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数 </span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-  <i class="far fa-comment"></i>
-    <a title="valine" href="/dialect/#valine-comments" itemprop="discussionUrl">
-     评论数
-      <span class="post-comments-count valine-comment-count" data-xid="/dialect/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-        <p><img data-src="/images/covers/193.jpg" alt=""></p>
-<a id="more"></a>
-
-<hr>
-<div class="center">
-
-<p><span style="font-size: 1.3em">乡音渐稀</span><br>浙江慈溪中学 孙文辉</p>
-<p>《语文学习》2016年第04期</p>
-</div>
-
-<p>　　二十年前某个阴雨绵绵的午后，我拖着一小箱日用衣物，回到了大岐山脚下的母校，预备从事初中语文教学。母校的格局没什么大变，时有昔日的老师掠影其中，恍惚间竟有卡朋特所唱“昨日重现”之感。唯有教室里一张张稚嫩而又陌生的脸，暗暗地提醒着我光阴不容抗拒的挪转。我开始用一种不分平翘舌音、不辨前后鼻音的普通话授课，学生们也用这种类似的普通话与我对话。有时说到幽深微妙处，师生们都会不约而同地拈取当地的土词俚语来表达，并在会心一笑间明了彼此的意思。至于门卫阿爷那些连珠炮似的骂词，更是非借土语不能传其神解其恨。重新浸溺于在外人听来鸠舌啅噪的乡音里，我渐渐悟得了岁月静好、现世安稳的深层根由。<br>　　大概过了一年，上头说所有在编教师要考普通话了，语文教师还须达到二级甲等水平。因事关饭碗，老师们无论老少，都练得很用心，有时还向学生请教发音，努力让自己的舌尖时平时翘，并憋出一种本地方言中极少有的后鼻音来。课堂上自不必说，连私下里聊天的用语也在自愿不自愿间转换成了普通话。同事们的耳朵变得越来越敏感，谁的咬字稍稍带点本地口音，就会被奚落一番。在那段几近牙牙学语的日子里，我明显感受到自己的口舌齿发生了位移，从中传出来的嗓音也陌生得吓人。相当一段时间里，我竞对自己的故土身份产生了隐隐的焦虑感：面对某种熟悉的事物情理，我常常陷入不知如何言说的困境。待普通话考级过去，大家才渐次卸去舌尖的盔甲，陆续回归到方言的便衣世界里。于是，一切话语又有了根，日常生活也重新明朗亲切起来。<br>　　几年后，我被调到县城一中教高中语文。新的教学环境里，最吸引人的还是那些或硬或软的乡音。虽然同为慈溪方言，但各乡镇的口音皆有差异，正所谓“五里不同音，十里不同调”。课堂外，我说师桥话，学生中有说龙山话、掌起话的，也有说周巷话、庵东话的，尽管每地话语的发音和用词各有所异，但这并不影响彼此间的深度交流，很多时候反而更能窥见说话方独异的性情和思致。可惜好景不长，等我带出一届高三，重返高一课堂时，学生已由“80后”跨入“90后”了，他们都能说一口流利的普通话，却有相当一部分学生不会说几句完整的本地话了。课外闲谈，我继续使用师桥方言，有些学生试着用他们父辈的方言与我对话，却不时卡壳，真是活活急煞听话之人，仿佛本地话己蛀蚀成一袭破衫，需用普通话不停地打补丁了。当“00后”的学生开始读高中，无论讲课还是闲聊，我不得已全部改用普通话了，因为此后的许多学生就连听悝当地的方言都有点困难了。<br>　　记得有一回教郁达夫的《故都的秋》，读到“在灰沉沉的天底下，忽而来一阵凉风，便息列索落地下起雨来了”，便有细心的学生问句中的“息列索落”是什么意思。我讶异地瞟了她一眼，说郁达夫是浙江富阳人，他所用的“息列索落”不过是吴方言中最常见的拟声词啊！言罢我又用当地方言念了一遍，那学生竞以更加讶异的目光看着我，似乎在听一种奇怪的发音。<br>　　遗憾的是，语文课本中更多的方言乡音在不断地转化为一种古怪而又僵硬的知识。早些年我给学生讲“为伊消得人憔悴”或者“问渠那得消如许”，从不解释其中的“伊”或“渠”，因为大家平时就是用这样的方言语词指代他者的；而如今我须将“伊””渠”释作“他“后，学生方能读通诗句的意思，有好事者甚至会据此出一道字词解释题，考考学生。至于古诗词中的押韵和平仄处，丧失了方言之根的学生更难有切身体会了。有学生问杜牧“远上寒山石径斜，白云生处有人家”句，末字为何读来不押韵。我用本地方言念了一遍，却押韵了，原来“斜”在方言中读作xia或qia，自然与“家(jia)”押韵。很多人感到神秘莫测的古音，实际上就活在你我的方言乡音里。偶尔提及古汉语语调中的入声，我用释真空“入声短促急收藏”的歌诀来解释，众人皆无反应；我转而举方言中吃(qi)”的发音为例，有本地方言印象的个别学生才略有反应，似乎有一种神秘而久远的声音，穿越重重的时空障碍在课堂上复活了。然而，大部分从普通话里浸泡过来的学生，却只能将此视作一种抽象的概念来识记，极难有贴切的感性体验。原本，再讲“李白乘舟将欲行，忽闻岸上踏歌声”中“白”读入声为仄音字，跟下句平声字“闻”相对的问题，该水到渠成了；但是对于谙熟方言远不如谙熟英语的学生来说，这些无异于艰深难辨的冷知识。<br>　　与学生交流如此，与同事日常对话也渐趋如此。一辈子浸润于方言中的老教师陆续退休了，从小就被普通话规训的新教师不断涌入，兼之外地教师广泛加盟，我周边的言语生态发生了根本性的变化，甚至操当地方言的教师正逐渐沦为言语交流场中的“少数民族”。很明显，以前我以说本地话为主，间以个别普通话语词；而今被迫以说普通话为主，间以个别本地话语词。在学校的语言交流空间里，我越来越难以意识到自己特定的言语身份和乡籍了，其他人恐怕也莫不如是。大家不由自主地用同一种与各自生命几无瓜葛的工具传递信息，抒发喜怒哀乐，时日一长也就慢慢地模糊了彼此的面目，原先方言世界里鲜活独特的生命状态被高度同质化了，就像现代城市文明催生出来的千篇一律的快餐和商品房。百无聊赖时，我总思忖着找个人用乡语聊聊天，不为别的，只为乡音里那独有的生活之诗和生命之思。然而，即便如此微渺的愿求，也越来越难以得到满足了。世间孤独千万种，可有谁体验过这种方言的孤独吗？维特根斯坦说得没错：“语言的界限就是一个人世界的界限。”在乡音越来越稀薄的父母之乡，我会不会鼓终沦落为无处皈依的流浪儿呢？<br>　　与吾辈同出浙东乡党的“四明狂客”贺知章，千余年前尝慨叹“少小离家老大回，乡音无改鬓毛衰”；如今看来，他不过失去了每个人都必然流逝的音春而已，终究拥有一个人赖以安身立命的乡音和乡音世界。倘使贺知章转世投胎于眼下日益标准化的语言生态中，那么他该用谁也听不懂的越州话怅吟“鬓毛已衰乡音改”了吧？或许上帝阻止入类建造通往天堂的巴别塔，是另有深意的，你说对吧？</p>
-
-    </div>
-
-    
-    
-    
-      
-  <div class="popular-posts-header">相关文章</div>
-  <ul class="popular-posts">
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\linguistic\" rel="bookmark">《语言学概论》辅修笔记</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\summary-of-linguistic\" rel="bookmark">《语言学纲要》书摘</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\a-course-in-phonetics\" rel="bookmark">《语音学教程（第七版）》书摘</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\course-of-phonetics\" rel="bookmark">《语音学教程》书摘</a></div>
-    </li>
-  </ul>
-
-
-      <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/%E8%AF%AD%E8%A8%80%E5%AD%A6/" rel="tag"># 语言学</a>
-          </div>
-
-        
-  <div class="post-widgets">
-    <div class="wp_rating">
-      <div id="wpac-rating"></div>
-    </div>
-  </div>
-
-
-        
-    <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/cognition/" rel="prev" title="认知之旅">
-      <i class="fa fa-chevron-left"></i> 认知之旅
-    </a></div>
-      <div class="post-nav-item">
-    <a href="/ec-learning/" rel="next" title="电子商务与学习观">
-      电子商务与学习观 <i class="fa fa-chevron-right"></i>
-    </a></div>
-    </div>
-      </footer>
-    
-  </article>
-  
-  
-  
-
-  </div>
-
-
-          </div>
-          
-    <div class="comments" id="valine-comments"></div>
-
-<script>
-  window.addEventListener('tabs:register', () => {
-    let activeClass = CONFIG.comments.activeClass;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
-      }
-    }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
-    });
-  }
-</script>
-
-        </div>
           
   
   <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
   </div>
 
   <aside class="sidebar">
-    <div class="sidebar-inner">
 
-      <ul class="sidebar-nav motion-element">
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
         </li>
@@ -453,18 +294,18 @@ if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
       </ul>
 
       <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-      </div>
+      <section class="post-toc-wrap sidebar-panel">
+      </section>
       <!--/noindex-->
 
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="千灵夙赋"
       src="/images/avatar.png">
   <p class="site-author-name" itemprop="name">千灵夙赋</p>
   <div class="site-description" itemprop="description"></div>
 </div>
-<div class="site-state-wrap motion-element">
+<div class="site-state-wrap animated">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
@@ -486,16 +327,10 @@ if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
       </div>
   </nav>
 </div>
-  <div class="links-of-author motion-element">
-      <span class="links-of-author-item">
-        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
-      </span>
-  </div>
 
 
-  <div class="links-of-blogroll motion-element">
-    <div class="links-of-blogroll-title">
-      <i class="fa fa-fw fa-link"></i>
+  <div class="links-of-blogroll animated">
+    <div class="links-of-blogroll-title"><i class="link fa-fw"></i>
       Friends
     </div>
     <ul class="links-of-blogroll-list">
@@ -562,18 +397,199 @@ var ap = new APlayer({
   });
 </script>
 
-      </div>
-
+      </section>
     </div>
   </aside>
   <div id="sidebar-dimmer"></div>
 
+
+      </header>
+
+      
+  <div class="back-to-top">
+    <i class="fa fa-chevron-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div id="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+      <div class="main-inner">
+        
+
+        <div class="content post posts-expand">
+          
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://qianling.pw/dialect/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="千灵夙赋">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="千灵">
+    </span>
+
+    
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          乡音渐稀
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-04-29 09:41:21 / 修改时间：09:45:53" itemprop="dateCreated datePublished" datetime="2020-04-29T09:41:21+08:00">2020-04-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AF%AD%E8%A8%80%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">语言学</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/dialect/" class="post-meta-item leancloud_visitors" data-flag-title="乡音渐稀" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    <a title="valine" href="/dialect/#valine-comments" itemprop="discussionUrl">
+    <i class="far fa-comment"></i>评论数
+      <span class="post-comments-count valine-comment-count" data-xid="/dialect/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p><img data-src="/images/covers/193.jpg"></p>
+<a id="more"></a>
+
+<hr>
+<div class="center">
+
+<p><span style="font-size: 1.3em">乡音渐稀</span><br>浙江慈溪中学 孙文辉</p>
+<p>《语文学习》2016年第04期</p>
+</div>
+
+<p>　　二十年前某个阴雨绵绵的午后，我拖着一小箱日用衣物，回到了大岐山脚下的母校，预备从事初中语文教学。母校的格局没什么大变，时有昔日的老师掠影其中，恍惚间竟有卡朋特所唱“昨日重现”之感。唯有教室里一张张稚嫩而又陌生的脸，暗暗地提醒着我光阴不容抗拒的挪转。我开始用一种不分平翘舌音、不辨前后鼻音的普通话授课，学生们也用这种类似的普通话与我对话。有时说到幽深微妙处，师生们都会不约而同地拈取当地的土词俚语来表达，并在会心一笑间明了彼此的意思。至于门卫阿爷那些连珠炮似的骂词，更是非借土语不能传其神解其恨。重新浸溺于在外人听来鸠舌啅噪的乡音里，我渐渐悟得了岁月静好、现世安稳的深层根由。<br>　　大概过了一年，上头说所有在编教师要考普通话了，语文教师还须达到二级甲等水平。因事关饭碗，老师们无论老少，都练得很用心，有时还向学生请教发音，努力让自己的舌尖时平时翘，并憋出一种本地方言中极少有的后鼻音来。课堂上自不必说，连私下里聊天的用语也在自愿不自愿间转换成了普通话。同事们的耳朵变得越来越敏感，谁的咬字稍稍带点本地口音，就会被奚落一番。在那段几近牙牙学语的日子里，我明显感受到自己的口舌齿发生了位移，从中传出来的嗓音也陌生得吓人。相当一段时间里，我竞对自己的故土身份产生了隐隐的焦虑感：面对某种熟悉的事物情理，我常常陷入不知如何言说的困境。待普通话考级过去，大家才渐次卸去舌尖的盔甲，陆续回归到方言的便衣世界里。于是，一切话语又有了根，日常生活也重新明朗亲切起来。<br>　　几年后，我被调到县城一中教高中语文。新的教学环境里，最吸引人的还是那些或硬或软的乡音。虽然同为慈溪方言，但各乡镇的口音皆有差异，正所谓“五里不同音，十里不同调”。课堂外，我说师桥话，学生中有说龙山话、掌起话的，也有说周巷话、庵东话的，尽管每地话语的发音和用词各有所异，但这并不影响彼此间的深度交流，很多时候反而更能窥见说话方独异的性情和思致。可惜好景不长，等我带出一届高三，重返高一课堂时，学生已由“80后”跨入“90后”了，他们都能说一口流利的普通话，却有相当一部分学生不会说几句完整的本地话了。课外闲谈，我继续使用师桥方言，有些学生试着用他们父辈的方言与我对话，却不时卡壳，真是活活急煞听话之人，仿佛本地话己蛀蚀成一袭破衫，需用普通话不停地打补丁了。当“00后”的学生开始读高中，无论讲课还是闲聊，我不得已全部改用普通话了，因为此后的许多学生就连听悝当地的方言都有点困难了。<br>　　记得有一回教郁达夫的《故都的秋》，读到“在灰沉沉的天底下，忽而来一阵凉风，便息列索落地下起雨来了”，便有细心的学生问句中的“息列索落”是什么意思。我讶异地瞟了她一眼，说郁达夫是浙江富阳人，他所用的“息列索落”不过是吴方言中最常见的拟声词啊！言罢我又用当地方言念了一遍，那学生竞以更加讶异的目光看着我，似乎在听一种奇怪的发音。<br>　　遗憾的是，语文课本中更多的方言乡音在不断地转化为一种古怪而又僵硬的知识。早些年我给学生讲“为伊消得人憔悴”或者“问渠那得消如许”，从不解释其中的“伊”或“渠”，因为大家平时就是用这样的方言语词指代他者的；而如今我须将“伊””渠”释作“他“后，学生方能读通诗句的意思，有好事者甚至会据此出一道字词解释题，考考学生。至于古诗词中的押韵和平仄处，丧失了方言之根的学生更难有切身体会了。有学生问杜牧“远上寒山石径斜，白云生处有人家”句，末字为何读来不押韵。我用本地方言念了一遍，却押韵了，原来“斜”在方言中读作xia或qia，自然与“家(jia)”押韵。很多人感到神秘莫测的古音，实际上就活在你我的方言乡音里。偶尔提及古汉语语调中的入声，我用释真空“入声短促急收藏”的歌诀来解释，众人皆无反应；我转而举方言中吃(qi)”的发音为例，有本地方言印象的个别学生才略有反应，似乎有一种神秘而久远的声音，穿越重重的时空障碍在课堂上复活了。然而，大部分从普通话里浸泡过来的学生，却只能将此视作一种抽象的概念来识记，极难有贴切的感性体验。原本，再讲“李白乘舟将欲行，忽闻岸上踏歌声”中“白”读入声为仄音字，跟下句平声字“闻”相对的问题，该水到渠成了；但是对于谙熟方言远不如谙熟英语的学生来说，这些无异于艰深难辨的冷知识。<br>　　与学生交流如此，与同事日常对话也渐趋如此。一辈子浸润于方言中的老教师陆续退休了，从小就被普通话规训的新教师不断涌入，兼之外地教师广泛加盟，我周边的言语生态发生了根本性的变化，甚至操当地方言的教师正逐渐沦为言语交流场中的“少数民族”。很明显，以前我以说本地话为主，间以个别普通话语词；而今被迫以说普通话为主，间以个别本地话语词。在学校的语言交流空间里，我越来越难以意识到自己特定的言语身份和乡籍了，其他人恐怕也莫不如是。大家不由自主地用同一种与各自生命几无瓜葛的工具传递信息，抒发喜怒哀乐，时日一长也就慢慢地模糊了彼此的面目，原先方言世界里鲜活独特的生命状态被高度同质化了，就像现代城市文明催生出来的千篇一律的快餐和商品房。百无聊赖时，我总思忖着找个人用乡语聊聊天，不为别的，只为乡音里那独有的生活之诗和生命之思。然而，即便如此微渺的愿求，也越来越难以得到满足了。世间孤独千万种，可有谁体验过这种方言的孤独吗？维特根斯坦说得没错：“语言的界限就是一个人世界的界限。”在乡音越来越稀薄的父母之乡，我会不会鼓终沦落为无处皈依的流浪儿呢？<br>　　与吾辈同出浙东乡党的“四明狂客”贺知章，千余年前尝慨叹“少小离家老大回，乡音无改鬓毛衰”；如今看来，他不过失去了每个人都必然流逝的音春而已，终究拥有一个人赖以安身立命的乡音和乡音世界。倘使贺知章转世投胎于眼下日益标准化的语言生态中，那么他该用谁也听不懂的越州话怅吟“鬓毛已衰乡音改”了吧？或许上帝阻止入类建造通往天堂的巴别塔，是另有深意的，你说对吧？</p>
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\summary-of-linguistic\" rel="bookmark">《语言学纲要》书摘</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\linguistic\" rel="bookmark">《语言学概论》辅修笔记</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\a-course-in-phonetics\" rel="bookmark">《语音学教程（第七版）》书摘</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\course-of-phonetics\" rel="bookmark">《语音学教程》书摘</a></div>
+    </li>
+  </ul>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E8%AF%AD%E8%A8%80%E5%AD%A6/" rel="tag"># 语言学</a>
+          </div>
+
+        
+  <div class="post-widgets">
+    <div class="wp_rating">
+      <div id="wpac-rating"></div>
+    </div>
+  </div>
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/cognition/" rel="prev" title="认知之旅">
+      <i class="fa fa-chevron-left"></i> 认知之旅
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/ec-learning/" rel="next" title="电子商务与学习观">
+      电子商务与学习观 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+        </div>
+        
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
 
       </div>
     </main>
 
     <footer class="footer">
       <div class="footer-inner">
+        
+
         
 
 <div class="copyright">
@@ -588,10 +604,10 @@ var ap = new APlayer({
 
         
 <div class="busuanzi-count">
-  <script pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
       <span class="post-meta-item-icon">
-        <i class="fa fa-"></i>你是第
+        <i class=""></i>你是第
       </span>
       <span class="site-uv" title="总访客量">
         <span id="busuanzi_value_site_uv"></span>位到访的小伙伴喔
@@ -600,7 +616,7 @@ var ap = new APlayer({
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
       <span class="post-meta-item-icon">
-        <i class="fa fa-"></i>本站已被访问
+        <i class=""></i>本站已被访问
       </span>
       <span class="site-pv" title="总访问量">
         <span id="busuanzi_value_site_pv"></span>次啦
@@ -613,30 +629,30 @@ var ap = new APlayer({
 
 
 
-  <script pjax>
-  function leancloudSelector(url) {
-    url = encodeURI(url);
-    return document.getElementById(url).querySelector('.leancloud-visitors-count');
-  }
-  if (CONFIG.page.isPost) {
-    function addCount(Counter) {
-      var visitors = document.querySelector('.leancloud_visitors');
-      var url = decodeURI(visitors.getAttribute('id'));
-      var title = visitors.getAttribute('data-flag-title');
+<script data-pjax>
+  (function() {
+    function leancloudSelector(url) {
+      url = encodeURI(url);
+      return document.getElementById(url).querySelector('.leancloud-visitors-count');
+    }
 
-      Counter('get', `/classes/Counter?where=${JSON.stringify({ url })}`)
+    function addCount(Counter) {
+      const visitors = document.querySelector('.leancloud_visitors');
+      const url = decodeURI(visitors.id);
+      const title = visitors.dataset.flagTitle;
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url })))
         .then(response => response.json())
         .then(({ results }) => {
           if (results.length > 0) {
-            var counter = results[0];
-              leancloudSelector(url).innerText = counter.time + 1;
+            const counter = results[0];
+            leancloudSelector(url).innerText = counter.time + 1;
             Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
-              .then(response => response.json())
               .catch(error => {
                 console.error('Failed to save visitor count', error);
-              })
+              });
           } else {
-              Counter('post', '/classes/Counter', { title: title, url: url, time: 1 })
+              Counter('post', '/classes/Counter', { title, url, time: 1 })
                 .then(response => response.json())
                 .then(() => {
                   leancloudSelector(url).innerText = 1;
@@ -650,48 +666,34 @@ var ap = new APlayer({
           console.error('LeanCloud Counter Error', error);
         });
     }
-  } else {
+
     function showTime(Counter) {
-      var visitors = document.querySelectorAll('.leancloud_visitors');
-      var entries = [...visitors].map(element => {
-        return decodeURI(element.getAttribute('id'));
+      const visitors = document.querySelectorAll('.leancloud_visitors');
+      const entries = [...visitors].map(element => {
+        return decodeURI(element.id);
       });
 
-      Counter('get', `/classes/Counter?where=${JSON.stringify({ url: { '$in': entries } })}`)
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url: { '$in': entries } })))
         .then(response => response.json())
         .then(({ results }) => {
-          if (results.length === 0) {
-            document.querySelectorAll('.leancloud_visitors .leancloud-visitors-count').forEach(element => {
-              element.innerText = 0;
-            });
-            return;
-          }
-          for (let item of results) {
-            let { url, time } = item;
-            leancloudSelector(url).innerText = time;
-          }
           for (let url of entries) {
-            var element = leancloudSelector(url);
-            if (element.innerText == '') {
-              element.innerText = 0;
-            }
+            let target = results.find(item => item.url === url);
+            leancloudSelector(url).innerText = target ? target.time : 0;
           }
         })
         .catch(error => {
           console.error('LeanCloud Counter Error', error);
         });
     }
-  }
 
-  fetch('https://app-router.leancloud.cn/2/route?appId=zulMeib4pyC6zB1a65OmVtHz-gzGzoHsz')
-    .then(response => response.json())
-    .then(({ api_server }) => {
-      var Counter = (method, url, data) => {
-        return fetch(`https://${api_server}/1.1${url}`, {
-          method: method,
+    let { app_id, app_key, server_url } = {"enable":true,"app_id":"zulMeib4pyC6zB1a65OmVtHz-gzGzoHsz","app_key":"TEjUlOUBz3KwSUmDQ35ROxpw","server_url":null,"security":false};
+    function fetchData(api_server) {
+      const Counter = (method, url, data) => {
+        return fetch(`${api_server}/1.1${url}`, {
+          method,
           headers: {
-            'X-LC-Id'     : 'zulMeib4pyC6zB1a65OmVtHz-gzGzoHsz',
-            'X-LC-Key'    : 'TEjUlOUBz3KwSUmDQ35ROxpw',
+            'X-LC-Id'     : app_id,
+            'X-LC-Key'    : app_key,
             'Content-Type': 'application/json',
           },
           body: JSON.stringify(data)
@@ -703,8 +705,21 @@ var ap = new APlayer({
       } else if (document.querySelectorAll('.post-title-link').length >= 1) {
         showTime(Counter);
       }
-    });
-  </script>
+    }
+
+    const api_server = app_id.slice(-9) !== '-MdYXbMMI' ? server_url : `https://${app_id.slice(0, 8).toLowerCase()}.api.lncldglobal.com`;
+
+    if (api_server) {
+      fetchData(api_server);
+    } else {
+      fetch('https://app-router.leancloud.cn/2/route?appId=' + app_id)
+        .then(response => response.json())
+        .then(({ api_server }) => {
+          fetchData('https://' + api_server);
+        });
+    }
+  })();
+</script>
 
 
       </div>
@@ -713,12 +728,10 @@ var ap = new APlayer({
 
   
   <script src="/lib/anime.min.js"></script>
-  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/next-theme/pjax@0/pjax.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
-  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
 
 <script src="/js/utils.js"></script>
 
@@ -734,47 +747,19 @@ var ap = new APlayer({
 var pjax = new Pjax({
   selectors: [
     'head title',
-    '#page-configurations',
-    '.content-wrap',
+    '.page-configurations',
+    '.main-inner',
     '.post-toc-wrap',
-    '#pjax'
+    '.languages',
+    '.pjax'
   ],
-  switches: {
-    '.post-toc-wrap': Pjax.switches.innerHTML
-  },
   analytics: false,
   cacheBust: false,
   scrollTo : !CONFIG.bookmark.enable
 });
 
-window.addEventListener('pjax:success', () => {
-  document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
-    var code = element.text || element.textContent || element.innerHTML || '';
-    var parent = element.parentNode;
-    parent.removeChild(element);
-    var script = document.createElement('script');
-    if (element.id) {
-      script.id = element.id;
-    }
-    if (element.className) {
-      script.className = element.className;
-    }
-    if (element.type) {
-      script.type = element.type;
-    }
-    if (element.src) {
-      script.src = element.src;
-      // Force synchronous loading of peripheral JS.
-      script.async = false;
-    }
-    if (element.getAttribute('pjax') !== null) {
-      script.setAttribute('pjax', '');
-    }
-    if (code !== '') {
-      script.appendChild(document.createTextNode(code));
-    }
-    parent.appendChild(script);
-  });
+document.addEventListener('pjax:success', () => {
+  pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
   NexT.boot.refresh();
   // Define Motion Sequence & Bootstrap Motion.
   if (CONFIG.motion.enable) {
@@ -784,27 +769,19 @@ window.addEventListener('pjax:success', () => {
       .add(NexT.motion.middleWares.postList)
       .bootstrap();
   }
+  const hasTOC = document.querySelector('.post-toc');
+  document.querySelector('.sidebar-inner').classList.toggle('sidebar-nav-active', hasTOC);
+  document.querySelector(hasTOC ? '.sidebar-nav-toc' : '.sidebar-nav-overview').click();
   NexT.utils.updateSidebarPosition();
 });
 </script>
 
 
-
-
   
-  <script pjax>
-    (function(){
-      var bp = document.createElement('script');
-      var curProtocol = window.location.protocol.split(':')[0];
-      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(bp, s);
-    })();
-  </script>
 
 
 
-  <script pjax>
+  <script data-pjax>
   if (CONFIG.page.isPost) {
     wpac_init = window.wpac_init || [];
     wpac_init.push({
@@ -840,46 +817,30 @@ window.addEventListener('pjax:success', () => {
 
 
 
-    <div id="pjax">
+    <div class="pjax">
   
 
   
-  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/quicklink@2/dist/quicklink.umd.js"></script>
   <script>
       window.addEventListener('load', () => {
-      quicklink({
-        timeout: 3000,
+      quicklink.listen({
+        timeout : 3000,
         priority: true,
-        ignores: [uri => uri.includes('#'),uri => uri == 'https://qianling.pw/dialect/',]
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://qianling.pw/dialect/',]
       });
       });
   </script>
 
 
 <script>
-NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
-  NexT.utils.getScript('https://qianling-1254036047.cos.ap-chengdu.myqcloud.com/js/Valine.min.js', () => {
-    var GUEST = ['nick', 'mail', 'link'];
-    var guest = 'nick,mail,link';
-    guest = guest.split(',').filter(item => {
-      return GUEST.includes(item);
-    });
-    new Valine({
-      el         : '#valine-comments',
-      verify     : false,
-      notify     : false,
-      appId      : 'zulMeib4pyC6zB1a65OmVtHz-gzGzoHsz',
-      appKey     : 'TEjUlOUBz3KwSUmDQ35ROxpw',
-      placeholder: "biu biu~　||ヽ(*￣▽￣*)ノミ|Ю",
-      avatar     : 'wavatar',
-      meta       : guest,
-      pageSize   : '10' || 10,
-      visitor    : false,
-      lang       : 'zh-cn' || 'zh-cn',
-      path       : location.pathname,
-      recordIP   : false,
-      serverURLs : ''
-    });
+NexT.utils.loadComments('#valine-comments', () => {
+  NexT.utils.getScript('/js/custom/Valine.min.js', () => {
+    new Valine(Object.assign({
+      el  : '#valine-comments',
+      path: location.pathname,
+    }, {"enable":true,"appId":"zulMeib4pyC6zB1a65OmVtHz-gzGzoHsz","appKey":"TEjUlOUBz3KwSUmDQ35ROxpw","placeholder":"biu biu~　||ヽ(*￣▽￣*)ノミ|Ю","avatar":"wavatar","meta":["nick","mail","link"],"pageSize":10,"language":"zh-cn","visitor":false,"comment_count":true,"recordIP":false,"serverURLs":null,"enableQQ":true,"requiredFields":[]}
+    ));
   }, window.Valine);
 });
 </script>

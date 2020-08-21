@@ -4,21 +4,25 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
+<meta name="generator" content="Hexo 5.0.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
 <link rel="stylesheet" href="/css/main.css">
 
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic|ZCOOL XiaoWei:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
-<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/5.10.0-11/css/all.min.css">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.css">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto+Serif+SC:300,300italic,400,400italic,700,700italic|ZCOOL+XiaoWei:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  
+  <link rel="stylesheet" href="/lib/animate-css/animate.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.min.css">
   <script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
 
-<script id="hexo-configurations">
+<script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"qianling.pw","root":"/","scheme":"Muse","version":"7.7.1","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"qianling.pw","root":"/","scheme":"Muse","version":"8.0.0-rc.5","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":true,"nav":null,"activeClass":"valine"},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"none","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"path":"search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true}};
   </script>
 
   <meta property="og:type" content="article">
@@ -38,19 +42,20 @@
 <link rel="canonical" href="https://qianling.pw/broadcasting-announcing-courses/">
 
 
-<script id="page-configurations">
+<script data-pjax class="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: false,
-    isPost: true
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
   };
 </script>
 
   <title>普通话考试及播音主持入门 | 千灵</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141264217-1"></script>
-    <script pjax>
+    <script data-pjax>
       if (CONFIG.hostname === location.hostname) {
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
@@ -60,7 +65,7 @@
     </script>
 
 
-  <script pjax>
+  <script data-pjax>
     var _hmt = _hmt || [];
     (function() {
       var hm = document.createElement("script");
@@ -75,24 +80,36 @@
 
   <noscript>
   <style>
-  .use-motion .brand,
+  body { margin-top: 2rem; }
+
   .use-motion .menu-item,
-  .sidebar-inner,
+  .use-motion .sidebar,
   .use-motion .post-block,
   .use-motion .pagination,
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
 
   .use-motion .site-title,
-  .use-motion .site-subtitle {
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
     opacity: initial;
     top: initial;
   }
 
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
   </style>
 </noscript>
 
@@ -103,67 +120,70 @@
   <div class="container use-motion">
     <div class="headband"></div>
 
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
+    <main class="main">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
     </div>
   </div>
 
   <div class="site-meta">
 
-    <div>
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">千灵</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">千灵</h1>
+      <i class="logo-line"></i>
+    </a>
   </div>
 
-  <div class="site-nav-right"></div>
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
 </div>
 
 
+
 <nav class="site-nav">
-  
-  <ul id="menu" class="menu">
+  <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-fw fa-star-half-alt"></i>首页</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-democrat"></i>归档</a>
+    <a href="/" rel="section"><i class="fa fa-star-half-alt fa-fw"></i>首页</a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-dove"></i>分类</a>
+    <a href="/categories/" rel="section"><i class="fa fa-dove fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-democrat fa-fw"></i>归档</a>
 
   </li>
         <li class="menu-item menu-item-daily">
 
-    <a href="/daily" rel="section"><i class="fa fa-fw fa-ghost"></i>碎念</a>
+    <a href="/daily" rel="section"><i class="fa fa-ghost fa-fw"></i>碎念</a>
 
   </li>
         <li class="menu-item menu-item-play">
 
-    <a href="/play" rel="section"><i class="fa fa-fw fa-fish"></i>游戏</a>
+    <a href="/play" rel="section"><i class="fa fa-fish fa-fw"></i>游戏</a>
 
   </li>
         <li class="menu-item menu-item-comments">
 
-    <a href="/comments" rel="section"><i class="fa fa-fw fa-dog"></i>留言</a>
+    <a href="/comments" rel="section"><i class="fa fa-dog fa-fw"></i>留言</a>
 
   </li>
         <li class="menu-item menu-item-about">
 
-    <a href="/about/" rel="section"><i class="fa fa-fw fa-carrot"></i>关于</a>
+    <a href="/about/" rel="section"><i class="fa fa-carrot fa-fw"></i>关于</a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -171,16 +191,18 @@
         </a>
       </li>
   </ul>
-
 </nav>
-  <div class="site-search">
+
+
+
+  <div class="search-pop-overlay">
     <div class="popup search-popup">
-    <div class="search-header">
+        <div class="search-header">
   <span class="search-icon">
     <i class="fa fa-search"></i>
   </span>
   <div class="search-input-container">
-    <input autocomplete="off" autocorrect="off" autocapitalize="off"
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
            placeholder="搜索..." spellcheck="false"
            type="search" class="search-input">
   </div>
@@ -188,12 +210,15 @@
     <i class="fa fa-times-circle"></i>
   </span>
 </div>
-<div id="search-result"></div>
-
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
 </div>
-<div class="search-pop-overlay"></div>
 
-  </div><script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+    </div>
+  </div>
+<script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
 <script src="/js/custom/custom.js"></script>
 
 <div class="top-scroll-bar"></div>
@@ -214,7 +239,7 @@ if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
 </script>
 <script type="text/javascript">
   $("body").backstretch([
-    "https://qianling-1254036047.cos.ap-chengdu.myqcloud.com/background/background%20(1).webp",
+    "/images/background/background (1).webp",
     "/images/background/background (2).webp",
     "/images/background/background (3).webp",
     "/images/background/background (4).webp",
@@ -249,223 +274,18 @@ if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
 </script>
 
 </div>
-    </header>
-
-    
-  <div class="back-to-top">
-    <i class="fa fa-chevron-up"></i>
-    <span>0%</span>
-  </div>
-
-
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-
-          <div class="content">
-            
-
-  <div class="posts-expand">
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://qianling.pw/broadcasting-announcing-courses/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="千灵夙赋">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="千灵">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          普通话考试及播音主持入门
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间 2020-03-13 12:55:35" itemprop="dateCreated datePublished" datetime="2020-03-13T12:55:35+08:00">2020-03-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间 2020-03-26 23:33:01" itemprop="dateModified" datetime="2020-03-26T23:33:01+08:00">2020-03-26</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%92%AD%E9%9F%B3%E4%B8%8E%E4%B8%BB%E6%8C%81%E8%89%BA%E6%9C%AF/" itemprop="url" rel="index">
-                    <span itemprop="name">播音与主持艺术</span>
-                  </a>
-                </span>
-            </span>
-
-          
-            <span id="/broadcasting-announcing-courses/" class="post-meta-item leancloud_visitors" data-flag-title="普通话考试及播音主持入门" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数 </span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-  <i class="far fa-comment"></i>
-    <a title="valine" href="/broadcasting-announcing-courses/#valine-comments" itemprop="discussionUrl">
-     评论数
-      <span class="post-comments-count valine-comment-count" data-xid="/broadcasting-announcing-courses/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-        <p><img data-src="/images/covers/177.jpg" alt=""></p>
-<a id="more"></a>
-
-<hr>
-<p>　　就艺术来说，年代越久、资历越老的艺术家越有学识、越有魅力。<br>　　同时，前人做事更认真、教学更仔细。<br>　　特地整理了一些年代较久远的资源，供观摩大师风范。</p>
-<p>　　本文分为<strong>普通话水平测试</strong>及<strong>播音主持艺术</strong>两部分，按需选择。</p>
-<h1 id="普通话水平测试"><a href="#普通话水平测试" class="headerlink" title="普通话水平测试"></a>普通话水平测试</h1><p>　　学完如有兴趣，建议进修一些播音的基础知识，在艺术上花时间，总不亏的。</p>
-<h2 id="拼音基础"><a href="#拼音基础" class="headerlink" title="拼音基础"></a>拼音基础</h2><p>学拼音说普通话：<a href="https://www.bilibili.com/video/av28083740">bilibili</a></p>
-<h2 id="声韵调纠正"><a href="#声韵调纠正" class="headerlink" title="声韵调纠正"></a>声韵调纠正</h2><p>普通话水平测试指南：<a href="https://www.bilibili.com/video/av28052050">bilibili Ⅰ</a>　<a href="https://www.bilibili.com/video/av27970243">bilibili Ⅱ</a></p>
-<h2 id="考试全知识点"><a href="#考试全知识点" class="headerlink" title="考试全知识点"></a>考试全知识点</h2><p>说好普通话 - 上海戏剧学院：<a href="https://www.bilibili.com/video/av28068973">bilibili</a>　<a href="https://list.youku.com/albumlist/show/id_17580686.htm">优酷</a><br>标准普通话教程 - 吴弘毅：<a href="https://www.bilibili.com/video/av96503830">bilibili</a>　<a href="https://study.163.com/course/introduction/360010.htm">网易云课堂</a>　<a href="https://so.tv.sohu.com/mts?wd=%E8%BD%BB%E6%9D%BE%E5%AD%A6%E4%B9%A0%E6%99%AE%E9%80%9A%E8%AF%9D&box=1">搜狐视频</a>　<a href="https://so.youku.com/search_video/q_%E8%BD%BB%E6%9D%BE%E5%AD%A6%E4%B9%A0%E8%AE%B2%E6%99%AE%E9%80%9A%E8%AF%9D">优酷视频</a>　<a href="https://www.56.com/w45/play_album-aid-14484428_vid-MTQ4OTU5NDUx.html">56视频</a>　<a href="http://v.baidu.com/v?word=%E6%A0%87%E5%87%86%E6%99%AE%E9%80%9A%E8%AF%9D%E6%95%99%E7%A8%8B&ct=301989888&rn=67&pn=0&db=0&s=0&fbl=800&ie=utf-8">百度视频</a></p>
-<h2 id="考试流程及注意事项"><a href="#考试流程及注意事项" class="headerlink" title="考试流程及注意事项"></a>考试流程及注意事项</h2><p>普通话水平测试考前培训 - 徐佑琮：<a href="https://www.bilibili.com/video/av95802757">bilibili</a>　<a href="http://educenter.fudan.edu.cn/hanyu">复旦大学现代教育技术中心 2018</a>　<a href="https://www.youtube.com/watch?v=uZf0IyQMHnQ">YouTube 2015</a></p>
-<br />
-
-<h1 id="播音主持艺术"><a href="#播音主持艺术" class="headerlink" title="播音主持艺术"></a>播音主持艺术</h1><p>　　<strong>建议按先后顺序学习，如有方言问题，请学习上面的拼音基础及声韵调纠正</strong></p>
-<h2 id="推荐"><a href="#推荐" class="headerlink" title="推荐"></a>推荐</h2><p>吐字发声技巧：<a href="https://www.bilibili.com/video/BV1Zb411s7GU">bilibili</a>　<a href="https://www.youtube.com/playlist?list=PLz-29gTa9wJMgp-maS4-Isd4kYBViWcg-">YouTube</a><br>普通话语音与发声 - 浙江传媒学院：<a href="https://www.bilibili.com/video/av9724765">bilibili</a><br>播音与主持教程 - 中国传媒大学：<a href="https://www.bilibili.com/video/av29517358">bilibili</a>　<a href="https://www.youtube.com/watch?v=pz0lJqP8efY&list=PLq3MGuyIKtnrizgcgtmCg1g3VGD96YZk-">YouTube</a><br>播音主持概论 - 浙江传媒学院：<a href="https://www.bilibili.com/video/av25901749">bilibili</a>　<a href="http://mooc1.chaoxing.com/course/1602637.html">超星</a><br>普通话语音 - 河南工业大学：<a href="https://zyzx.haut.edu.cn/resource.html?stationID=3&resourceid=5200&isprivate=false&cateid=1100">河南工业大学数字资源中心</a><br>朗读艺术入门 - 浙江传媒学院：<a href="http://www.icourse163.org/course/ZJICM-1449618170">中国大学MOOC</a>　<a href="https://www.zhihuishu.com/portals_h5/2clearning.html#/courseInfo/2086704?studyMode=2&VNK=d49eb4c5">智慧树</a></p>
-<br />
-
-<h2 id="可选"><a href="#可选" class="headerlink" title="可选"></a>可选</h2><p>跟房世祚学朗读：<a href="https://www.bilibili.com/video/BV1Q7411f7cG">bilibili</a>　<a href="https://v.qq.com/x/search/?q=%E8%B7%9F%E6%88%BF%E4%B8%96%E7%A5%9A%E5%AD%A6%E6%9C%97%E8%AF%BB">腾讯视频</a>　<a href="https://www.youtube.com/playlist?list=PLyZkDk4riiv9FHajID0FAdNEBYePhhV24">YouTube</a><br>即兴口语表达 - 浙江传媒学院：<a href="https://www.zhihuishu.com/portals_h5/2clearning.html#/courseInfo/2086709?studyMode=2&VNK=d8c3663c">智慧树</a>　　字音误读较多；写作、口语提升；理论为主；第七章老师很水</p>
-<br />
-
-<h2 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h2><p>　　<strong>以下公开课没看完，不做推荐</strong></p>
-<p>电视采访报道 - 中国传媒大学：<a href="https://www.icourse163.org/course/CUC-1206311804">中国大学MOOC</a><br>剪辑的历史、理论与实践 - 中国传媒大学：<a href="https://www.icourse163.org/course/CUC-1206311804">中国大学MOOC</a><br>带你走上主播台 - 浙江传媒学院：<a href="https://www.zhihuishu.com/portals_h5/2clearning.html#/courseInfo/2086728?studyMode=2&VNK=b99a41cc">智慧树</a><br>普通话语音与发声 - 浙江传媒学院：<a href="https://www.zhihuishu.com/portals_h5/2clearning.html#/courseInfo/2086714?studyMode=2&VNK=fe73d9ad">智慧树</a><br>播音员主持人形象塑造 - 浙江传媒学院：<a href="https://www.zhihuishu.com/portals_h5/2clearning.html#/courseInfo/2086702?studyMode=2&VNK=e59c7c5e">智慧树</a><br>礼仪文化修养 - 浙江传媒学院：<a href="https://www.zhihuishu.com/portals_h5/2clearning.html#/courseInfo/2086698?studyMode=2&VNK=fa7a02d3">智慧树</a>　<a href="http://www.zjooc.cn/course/30008942">浙江省高等学校在线开放课程共享平台</a><br>普通话水平测试轻松过 - 浙江传媒学院：<a href="https://www.zhihuishu.com/portals_h5/2clearning.html#/courseInfo/2086705?studyMode=2&VNK=3fa70096">智慧树</a><br>如何进行主持传播 - 浙江传媒学院：<a href="https://www.zhihuishu.com/portals_h5/2clearning.html#/courseInfo/2086717?studyMode=2&VNK=35805159">智慧树</a><br>生活化妆 - 浙江传媒学院：<a href="http://www.icourse163.org/course/ZJICM-1449582162">中国大学MOOC</a><br>影响力从语言开始 - 上海戏剧学院：<a href="https://www.icourse163.org/course/STA-1205982820">中国大学MOOC</a>　<a href="https://mooc1.chaoxing.com/course/201787863.html">超星</a><br>普通话实训与测试 - 四川大学：<a href="https://www.bilibili.com/video/av77291639">bilibili</a>　<a href="https://www.icourse163.org/course/SCU-1003501002">中国大学MOOC</a><br>我是朗读者 - 苏州大学：<a href="https://www.icourse163.org/course/SUDA-1207116802">中国大学MOOC</a><br>中国古典诗文朗诵与吟诵 -<br>江苏师范大学：<a href="https://www.icourse163.org/course/XZNU-1001754173">中国大学MOOC</a><br>普通话语音和播音发声 - 平顶山学院：<a href="https://www.icourse163.org/course/PDSU-1001794029">中国大学MOOC</a><br>广播节目播音与主持 - 长沙学院：<a href="https://www.icourse163.org/course/CCSU-1002716005">中国大学MOOC</a><br>表演与台词 - 黄淮学院：<a href="https://www.icourse163.org/course/HUAHU001-1449770173">中国大学MOOC</a></p>
-
-    </div>
-
-    
-    
-    
-      
-  <div class="popular-posts-header">相关文章</div>
-  <ul class="popular-posts">
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\mandarin\" rel="bookmark">《普通话语音》辅修笔记</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\pai\" rel="bookmark">从《圆桌派：菜市——食过返寻味》看谈话节目主持</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\reading-art\" rel="bookmark">《朗读艺术入门》笔记</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\pragmatics\" rel="bookmark">《节目主持语用学》书摘</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\impromptu-spoken-language\" rel="bookmark">《即兴口语表达》笔记</a></div>
-    </li>
-  </ul>
-
-
-      <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/%E6%92%AD%E9%9F%B3%E4%B8%8E%E4%B8%BB%E6%8C%81%E8%89%BA%E6%9C%AF/" rel="tag"># 播音与主持艺术</a>
-              <a href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag"># 学习</a>
-          </div>
-
-        
-  <div class="post-widgets">
-    <div class="wp_rating">
-      <div id="wpac-rating"></div>
-    </div>
-  </div>
-
-
-        
-    <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/economics/" rel="prev" title="有趣的经济学原理">
-      <i class="fa fa-chevron-left"></i> 有趣的经济学原理
-    </a></div>
-      <div class="post-nav-item">
-    <a href="/international-trade/" rel="next" title="国际贸易实务小知识">
-      国际贸易实务小知识 <i class="fa fa-chevron-right"></i>
-    </a></div>
-    </div>
-      </footer>
-    
-  </article>
-  
-  
-  
-
-  </div>
-
-
-          </div>
-          
-    <div class="comments" id="valine-comments"></div>
-
-<script>
-  window.addEventListener('tabs:register', () => {
-    let activeClass = CONFIG.comments.activeClass;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
-      }
-    }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
-    });
-  }
-</script>
-
-        </div>
           
   
   <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
   </div>
 
   <aside class="sidebar">
-    <div class="sidebar-inner">
 
-      <ul class="sidebar-nav motion-element">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
         </li>
@@ -475,19 +295,19 @@ if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
       </ul>
 
       <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#普通话水平测试"><span class="nav-text">普通话水平测试</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#拼音基础"><span class="nav-text">拼音基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#声韵调纠正"><span class="nav-text">声韵调纠正</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#考试全知识点"><span class="nav-text">考试全知识点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#考试流程及注意事项"><span class="nav-text">考试流程及注意事项</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#播音主持艺术"><span class="nav-text">播音主持艺术</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#推荐"><span class="nav-text">推荐</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可选"><span class="nav-text">可选</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其它"><span class="nav-text">其它</span></a></li></ol></li></ol></div>
-      </div>
+      <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%99%AE%E9%80%9A%E8%AF%9D%E6%B0%B4%E5%B9%B3%E6%B5%8B%E8%AF%95"><span class="nav-text">普通话水平测试</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8B%BC%E9%9F%B3%E5%9F%BA%E7%A1%80"><span class="nav-text">拼音基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A3%B0%E9%9F%B5%E8%B0%83%E7%BA%A0%E6%AD%A3"><span class="nav-text">声韵调纠正</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%80%83%E8%AF%95%E5%85%A8%E7%9F%A5%E8%AF%86%E7%82%B9"><span class="nav-text">考试全知识点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%80%83%E8%AF%95%E6%B5%81%E7%A8%8B%E5%8F%8A%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="nav-text">考试流程及注意事项</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%92%AD%E9%9F%B3%E4%B8%BB%E6%8C%81%E8%89%BA%E6%9C%AF"><span class="nav-text">播音主持艺术</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%A8%E8%8D%90"><span class="nav-text">推荐</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%AF%E9%80%89"><span class="nav-text">可选</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E5%AE%83"><span class="nav-text">其它</span></a></li></ol></li></ol></div>
+      </section>
       <!--/noindex-->
 
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="千灵夙赋"
       src="/images/avatar.png">
   <p class="site-author-name" itemprop="name">千灵夙赋</p>
   <div class="site-description" itemprop="description"></div>
 </div>
-<div class="site-state-wrap motion-element">
+<div class="site-state-wrap animated">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
@@ -509,16 +329,10 @@ if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
       </div>
   </nav>
 </div>
-  <div class="links-of-author motion-element">
-      <span class="links-of-author-item">
-        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
-      </span>
-  </div>
 
 
-  <div class="links-of-blogroll motion-element">
-    <div class="links-of-blogroll-title">
-      <i class="fa fa-fw fa-link"></i>
+  <div class="links-of-blogroll animated">
+    <div class="links-of-blogroll-title"><i class="link fa-fw"></i>
       Friends
     </div>
     <ul class="links-of-blogroll-list">
@@ -585,18 +399,220 @@ var ap = new APlayer({
   });
 </script>
 
-      </div>
-
+      </section>
     </div>
   </aside>
   <div id="sidebar-dimmer"></div>
 
+
+      </header>
+
+      
+  <div class="back-to-top">
+    <i class="fa fa-chevron-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div id="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+      <div class="main-inner">
+        
+
+        <div class="content post posts-expand">
+          
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://qianling.pw/broadcasting-announcing-courses/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="千灵夙赋">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="千灵">
+    </span>
+
+    
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          普通话考试及播音主持入门
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-03-13 12:55:35" itemprop="dateCreated datePublished" datetime="2020-03-13T12:55:35+08:00">2020-03-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-03-26 23:33:01" itemprop="dateModified" datetime="2020-03-26T23:33:01+08:00">2020-03-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%92%AD%E9%9F%B3%E4%B8%8E%E4%B8%BB%E6%8C%81%E8%89%BA%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">播音与主持艺术</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/broadcasting-announcing-courses/" class="post-meta-item leancloud_visitors" data-flag-title="普通话考试及播音主持入门" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    <a title="valine" href="/broadcasting-announcing-courses/#valine-comments" itemprop="discussionUrl">
+    <i class="far fa-comment"></i>评论数
+      <span class="post-comments-count valine-comment-count" data-xid="/broadcasting-announcing-courses/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p><img data-src="/images/covers/177.jpg"></p>
+<a id="more"></a>
+
+<hr>
+<p>　　就艺术来说，年代越久、资历越老的艺术家越有学识、越有魅力。<br>　　同时，前人做事更认真、教学更仔细。<br>　　特地整理了一些年代较久远的资源，供观摩大师风范。</p>
+<p>　　本文分为<strong>普通话水平测试</strong>及<strong>播音主持艺术</strong>两部分，按需选择。</p>
+<h1 id="普通话水平测试"><a href="#普通话水平测试" class="headerlink" title="普通话水平测试"></a>普通话水平测试</h1><p>　　学完如有兴趣，建议进修一些播音的基础知识，在艺术上花时间，总不亏的。</p>
+<h2 id="拼音基础"><a href="#拼音基础" class="headerlink" title="拼音基础"></a>拼音基础</h2><p>学拼音说普通话：<a href="https://www.bilibili.com/video/av28083740">bilibili</a></p>
+<h2 id="声韵调纠正"><a href="#声韵调纠正" class="headerlink" title="声韵调纠正"></a>声韵调纠正</h2><p>普通话水平测试指南：<a href="https://www.bilibili.com/video/av28052050">bilibili Ⅰ</a>　<a href="https://www.bilibili.com/video/av27970243">bilibili Ⅱ</a></p>
+<h2 id="考试全知识点"><a href="#考试全知识点" class="headerlink" title="考试全知识点"></a>考试全知识点</h2><p>说好普通话 - 上海戏剧学院：<a href="https://www.bilibili.com/video/av28068973">bilibili</a>　<a href="https://list.youku.com/albumlist/show/id_17580686.htm">优酷</a><br>标准普通话教程 - 吴弘毅：<a href="https://www.bilibili.com/video/av96503830">bilibili</a>　<a href="https://study.163.com/course/introduction/360010.htm">网易云课堂</a>　<a href="https://so.tv.sohu.com/mts?wd=%E8%BD%BB%E6%9D%BE%E5%AD%A6%E4%B9%A0%E6%99%AE%E9%80%9A%E8%AF%9D&box=1">搜狐视频</a>　<a href="https://so.youku.com/search_video/q_%E8%BD%BB%E6%9D%BE%E5%AD%A6%E4%B9%A0%E8%AE%B2%E6%99%AE%E9%80%9A%E8%AF%9D">优酷视频</a>　<a href="https://www.56.com/w45/play_album-aid-14484428_vid-MTQ4OTU5NDUx.html">56视频</a>　<a href="http://v.baidu.com/v?word=%E6%A0%87%E5%87%86%E6%99%AE%E9%80%9A%E8%AF%9D%E6%95%99%E7%A8%8B&ct=301989888&rn=67&pn=0&db=0&s=0&fbl=800&ie=utf-8">百度视频</a></p>
+<h2 id="考试流程及注意事项"><a href="#考试流程及注意事项" class="headerlink" title="考试流程及注意事项"></a>考试流程及注意事项</h2><p>普通话水平测试考前培训 - 徐佑琮：<a href="https://www.bilibili.com/video/av95802757">bilibili</a>　<a href="http://educenter.fudan.edu.cn/hanyu">复旦大学现代教育技术中心 2018</a>　<a href="https://www.youtube.com/watch?v=uZf0IyQMHnQ">YouTube 2015</a></p>
+<br />
+
+<h1 id="播音主持艺术"><a href="#播音主持艺术" class="headerlink" title="播音主持艺术"></a>播音主持艺术</h1><p>　　<strong>建议按先后顺序学习，如有方言问题，请学习上面的拼音基础及声韵调纠正</strong></p>
+<h2 id="推荐"><a href="#推荐" class="headerlink" title="推荐"></a>推荐</h2><p>吐字发声技巧：<a href="https://www.bilibili.com/video/BV1Zb411s7GU">bilibili</a>　<a href="https://www.youtube.com/playlist?list=PLz-29gTa9wJMgp-maS4-Isd4kYBViWcg-">YouTube</a><br>普通话语音与发声 - 浙江传媒学院：<a href="https://www.bilibili.com/video/av9724765">bilibili</a><br>播音与主持教程 - 中国传媒大学：<a href="https://www.bilibili.com/video/av29517358">bilibili</a>　<a href="https://www.youtube.com/watch?v=pz0lJqP8efY&list=PLq3MGuyIKtnrizgcgtmCg1g3VGD96YZk-">YouTube</a><br>播音主持概论 - 浙江传媒学院：<a href="https://www.bilibili.com/video/av25901749">bilibili</a>　<a href="http://mooc1.chaoxing.com/course/1602637.html">超星</a><br>普通话语音 - 河南工业大学：<a href="https://zyzx.haut.edu.cn/resource.html?stationID=3&resourceid=5200&isprivate=false&cateid=1100">河南工业大学数字资源中心</a><br>朗读艺术入门 - 浙江传媒学院：<a href="http://www.icourse163.org/course/ZJICM-1449618170">中国大学MOOC</a>　<a href="https://www.zhihuishu.com/portals_h5/2clearning.html#/courseInfo/2086704?studyMode=2&VNK=d49eb4c5">智慧树</a></p>
+<br />
+
+<h2 id="可选"><a href="#可选" class="headerlink" title="可选"></a>可选</h2><p>跟房世祚学朗读：<a href="https://www.bilibili.com/video/BV1Q7411f7cG">bilibili</a>　<a href="https://v.qq.com/x/search/?q=%E8%B7%9F%E6%88%BF%E4%B8%96%E7%A5%9A%E5%AD%A6%E6%9C%97%E8%AF%BB">腾讯视频</a>　<a href="https://www.youtube.com/playlist?list=PLyZkDk4riiv9FHajID0FAdNEBYePhhV24">YouTube</a><br>即兴口语表达 - 浙江传媒学院：<a href="https://www.zhihuishu.com/portals_h5/2clearning.html#/courseInfo/2086709?studyMode=2&VNK=d8c3663c">智慧树</a>　　字音误读较多；写作、口语提升；理论为主；第七章老师很水</p>
+<br />
+
+<h2 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h2><p>　　<strong>以下公开课没看完，不做推荐</strong></p>
+<p>电视采访报道 - 中国传媒大学：<a href="https://www.icourse163.org/course/CUC-1206311804">中国大学MOOC</a><br>剪辑的历史、理论与实践 - 中国传媒大学：<a href="https://www.icourse163.org/course/CUC-1206311804">中国大学MOOC</a><br>带你走上主播台 - 浙江传媒学院：<a href="https://www.zhihuishu.com/portals_h5/2clearning.html#/courseInfo/2086728?studyMode=2&VNK=b99a41cc">智慧树</a><br>普通话语音与发声 - 浙江传媒学院：<a href="https://www.zhihuishu.com/portals_h5/2clearning.html#/courseInfo/2086714?studyMode=2&VNK=fe73d9ad">智慧树</a><br>播音员主持人形象塑造 - 浙江传媒学院：<a href="https://www.zhihuishu.com/portals_h5/2clearning.html#/courseInfo/2086702?studyMode=2&VNK=e59c7c5e">智慧树</a><br>礼仪文化修养 - 浙江传媒学院：<a href="https://www.zhihuishu.com/portals_h5/2clearning.html#/courseInfo/2086698?studyMode=2&VNK=fa7a02d3">智慧树</a>　<a href="http://www.zjooc.cn/course/30008942">浙江省高等学校在线开放课程共享平台</a><br>普通话水平测试轻松过 - 浙江传媒学院：<a href="https://www.zhihuishu.com/portals_h5/2clearning.html#/courseInfo/2086705?studyMode=2&VNK=3fa70096">智慧树</a><br>如何进行主持传播 - 浙江传媒学院：<a href="https://www.zhihuishu.com/portals_h5/2clearning.html#/courseInfo/2086717?studyMode=2&VNK=35805159">智慧树</a><br>生活化妆 - 浙江传媒学院：<a href="http://www.icourse163.org/course/ZJICM-1449582162">中国大学MOOC</a><br>影响力从语言开始 - 上海戏剧学院：<a href="https://www.icourse163.org/course/STA-1205982820">中国大学MOOC</a>　<a href="https://mooc1.chaoxing.com/course/201787863.html">超星</a><br>普通话实训与测试 - 四川大学：<a href="https://www.bilibili.com/video/av77291639">bilibili</a>　<a href="https://www.icourse163.org/course/SCU-1003501002">中国大学MOOC</a><br>我是朗读者 - 苏州大学：<a href="https://www.icourse163.org/course/SUDA-1207116802">中国大学MOOC</a><br>中国古典诗文朗诵与吟诵 -<br>江苏师范大学：<a href="https://www.icourse163.org/course/XZNU-1001754173">中国大学MOOC</a><br>普通话语音和播音发声 - 平顶山学院：<a href="https://www.icourse163.org/course/PDSU-1001794029">中国大学MOOC</a><br>广播节目播音与主持 - 长沙学院：<a href="https://www.icourse163.org/course/CCSU-1002716005">中国大学MOOC</a><br>表演与台词 - 黄淮学院：<a href="https://www.icourse163.org/course/HUAHU001-1449770173">中国大学MOOC</a></p>
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\pai\" rel="bookmark">从《圆桌派：菜市——食过返寻味》看谈话节目主持</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\reading-art\" rel="bookmark">《朗读艺术入门》笔记</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\mandarin\" rel="bookmark">《普通话语音》辅修笔记</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\pragmatics\" rel="bookmark">《节目主持语用学》书摘</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\impromptu-spoken-language\" rel="bookmark">《即兴口语表达》笔记</a></div>
+    </li>
+  </ul>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%92%AD%E9%9F%B3%E4%B8%8E%E4%B8%BB%E6%8C%81%E8%89%BA%E6%9C%AF/" rel="tag"># 播音与主持艺术</a>
+              <a href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag"># 学习</a>
+          </div>
+
+        
+  <div class="post-widgets">
+    <div class="wp_rating">
+      <div id="wpac-rating"></div>
+    </div>
+  </div>
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/economics/" rel="prev" title="有趣的经济学原理">
+      <i class="fa fa-chevron-left"></i> 有趣的经济学原理
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/international-trade/" rel="next" title="国际贸易实务小知识">
+      国际贸易实务小知识 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+        </div>
+        
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
 
       </div>
     </main>
 
     <footer class="footer">
       <div class="footer-inner">
+        
+
         
 
 <div class="copyright">
@@ -611,10 +627,10 @@ var ap = new APlayer({
 
         
 <div class="busuanzi-count">
-  <script pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
       <span class="post-meta-item-icon">
-        <i class="fa fa-"></i>你是第
+        <i class=""></i>你是第
       </span>
       <span class="site-uv" title="总访客量">
         <span id="busuanzi_value_site_uv"></span>位到访的小伙伴喔
@@ -623,7 +639,7 @@ var ap = new APlayer({
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
       <span class="post-meta-item-icon">
-        <i class="fa fa-"></i>本站已被访问
+        <i class=""></i>本站已被访问
       </span>
       <span class="site-pv" title="总访问量">
         <span id="busuanzi_value_site_pv"></span>次啦
@@ -636,30 +652,30 @@ var ap = new APlayer({
 
 
 
-  <script pjax>
-  function leancloudSelector(url) {
-    url = encodeURI(url);
-    return document.getElementById(url).querySelector('.leancloud-visitors-count');
-  }
-  if (CONFIG.page.isPost) {
-    function addCount(Counter) {
-      var visitors = document.querySelector('.leancloud_visitors');
-      var url = decodeURI(visitors.getAttribute('id'));
-      var title = visitors.getAttribute('data-flag-title');
+<script data-pjax>
+  (function() {
+    function leancloudSelector(url) {
+      url = encodeURI(url);
+      return document.getElementById(url).querySelector('.leancloud-visitors-count');
+    }
 
-      Counter('get', `/classes/Counter?where=${JSON.stringify({ url })}`)
+    function addCount(Counter) {
+      const visitors = document.querySelector('.leancloud_visitors');
+      const url = decodeURI(visitors.id);
+      const title = visitors.dataset.flagTitle;
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url })))
         .then(response => response.json())
         .then(({ results }) => {
           if (results.length > 0) {
-            var counter = results[0];
-              leancloudSelector(url).innerText = counter.time + 1;
+            const counter = results[0];
+            leancloudSelector(url).innerText = counter.time + 1;
             Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
-              .then(response => response.json())
               .catch(error => {
                 console.error('Failed to save visitor count', error);
-              })
+              });
           } else {
-              Counter('post', '/classes/Counter', { title: title, url: url, time: 1 })
+              Counter('post', '/classes/Counter', { title, url, time: 1 })
                 .then(response => response.json())
                 .then(() => {
                   leancloudSelector(url).innerText = 1;
@@ -673,48 +689,34 @@ var ap = new APlayer({
           console.error('LeanCloud Counter Error', error);
         });
     }
-  } else {
+
     function showTime(Counter) {
-      var visitors = document.querySelectorAll('.leancloud_visitors');
-      var entries = [...visitors].map(element => {
-        return decodeURI(element.getAttribute('id'));
+      const visitors = document.querySelectorAll('.leancloud_visitors');
+      const entries = [...visitors].map(element => {
+        return decodeURI(element.id);
       });
 
-      Counter('get', `/classes/Counter?where=${JSON.stringify({ url: { '$in': entries } })}`)
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url: { '$in': entries } })))
         .then(response => response.json())
         .then(({ results }) => {
-          if (results.length === 0) {
-            document.querySelectorAll('.leancloud_visitors .leancloud-visitors-count').forEach(element => {
-              element.innerText = 0;
-            });
-            return;
-          }
-          for (let item of results) {
-            let { url, time } = item;
-            leancloudSelector(url).innerText = time;
-          }
           for (let url of entries) {
-            var element = leancloudSelector(url);
-            if (element.innerText == '') {
-              element.innerText = 0;
-            }
+            let target = results.find(item => item.url === url);
+            leancloudSelector(url).innerText = target ? target.time : 0;
           }
         })
         .catch(error => {
           console.error('LeanCloud Counter Error', error);
         });
     }
-  }
 
-  fetch('https://app-router.leancloud.cn/2/route?appId=zulMeib4pyC6zB1a65OmVtHz-gzGzoHsz')
-    .then(response => response.json())
-    .then(({ api_server }) => {
-      var Counter = (method, url, data) => {
-        return fetch(`https://${api_server}/1.1${url}`, {
-          method: method,
+    let { app_id, app_key, server_url } = {"enable":true,"app_id":"zulMeib4pyC6zB1a65OmVtHz-gzGzoHsz","app_key":"TEjUlOUBz3KwSUmDQ35ROxpw","server_url":null,"security":false};
+    function fetchData(api_server) {
+      const Counter = (method, url, data) => {
+        return fetch(`${api_server}/1.1${url}`, {
+          method,
           headers: {
-            'X-LC-Id'     : 'zulMeib4pyC6zB1a65OmVtHz-gzGzoHsz',
-            'X-LC-Key'    : 'TEjUlOUBz3KwSUmDQ35ROxpw',
+            'X-LC-Id'     : app_id,
+            'X-LC-Key'    : app_key,
             'Content-Type': 'application/json',
           },
           body: JSON.stringify(data)
@@ -726,8 +728,21 @@ var ap = new APlayer({
       } else if (document.querySelectorAll('.post-title-link').length >= 1) {
         showTime(Counter);
       }
-    });
-  </script>
+    }
+
+    const api_server = app_id.slice(-9) !== '-MdYXbMMI' ? server_url : `https://${app_id.slice(0, 8).toLowerCase()}.api.lncldglobal.com`;
+
+    if (api_server) {
+      fetchData(api_server);
+    } else {
+      fetch('https://app-router.leancloud.cn/2/route?appId=' + app_id)
+        .then(response => response.json())
+        .then(({ api_server }) => {
+          fetchData('https://' + api_server);
+        });
+    }
+  })();
+</script>
 
 
       </div>
@@ -736,12 +751,10 @@ var ap = new APlayer({
 
   
   <script src="/lib/anime.min.js"></script>
-  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/next-theme/pjax@0/pjax.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
-  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
 
 <script src="/js/utils.js"></script>
 
@@ -757,47 +770,19 @@ var ap = new APlayer({
 var pjax = new Pjax({
   selectors: [
     'head title',
-    '#page-configurations',
-    '.content-wrap',
+    '.page-configurations',
+    '.main-inner',
     '.post-toc-wrap',
-    '#pjax'
+    '.languages',
+    '.pjax'
   ],
-  switches: {
-    '.post-toc-wrap': Pjax.switches.innerHTML
-  },
   analytics: false,
   cacheBust: false,
   scrollTo : !CONFIG.bookmark.enable
 });
 
-window.addEventListener('pjax:success', () => {
-  document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
-    var code = element.text || element.textContent || element.innerHTML || '';
-    var parent = element.parentNode;
-    parent.removeChild(element);
-    var script = document.createElement('script');
-    if (element.id) {
-      script.id = element.id;
-    }
-    if (element.className) {
-      script.className = element.className;
-    }
-    if (element.type) {
-      script.type = element.type;
-    }
-    if (element.src) {
-      script.src = element.src;
-      // Force synchronous loading of peripheral JS.
-      script.async = false;
-    }
-    if (element.getAttribute('pjax') !== null) {
-      script.setAttribute('pjax', '');
-    }
-    if (code !== '') {
-      script.appendChild(document.createTextNode(code));
-    }
-    parent.appendChild(script);
-  });
+document.addEventListener('pjax:success', () => {
+  pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
   NexT.boot.refresh();
   // Define Motion Sequence & Bootstrap Motion.
   if (CONFIG.motion.enable) {
@@ -807,27 +792,19 @@ window.addEventListener('pjax:success', () => {
       .add(NexT.motion.middleWares.postList)
       .bootstrap();
   }
+  const hasTOC = document.querySelector('.post-toc');
+  document.querySelector('.sidebar-inner').classList.toggle('sidebar-nav-active', hasTOC);
+  document.querySelector(hasTOC ? '.sidebar-nav-toc' : '.sidebar-nav-overview').click();
   NexT.utils.updateSidebarPosition();
 });
 </script>
 
 
-
-
   
-  <script pjax>
-    (function(){
-      var bp = document.createElement('script');
-      var curProtocol = window.location.protocol.split(':')[0];
-      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(bp, s);
-    })();
-  </script>
 
 
 
-  <script pjax>
+  <script data-pjax>
   if (CONFIG.page.isPost) {
     wpac_init = window.wpac_init || [];
     wpac_init.push({
@@ -863,46 +840,30 @@ window.addEventListener('pjax:success', () => {
 
 
 
-    <div id="pjax">
+    <div class="pjax">
   
 
   
-  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/quicklink@2/dist/quicklink.umd.js"></script>
   <script>
       window.addEventListener('load', () => {
-      quicklink({
-        timeout: 3000,
+      quicklink.listen({
+        timeout : 3000,
         priority: true,
-        ignores: [uri => uri.includes('#'),uri => uri == 'https://qianling.pw/broadcasting-announcing-courses/',]
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://qianling.pw/broadcasting-announcing-courses/',]
       });
       });
   </script>
 
 
 <script>
-NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
-  NexT.utils.getScript('https://qianling-1254036047.cos.ap-chengdu.myqcloud.com/js/Valine.min.js', () => {
-    var GUEST = ['nick', 'mail', 'link'];
-    var guest = 'nick,mail,link';
-    guest = guest.split(',').filter(item => {
-      return GUEST.includes(item);
-    });
-    new Valine({
-      el         : '#valine-comments',
-      verify     : false,
-      notify     : false,
-      appId      : 'zulMeib4pyC6zB1a65OmVtHz-gzGzoHsz',
-      appKey     : 'TEjUlOUBz3KwSUmDQ35ROxpw',
-      placeholder: "biu biu~　||ヽ(*￣▽￣*)ノミ|Ю",
-      avatar     : 'wavatar',
-      meta       : guest,
-      pageSize   : '10' || 10,
-      visitor    : false,
-      lang       : 'zh-cn' || 'zh-cn',
-      path       : location.pathname,
-      recordIP   : false,
-      serverURLs : ''
-    });
+NexT.utils.loadComments('#valine-comments', () => {
+  NexT.utils.getScript('/js/custom/Valine.min.js', () => {
+    new Valine(Object.assign({
+      el  : '#valine-comments',
+      path: location.pathname,
+    }, {"enable":true,"appId":"zulMeib4pyC6zB1a65OmVtHz-gzGzoHsz","appKey":"TEjUlOUBz3KwSUmDQ35ROxpw","placeholder":"biu biu~　||ヽ(*￣▽￣*)ノミ|Ю","avatar":"wavatar","meta":["nick","mail","link"],"pageSize":10,"language":"zh-cn","visitor":false,"comment_count":true,"recordIP":false,"serverURLs":null,"enableQQ":true,"requiredFields":[]}
+    ));
   }, window.Valine);
 });
 </script>

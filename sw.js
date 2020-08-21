@@ -15,7 +15,7 @@ self.toolbox.router.get("/(.*)", self.toolbox.cacheFirst, {
     }
 });
 self.toolbox.router.get("/(.*)", self.toolbox.cacheFirst, {
-    origin: /fonts\.loli\.net/,
+    origin: /fonts\.googleapis\.com/,
     cache: {
         name: staticImageCacheName,
         maxEntries: maxEntries
@@ -89,12 +89,6 @@ self.toolbox.router.get("/(.*)", self.toolbox.cacheFirst, {
     origin: /api\.imjad\.cn/,
     cache: {
         name: staticAssetsCacheName,
-        maxEntries: maxEntries
-    }
-});
-self.toolbox.router.get("/(.*)", self.toolbox.cacheFirst, {origin: /(hm\.baidu\.com)/,
-    cache: {
-        name: vendorCacheName,
         maxEntries: maxEntries
     }
 });

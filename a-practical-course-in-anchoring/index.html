@@ -4,21 +4,25 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
+<meta name="generator" content="Hexo 5.0.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
 <link rel="stylesheet" href="/css/main.css">
 
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic|ZCOOL XiaoWei:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
-<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/5.10.0-11/css/all.min.css">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.css">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto+Serif+SC:300,300italic,400,400italic,700,700italic|ZCOOL+XiaoWei:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  
+  <link rel="stylesheet" href="/lib/animate-css/animate.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.min.css">
   <script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
 
-<script id="hexo-configurations">
+<script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"qianling.pw","root":"/","scheme":"Muse","version":"7.7.1","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"qianling.pw","root":"/","scheme":"Muse","version":"8.0.0-rc.5","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":true,"nav":null,"activeClass":"valine"},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"none","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"path":"search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true}};
   </script>
 
   <meta property="og:type" content="article">
@@ -81,19 +85,20 @@
 <link rel="canonical" href="https://qianling.pw/a-practical-course-in-anchoring/">
 
 
-<script id="page-configurations">
+<script data-pjax class="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: false,
-    isPost: true
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
   };
 </script>
 
   <title>《实用播音教程》书摘 | 千灵</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141264217-1"></script>
-    <script pjax>
+    <script data-pjax>
       if (CONFIG.hostname === location.hostname) {
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
@@ -103,7 +108,7 @@
     </script>
 
 
-  <script pjax>
+  <script data-pjax>
     var _hmt = _hmt || [];
     (function() {
       var hm = document.createElement("script");
@@ -118,24 +123,36 @@
 
   <noscript>
   <style>
-  .use-motion .brand,
+  body { margin-top: 2rem; }
+
   .use-motion .menu-item,
-  .sidebar-inner,
+  .use-motion .sidebar,
   .use-motion .post-block,
   .use-motion .pagination,
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
 
   .use-motion .site-title,
-  .use-motion .site-subtitle {
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
     opacity: initial;
     top: initial;
   }
 
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
   </style>
 </noscript>
 
@@ -146,67 +163,70 @@
   <div class="container use-motion">
     <div class="headband"></div>
 
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
+    <main class="main">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
     </div>
   </div>
 
   <div class="site-meta">
 
-    <div>
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">千灵</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">千灵</h1>
+      <i class="logo-line"></i>
+    </a>
   </div>
 
-  <div class="site-nav-right"></div>
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
 </div>
 
 
+
 <nav class="site-nav">
-  
-  <ul id="menu" class="menu">
+  <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-fw fa-star-half-alt"></i>首页</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-democrat"></i>归档</a>
+    <a href="/" rel="section"><i class="fa fa-star-half-alt fa-fw"></i>首页</a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-dove"></i>分类</a>
+    <a href="/categories/" rel="section"><i class="fa fa-dove fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-democrat fa-fw"></i>归档</a>
 
   </li>
         <li class="menu-item menu-item-daily">
 
-    <a href="/daily" rel="section"><i class="fa fa-fw fa-ghost"></i>碎念</a>
+    <a href="/daily" rel="section"><i class="fa fa-ghost fa-fw"></i>碎念</a>
 
   </li>
         <li class="menu-item menu-item-play">
 
-    <a href="/play" rel="section"><i class="fa fa-fw fa-fish"></i>游戏</a>
+    <a href="/play" rel="section"><i class="fa fa-fish fa-fw"></i>游戏</a>
 
   </li>
         <li class="menu-item menu-item-comments">
 
-    <a href="/comments" rel="section"><i class="fa fa-fw fa-dog"></i>留言</a>
+    <a href="/comments" rel="section"><i class="fa fa-dog fa-fw"></i>留言</a>
 
   </li>
         <li class="menu-item menu-item-about">
 
-    <a href="/about/" rel="section"><i class="fa fa-fw fa-carrot"></i>关于</a>
+    <a href="/about/" rel="section"><i class="fa fa-carrot fa-fw"></i>关于</a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -214,16 +234,18 @@
         </a>
       </li>
   </ul>
-
 </nav>
-  <div class="site-search">
+
+
+
+  <div class="search-pop-overlay">
     <div class="popup search-popup">
-    <div class="search-header">
+        <div class="search-header">
   <span class="search-icon">
     <i class="fa fa-search"></i>
   </span>
   <div class="search-input-container">
-    <input autocomplete="off" autocorrect="off" autocapitalize="off"
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
            placeholder="搜索..." spellcheck="false"
            type="search" class="search-input">
   </div>
@@ -231,12 +253,15 @@
     <i class="fa fa-times-circle"></i>
   </span>
 </div>
-<div id="search-result"></div>
-
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
 </div>
-<div class="search-pop-overlay"></div>
 
-  </div><script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+    </div>
+  </div>
+<script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
 <script src="/js/custom/custom.js"></script>
 
 <div class="top-scroll-bar"></div>
@@ -257,7 +282,7 @@ if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
 </script>
 <script type="text/javascript">
   $("body").backstretch([
-    "https://qianling-1254036047.cos.ap-chengdu.myqcloud.com/background/background%20(1).webp",
+    "/images/background/background (1).webp",
     "/images/background/background (2).webp",
     "/images/background/background (3).webp",
     "/images/background/background (4).webp",
@@ -292,28 +317,160 @@ if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
 </script>
 
 </div>
-    </header>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
 
-    
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%8A%E7%AF%87-%E6%99%AE%E9%80%9A%E8%AF%9D%E8%AF%AD%E9%9F%B3"><span class="nav-text">上篇　普通话语音</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E5%8D%95%E5%85%83-%E6%99%AE%E9%80%9A%E8%AF%9D%E8%AF%AD%E9%9F%B3%E6%A6%82%E8%AF%B4"><span class="nav-text">第一单元　普通话语音概说</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E4%BB%80%E4%B9%88%E6%98%AF%E6%99%AE%E9%80%9A%E8%AF%9D"><span class="nav-text">一、什么是普通话</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E6%99%AE%E9%80%9A%E8%AF%9D%E8%AF%AD%E9%9F%B3%E6%95%99%E5%AD%A6%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7"><span class="nav-text">二、普通话语音教学的重要性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E6%99%AE%E9%80%9A%E8%AF%9D%E8%AF%AD%E9%9F%B3%E7%9A%84%E7%89%B9%E7%82%B9"><span class="nav-text">三、普通话语音的特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E8%AF%AD%E9%9F%B3%E7%9A%84%E7%89%A9%E7%90%86%E3%80%81%E7%94%9F%E7%90%86%E5%8F%8A%E5%BF%83%E7%90%86%E5%9F%BA%E7%A1%80"><span class="nav-text">四、语音的物理、生理及心理基础</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%94%E3%80%81%E8%AF%AD%E9%9F%B3%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-text">五、语音基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%80%9D%E8%80%83%E9%A2%98"><span class="nav-text">思考题</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E5%8D%95%E5%85%83-%E5%A3%B0%E6%AF%8D"><span class="nav-text">第二单元　声母</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E4%BB%80%E4%B9%88%E6%98%AF%E5%A3%B0%E6%AF%8D"><span class="nav-text">一、什么是声母</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E5%A3%B0%E6%AF%8D%E7%9A%84%E5%88%86%E7%B1%BB"><span class="nav-text">二、声母的分类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%EF%BC%88%E4%B8%80%EF%BC%89%E6%8C%89%E5%8F%91%E9%9F%B3%E9%83%A8%E4%BD%8D%E5%88%86%E7%B1%BB"><span class="nav-text">（一）按发音部位分类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%EF%BC%88%E4%BA%8C%EF%BC%89%E6%8C%89%E5%8F%91%E9%9F%B3%E6%96%B9%E6%B3%95%E5%88%86%E7%B1%BB"><span class="nav-text">（二）按发音方法分类</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E5%A3%B0%E6%AF%8D%E7%BB%83%E4%B9%A0"><span class="nav-text">三、声母练习</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%EF%BC%88%E4%B8%80%EF%BC%89%E8%BE%85%E9%9F%B3%E5%A3%B0%E6%AF%8D%E5%8F%91%E9%9F%B3%E8%AE%AD%E7%BB%83"><span class="nav-text">（一）辅音声母发音训练</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%EF%BC%88%E4%BA%8C%EF%BC%89%E9%9B%B6%E5%A3%B0%E6%AF%8D%E9%9F%B3%E8%8A%82%E5%8F%91%E9%9F%B3%E8%AE%AD%E7%BB%83"><span class="nav-text">（二）零声母音节发音训练</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%EF%BC%88%E4%B8%89%EF%BC%89%E5%A3%B0%E6%AF%8D%E8%BE%A8%E8%AF%BB%E5%8F%91%E9%9F%B3%E8%AE%AD%E7%BB%83"><span class="nav-text">（三）声母辨读发音训练</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%EF%BC%88%E5%9B%9B%EF%BC%89%E5%A3%B0%E6%AF%8D%E6%AD%8C"><span class="nav-text">（四）声母歌</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%80%9D%E8%80%83%E9%A2%98-1"><span class="nav-text">思考题</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E5%8D%95%E5%85%83-%E9%9F%B5%E6%AF%8D"><span class="nav-text">第三单元　韵母</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E4%BB%80%E4%B9%88%E6%98%AF%E9%9F%B5%E6%AF%8D"><span class="nav-text">一、什么是韵母</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E9%9F%B5%E6%AF%8D%E7%9A%84%E5%88%86%E7%B1%BB"><span class="nav-text">二、韵母的分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E9%9F%B5%E6%AF%8D%E7%BB%83%E4%B9%A0"><span class="nav-text">三、韵母练习</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%EF%BC%88%E4%B8%80%EF%BC%89%E5%8D%95%E5%85%83%E9%9F%B3%E9%9F%B5%E6%AF%8D%E7%BB%83%E4%B9%A0"><span class="nav-text">（一）单元音韵母练习</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%EF%BC%88%E4%BA%8C%EF%BC%89%E5%A4%8D%E5%90%88%E5%85%83%E9%9F%B3%E9%9F%B5%E6%AF%8D%E7%BB%83%E4%B9%A0"><span class="nav-text">（二）复合元音韵母练习</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%EF%BC%88%E4%B8%89%EF%BC%89%E5%B8%A6%E9%BC%BB%E5%B0%BE%E9%9F%B3%E9%9F%B5%E6%AF%8D%EF%BC%88%E9%BC%BB%E9%9F%B5%E6%AF%8D%EF%BC%89%E7%BB%83%E4%B9%A0"><span class="nav-text">（三）带鼻尾音韵母（鼻韵母）练习</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%EF%BC%88%E5%9B%9B%EF%BC%89%E9%9F%B5%E6%AF%8D%E6%8C%89%E5%9B%9B%E5%91%BC%E8%BF%9B%E8%A1%8C%E5%88%86%E7%B1%BB%E5%8F%8A%E7%BB%83%E4%B9%A0"><span class="nav-text">（四）韵母按四呼进行分类及练习</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%80%9D%E8%80%83%E9%A2%98-2"><span class="nav-text">思考题</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E5%9B%9B%E5%8D%95%E5%85%83-%E5%A3%B0%E8%B0%83"><span class="nav-text">第四单元　声调</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E4%BB%80%E4%B9%88%E6%98%AF%E5%A3%B0%E8%B0%83"><span class="nav-text">一、什么是声调</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E5%A3%B0%E8%B0%83%E7%9A%84%E6%80%A7%E8%B4%A8%E5%92%8C%E7%89%B9%E7%82%B9"><span class="nav-text">二、声调的性质和特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E6%99%AE%E9%80%9A%E8%AF%9D%E7%9A%84%E8%B0%83%E7%B1%BB%E5%92%8C%E8%B0%83%E5%80%BC"><span class="nav-text">三、普通话的调类和调值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E6%99%AE%E9%80%9A%E8%AF%9D%E5%A3%B0%E8%B0%83%E5%8F%91%E9%9F%B3%E8%A6%81%E9%A2%86"><span class="nav-text">四、普通话声调发音要领</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%94%E3%80%81%E6%99%AE%E9%80%9A%E8%AF%9D%E5%A3%B0%E8%B0%83%E7%BB%83%E4%B9%A0"><span class="nav-text">五、普通话声调练习</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%EF%BC%88%E4%B8%80%EF%BC%89%E5%90%8C%E5%A3%B0%E9%9F%B5%E9%9F%B3%E8%8A%82%E5%9B%9B%E5%A3%B0%E5%8F%91%E9%9F%B3%E8%AE%AD%E7%BB%83"><span class="nav-text">（一）同声韵音节四声发音训练</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%EF%BC%88%E4%BA%8C%EF%BC%89%E5%8F%8C%E9%9F%B3%E8%8A%82%E8%AF%8D%E8%AF%AD%E5%9B%9B%E5%A3%B0%E4%B8%8D%E5%90%8C%E7%BB%84%E5%90%88%E5%8F%91%E9%9F%B3%E8%AE%AD%E7%BB%83"><span class="nav-text">（二）双音节词语四声不同组合发音训练</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%EF%BC%88%E4%B8%89%EF%BC%89%E6%8C%89%E9%98%B4%E3%80%81%E9%98%B3%E3%80%81%E4%B8%8A%E3%80%81%E5%8E%BB%E5%92%8C%E5%8E%BB%E3%80%81%E4%B8%8A%E3%80%81%E9%98%B3%E3%80%81%E9%98%B4%E9%A1%BA%E5%BA%8F%E6%8E%92%E5%88%97%E5%9B%9B%E9%9F%B3%E8%8A%82%E8%AF%8D%E8%AF%AD%E5%A3%B0%E8%B0%83%E5%8F%91%E9%9F%B3%E8%AE%AD%E7%BB%83"><span class="nav-text">（三）按阴、阳、上、去和去、上、阳、阴顺序排列四音节词语声调发音训练</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%EF%BC%88%E5%9B%9B%EF%BC%89%E4%B8%8A%E5%A3%B0%E9%9F%B3%E8%8A%82%E5%8F%91%E9%9F%B3%E8%AE%AD%E7%BB%83"><span class="nav-text">（四）上声音节发音训练</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%EF%BC%88%E4%BA%94%EF%BC%89%E6%8C%89%E5%A3%B0%E6%AF%8D%E9%A1%BA%E5%BA%8F%E6%8E%92%E5%88%97%E5%9B%9B%E5%A3%B0%E6%B7%B7%E5%90%88%E5%9B%9B%E9%9F%B3%E8%8A%82%E8%AF%8D%E8%AF%AD%E5%8F%91%E9%9F%B3%E8%AE%AD%E7%BB%83"><span class="nav-text">（五）按声母顺序排列四声混合四音节词语发音训练</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%EF%BC%88%E5%85%AD%EF%BC%89%E5%A3%B0%E8%B0%83%E7%BB%BC%E5%90%88%E8%AE%AD%E7%BB%83"><span class="nav-text">（六）声调综合训练</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%80%9D%E8%80%83%E9%A2%98-3"><span class="nav-text">思考题</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%BA%94%E5%8D%95%E5%85%83-%E6%99%AE%E9%80%9A%E8%AF%9D%E9%9F%B3%E8%8A%82%E7%BB%93%E6%9E%84%E4%B8%8E%E5%A3%B0%E9%9F%B5%E6%8B%BC%E5%90%88%E5%85%B3%E7%B3%BB"><span class="nav-text">第五单元　普通话音节结构与声韵拼合关系</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E6%99%AE%E9%80%9A%E8%AF%9D%E9%9F%B3%E8%8A%82%E7%BB%93%E6%9E%84"><span class="nav-text">一、普通话音节结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E6%99%AE%E9%80%9A%E8%AF%9D%E9%9F%B3%E8%8A%82%E7%9A%84%E5%A3%B0%E9%9F%B5%E6%8B%BC%E5%90%88%E5%85%B3%E7%B3%BB"><span class="nav-text">二、普通话音节的声韵拼合关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%9D%E8%80%83%E9%A2%98-4"><span class="nav-text">思考题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E5%85%AD%E5%8D%95%E5%85%83-%E8%AF%AD%E6%B5%81%E9%9F%B3%E5%8F%98"><span class="nav-text">第六单元　语流音变</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E4%BB%80%E4%B9%88%E5%8F%AB%E8%AF%AD%E6%B5%81%E9%9F%B3%E5%8F%98"><span class="nav-text">一、什么叫语流音变</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E8%AF%AD%E6%B5%81%E9%9F%B3%E5%8F%98%E7%BB%83%E4%B9%A0"><span class="nav-text">二、语流音变练习</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%EF%BC%88%E4%B8%80%EF%BC%89%E8%BD%BB%E5%A3%B0%E8%AE%AD%E7%BB%83"><span class="nav-text">（一）轻声训练</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%EF%BC%88%E4%BA%8C%EF%BC%89%E5%84%BF%E5%8C%96%E8%AE%AD%E7%BB%83"><span class="nav-text">（二）儿化训练</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%EF%BC%88%E4%B8%89%EF%BC%89%E5%8F%98%E8%B0%83%E8%AE%AD%E7%BB%83"><span class="nav-text">（三）变调训练</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%EF%BC%88%E5%9B%9B%EF%BC%89%E8%AF%AD%E6%B0%94%E8%AF%8D%E2%80%9C%E5%95%8A%E2%80%9D%E7%9A%84%E5%8F%91%E9%9F%B3%E5%8F%98%E5%8C%96%E8%A7%84%E5%BE%8B%E5%8F%8A%E5%8F%91%E9%9F%B3%E8%AE%AD%E7%BB%83"><span class="nav-text">（四）语气词“啊”的发音变化规律及发音训练</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%EF%BC%88%E4%BA%94%EF%BC%89%E8%AF%8D%E7%9A%84%E8%BD%BB%E9%87%8D%E6%A0%BC%E5%BC%8F%E5%8F%91%E9%9F%B3%E8%AE%AD%E7%BB%83"><span class="nav-text">（五）词的轻重格式发音训练</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%80%9D%E8%80%83%E9%A2%98-5"><span class="nav-text">思考题</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B1%89%E8%AF%AD%E6%8B%BC%E9%9F%B3%E9%9F%B3%E8%8A%82%E5%88%97%E8%A1%A8%EF%BC%88WiKi%EF%BC%89"><span class="nav-text">汉语拼音音节列表（WiKi）</span></a></li></ol></li></ol></div>
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="千灵夙赋"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">千灵夙赋</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">166</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">37</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">46</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+  <div class="links-of-blogroll animated">
+    <div class="links-of-blogroll-title"><i class="link fa-fw"></i>
+      Friends
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://myloveru.cn/" title="http:&#x2F;&#x2F;myloveru.cn&#x2F;" rel="noopener" target="_blank">梦想博客</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://meow3.family.blog/" title="https:&#x2F;&#x2F;meow3.family.blog&#x2F;" rel="noopener" target="_blank">恶魔菌の记事簿</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://tding.top/" title="https:&#x2F;&#x2F;tding.top&#x2F;" rel="noopener" target="_blank">小丁的个人博客</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.julydate.com/" title="https:&#x2F;&#x2F;www.julydate.com&#x2F;" rel="noopener" target="_blank">七夏浅笑</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://raspii.tech/" title="https:&#x2F;&#x2F;raspii.tech&#x2F;" rel="noopener" target="_blank">无用挂件</a>
+        </li>
+    </ul>
+  </div>
+<div id="aplayer" class="aplayer"></div>
+<script>
+if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
+  document.write('<script type="text/javascript" src="/js/custom/APlayer.min.js"><\/script>');
+}
+</script>
+<script type="text/javascript">
+var ap = new APlayer({
+    element: document.getElementById('aplayer'),                       // Optional, player element
+    narrow: false,                                                     // Optional, narrow style
+    autoplay: false,                                                    // Optional, autoplay song(s), not supported by mobile browsers
+    showlrc: 0,                                                        // Optional, show lrc, can be 0, 1, 2, see: ###With lrc
+    mutex: true,                                                       // Optional, pause other players when this player playing
+    theme: '#e6d0b2',                                                  // Optional, theme color, default: #b7daff
+    mode: 'random',                                                    // Optional, play mode, can be `random` `single` `circulation`(loop) `order`(no loop), default: `circulation`
+    preload: 'metadata',                                               // Optional, the way to load music, can be 'none' 'metadata' 'auto', default: 'auto'
+    listmaxheight: '513px',                                             // Optional, max height of play list
+    music: [{
+      title: '世末歌者',
+      author: '双笙 囧菌',
+      url: '/music/%E5%8F%8C%E7%AC%99%20%E5%9B%A7%E8%8F%8C%20-%20%E4%B8%96%E6%9C%AB%E6%AD%8C%E8%80%85.mp3',
+      pic: '/images/aplayer/双笙　囧菌 - 世末歌者.webp',
+    }, {
+      title: '幹物女(WeiWei)',
+      author: '封茗囧菌',
+      url: '/music/%E5%B0%81%E8%8C%97%E5%9B%A7%E8%8F%8C%20-%20%E5%B9%B9%E7%89%A9%E5%A5%B3(WeiWei).mp3',
+      pic: '/images/aplayer/封茗囧菌 - 幹物女(WeiWei).webp',
+    }, {
+      title: '东京不太热',
+      author: '封茗囧菌',
+      url: '/music/%E5%B0%81%E8%8C%97%E5%9B%A7%E8%8F%8C%20-%20%E4%B8%9C%E4%BA%AC%E4%B8%8D%E5%A4%AA%E7%83%AD.mp3',
+      pic: '/images/aplayer/封茗囧菌 - 东京不太热.webp',
+    }, {
+      title: '有故事的小仙女（Cover 初音ミク）',
+      author: '井宿',
+      url: '/music/%E4%BA%95%E5%AE%BF%20-%20%E6%9C%89%E6%95%85%E4%BA%8B%E7%9A%84%E5%B0%8F%E4%BB%99%E5%A5%B3%EF%BC%88Cover%20%E5%88%9D%E9%9F%B3%E3%83%9F%E3%82%AF%EF%BC%89.mp3',
+      pic: '/images/aplayer/井宿 - 有故事的小仙女（Cover 初音ミク）.webp',
+    }, {
+      title: '拼凑的断音（Cover 洛天依）',
+      author: '泡泡Hansy',
+      url: '/music/%E6%B3%A1%E6%B3%A1Hansy%20-%20%E6%8B%BC%E5%87%91%E7%9A%84%E6%96%AD%E9%9F%B3%EF%BC%88Cover%20%E6%B4%9B%E5%A4%A9%E4%BE%9D%EF%BC%89.mp3',
+      pic: '/images/aplayer/泡泡Hansy - 拼凑的断音（Cover 洛天依）.webp',
+    }]
+  });
+</script>
+
+      </section>
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </header>
+
+      
   <div class="back-to-top">
     <i class="fa fa-chevron-up"></i>
     <span>0%</span>
   </div>
 
+<noscript>
+  <div id="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
 
-    <main class="main">
+
       <div class="main-inner">
-        <div class="content-wrap">
+        
+
+        <div class="content post posts-expand">
           
 
-          <div class="content">
-            
-
-  <div class="posts-expand">
-        
+    
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://qianling.pw/a-practical-course-in-anchoring/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -325,6 +482,8 @@ if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="千灵">
     </span>
+
+    
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           《实用播音教程》书摘
@@ -333,28 +492,26 @@ if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间 2019-08-14 07:50:31" itemprop="dateCreated datePublished" datetime="2019-08-14T07:50:31+08:00">2019-08-14</time>
+              <time title="创建时间：2019-08-14 07:50:31" itemprop="dateCreated datePublished" datetime="2019-08-14T07:50:31+08:00">2019-08-14</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间 2019-08-23 18:45:42" itemprop="dateModified" datetime="2019-08-23T18:45:42+08:00">2019-08-23</time>
+                <time title="修改时间：2019-08-23 18:45:42" itemprop="dateModified" datetime="2019-08-23T18:45:42+08:00">2019-08-23</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
+                <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%92%AD%E9%9F%B3%E4%B8%8E%E4%B8%BB%E6%8C%81%E8%89%BA%E6%9C%AF/" itemprop="url" rel="index">
-                    <span itemprop="name">播音与主持艺术</span>
-                  </a>
+                  <a href="/categories/%E6%92%AD%E9%9F%B3%E4%B8%8E%E4%B8%BB%E6%8C%81%E8%89%BA%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">播音与主持艺术</span></a>
                 </span>
             </span>
 
@@ -363,14 +520,13 @@ if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
-              <span class="post-meta-item-text">阅读次数 </span>
+              <span class="post-meta-item-text">阅读次数</span>
               <span class="leancloud-visitors-count"></span>
             </span>
   
   <span class="post-meta-item">
-  <i class="far fa-comment"></i>
     <a title="valine" href="/a-practical-course-in-anchoring/#valine-comments" itemprop="discussionUrl">
-     评论数
+    <i class="far fa-comment"></i>评论数
       <span class="post-comments-count valine-comment-count" data-xid="/a-practical-course-in-anchoring/" itemprop="commentCount"></span>
     </a>
   </span>
@@ -384,9 +540,7 @@ if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
-        <p><img data-src="/images/covers/151.png" alt=""></p>
+        <p><img data-src="/images/covers/151.png"></p>
 <a id="more"></a>
 
 <hr>
@@ -401,20 +555,20 @@ if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
 <h3 id="四、语音的物理、生理及心理基础"><a href="#四、语音的物理、生理及心理基础" class="headerlink" title="四、语音的物理、生理及心理基础"></a>四、语音的物理、生理及心理基础</h3><p>　　语音学（phonetics）是研究语音规律的科学。语音具有一切声音所共有的物理属性，我们可以从声学的角度去分析，同时语音的发音过程又是人类发音器官的一种生理活动，我们可以通过发音器官活动方式进行分析，人类在思维、说话和对语音的知觉过程又是一种心理活动，我们也可以从人类心理活动过程来分析语音现象。<br>　　语音也是一种声音，因此它具有声音的物理属性。我们可以通过音高、音强、音长和音色四要素进行分析。<br>　　音高，与声波的频率高低有关。频率高，声音就高，频率低，声音就低。人的听觉可以感受到频率在 16 赫兹—20000 赫兹之间的声波。语音的音高主要是由人类发声振动器官声带的长短、松紧、薄厚决定的。通常女性的声带要比男性短、紧、薄，所以发出的声音要比男性高。而一个人要改变自己语音的音高，也可以通过改变声带的长短、薄厚和松紧来实现。<br>　　音强，与声波的振幅大小有关，振幅大声音就强，相反，振幅小声音就弱。计算音强的单位叫分贝（db）。在语音中，音强与音高往往有连带关系，一般说来，音强加强时，音高也会加高；而音高加高时，音强也会增强。<br>　　音长，指声波震动持续时间的长短。计算音长通常以毫秒（ms）为单位。虽然汉语普通话中没有长元音和短元音的区分，但从语言学的角度分析音长仍有重要意义。如普通话轻声音节的主要特征之一就是音长较短。此外，在话语中音长较长的音节，往往是被强调的音节。而音高较高、音强较强的语音，往往也会表现为音长较长。<br>　　音色，也叫音质，是指声音的特色和本质。语音并非只有一个频率的纯音，而是包含几个纯音的复音。其中振动频率最低、振幅最大的是基波，其余部分叫谐波。音色的不同除取决于基波以外，还决定于数量不同的谐波。语音音色的不同主要是由于发音时声腔形状的不同而造成的。语音是人类通过发音器官振动与调节发出的。人的发音器宫可分为动力器官、振动器官、共鸣器官及咬字器官。发音器官的每一部分对于发音的作用各司其职又互相协调。发音时，肺部呼出气流，通过气管到喉头使声带颤动而发音，同时经过由喉至口唇的声道共鸣而扩大、美化，并由于共鸣腔，主要是口腔形状的变化而产生各种不同音色的声音。这部分声音称为乐音。此外还有口腔中咬字器官的运动使呼出气流受阻而发出的噪音。人类的语音是由于这些乐音和噪音的独用或并用而构成的。而这些乐音和噪音主要是集中在口腔中的可以活动的发音器官产生的。复杂的生成语音的过程是集中在口腔中进行的。<br>　　语言是人类社会特有的信息符号。语言过程即信息的编码——发送——传输——接收——解码的过程。语音的产生和接收理解的过程是人的心理活动的过程。同时人在言语发声的过程中还要及时检验发声的效果，进行反馈，并依此来不断调节发声器官的运动。对语音的知觉和识别也是有声语言交际的重要过程。语音的知觉是主观听觉的心理现象对客观物理现象声音的反映。人对语音的分辨能力先于发音能力，所以发音的准确与否常依赖于听音辨音的准确与否。</p>
 <h3 id="五、语音基本概念"><a href="#五、语音基本概念" class="headerlink" title="五、语音基本概念"></a>五、语音基本概念</h3><p>　　音节：用听觉可以区分的语音结构基本单位。在汉语中一般说来一个汉字的读音即为一个音节。普通话常用基本无调音节为 400 个，有调音节为 1300 多个。（《新华字典》中收录 418 个无调音节。这多出的十几个音节多为一些特殊的辅音音节、变化特殊的语气词及一些过于土俗的方言词音节。）<br>　　音素：语音的最小单位。普通话中有 32 个音素，其中元音音素 10 个，辅音音素 22 个。<br>　　音系：音系学概念。语音系统的简称。<br>　　音位：从语言的社会功能出发，不是把语音仅看成是物理或生理的差别，而是在某种语言中，把语音归纳为数目有限的具有辨义作用的语音单位叫音位。<br>　　元音：音素的一种。发音时气流在口腔中不受明显阻碍，呼出气流较弱，发音器官肌肉均衡紧张，声带颤动，声音响亮清晰，都是乐音。<br>　　单元音：即单纯元音。在发音过程中，音质始终不变的一个元音。它包括一般单纯元音（舌面元音）以及特殊元音。<br>　　一般单纯元音：又叫舌面元音，发音过程中舌位的活动在舌面。<br>　　一般单纯元音发音条件：决定一般单纯元音音色的条件，分别有舌位的高低（口腔开度的开闭）、舌位的前后以及唇形的圆展。其中舌位的高低与口腔的开度开闭成反比。<br>　　舌位：发元音时舌面隆起最高点即最接近上腭的一点，即近腭点。<br>　　舌面元音舌位图：是一种示意图。四个端点分别表示发音时舌头在口腔中上下前后的四个极端位置。用直线将四个端点连接起来形成的一个四边形。四边形横面分为前、央、后，用以表示舌位的前后；竖面分为低、半低、半高、高，用以表示舌位的高低（口腔的开闭）。竖线的左侧标记不圆唇音，右侧标记圆唇音。这种示意方式是世界通用的。</p>
 <div><div class="fold_hider"><div class="close hider_title">展开图片</div></div><div class="fold">
-<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-1.png" alt=""></p>
+<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-1.png"></p>
 
 </div></div>
 
 <p>　　特殊元音：普通话语音中所包括的汉语中特有的以舌尖运动或卷舌动作形成的元音音素。<br>　　卷舌元音：特殊元音的一种，靠卷舌动作形成的元音音素。普通话中卷舌元音只有一个音素［r］。<br>　　复合音：两个或三个元音音素组成的音组或单元音、复合元音后面附带鼻尾音组成的音组统称为复合音。<br>　　复合元音：由两个或三个元音音素组成的音组。<br>　　舌位动程：复合元音的发音过程是由几个元音音素的舌位连续移动而形成的。舌位移动的过程叫舌位动程。<br>　　复合鼻尾音：单纯元音或复合元音的后面附带鼻辅音［n］或［ng］作尾音的复合音。<br>　　辅音：音素的一类。发辅音时气流在口腔中明显受到阻碍，呼出气流较强，发音器官对气流构成阻碍的部分肌肉紧张，大部分辅音发音时声带不颤动。普通话中辅音音素有 22  个。<br>　　发音部位：发辅音时，口腔对呼出气流构成阻碍的部位。普通话中 22 个辅音音素的发音部位共有 7 处，即：双唇阻、唇齿阻、舌尖前阻、舌尖中阻、舌尖后阻、舌面阻和舌根阻。<br>　　发音方法：发辅音时，呼出气流破除发音部位所构成阻碍的方法。普通话中 22 个辅音音素的发音方法可分为 5 种：塞音、擦音、塞擦音、鼻音和边音。<br>　　送气与否：配合发音方法对辅音发音条件进行的区分。在塞音和塞擦音中按呼出气流的强、弱区分为送气音和不送气音两组辅音音素。<br>　　清浊区分：配合发音方法对辅音发音条件进行的区分。清音指发辅音时声带不颤动；浊音指发辅音时声带颤动。普通话 22 个辅音音素中，只有鼻音 m、n、ng、边音 l 和擦音 r 等 5 个辅音音素为浊音，其余 17 个均为清辅音。<br>　　辅音发音要领表：普通话 22 个辅音音素按发音部位、发音方法以及送气与否、清浊的区分可以列为以下的辅音发音要领表。</p>
 <div><div class="fold_hider"><div class="close hider_title">展开图片</div></div><div class="fold">
-<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-2.png" alt=""><br><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-3.png" alt=""></p>
+<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-2.png"><br><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-3.png"></p>
 
 </div></div>
 
 <p>　　辅音发音过程：发辅音时，从准备发音到发音结束的过程一般可分为成阻、持阻和除阻三个阶段。不同的发音方法，三个阶段的状态各有不同。<br>　　成阻—发辅音过程的开始阶段，即发音过程中阻碍作用开始形成，发音器官从静止或其他状态转到发一种辅音时所必须构成阻碍状态的过程。<br>　　持阻—发辅音过程的中间阶段，即发音过程中阻碍作用的持续，发音器官从开始成阻到最后除阻的一种中间过程。<br>　　除阻—发辅音过程的最后阶段，即发音过程中阻碍作用的解除，发音器官从某种阻碍状态转到原来静止或其他状态的一种过程。<br>　　声母：按汉语语音学的传统分析方法，把一个汉语音节起头的辅音叫做声母。普通话有 21 个辅音声母。<br>　　零声母：按汉语语音学的传统分析方法，把汉语音节中没有辅音声母叫零声母。<br>　　韵母：按汉语语音学的传统分析方法，把汉语音节中声母以后的部分叫韵母。韵母由单元音或复合音充当。普通话中有 39 个韵母。<br>　　四呼：按汉语语音学的传统分析方法，根据韵母起头元音的唇形特点将韵母分为开口呼、齐齿呼、合口呼、撮口呼四类。四呼即指开、齐、合、撮四类韵母。<br>　　声调：汉语音节所固有的，可以区别意义的声音的高低和升降。<br>　　调类：声调的种类。普通话有四个调类，即阴平、阳平、上声和去声。<br>　　调值：声调的实值，即声调的实际发音，也叫调形。指声音高低、升降、曲直、长短的形式。普通话有高平调、高升调、降升调、全降调四种调<br>值形式，按五度标记法，调值分别为 55、35、214 和 51。<br>　　语流音变：在语流中，由于受到相邻音节的相邻音素的影响，一些音节<br>中的声母、韵母、声调会发生语音的变化，我们称之为语流音变。<br>　　轻声：普通话中每个音节都有它的声调，可是在句子里有些音节常常失<br>去了原有的声调而念成较轻、较短的调子，叫做轻声。<br>　　儿化：儿化又称儿化韵，是普通话和某些汉语方言中的一种语音现象，即词的后缀“儿”字不自成音节，而同前面的音节合在一起，使前一音节的韵母成为卷舌韵母。</p>
 <h4 id="思考题"><a href="#思考题" class="headerlink" title="思考题"></a>思考题</h4><p>　　1. 什么是普通话？普通话的语音特点是怎样的？<br>　　2. 熟记基本概念。<br>　　3. 画出普通话舌面元音舌位图。<br>　　4. 画出普通话辅音发音要领表。</p>
 <div><div class="fold_hider"><div class="close hider_title">展开图片</div></div><div class="fold">
-<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-4.png" alt=""><br><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-5.png" alt=""></p>
+<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-4.png"><br><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-5.png"></p>
 
 </div></div>
 
@@ -515,7 +669,7 @@ if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
 <h3 id="二、韵母的分类"><a href="#二、韵母的分类" class="headerlink" title="二、韵母的分类"></a>二、韵母的分类</h3><p>　　普通话 39 个韵母可以按不同的条件进行分类。<br>　　按语音结构进行分类可以分为三大类，即单韵母、复韵母和鼻韵母。<br>　　按汉语语音学的传统分析方法，又可以按韵母开头元音的唇形特点把韵母分为四类，叫“四呼”，即开口呼、齐齿呼、合口呼和撮口呼韵母。</p>
 <h3 id="三、韵母练习"><a href="#三、韵母练习" class="headerlink" title="三、韵母练习"></a>三、韵母练习</h3><h4 id="（一）单元音韵母练习"><a href="#（一）单元音韵母练习" class="headerlink" title="（一）单元音韵母练习"></a>（一）单元音韵母练习</h4><p>　　1. 单元音韵母发音要领简表</p>
 <div><div class="fold_hider"><div class="close hider_title">展开图片</div></div><div class="fold">
-<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-6.png" alt=""></p>
+<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-6.png"></p>
 
 </div></div>
 
@@ -538,63 +692,63 @@ if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
 </ol>
 <p>　　ai 发音要领：<br>　　ai 属前元音音素的复合，舌位动程较宽。发音时，起点元音是比央位的单元音 a［ᴀ］偏前的前 a［a］，<strong>舌位向 i 的方向滑动升高，约在接近高元音 i［i］的区域时就停止发音了，终点元音实际是舌位比高元音 i 略低的［I］。</strong></p>
 <div><div class="fold_hider"><div class="close hider_title">展开图片</div></div><div class="fold">
-<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-7.png" alt=""></p>
+<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-7.png"></p>
 
 </div></div>
 
 <p>　　爱戴　白菜　摆开　买卖　拍卖　开采　海带　彩带　彩排　灾害　带来<br>　　采摘　拆台　晒台　开赛　开来　凯莱</p>
 <p>　　ei 发音要领：<br>　　起点是前半高不圆唇元音 e［e］，而并非后半高不圆唇元音 e［ɣ］。<strong>实际发音舌位比［e］稍偏后偏低，接近央元音［ə］。</strong>起音后，舌位向前高滑动，终止位置接近比高元音：略低的［I］，但由于受 e［e］的影响，舌位比［I］略高而且稍偏后。ei 是普通话中动程较短的复合元音。</p>
 <div><div class="fold_hider"><div class="close hider_title">展开图片</div></div><div class="fold">
-<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-8.png" alt=""></p>
+<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-8.png"></p>
 
 </div></div>
 
 <p>　　北非　北碚　蓓蕾　贝类　北美　配备　肥美　妹妹　非得　飞贼　黑煤　狒狒</p>
 <p>　　ao 发音要领：<br>　　ao 是后元音音素的复合。起点元音比单元音 a［ᴀ］偏后，是后 a［a］，舌位由［a］开始向 o 滑动升高，唇形逐渐自然拢圆。终止位置是比单元音 o［o］偏高，接近单元音 u 的［U］。</p>
 <div><div class="fold_hider"><div class="close hider_title">展开图片</div></div><div class="fold">
-<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-9.png" alt=""></p>
+<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-9.png"></p>
 
 </div></div>
 
 <p>　　包抄　报道　报告　报考　抛锚　跑道　茅草　冒号　唠叨　祷告　稻草<br>　　逃跑　讨好　牢靠　牢骚　劳保　老少　高傲　高潮　高烧　高考　高超<br>　　搞好　犒劳　号啕　毫毛　号召　照抄　招考　吵闹　早操　早稻　糟糕<br>　　操劳　草帽　骚扰</p>
 <p>　　ou 发音要领：<br>　　起点元音比单元音 o 的舌位略高偏前，接近央元音［ə］。起音后舌位向 u 的位置滑动，唇形逐渐收缩成圆形。终止位置是比 u 略低的［U］，但由于受 o 的影响，收尾的舌位位置比复合元音 ao 的收尾位置略高。ou 是普通话中舌位动程最短的复合元音。</p>
 <div><div class="fold_hider"><div class="close hider_title">展开图片</div></div><div class="fold">
-<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-10.png" alt=""></p>
+<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-10.png"></p>
 
 </div></div>
 
 <p>　　兜售　抖擞　豆蔻　漏斗　露头　佝偻　口头　口授　叩首　喉头　后头<br>　　绸缪　丑陋　收购　凑手　收受</p>
 <p>　　ia 发音要领：<br>　　起点元音是前高元音 i［i］，舌位滑向央低元音 a［ᴀ］。<strong>由于受 i 的影响，终止位置往往要比［ᴀ］稍偏前。</strong></p>
 <div><div class="fold_hider"><div class="close hider_title">展开图片</div></div><div class="fold">
-<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-11.png" alt=""></p>
+<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-11.png"></p>
 
 </div></div>
 
 <p>　　家家　假牙　加价　加压　恰恰　下嫁　压价　下牙</p>
 <p>　　ie 发音要领：<br>　　起点元音是前高元音 i［i］，舌位向下滑向前半低元音 ê［ɛ］。<strong>实际终止位置是比［ɛ］略高的［E］。</strong>ie 舌位动程较窄。</p>
 <div><div class="fold_hider"><div class="close hider_title">展开图片</div></div><div class="fold">
-<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-12.png" alt=""></p>
+<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-12.png"></p>
 
 </div></div>
 
 <p>　　爹爹　贴切　铁鞋　猎猎　趔趄　乜斜　接界　姐姐　结节　节烈　切切<br>　　斜街　谢谢　戒牒</p>
 <p>　　ua 发音要领：<br>　　起点元音是后高圆唇元音 u，舌位滑向央低元音 a［ᴀ］，唇形逐渐由圆变展。<strong>由于受 u 的影响，终止位置实际往往比央 a 要稍偏后。</strong></p>
 <div><div class="fold_hider"><div class="close hider_title">展开图片</div></div><div class="fold">
-<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-13.png" alt=""></p>
+<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-13.png"></p>
 
 </div></div>
 
 <p>　　娃娃　画画　挂花　挂画　耍滑　花袜　挂瓦</p>
 <p>　　uo 发音要领：<br>　　起点元音是后高元音 u，舌位下滑到后半高元音 o。唇形始终为圆唇，开始唇形收缩稍紧，收尾时唇形开度稍加大。uo 舌位动程很窄，发音时一定注意要有舌位动程，口腔开度由闭到半闭。不能处理成一个单元音的发音过程。</p>
 <div><div class="fold_hider"><div class="close hider_title">展开图片</div></div><div class="fold">
-<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-14.png" alt=""></p>
+<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-14.png"></p>
 
 </div></div>
 
 <p>　　错过　蹉跎　做作　错落　哆嗦　堕落　国货　过错　火锅　阔绰　罗锅<br>　　罗嗦　落座　骆驼　懦弱　硕果　脱落　陀螺　着落　坐落</p>
 <p>　　üe 发音要领：<br>　　üe 是由两个前元音复合而成。起点元音是圆唇前高元音 ü，舌位下滑至接近前半低元音 ê 的位置，唇形由圆唇逐渐展开。<strong>实际发音比 ê 略高为［E］。</strong>这也是一个舌位动程较窄的复合元音，发音时既要注意唇形的变化，也要注意舌位的动程。</p>
 <div><div class="fold_hider"><div class="close hider_title">展开图片</div></div><div class="fold">
-<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-15.png" alt=""></p>
+<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-15.png"></p>
 
 </div></div>
 
@@ -604,28 +758,28 @@ if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
 </ol>
 <p>　　iao 发音要领：<br>　　舌位由起点元音前高元音 i 开始，向下向后，滑向后 a［a］，再由低升高到后半高元音 o。<strong>终止元音实际位置是要比 o 偏高接近后高元音 u 的［U］。</strong>唇形由折点元音 a 开始逐渐由不圆唇变为圆唇。这是普通话中舌位动程最大的复合元音之一。动程变化由高到低再由低到高，其中还要加上唇形的变化。一要注意不能由于起始点与终止点元音都是高元音，而使折点元音 a 的位置降不下来，口腔开度不能打开，从而易使与舌位动程曲线相似动程稍窄的三合复合元音 iou 音色相混淆。二要注意三合复合元音发音是三个元音的复合，要仔细体会舌位的动程，而不能将其中两个元音音素变为一个音色相近的单元音音素，把三合元音变为二合元音发音。</p>
 <div><div class="fold_hider"><div class="close hider_title">展开图片</div></div><div class="fold">
-<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-16.png" alt=""></p>
+<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-16.png"></p>
 
 </div></div>
 
 <p>　　巧妙　教条　娇小　逍遥　苗条　脚镣　交角　吊桥　叫嚣　疗效　吊销<br>　　渺小　飘摇　笑料　缥缈　调教　调料　萧条　秒表　小调　小巧　窈窕</p>
 <p>　　iou 发音要领：<br>　　<strong>舌位由前高元音 i 开始，降至比央元音［ə］稍偏后的位置，再向后向上滑升，终止位置是比后高元音 u 稍低的［U］。</strong>唇形由折点元音［ə］开始逐渐拢圆。由于舌位动程曲线相似，要注意与三合复合元音 iao 的区分。在播音发声中要注意复元音 iou 的韵腹元音 o 不能弱化，尤其是在音节中阴平和阳平声调时，更要强调韵腹元音发音时的口腔开度。汉语拼音方案中规定 iou 前拼声母时可以简化拼写为 iu。<strong>拼写的简化不能简单地套用成发音的简化。</strong></p>
 <div><div class="fold_hider"><div class="close hider_title">展开图片</div></div><div class="fold">
-<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-17.png" alt=""></p>
+<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-17.png"></p>
 
 </div></div>
 
 <p>　　久留　舅舅　求救　优秀　悠久　有救　牛油　旧友　流油　悠悠</p>
 <p>　　uai 发音要领：<br>　　<strong>由后高元音 u 开始舌位向前向下滑动到前 a［a］再折向前高元音 i 的方向滑升，终止元音是比前高元音 i 偏低的［I］。</strong>唇形由圆唇开始到折点元音 a 逐渐变为展唇，舌位由后到前，由高到低再到高，曲折幅度大。这也是普通话中舌位动程最大的复合元音之一。同样要注意韵腹元音的舌位一定要能低下来，口腔开度要打开。要注意不能由于拼写可以简化，而发音也简化为二合复合元音。同时要注意与舌位动程曲线相似的三合复合元音 uei 的区分。</p>
 <div><div class="fold_hider"><div class="close hider_title">展开图片</div></div><div class="fold">
-<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-18.png" alt=""></p>
+<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-18.png"></p>
 
 </div></div>
 
 <p>　　乖乖　外快　怀揣　外踝　摔坏</p>
 <p>　　uei 发音要领：<br>　　由后高元音 u 开始，舌位向前向下滑至前半高元音［e］的位置，唇形由拢圆到展开。<strong>实际发音折点元音的位置不是后半高不圆唇元音［ɣ］，而是比［e］稍偏后、偏低，相当于央元音［ə］偏前的位置，再向前高元音 i 的位置滑升。终点位置是比 i 稍低的［I］。实际发音时，同样要注意拼写可以简化，播音发声不能简化。</strong>三合复合元音不能发成二合复合元音。特别要注意与舌尖音（包括舌尖前、舌尖中、舌尖后音）拼合的音节，发音时韵腹不能丢失，注意音节声调为阴平、阳平发音时韵腹不能丢失。此外，还应该注意避免另一种倾向，即三合复合元音发音时受方言的影响，折点元音 e 的位置偏低、口腔开度偏大，口腔控制偏松，与前 a［a］接近，使元音 uei 的发音与 uai 相近似的倾向。</p>
 <div><div class="fold_hider"><div class="close hider_title">展开图片</div></div><div class="fold">
-<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-19.png" alt=""></p>
+<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-19.png"></p>
 
 </div></div>
 
@@ -640,56 +794,56 @@ if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
 </ol>
 <p>　　an 发音要领：<br>　　起点元音为前 a［a］，舌面逐渐升高，舌面前部贴向硬腭前部。当两者将要接触时，软腭下降，鼻腔通路打开。紧接着舌面前部与硬得前部闭合，口腔中受阻气流由鼻腔透出。口腔开度由开到闭，舌位动程较大。</p>
 <div><div class="fold_hider"><div class="close hider_title">展开图片</div></div><div class="fold">
-<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-20.png" alt=""></p>
+<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-20.png"></p>
 
 </div></div>
 
 <p>　　安然　案板　暗淡　暗含　斑斓　参赞　参战　惨淡　单产　单干　胆寒<br>　　胆敢　翻案　翻板　繁难　反感　反叛　泛滥　犯案　犯难　干饭　肝胆<br>　　感叹　寒战　勘探　懒汉　烂漫　蛮干　难看　难堪　散漫　善战　贪婪<br>　　摊贩　谈判　坦然　赞叹　沾染　展览　湛蓝</p>
 <p>　　ian 发音要领：<br>　　起点元音为前高元音 i，舌位降低向前 a［a］方向滑动，但没有完全降到［a］，只降到前元音［æ］的位置即开始升高，直到舌面前部贴向硬腭前部形成鼻音 n。实际发音，等于在 an 前面加上一段由前高元音 i 开始的动程。</p>
 <div><div class="fold_hider"><div class="close hider_title">展开图片</div></div><div class="fold">
-<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-21.png" alt=""></p>
+<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-21.png"></p>
 
 </div></div>
 
 <p>　　边沿　变脸　变迁　变天　便宴　癫痫　垫肩　电键　电线　艰险　简便<br>　　简炼　检点　检验　渐变　见面　联翩　连绵　连篇　连天　脸面　棉田<br>　　棉线　绵延　面前　年间　年鉴　偏见　翩跹　片面　片言　牵念　牵线<br>　　前边　前面　前天　前线　前沿　浅见　浅显　天边　天年　天堑　天仙<br>　　田间　先前　鲜艳　闲钱　显现　显眼　现钱　现眼　盐碱　盐田　沿线<br>　　眼见　眼帘　眼线</p>
 <p>　　uan 发音要领：<br>　　起点元音为后高元音 u，舌位向前向下滑向前 a［a］，过程中，口腔开度由合渐开，唇形由圆渐展，舌位到前 a［a］后紧接着升高，接续鼻尾音 n。实际发音，等于在 an 前面加上一段由后高元音 u 开始的动程。</p>
 <div><div class="fold_hider"><div class="close hider_title">展开图片</div></div><div class="fold">
-<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-22.png" alt=""></p>
+<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-22.png"></p>
 
 </div></div>
 
 <p>　　传唤　串换　贯穿　宦官　软缎　团团　酸软　宛转　万贯　万万　专断<br>　　专款　转换　转弯　乱窜　换算　弯管　万端　宽缓</p>
 <p>　　üan 发音要领：<br>　　起点元音为前高圆唇元音 i，舌位向前 a［a］方向滑动，过程中唇形由圆渐展，舌位只降到前元音［æ］即开始升高，接续鼻尾音 n。实际发音，等于在 an 的前面加上一段由前高元音 ü 开始的动程。</p>
 <div><div class="fold_hider"><div class="close hider_title">展开图片</div></div><div class="fold">
-<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-23.png" alt=""></p>
+<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-23.png"></p>
 
 </div></div>
 
 <p>　　涓涓　全权　渊源　源远　源泉　源源　圆圈　轩辕　全员</p>
 <p>　　en 发音要领：<br>　　起点元音是央元音［ə］，舌面升高，舌面前部贴向硬腭前部。两者将要接触时，软腭下降，鼻腔通路打开，紧接着舌面前部与硬前部闭合，口腔中受阻气流由鼻腔透出。口腔开度由开到闭，舌位动程较小。</p>
 <div><div class="fold_hider"><div class="close hider_title">展开图片</div></div><div class="fold">
-<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-24.png" alt=""></p>
+<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-24.png"></p>
 
 </div></div>
 
 <p>　　本分　本人　沉闷　分身　粉尘　愤恨　根本　门诊　人身　人参　认真<br>　　深沉　神人　审慎　真人　珍本　振奋　深圳</p>
 <p>　　in 发音要领：<br>　　起点元音是前高不圆唇元音 i，舌面升高，舌面前部贴向硬腭前部。当两者将要接触时，软腭下降，鼻腔通路打开。紧接着，舌面前部与硬腭前部闭合，口腔中受阻气流由鼻腔透出。口腔开度闭，几乎没有变化，舌位动程很小。</p>
 <div><div class="fold_hider"><div class="close hider_title">展开图片</div></div><div class="fold">
-<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-25.png" alt=""></p>
+<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-25.png"></p>
 
 </div></div>
 
 <p>　　濒临　金印　斤斤　仅仅　近临　近亲　尽心　临近　凛凛　民心　拼音<br>　　亲近　亲信　新近　薪金　心劲　心音　信心　辛勤　音频　音品　姻亲<br>　　殷勤　引进</p>
 <p>　　uen 发音要领：<br>　　起点元音为后高圆唇元音 u，舌位向央元音［ə］滑动，其间唇形由圆渐展，随后舌位升高接续鼻尾音 n。实际发音，等于在 en 前面加上一段由后高元音 u 开始的动程。</p>
 <div><div class="fold_hider"><div class="close hider_title">展开图片</div></div><div class="fold">
-<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-26.png" alt=""></p>
+<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-26.png"></p>
 
 </div></div>
 
 <p>　　滚滚　混沌　困顿　昆仑　温存　温顺　谆谆　论文　馄饨　春笋　伦敦</p>
 <p>　　ün 发音要领：<br>　　起点元音是前高圆唇元音 ü。与 in 的发音过程相似，只是唇形变化不同。ün 从前高元音 ü 开始，唇形稍展开。而 in 唇形始终是展唇。展唇应在接续鼻尾音 n 时开始，而不能由 ü 开始展唇到 i 再接续鼻尾音。</p>
 <div><div class="fold_hider"><div class="close hider_title">展开图片</div></div><div class="fold">
-<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-27.png" alt=""></p>
+<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-27.png"></p>
 
 </div></div>
 
@@ -699,56 +853,56 @@ if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
 </ol>
 <p>　　ang 发音要领：<br>　　起点元音是后 a［a］，舌根抬起，贴近软腭时，软腭下降，鼻腔通路打开。紧接着舌根与软腭接触，关闭口腔通路，气流从鼻腔透出。</p>
 <div><div class="fold_hider"><div class="close hider_title">展开图片</div></div><div class="fold">
-<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-28.png" alt=""></p>
+<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-28.png"></p>
 
 </div></div>
 
 <p>　　帮忙　仓房　沧桑　苍茫　厂房　长方　常常　当场　放荡　刚刚　行当<br>　　浪荡　盲肠　商场　上场　上当　上房　商行　烫伤　帐房</p>
 <p>　　iang 发音要领：<br>　　起点元音为前高元音 i，舌位向后向下滑向后 a［a］，紧接着舌位升高，接续鼻尾音 ng。实际发音，等于在 ang 前面加一段由前高元音 i 开始的动程。</p>
 <div><div class="fold_hider"><div class="close hider_title">展开图片</div></div><div class="fold">
-<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-29.png" alt=""></p>
+<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-29.png"></p>
 
 </div></div>
 
 <p>　　粮饷　两厢　两样　亮相　良乡　踉跄　良将　洋姜　洋相　洋枪　痒痒<br>　　香江　相像　湘江　想象　响亮　向阳</p>
 <p>　　uang 发音要领：<br>　　起点元音为后高圆唇元音 u，舌位下降到后 a［a］，其间唇形由圆渐展，紧接着舌位升高，接续鼻尾音 ng。实际发音，等于在 ang 前面加一段由后高元音 u 开始的动程。</p>
 <div><div class="fold_hider"><div class="close hider_title">展开图片</div></div><div class="fold">
-<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-30.png" alt=""></p>
+<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-30.png"></p>
 
 </div></div>
 
 <p>　　框框　狂妄　双簧　网状　往往　装潢　状况　窗框</p>
 <p>　　eng 发音要领：<br>　　起点元音是后半高不圆唇元音 e［ɣ］，舌根抬起，贴向软腭，当两者将要接触时，软腭下降，鼻腔通路打开，紧接着舌根与软接触，关闭口腔通路，受阻气流从鼻腔透出。</p>
 <div><div class="fold_hider"><div class="close hider_title">展开图片</div></div><div class="fold">
-<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-31.png" alt=""></p>
+<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-31.png"></p>
 
 </div></div>
 
 <p>　　成风　承蒙　逞能　登程　丰登　丰盛　风声　风筝　更生　更正　冷风<br>　　萌生　声称　生成　升腾　省城　征程　蒸腾　整风</p>
 <p>　　ing 发音要领：<br>　　起点元音是前高不圆唇元音 i［i］，由 i 开始舌位不降低一直后移，同时舌尖离开下齿背，舌根稍微抬起，贴向软，当两者将要接触时，软腭下降，鼻腔通路打开，紧接着舌根与软腭接触，关闭口腔通路，受阻气流由鼻腔透出。注意舌位由 i 向 ng 移动过程中，高度不变，不能降低后再上升，不能加进［ə］、［ɣ］等一串音素。</p>
 <div><div class="fold_hider"><div class="close hider_title">展开图片</div></div><div class="fold">
-<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-32.png" alt=""></p>
+<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-32.png"></p>
 
 </div></div>
 
 <p>　　冰凌　兵营　禀性　秉性　并行　叮咛　定睛　定形　定型　惊醒　精灵<br>　　精明　经营　菱形　零星　伶仃　灵性　领情　另行　明净　明星　酩酊<br>　　命令　平定　平静　平行　评定　清醒　清明　清静　蜻蜓　倾听　轻盈<br>　　情景　行径　行星　性命　性情　姓名　英明　英灵　影评　影星　应景<br>　　硬性</p>
 <p>　　ueng 发音要领：<br>　　起点元音为后高圆唇元音 u，舌位向下滑动降到比后半高元音 e［ɣ］稍靠前、略低的位置，其间唇形由圆渐展，紧接着舌位升高，接续鼻尾音 ng。实际发音，等于在 eng 前面加一段由后高元音 u 开始的动程。</p>
 <div><div class="fold_hider"><div class="close hider_title">展开图片</div></div><div class="fold">
-<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-33.png" alt=""></p>
+<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-33.png"></p>
 
 </div></div>
 
 <p>　　瓮　翁　水瓮　主人翁　渔翁　白头翁　蕹菜</p>
 <p>　　ong 发音要领：<br>　　起点元音是比后高圆唇元音 u 舌位略低的［U］，舌尖离开下齿背，舌后缩，舌根稍隆起，贴向软腭，当两者将要接触时，软腭下降，鼻腔通路打开，紧接着舌根与软接触，关闭口腔通路，受阻气流从鼻腔透出。唇形始终拢圆，变化不明显。</p>
 <div><div class="fold_hider"><div class="close hider_title">展开图片</div></div><div class="fold">
-<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-34.png" alt=""></p>
+<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-34.png"></p>
 
 </div></div>
 
 <p>　　动容　工种　公共　公众　共同　轰动　轰隆　红铜　红肿　洪钟　空洞<br>　　空中　恐龙　龙宫　龙钟　隆冬　隆重　浓重　脓肿　通红　通融　瞳孔<br>　　童工　中东　中共</p>
 <p>　　iong 发音要领：<br>　　起点元音为前高元音 i，但由于后面圆唇元音的影响，i 也带上圆唇动作。实际发音中同以 ü 开头的韵母没有太大差别。传统汉语语音学把 iong 归属撮口呼。舌位向后移动，略有下降，到比后高元音 u 略低的［U］的位置，紧接着舌位升高，接续鼻尾音 ng。实际发音，等于在 ong 前面加一段由前高元音开始的动程。</p>
 <div><div class="fold_hider"><div class="close hider_title">展开图片</div></div><div class="fold">
-<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-35.png" alt=""></p>
+<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-35.png"></p>
 
 </div></div>
 
@@ -792,31 +946,31 @@ if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
 <h3 id="二、声调的性质和特点"><a href="#二、声调的性质和特点" class="headerlink" title="二、声调的性质和特点"></a>二、声调的性质和特点</h3><p>　　声调和音长、音强都有关系，但它的性质主要决定于音高。在汉语普通话音节中，音长不具有区别意义的作用。音高的变化，是由于发音时声带的松紧变化。发音时声带越紧，在单位时间内颤动的次数就越多，声音的频率就越高，声调就越高。发音时，声带越松，在单位时间内颤动的次数就越少，声音的频率就越低，声调就越低。在发音过程中，声带可以先松后紧或先紧后松还可以松紧相间。这样按一定规律造成的种种不同的音高变化，就构成了各种不同的声调。<br>　　声调的高低和音乐中音阶的音高是有区别的。同样是音高的变化，声调的音高变化是相对的，不要求音高频率的绝对值。由于人的嗓音高低各不相同，声调高低并不是要求人人发得同样高。女性和儿童由于声带比成年男性要短一些、窄一些、薄一些，所以他们的声调音高要比成年男性高一些；同一个人情绪紧张、激动时，声带会控制得紧一些，所以这时他的声调音高要比情绪平和时高一些。音阶的高低变化则是绝对的，不变的。另外，声调的音高变化包括上升、下降等，升降变化的形式是逐渐滑动的变化。音乐中音阶的移动、变化，则常常表现为跳跃式的变化。</p>
 <h3 id="三、普通话的调类和调值"><a href="#三、普通话的调类和调值" class="headerlink" title="三、普通话的调类和调值"></a>三、普通话的调类和调值</h3><p>　　调类指的是对声调的分类。调类的名称只代表某种汉语方言声调的种类，而不表示实际的调值。普通话声调可分为 4 类，分别是阴平、阳平、上声和去声。<br>　　调值也叫调形，指的是声调高低、升降、曲直的变化，也就是声调的实际读法。<br>　　调值通常采用五度标记法记录。用一条竖线表示声音的高低，由下面最低点到最高点共分为五度，即低、半低、中、半高、高，分别用 1、2、3、4、5 依次表示。（如图）普通话各类声调的调值为：<br>　　阴平：高平调，55<br>　　阳平：高升调，35<br>　　上声：降升调，214<br>　　去声：全降调，51</p>
 <div><div class="fold_hider"><div class="close hider_title">展开图片</div></div><div class="fold">
-<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-36.png" alt=""></p>
+<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-36.png"></p>
 
 </div></div>
 
 <h3 id="四、普通话声调发音要领"><a href="#四、普通话声调发音要领" class="headerlink" title="四、普通话声调发音要领"></a>四、普通话声调发音要领</h3><p>　　阴平：高平调（55）。声音基本上高而平，由 5 度到 5 度，大体没有升降变化。实际发音在起音后略升高一点，末尾稍有一点降的趋势，首尾差别不大。全调时值比上声、阳平略短，比去声稍长。阴平的发音很重要，如发得不准将影响其他声调的调值。</p>
 <div><div class="fold_hider"><div class="close hider_title">展开图片</div></div><div class="fold">
-<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-37.png" alt=""></p>
+<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-37.png"></p>
 
 </div></div>
 
 <p>　　阳平：高升调（35）。声音由中高音升到高音，由 3 度到 5 度。阳平发音起调略高，逐渐升高，升到最高。全调时值比阴平、去声稍长，比上声略短。发好阳平关键在于起调要保持较高，升高时要直接上升不要拐弯儿曲线上升。</p>
 <div><div class="fold_hider"><div class="close hider_title">展开图片</div></div><div class="fold">
-<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-38.png" alt=""></p>
+<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-38.png"></p>
 
 </div></div>
 
 <p>　　上声：降升调（214）。发音时由半低起调，先降到最低，然后再升到半高音，由 2 度降到 1 度再升到 4 度。上声是普通话四个声调中唯一有弯曲变化，先降后升的声调。全调时值在四个声调中最长。发好上声在于起调要较低，还要能降下来，再扬上去。上声调的降升变化是平滑的弯曲变化，尤其在降到最低再扬起的过程，即由 1 度升到 4 度的过程，不要有折起的硬拐弯儿的感觉。另外由 1 度升到 4 度的过程是音高逐渐升高，而音量逐减，到最后变为升高的一种趋势。不能随音高升高而逐渐加大音量。上声是普通话四个声调中较难掌握，而且在语流中变化较多的一个声调。而先掌握好上声本调的发音是最关键的。</p>
 <div><div class="fold_hider"><div class="close hider_title">展开图片</div></div><div class="fold">
-<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-39.png" alt=""></p>
+<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-39.png"></p>
 
 </div></div>
 
 <p>　　去声：全降调（51）。发音时，声音由高音降到最低，由 5 度降到 1 度。全调时值在普通话四个调类中最短。发好去声的关键在于起调要高，迅速下降。要于脆，不能拖沓。</p>
 <div><div class="fold_hider"><div class="close hider_title">展开图片</div></div><div class="fold">
-<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-40.png" alt=""></p>
+<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-40.png"></p>
 
 </div></div>
 
@@ -909,13 +1063,13 @@ if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
 <h4 id="思考题-3"><a href="#思考题-3" class="headerlink" title="思考题"></a>思考题</h4><p>　　1. 什么是声调？声调的性质和特点是怎样的？<br>　　2. 什么是调值？什么是调类？普通话声调分哪几种调类？调值是怎样的？<br>　　3. 声调在语言传播中起什么作用？<br>　　4. 你学习普通话语音，在声调这一部分遇到什么问题？如何解决？</p>
 <h2 id="第五单元-普通话音节结构与声韵拼合关系"><a href="#第五单元-普通话音节结构与声韵拼合关系" class="headerlink" title="第五单元　普通话音节结构与声韵拼合关系"></a>第五单元　普通话音节结构与声韵拼合关系</h2><h3 id="一、普通话音节结构"><a href="#一、普通话音节结构" class="headerlink" title="一、普通话音节结构"></a>一、普通话音节结构</h3><p>　　普通话音节最多由四部分组成：1. 声母，主要指辅音声母。2. 韵头，又叫介音，是指介于辅音声母和韵腹即主要元音之间的音，又叫头音。普通话中只有 i、u、ü 三个介音。3. 韵腹，是韵母中口腔开度最大的元音，也是音节中最响亮、最突出、听觉感觉最显著的部分。如果音节中只有一个元音，那么，这个元音就是韵腹。4. 韵尾，是一个音节的收束部分，发音较短、较弱，又叫尾音。普通话中只有 i、u、o、n、ng 五个音素充当尾音。实际发音中由于 o 在复韵母 ao 中实际发音近似于 u，所以也可以说只有 i、u、n、ng 四个音素充当尾音了。但是普通话并不是每个音节都由以上四个部分组成。<br>　　音节中除主要元音（韵腹）不可缺少以外，可能会缺少辅音声母、韵头（介音）、韵尾（尾音）中某部分，或某几部分。（见下表）</p>
 <div><div class="fold_hider"><div class="close hider_title">展开图片</div></div><div class="fold">
-<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-41.png" alt=""></p>
+<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-41.png"></p>
 
 </div></div>
 
 <h3 id="二、普通话音节的声韵拼合关系"><a href="#二、普通话音节的声韵拼合关系" class="headerlink" title="二、普通话音节的声韵拼合关系"></a>二、普通话音节的声韵拼合关系</h3><p>　　普通话音节由声母和韵母两部分构成，但并不是任何声母和任何韵母都可以拼合。普通话音节拼合关系指的就是声母和韵母的拼合关系，即声母和韵母之间连接的关系。掌握普通话的声韵拼合关系需要分辨声母的发音部位，以及韵母起头元音的唇形。传统的汉语语音学把韵母按起头元音的唇形特点分为开口呼、齐齿呼、合口呼和振口呼四类。声母的发音部位则分为双唇音、唇齿音、舌根音、舌面音、舌尖前音和舌尖后音以及舌尖中音，其中舌尖中音又分为 d、t 和 n、l 两类。此外还有没有辅音声母的零声母。</p>
 <div><div class="fold_hider"><div class="close hider_title">展开图片</div></div><div class="fold">
-<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-42.png" alt=""><br><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-43.png" alt=""></p>
+<p><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-42.png"><br><img data-src="/images/posts/a-practical-course-in-anchoring/a-practical-course-in-anchoring-43.png"></p>
 
 </div></div>
 
@@ -3094,10 +3248,10 @@ if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
       <div class="popular-posts-title"><a href="\broadcasting-announcing-courses\" rel="bookmark">普通话考试及播音主持入门</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\mandarin\" rel="bookmark">《普通话语音》辅修笔记</a></div>
+      <div class="popular-posts-title"><a href="\pai\" rel="bookmark">从《圆桌派：菜市——食过返寻味》看谈话节目主持</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\pai\" rel="bookmark">从《圆桌派：菜市——食过返寻味》看谈话节目主持</a></div>
+      <div class="popular-posts-title"><a href="\reading-art\" rel="bookmark">《朗读艺术入门》笔记</a></div>
     </li>
   </ul>
 
@@ -3134,16 +3288,15 @@ if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
   
   
 
-  </div>
 
 
-          </div>
-          
+        </div>
+        
     <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
-    let activeClass = CONFIG.comments.activeClass;
+    let { activeClass } = CONFIG.comments;
     if (CONFIG.comments.storage) {
       activeClass = localStorage.getItem('comments_active') || activeClass;
     }
@@ -3163,150 +3316,13 @@ if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
   }
 </script>
 
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          文章目录
-        </li>
-        <li class="sidebar-nav-overview">
-          站点概览
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#上篇-普通话语音"><span class="nav-text">上篇　普通话语音</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一单元-普通话语音概说"><span class="nav-text">第一单元　普通话语音概说</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、什么是普通话"><span class="nav-text">一、什么是普通话</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、普通话语音教学的重要性"><span class="nav-text">二、普通话语音教学的重要性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、普通话语音的特点"><span class="nav-text">三、普通话语音的特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、语音的物理、生理及心理基础"><span class="nav-text">四、语音的物理、生理及心理基础</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五、语音基本概念"><span class="nav-text">五、语音基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#思考题"><span class="nav-text">思考题</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二单元-声母"><span class="nav-text">第二单元　声母</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、什么是声母"><span class="nav-text">一、什么是声母</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、声母的分类"><span class="nav-text">二、声母的分类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#（一）按发音部位分类"><span class="nav-text">（一）按发音部位分类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#（二）按发音方法分类"><span class="nav-text">（二）按发音方法分类</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、声母练习"><span class="nav-text">三、声母练习</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#（一）辅音声母发音训练"><span class="nav-text">（一）辅音声母发音训练</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#（二）零声母音节发音训练"><span class="nav-text">（二）零声母音节发音训练</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#（三）声母辨读发音训练"><span class="nav-text">（三）声母辨读发音训练</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#（四）声母歌"><span class="nav-text">（四）声母歌</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#思考题-1"><span class="nav-text">思考题</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三单元-韵母"><span class="nav-text">第三单元　韵母</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、什么是韵母"><span class="nav-text">一、什么是韵母</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、韵母的分类"><span class="nav-text">二、韵母的分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、韵母练习"><span class="nav-text">三、韵母练习</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#（一）单元音韵母练习"><span class="nav-text">（一）单元音韵母练习</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#（二）复合元音韵母练习"><span class="nav-text">（二）复合元音韵母练习</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#（三）带鼻尾音韵母（鼻韵母）练习"><span class="nav-text">（三）带鼻尾音韵母（鼻韵母）练习</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#（四）韵母按四呼进行分类及练习"><span class="nav-text">（四）韵母按四呼进行分类及练习</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#思考题-2"><span class="nav-text">思考题</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第四单元-声调"><span class="nav-text">第四单元　声调</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、什么是声调"><span class="nav-text">一、什么是声调</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、声调的性质和特点"><span class="nav-text">二、声调的性质和特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、普通话的调类和调值"><span class="nav-text">三、普通话的调类和调值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、普通话声调发音要领"><span class="nav-text">四、普通话声调发音要领</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五、普通话声调练习"><span class="nav-text">五、普通话声调练习</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#（一）同声韵音节四声发音训练"><span class="nav-text">（一）同声韵音节四声发音训练</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#（二）双音节词语四声不同组合发音训练"><span class="nav-text">（二）双音节词语四声不同组合发音训练</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#（三）按阴、阳、上、去和去、上、阳、阴顺序排列四音节词语声调发音训练"><span class="nav-text">（三）按阴、阳、上、去和去、上、阳、阴顺序排列四音节词语声调发音训练</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#（四）上声音节发音训练"><span class="nav-text">（四）上声音节发音训练</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#（五）按声母顺序排列四声混合四音节词语发音训练"><span class="nav-text">（五）按声母顺序排列四声混合四音节词语发音训练</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#（六）声调综合训练"><span class="nav-text">（六）声调综合训练</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#思考题-3"><span class="nav-text">思考题</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第五单元-普通话音节结构与声韵拼合关系"><span class="nav-text">第五单元　普通话音节结构与声韵拼合关系</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、普通话音节结构"><span class="nav-text">一、普通话音节结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、普通话音节的声韵拼合关系"><span class="nav-text">二、普通话音节的声韵拼合关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思考题-4"><span class="nav-text">思考题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第六单元-语流音变"><span class="nav-text">第六单元　语流音变</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、什么叫语流音变"><span class="nav-text">一、什么叫语流音变</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、语流音变练习"><span class="nav-text">二、语流音变练习</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#（一）轻声训练"><span class="nav-text">（一）轻声训练</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#（二）儿化训练"><span class="nav-text">（二）儿化训练</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#（三）变调训练"><span class="nav-text">（三）变调训练</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#（四）语气词“啊”的发音变化规律及发音训练"><span class="nav-text">（四）语气词“啊”的发音变化规律及发音训练</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#（五）词的轻重格式发音训练"><span class="nav-text">（五）词的轻重格式发音训练</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#思考题-5"><span class="nav-text">思考题</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#汉语拼音音节列表（WiKi）"><span class="nav-text">汉语拼音音节列表（WiKi）</span></a></li></ol></li></ol></div>
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="千灵夙赋"
-      src="/images/avatar.png">
-  <p class="site-author-name" itemprop="name">千灵夙赋</p>
-  <div class="site-description" itemprop="description"></div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives/">
-        
-          <span class="site-state-item-count">166</span>
-          <span class="site-state-item-name">日志</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-            <a href="/categories/">
-          
-        <span class="site-state-item-count">37</span>
-        <span class="site-state-item-name">分类</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/tags/">
-        <span class="site-state-item-count">46</span>
-        <span class="site-state-item-name">标签</span></a>
-      </div>
-  </nav>
-</div>
-  <div class="links-of-author motion-element">
-      <span class="links-of-author-item">
-        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
-      </span>
-  </div>
-
-
-  <div class="links-of-blogroll motion-element">
-    <div class="links-of-blogroll-title">
-      <i class="fa fa-fw fa-link"></i>
-      Friends
-    </div>
-    <ul class="links-of-blogroll-list">
-        <li class="links-of-blogroll-item">
-          <a href="http://myloveru.cn/" title="http:&#x2F;&#x2F;myloveru.cn&#x2F;" rel="noopener" target="_blank">梦想博客</a>
-        </li>
-        <li class="links-of-blogroll-item">
-          <a href="https://meow3.family.blog/" title="https:&#x2F;&#x2F;meow3.family.blog&#x2F;" rel="noopener" target="_blank">恶魔菌の记事簿</a>
-        </li>
-        <li class="links-of-blogroll-item">
-          <a href="https://tding.top/" title="https:&#x2F;&#x2F;tding.top&#x2F;" rel="noopener" target="_blank">小丁的个人博客</a>
-        </li>
-        <li class="links-of-blogroll-item">
-          <a href="https://www.julydate.com/" title="https:&#x2F;&#x2F;www.julydate.com&#x2F;" rel="noopener" target="_blank">七夏浅笑</a>
-        </li>
-        <li class="links-of-blogroll-item">
-          <a href="https://raspii.tech/" title="https:&#x2F;&#x2F;raspii.tech&#x2F;" rel="noopener" target="_blank">无用挂件</a>
-        </li>
-    </ul>
-  </div>
-<div id="aplayer" class="aplayer"></div>
-<script>
-if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
-  document.write('<script type="text/javascript" src="/js/custom/APlayer.min.js"><\/script>');
-}
-</script>
-<script type="text/javascript">
-var ap = new APlayer({
-    element: document.getElementById('aplayer'),                       // Optional, player element
-    narrow: false,                                                     // Optional, narrow style
-    autoplay: false,                                                    // Optional, autoplay song(s), not supported by mobile browsers
-    showlrc: 0,                                                        // Optional, show lrc, can be 0, 1, 2, see: ###With lrc
-    mutex: true,                                                       // Optional, pause other players when this player playing
-    theme: '#e6d0b2',                                                  // Optional, theme color, default: #b7daff
-    mode: 'random',                                                    // Optional, play mode, can be `random` `single` `circulation`(loop) `order`(no loop), default: `circulation`
-    preload: 'metadata',                                               // Optional, the way to load music, can be 'none' 'metadata' 'auto', default: 'auto'
-    listmaxheight: '513px',                                             // Optional, max height of play list
-    music: [{
-      title: '世末歌者',
-      author: '双笙 囧菌',
-      url: '/music/%E5%8F%8C%E7%AC%99%20%E5%9B%A7%E8%8F%8C%20-%20%E4%B8%96%E6%9C%AB%E6%AD%8C%E8%80%85.mp3',
-      pic: '/images/aplayer/双笙　囧菌 - 世末歌者.webp',
-    }, {
-      title: '幹物女(WeiWei)',
-      author: '封茗囧菌',
-      url: '/music/%E5%B0%81%E8%8C%97%E5%9B%A7%E8%8F%8C%20-%20%E5%B9%B9%E7%89%A9%E5%A5%B3(WeiWei).mp3',
-      pic: '/images/aplayer/封茗囧菌 - 幹物女(WeiWei).webp',
-    }, {
-      title: '东京不太热',
-      author: '封茗囧菌',
-      url: '/music/%E5%B0%81%E8%8C%97%E5%9B%A7%E8%8F%8C%20-%20%E4%B8%9C%E4%BA%AC%E4%B8%8D%E5%A4%AA%E7%83%AD.mp3',
-      pic: '/images/aplayer/封茗囧菌 - 东京不太热.webp',
-    }, {
-      title: '有故事的小仙女（Cover 初音ミク）',
-      author: '井宿',
-      url: '/music/%E4%BA%95%E5%AE%BF%20-%20%E6%9C%89%E6%95%85%E4%BA%8B%E7%9A%84%E5%B0%8F%E4%BB%99%E5%A5%B3%EF%BC%88Cover%20%E5%88%9D%E9%9F%B3%E3%83%9F%E3%82%AF%EF%BC%89.mp3',
-      pic: '/images/aplayer/井宿 - 有故事的小仙女（Cover 初音ミク）.webp',
-    }, {
-      title: '拼凑的断音（Cover 洛天依）',
-      author: '泡泡Hansy',
-      url: '/music/%E6%B3%A1%E6%B3%A1Hansy%20-%20%E6%8B%BC%E5%87%91%E7%9A%84%E6%96%AD%E9%9F%B3%EF%BC%88Cover%20%E6%B4%9B%E5%A4%A9%E4%BE%9D%EF%BC%89.mp3',
-      pic: '/images/aplayer/泡泡Hansy - 拼凑的断音（Cover 洛天依）.webp',
-    }]
-  });
-</script>
-
-      </div>
-
-    </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
       </div>
     </main>
 
     <footer class="footer">
       <div class="footer-inner">
+        
+
         
 
 <div class="copyright">
@@ -3321,10 +3337,10 @@ var ap = new APlayer({
 
         
 <div class="busuanzi-count">
-  <script pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
       <span class="post-meta-item-icon">
-        <i class="fa fa-"></i>你是第
+        <i class=""></i>你是第
       </span>
       <span class="site-uv" title="总访客量">
         <span id="busuanzi_value_site_uv"></span>位到访的小伙伴喔
@@ -3333,7 +3349,7 @@ var ap = new APlayer({
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
       <span class="post-meta-item-icon">
-        <i class="fa fa-"></i>本站已被访问
+        <i class=""></i>本站已被访问
       </span>
       <span class="site-pv" title="总访问量">
         <span id="busuanzi_value_site_pv"></span>次啦
@@ -3346,30 +3362,30 @@ var ap = new APlayer({
 
 
 
-  <script pjax>
-  function leancloudSelector(url) {
-    url = encodeURI(url);
-    return document.getElementById(url).querySelector('.leancloud-visitors-count');
-  }
-  if (CONFIG.page.isPost) {
-    function addCount(Counter) {
-      var visitors = document.querySelector('.leancloud_visitors');
-      var url = decodeURI(visitors.getAttribute('id'));
-      var title = visitors.getAttribute('data-flag-title');
+<script data-pjax>
+  (function() {
+    function leancloudSelector(url) {
+      url = encodeURI(url);
+      return document.getElementById(url).querySelector('.leancloud-visitors-count');
+    }
 
-      Counter('get', `/classes/Counter?where=${JSON.stringify({ url })}`)
+    function addCount(Counter) {
+      const visitors = document.querySelector('.leancloud_visitors');
+      const url = decodeURI(visitors.id);
+      const title = visitors.dataset.flagTitle;
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url })))
         .then(response => response.json())
         .then(({ results }) => {
           if (results.length > 0) {
-            var counter = results[0];
-              leancloudSelector(url).innerText = counter.time + 1;
+            const counter = results[0];
+            leancloudSelector(url).innerText = counter.time + 1;
             Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
-              .then(response => response.json())
               .catch(error => {
                 console.error('Failed to save visitor count', error);
-              })
+              });
           } else {
-              Counter('post', '/classes/Counter', { title: title, url: url, time: 1 })
+              Counter('post', '/classes/Counter', { title, url, time: 1 })
                 .then(response => response.json())
                 .then(() => {
                   leancloudSelector(url).innerText = 1;
@@ -3383,48 +3399,34 @@ var ap = new APlayer({
           console.error('LeanCloud Counter Error', error);
         });
     }
-  } else {
+
     function showTime(Counter) {
-      var visitors = document.querySelectorAll('.leancloud_visitors');
-      var entries = [...visitors].map(element => {
-        return decodeURI(element.getAttribute('id'));
+      const visitors = document.querySelectorAll('.leancloud_visitors');
+      const entries = [...visitors].map(element => {
+        return decodeURI(element.id);
       });
 
-      Counter('get', `/classes/Counter?where=${JSON.stringify({ url: { '$in': entries } })}`)
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url: { '$in': entries } })))
         .then(response => response.json())
         .then(({ results }) => {
-          if (results.length === 0) {
-            document.querySelectorAll('.leancloud_visitors .leancloud-visitors-count').forEach(element => {
-              element.innerText = 0;
-            });
-            return;
-          }
-          for (let item of results) {
-            let { url, time } = item;
-            leancloudSelector(url).innerText = time;
-          }
           for (let url of entries) {
-            var element = leancloudSelector(url);
-            if (element.innerText == '') {
-              element.innerText = 0;
-            }
+            let target = results.find(item => item.url === url);
+            leancloudSelector(url).innerText = target ? target.time : 0;
           }
         })
         .catch(error => {
           console.error('LeanCloud Counter Error', error);
         });
     }
-  }
 
-  fetch('https://app-router.leancloud.cn/2/route?appId=zulMeib4pyC6zB1a65OmVtHz-gzGzoHsz')
-    .then(response => response.json())
-    .then(({ api_server }) => {
-      var Counter = (method, url, data) => {
-        return fetch(`https://${api_server}/1.1${url}`, {
-          method: method,
+    let { app_id, app_key, server_url } = {"enable":true,"app_id":"zulMeib4pyC6zB1a65OmVtHz-gzGzoHsz","app_key":"TEjUlOUBz3KwSUmDQ35ROxpw","server_url":null,"security":false};
+    function fetchData(api_server) {
+      const Counter = (method, url, data) => {
+        return fetch(`${api_server}/1.1${url}`, {
+          method,
           headers: {
-            'X-LC-Id'     : 'zulMeib4pyC6zB1a65OmVtHz-gzGzoHsz',
-            'X-LC-Key'    : 'TEjUlOUBz3KwSUmDQ35ROxpw',
+            'X-LC-Id'     : app_id,
+            'X-LC-Key'    : app_key,
             'Content-Type': 'application/json',
           },
           body: JSON.stringify(data)
@@ -3436,8 +3438,21 @@ var ap = new APlayer({
       } else if (document.querySelectorAll('.post-title-link').length >= 1) {
         showTime(Counter);
       }
-    });
-  </script>
+    }
+
+    const api_server = app_id.slice(-9) !== '-MdYXbMMI' ? server_url : `https://${app_id.slice(0, 8).toLowerCase()}.api.lncldglobal.com`;
+
+    if (api_server) {
+      fetchData(api_server);
+    } else {
+      fetch('https://app-router.leancloud.cn/2/route?appId=' + app_id)
+        .then(response => response.json())
+        .then(({ api_server }) => {
+          fetchData('https://' + api_server);
+        });
+    }
+  })();
+</script>
 
 
       </div>
@@ -3446,12 +3461,10 @@ var ap = new APlayer({
 
   
   <script src="/lib/anime.min.js"></script>
-  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/next-theme/pjax@0/pjax.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
-  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
 
 <script src="/js/utils.js"></script>
 
@@ -3467,47 +3480,19 @@ var ap = new APlayer({
 var pjax = new Pjax({
   selectors: [
     'head title',
-    '#page-configurations',
-    '.content-wrap',
+    '.page-configurations',
+    '.main-inner',
     '.post-toc-wrap',
-    '#pjax'
+    '.languages',
+    '.pjax'
   ],
-  switches: {
-    '.post-toc-wrap': Pjax.switches.innerHTML
-  },
   analytics: false,
   cacheBust: false,
   scrollTo : !CONFIG.bookmark.enable
 });
 
-window.addEventListener('pjax:success', () => {
-  document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
-    var code = element.text || element.textContent || element.innerHTML || '';
-    var parent = element.parentNode;
-    parent.removeChild(element);
-    var script = document.createElement('script');
-    if (element.id) {
-      script.id = element.id;
-    }
-    if (element.className) {
-      script.className = element.className;
-    }
-    if (element.type) {
-      script.type = element.type;
-    }
-    if (element.src) {
-      script.src = element.src;
-      // Force synchronous loading of peripheral JS.
-      script.async = false;
-    }
-    if (element.getAttribute('pjax') !== null) {
-      script.setAttribute('pjax', '');
-    }
-    if (code !== '') {
-      script.appendChild(document.createTextNode(code));
-    }
-    parent.appendChild(script);
-  });
+document.addEventListener('pjax:success', () => {
+  pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
   NexT.boot.refresh();
   // Define Motion Sequence & Bootstrap Motion.
   if (CONFIG.motion.enable) {
@@ -3517,27 +3502,19 @@ window.addEventListener('pjax:success', () => {
       .add(NexT.motion.middleWares.postList)
       .bootstrap();
   }
+  const hasTOC = document.querySelector('.post-toc');
+  document.querySelector('.sidebar-inner').classList.toggle('sidebar-nav-active', hasTOC);
+  document.querySelector(hasTOC ? '.sidebar-nav-toc' : '.sidebar-nav-overview').click();
   NexT.utils.updateSidebarPosition();
 });
 </script>
 
 
-
-
   
-  <script pjax>
-    (function(){
-      var bp = document.createElement('script');
-      var curProtocol = window.location.protocol.split(':')[0];
-      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(bp, s);
-    })();
-  </script>
 
 
 
-  <script pjax>
+  <script data-pjax>
   if (CONFIG.page.isPost) {
     wpac_init = window.wpac_init || [];
     wpac_init.push({
@@ -3573,46 +3550,30 @@ window.addEventListener('pjax:success', () => {
 
 
 
-    <div id="pjax">
+    <div class="pjax">
   
 
   
-  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/quicklink@2/dist/quicklink.umd.js"></script>
   <script>
       window.addEventListener('load', () => {
-      quicklink({
-        timeout: 3000,
+      quicklink.listen({
+        timeout : 3000,
         priority: true,
-        ignores: [uri => uri.includes('#'),uri => uri == 'https://qianling.pw/a-practical-course-in-anchoring/',]
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://qianling.pw/a-practical-course-in-anchoring/',]
       });
       });
   </script>
 
 
 <script>
-NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
-  NexT.utils.getScript('https://qianling-1254036047.cos.ap-chengdu.myqcloud.com/js/Valine.min.js', () => {
-    var GUEST = ['nick', 'mail', 'link'];
-    var guest = 'nick,mail,link';
-    guest = guest.split(',').filter(item => {
-      return GUEST.includes(item);
-    });
-    new Valine({
-      el         : '#valine-comments',
-      verify     : false,
-      notify     : false,
-      appId      : 'zulMeib4pyC6zB1a65OmVtHz-gzGzoHsz',
-      appKey     : 'TEjUlOUBz3KwSUmDQ35ROxpw',
-      placeholder: "biu biu~　||ヽ(*￣▽￣*)ノミ|Ю",
-      avatar     : 'wavatar',
-      meta       : guest,
-      pageSize   : '10' || 10,
-      visitor    : false,
-      lang       : 'zh-cn' || 'zh-cn',
-      path       : location.pathname,
-      recordIP   : false,
-      serverURLs : ''
-    });
+NexT.utils.loadComments('#valine-comments', () => {
+  NexT.utils.getScript('/js/custom/Valine.min.js', () => {
+    new Valine(Object.assign({
+      el  : '#valine-comments',
+      path: location.pathname,
+    }, {"enable":true,"appId":"zulMeib4pyC6zB1a65OmVtHz-gzGzoHsz","appKey":"TEjUlOUBz3KwSUmDQ35ROxpw","placeholder":"biu biu~　||ヽ(*￣▽￣*)ノミ|Ю","avatar":"wavatar","meta":["nick","mail","link"],"pageSize":10,"language":"zh-cn","visitor":false,"comment_count":true,"recordIP":false,"serverURLs":null,"enableQQ":true,"requiredFields":[]}
+    ));
   }, window.Valine);
 });
 </script>

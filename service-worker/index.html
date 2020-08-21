@@ -4,21 +4,25 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
+<meta name="generator" content="Hexo 5.0.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
 <link rel="stylesheet" href="/css/main.css">
 
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic|ZCOOL XiaoWei:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
-<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/5.10.0-11/css/all.min.css">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.css">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto+Serif+SC:300,300italic,400,400italic,700,700italic|ZCOOL+XiaoWei:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  
+  <link rel="stylesheet" href="/lib/animate-css/animate.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.min.css">
   <script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
 
-<script id="hexo-configurations">
+<script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"qianling.pw","root":"/","scheme":"Muse","version":"7.7.1","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"qianling.pw","root":"/","scheme":"Muse","version":"8.0.0-rc.5","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":true,"nav":null,"activeClass":"valine"},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"none","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"path":"search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true}};
   </script>
 
   <meta property="og:type" content="article">
@@ -33,29 +37,28 @@
 <meta property="article:published_time" content="2018-02-01T10:18:43.000Z">
 <meta property="article:modified_time" content="2020-02-18T11:26:31.000Z">
 <meta property="article:author" content="千灵夙赋">
-<meta property="article:tag" content="Service Worker">
-<meta property="article:tag" content="Service Worker Hexo">
-<meta property="article:tag" content="Hexo离线访问">
-<meta property="article:tag" content="Service Worker 博客">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="前端">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://qianling.pw/images/covers/6.png">
 
 <link rel="canonical" href="https://qianling.pw/service-worker/">
 
 
-<script id="page-configurations">
+<script data-pjax class="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: false,
-    isPost: true
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
   };
 </script>
 
   <title>Hexo 部署 Service Worker | 千灵</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141264217-1"></script>
-    <script pjax>
+    <script data-pjax>
       if (CONFIG.hostname === location.hostname) {
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
@@ -65,7 +68,7 @@
     </script>
 
 
-  <script pjax>
+  <script data-pjax>
     var _hmt = _hmt || [];
     (function() {
       var hm = document.createElement("script");
@@ -80,24 +83,36 @@
 
   <noscript>
   <style>
-  .use-motion .brand,
+  body { margin-top: 2rem; }
+
   .use-motion .menu-item,
-  .sidebar-inner,
+  .use-motion .sidebar,
   .use-motion .post-block,
   .use-motion .pagination,
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
 
   .use-motion .site-title,
-  .use-motion .site-subtitle {
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
     opacity: initial;
     top: initial;
   }
 
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
   </style>
 </noscript>
 
@@ -108,67 +123,70 @@
   <div class="container use-motion">
     <div class="headband"></div>
 
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
+    <main class="main">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
     </div>
   </div>
 
   <div class="site-meta">
 
-    <div>
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">千灵</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">千灵</h1>
+      <i class="logo-line"></i>
+    </a>
   </div>
 
-  <div class="site-nav-right"></div>
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
 </div>
 
 
+
 <nav class="site-nav">
-  
-  <ul id="menu" class="menu">
+  <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-fw fa-star-half-alt"></i>首页</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-democrat"></i>归档</a>
+    <a href="/" rel="section"><i class="fa fa-star-half-alt fa-fw"></i>首页</a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-dove"></i>分类</a>
+    <a href="/categories/" rel="section"><i class="fa fa-dove fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-democrat fa-fw"></i>归档</a>
 
   </li>
         <li class="menu-item menu-item-daily">
 
-    <a href="/daily" rel="section"><i class="fa fa-fw fa-ghost"></i>碎念</a>
+    <a href="/daily" rel="section"><i class="fa fa-ghost fa-fw"></i>碎念</a>
 
   </li>
         <li class="menu-item menu-item-play">
 
-    <a href="/play" rel="section"><i class="fa fa-fw fa-fish"></i>游戏</a>
+    <a href="/play" rel="section"><i class="fa fa-fish fa-fw"></i>游戏</a>
 
   </li>
         <li class="menu-item menu-item-comments">
 
-    <a href="/comments" rel="section"><i class="fa fa-fw fa-dog"></i>留言</a>
+    <a href="/comments" rel="section"><i class="fa fa-dog fa-fw"></i>留言</a>
 
   </li>
         <li class="menu-item menu-item-about">
 
-    <a href="/about/" rel="section"><i class="fa fa-fw fa-carrot"></i>关于</a>
+    <a href="/about/" rel="section"><i class="fa fa-carrot fa-fw"></i>关于</a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -176,16 +194,18 @@
         </a>
       </li>
   </ul>
-
 </nav>
-  <div class="site-search">
+
+
+
+  <div class="search-pop-overlay">
     <div class="popup search-popup">
-    <div class="search-header">
+        <div class="search-header">
   <span class="search-icon">
     <i class="fa fa-search"></i>
   </span>
   <div class="search-input-container">
-    <input autocomplete="off" autocorrect="off" autocapitalize="off"
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
            placeholder="搜索..." spellcheck="false"
            type="search" class="search-input">
   </div>
@@ -193,12 +213,15 @@
     <i class="fa fa-times-circle"></i>
   </span>
 </div>
-<div id="search-result"></div>
-
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
 </div>
-<div class="search-pop-overlay"></div>
 
-  </div><script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+    </div>
+  </div>
+<script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
 <script src="/js/custom/custom.js"></script>
 
 <div class="top-scroll-bar"></div>
@@ -219,7 +242,7 @@ if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
 </script>
 <script type="text/javascript">
   $("body").backstretch([
-    "https://qianling-1254036047.cos.ap-chengdu.myqcloud.com/background/background%20(1).webp",
+    "/images/background/background (1).webp",
     "/images/background/background (2).webp",
     "/images/background/background (3).webp",
     "/images/background/background (4).webp",
@@ -254,257 +277,18 @@ if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
 </script>
 
 </div>
-    </header>
-
-    
-  <div class="back-to-top">
-    <i class="fa fa-chevron-up"></i>
-    <span>0%</span>
-  </div>
-
-
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-
-          <div class="content">
-            
-
-  <div class="posts-expand">
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://qianling.pw/service-worker/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="千灵夙赋">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="千灵">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          Hexo 部署 Service Worker
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间 2018-02-01 18:18:43" itemprop="dateCreated datePublished" datetime="2018-02-01T18:18:43+08:00">2018-02-01</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间 2020-02-18 19:26:31" itemprop="dateModified" datetime="2020-02-18T19:26:31+08:00">2020-02-18</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">Hexo</span>
-                  </a>
-                </span>
-            </span>
-
-          
-            <span id="/service-worker/" class="post-meta-item leancloud_visitors" data-flag-title="Hexo 部署 Service Worker" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数 </span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-  <i class="far fa-comment"></i>
-    <a title="valine" href="/service-worker/#valine-comments" itemprop="discussionUrl">
-     评论数
-      <span class="post-comments-count valine-comment-count" data-xid="/service-worker/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-        <p><img data-src="/images/covers/6.png" alt=""></p>
-<a id="more"></a>
-
-<hr>
-<h1 id="一-作用"><a href="#一-作用" class="headerlink" title="一. 作用"></a><span style="color:#2aa198">一. 作用</span></h1><p><br />Service workers 本质上充当 Web 应用程序与浏览器之间的代理服务器，为了适应越来越多的网页应用而产生。<br /><br>它可以通过拦截并修改访问和资源请求，缓存特定的网页资源，并可以将网页做到离线可用；<br /><br>同时 Service Workers 也能做到定期后台同步与信息推送。<br /><br>部署成功后，可以节省用户流量、提升页面二次加载速度等。<br><br /><br><br /></p>
-<h1 id="二-须知"><a href="#二-须知" class="headerlink" title="二. 须知"></a><span style="color:#2aa198">二. 须知</span></h1><p><span style="color:#3a87ad;font-weight:600"><strong>需要 Https 支持</strong></span></p>
-<p><span style="color:#3a87ad;font-weight:600">黑客可以通过 Service Worker 劫持连接、伪造和过滤响应，因此只能在 Https 网页上注册 Service Workers</span><br><br /><br><br /></p>
-<h1 id="三-部署"><a href="#三-部署" class="headerlink" title="三. 部署"></a><span style="color:#2aa198">三. 部署</span></h1><h2 id="1-注册-Service-Worker"><a href="#1-注册-Service-Worker" class="headerlink" title="1. 注册 Service Worker"></a><span style="color:#2aa198">1. 注册 Service Worker</span></h2><h3 id="①-创建文件"><a href="#①-创建文件" class="headerlink" title="① 创建文件"></a><span style="color:#2aa198">① 创建文件</span></h3><p><span style="color:#3a87ad;font-weight:600">打开　</span><code>\blog\source\</code></p>
-<p><span style="color:#3a87ad;font-weight:600">新建　</span><code>sw.js</code></p>
-<h3 id="②-跳过渲染"><a href="#②-跳过渲染" class="headerlink" title="② 跳过渲染"></a><span style="color:#2aa198">② 跳过渲染</span></h3><p><span style="color:#3a87ad;font-weight:600">打开　</span><code>\blog\_config.yml</code></p>
-<p><span style="color:#3a87ad;font-weight:600">查找　</span><code>skip_render</code></p>
-<p><span style="color:#3a87ad;font-weight:600">添加　</span><code>- sw.js</code></p>
-<h3 id="③-注册"><a href="#③-注册" class="headerlink" title="③ 注册"></a><span style="color:#2aa198">③ 注册</span></h3><p><span style="color:#3a87ad;font-weight:600">打开　</span><code>\themes\next\source\js\custom\</code></p>
-<p><span style="color:#3a87ad;font-weight:600">新建　</span><code>custom.js</code></p>
-<p><span style="color:#3a87ad;font-weight:600">写入</span></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Service Workers</span></span><br><span class="line">  <span class="keyword">if</span> (<span class="string">'serviceWorker'</span> <span class="keyword">in</span> navigator) &#123;</span><br><span class="line">      <span class="built_in">window</span>.addEventListener(<span class="string">'load'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">          navigator.serviceWorker.register(<span class="string">'/sw.js'</span>).then(<span class="function"><span class="keyword">function</span> (<span class="params">registration</span>) </span>&#123;</span><br><span class="line">              <span class="built_in">console</span>.log(<span class="string">'ServiceWorker registration successful with scope: '</span>, registration.scope);</span><br><span class="line">          &#125;).catch(<span class="function"><span class="keyword">function</span> (<span class="params">err</span>) </span>&#123;</span><br><span class="line">              <span class="built_in">console</span>.log(<span class="string">'ServiceWorker registration failed: '</span>, err);</span><br><span class="line">          &#125;);</span><br><span class="line">      &#125;);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-
-<p><span class="f-fw">打开　</span><code>\blog\source\_data\header.swig</code></p>
-<p><span class="f-fw">添加　</span><code>&lt;script src=&quot;/js/custom/custom.js&quot;&gt;&lt;/script&gt;</code></p>
-<p><span style="color:#3a87ad;font-weight:600">您也可以在其它模块内注册</span></p>
-<p><span style="color:#3a87ad;font-weight:600">注：</span></p>
-<p>将<code>sw.js</code>文件放在网站的根目录下，Service Worker 将会收到网站的所有 fetch 事件。</p>
-<p>如果将 Service Worker 文件注册为<code>/example/sw.js</code>，那么，Service Worker 只能收到<code>/example/</code>路径下的 fetch 事件（例如： <code>/example/page1/</code>, <code>/example/page2/</code>）<br><br /></p>
-<h2 id="2-设定缓存规则"><a href="#2-设定缓存规则" class="headerlink" title="2. 设定缓存规则"></a><span style="color:#2aa198">2. 设定缓存规则</span></h2><p>请打开<code>开发者工具-Source</code>自行定义<br><img data-src="/images/posts/service-worker/service-worker1.png" alt=""></p>
-<h3 id="①载入-sw-toolbox-js-与定义缓存版本、名称、最大缓存数量"><a href="#①载入-sw-toolbox-js-与定义缓存版本、名称、最大缓存数量" class="headerlink" title="①载入 sw-toolbox.js 与定义缓存版本、名称、最大缓存数量"></a><span style="color:#2aa198">①载入 sw-toolbox.js 与定义缓存版本、名称、最大缓存数量</span></h3><p><span style="color:#3a87ad;font-weight:600">打开　</span><code>\blog\source\sw.js</code></p>
-<p><span style="color:#3a87ad;font-weight:600">写入</span></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">importScripts(<span class="string">"/js/custom/sw-toolbox.js"</span>);</span><br><span class="line"><span class="keyword">var</span> cacheVersion = <span class="string">"-17104"</span>;</span><br><span class="line"><span class="keyword">var</span> staticImageCacheName = <span class="string">"image"</span> + cacheVersion;</span><br><span class="line"><span class="keyword">var</span> staticAssetsCacheName = <span class="string">"assets"</span> + cacheVersion;</span><br><span class="line"><span class="keyword">var</span> contentCacheName = <span class="string">"content"</span> + cacheVersion;</span><br><span class="line"><span class="keyword">var</span> vendorCacheName = <span class="string">"vendor"</span> + cacheVersion;</span><br><span class="line"><span class="keyword">var</span> maxEntries = <span class="number">100</span>;</span><br></pre></td></tr></table></figure>
-<p>您也可以从 <code>css.net</code> 的公共 CDN 库中载入 <code>sw-toolbox.js</code></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">self.importScripts(<span class="string">"https://cdnjs.cat.net/ajax/libs/sw-toolbox/3.6.1/sw-toolbox.js"</span>);</span><br><span class="line">self.toolbox.options.debug = <span class="literal">false</span>;</span><br><span class="line">self.toolbox.options.networkTimeoutSeconds = <span class="number">3</span>;</span><br></pre></td></tr></table></figure>
-
-<h3 id="②图床缓存"><a href="#②图床缓存" class="headerlink" title="②图床缓存"></a><span style="color:#2aa198">②图床缓存</span></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* Static ImageCache */</span></span><br><span class="line">self.toolbox.router.get(<span class="string">"/(.*)"</span>, self.toolbox.cacheFirst, &#123;</span><br><span class="line">    origin: <span class="regexp">/qianling-1254036047\.cos\.ap-chengdu\.myqcloud\.com/</span>,</span><br><span class="line">    cache: &#123;</span><br><span class="line">        name: staticImageCacheName,</span><br><span class="line">        maxEntries: maxEntries</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">self.toolbox.router.get(<span class="string">"/(.*)"</span>, self.toolbox.cacheFirst, &#123;</span><br><span class="line">    origin: <span class="regexp">/t1\.aixinxi\.net/</span>,</span><br><span class="line">    cache: &#123;</span><br><span class="line">        name: staticImageCacheName,</span><br><span class="line">        maxEntries: maxEntries</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">self.toolbox.router.get(<span class="string">"/(.*)"</span>, self.toolbox.cacheFirst, &#123;</span><br><span class="line">    origin: <span class="regexp">/i\.loli\.net/</span>,</span><br><span class="line">    cache: &#123;</span><br><span class="line">        name: staticImageCacheName,</span><br><span class="line">        maxEntries: maxEntries</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<h3 id="③静态内容缓存"><a href="#③静态内容缓存" class="headerlink" title="③静态内容缓存"></a><span style="color:#2aa198">③静态内容缓存</span></h3><p>公共 CDN 库上调用的文件很少改动，全部使用 <code>cacheFirst</code><br>并使百度统计调用的 <code>js</code> 直接使用缓存</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* Static Cache */</span></span><br><span class="line">self.toolbox.router.get(<span class="string">"/(.*)"</span>, self.toolbox.cacheFirst, &#123;</span><br><span class="line">    origin: <span class="regexp">/cdn\.bootcss\.com/</span>,</span><br><span class="line">    cache: &#123;</span><br><span class="line">        name: staticAssetsCacheName,</span><br><span class="line">        maxEntries: maxEntries</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">self.toolbox.router.get(<span class="string">"/(.*)"</span>, self.toolbox.cacheFirst, &#123;</span><br><span class="line">    origin: <span class="regexp">/cdnjs\.cloudflare\.com/</span>,</span><br><span class="line">    cache: &#123;</span><br><span class="line">        name: staticAssetsCacheName,</span><br><span class="line">        maxEntries: maxEntries</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">self.toolbox.router.get(<span class="string">"/(.*)"</span>, self.toolbox.cacheFirst, &#123;</span><br><span class="line">    origin: <span class="regexp">/cdn1\.lncld\.net/</span>,</span><br><span class="line">    cache: &#123;</span><br><span class="line">        name: staticAssetsCacheName,</span><br><span class="line">        maxEntries: maxEntries</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">self.toolbox.router.get(<span class="string">"/(.*)"</span>, self.toolbox.cacheFirst, &#123;</span><br><span class="line">    origin: <span class="regexp">/api\.imjad\.cn/</span>,</span><br><span class="line">    cache: &#123;</span><br><span class="line">        name: staticAssetsCacheName,</span><br><span class="line">        maxEntries: maxEntries</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">self.toolbox.router.get(<span class="string">"/(.*)"</span>, self.toolbox.cacheFirst, &#123;<span class="attr">origin</span>: <span class="regexp">/(hm\.baidu\.com)/</span>,</span><br><span class="line">    cache: &#123;</span><br><span class="line">        name: vendorCacheName,</span><br><span class="line">        maxEntries: maxEntries</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<h3 id="④网页内容缓存"><a href="#④网页内容缓存" class="headerlink" title="④网页内容缓存"></a><span style="color:#2aa198">④网页内容缓存</span></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* ContentCache */</span></span><br><span class="line">self.toolbox.router.get(<span class="string">"/(.*)"</span>, self.toolbox.networkFirst, &#123;</span><br><span class="line">    origin: <span class="regexp">/qianling\.pw/</span>,</span><br><span class="line">    cache: &#123;</span><br><span class="line">       name: contentCacheName,</span><br><span class="line">       maxEntries: maxEntries</span><br><span class="line">&#125;</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
-
-<h3 id="⑤不缓存"><a href="#⑤不缓存" class="headerlink" title="⑤不缓存"></a><span style="color:#2aa198">⑤不缓存</span></h3><p>对于 <code>sw.js</code> 采取 <code>networkFirst</code> 策略，使访客网络状态正常时更新 <code>sw.js</code>，离线时也能正常使用 <code>Service Worker</code></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* NoCache */</span></span><br><span class="line">self.toolbox.router.get(<span class="string">"/sw.js"</span>,self.toolbox.networkFirst);</span><br></pre></td></tr></table></figure>
-
-<h3 id="⑥预缓存"><a href="#⑥预缓存" class="headerlink" title="⑥预缓存"></a><span style="color:#2aa198">⑥预缓存</span></h3><p>每次页面加载时强制更新 <code>Service Worker</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;* PreCache *&#x2F;</span><br><span class="line">self.addEventListener(&quot;install&quot;,</span><br><span class="line">function(event) &#123;return event.waitUntil(self.skipWaiting())</span><br><span class="line">&#125;);</span><br><span class="line">self.addEventListener(&quot;activate&quot;,</span><br><span class="line">function(event) &#123;return event.waitUntil(self.clients.claim())</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<br />
-<br />
-
-<h1 id="四-缓存管理"><a href="#四-缓存管理" class="headerlink" title="四. 缓存管理"></a><span style="color:#2aa198">四. 缓存管理</span></h1><p><img data-src="/images/posts/service-worker/service-worker2.png" alt=""></p>
-<p><span style="color:#3a87ad;word-wrap: break-word;font-weight:600">访问　</span><code>chrome://inspect/#service-workers</code></p>
-<p><span style="color:#3a87ad;font-weight:600">打开　</span><code>Service workers</code><br><br /><br><br /></p>
-<h1 id="五-Demo"><a href="#五-Demo" class="headerlink" title="五. Demo"></a><span style="color:#2aa198">五. Demo</span></h1><p><img data-src="/images/posts/service-worker/service-worker3.png" alt=""><br><span style="color:#3a87ad;font-weight:600">打开　</span><code>开发者工具-Appliaction-Service Workers</code></p>
-<p><span style="color:#3a87ad;font-weight:600">勾选　</span><code>Offline</code></p>
-<p><span style="color:#3a87ad;font-weight:600">NetWork 出现 ⚠，刷新即可体验离线版本</span></p>
-<br />
-<br />
-
-<p><strong>参考文档：</strong><br><a href="https://blog.nfz.moe/archives/sw-toolbox-practice.html/">本博客对 sw-toolbox 的实践 – neoFelhz</a><br><a href="https://www.isthnew.com/service-workers/">开始使用 SERVICE WORKERS – 可乐没气的猫</a><br><a href="http://kailian.github.io/2017/03/01/service-worker/">service worker – kailian</a></p>
-
-    </div>
-
-    
-    
-    
-      
-  <div class="popular-posts-header">相关文章</div>
-  <ul class="popular-posts">
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\base64-fonts\" rel="bookmark">内联引入 base64 字体</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\hexo-optimization\" rel="bookmark">Hexo 优化汇总</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\changyan\" rel="bookmark">免备案使用畅言</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\custom-web-page\" rel="bookmark">Hexo 跳过渲染，创建自定义网页</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\error-launching-git\" rel="bookmark">关于 'error launching git' 的解决方法</a></div>
-    </li>
-  </ul>
-
-
-      <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/Hexo/" rel="tag"># Hexo</a>
-              <a href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag"># 前端</a>
-          </div>
-
-        
-  <div class="post-widgets">
-    <div class="wp_rating">
-      <div id="wpac-rating"></div>
-    </div>
-  </div>
-
-
-        
-    <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/vacation-comes/" rel="prev" title="假期将至">
-      <i class="fa fa-chevron-left"></i> 假期将至
-    </a></div>
-      <div class="post-nav-item">
-    <a href="/base64-fonts/" rel="next" title="内联引入 base64 字体">
-      内联引入 base64 字体 <i class="fa fa-chevron-right"></i>
-    </a></div>
-    </div>
-      </footer>
-    
-  </article>
-  
-  
-  
-
-  </div>
-
-
-          </div>
-          
-    <div class="comments" id="valine-comments"></div>
-
-<script>
-  window.addEventListener('tabs:register', () => {
-    let activeClass = CONFIG.comments.activeClass;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
-      }
-    }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
-    });
-  }
-</script>
-
-        </div>
           
   
   <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
   </div>
 
   <aside class="sidebar">
-    <div class="sidebar-inner">
 
-      <ul class="sidebar-nav motion-element">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
         </li>
@@ -514,19 +298,19 @@ if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
       </ul>
 
       <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一-作用"><span class="nav-text">一. 作用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二-须知"><span class="nav-text">二. 须知</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三-部署"><span class="nav-text">三. 部署</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-注册-Service-Worker"><span class="nav-text">1. 注册 Service Worker</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#①-创建文件"><span class="nav-text">① 创建文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#②-跳过渲染"><span class="nav-text">② 跳过渲染</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#③-注册"><span class="nav-text">③ 注册</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-设定缓存规则"><span class="nav-text">2. 设定缓存规则</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#①载入-sw-toolbox-js-与定义缓存版本、名称、最大缓存数量"><span class="nav-text">①载入 sw-toolbox.js 与定义缓存版本、名称、最大缓存数量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#②图床缓存"><span class="nav-text">②图床缓存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#③静态内容缓存"><span class="nav-text">③静态内容缓存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#④网页内容缓存"><span class="nav-text">④网页内容缓存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#⑤不缓存"><span class="nav-text">⑤不缓存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#⑥预缓存"><span class="nav-text">⑥预缓存</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四-缓存管理"><span class="nav-text">四. 缓存管理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五-Demo"><span class="nav-text">五. Demo</span></a></li></ol></div>
-      </div>
+      <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80-%E4%BD%9C%E7%94%A8"><span class="nav-text">一. 作用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C-%E9%A1%BB%E7%9F%A5"><span class="nav-text">二. 须知</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%89-%E9%83%A8%E7%BD%B2"><span class="nav-text">三. 部署</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E6%B3%A8%E5%86%8C-Service-Worker"><span class="nav-text">1. 注册 Service Worker</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%91%A0-%E5%88%9B%E5%BB%BA%E6%96%87%E4%BB%B6"><span class="nav-text">① 创建文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%91%A1-%E8%B7%B3%E8%BF%87%E6%B8%B2%E6%9F%93"><span class="nav-text">② 跳过渲染</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%91%A2-%E6%B3%A8%E5%86%8C"><span class="nav-text">③ 注册</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E8%AE%BE%E5%AE%9A%E7%BC%93%E5%AD%98%E8%A7%84%E5%88%99"><span class="nav-text">2. 设定缓存规则</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%91%A0%E8%BD%BD%E5%85%A5-sw-toolbox-js-%E4%B8%8E%E5%AE%9A%E4%B9%89%E7%BC%93%E5%AD%98%E7%89%88%E6%9C%AC%E3%80%81%E5%90%8D%E7%A7%B0%E3%80%81%E6%9C%80%E5%A4%A7%E7%BC%93%E5%AD%98%E6%95%B0%E9%87%8F"><span class="nav-text">①载入 sw-toolbox.js 与定义缓存版本、名称、最大缓存数量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%91%A1%E5%9B%BE%E5%BA%8A%E7%BC%93%E5%AD%98"><span class="nav-text">②图床缓存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%91%A2%E9%9D%99%E6%80%81%E5%86%85%E5%AE%B9%E7%BC%93%E5%AD%98"><span class="nav-text">③静态内容缓存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%91%A3%E7%BD%91%E9%A1%B5%E5%86%85%E5%AE%B9%E7%BC%93%E5%AD%98"><span class="nav-text">④网页内容缓存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%91%A4%E4%B8%8D%E7%BC%93%E5%AD%98"><span class="nav-text">⑤不缓存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%91%A5%E9%A2%84%E7%BC%93%E5%AD%98"><span class="nav-text">⑥预缓存</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%9B-%E7%BC%93%E5%AD%98%E7%AE%A1%E7%90%86"><span class="nav-text">四. 缓存管理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%94-Demo"><span class="nav-text">五. Demo</span></a></li></ol></div>
+      </section>
       <!--/noindex-->
 
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="千灵夙赋"
       src="/images/avatar.png">
   <p class="site-author-name" itemprop="name">千灵夙赋</p>
   <div class="site-description" itemprop="description"></div>
 </div>
-<div class="site-state-wrap motion-element">
+<div class="site-state-wrap animated">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
@@ -548,16 +332,10 @@ if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
       </div>
   </nav>
 </div>
-  <div class="links-of-author motion-element">
-      <span class="links-of-author-item">
-        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
-      </span>
-  </div>
 
 
-  <div class="links-of-blogroll motion-element">
-    <div class="links-of-blogroll-title">
-      <i class="fa fa-fw fa-link"></i>
+  <div class="links-of-blogroll animated">
+    <div class="links-of-blogroll-title"><i class="link fa-fw"></i>
       Friends
     </div>
     <ul class="links-of-blogroll-list">
@@ -624,18 +402,254 @@ var ap = new APlayer({
   });
 </script>
 
-      </div>
-
+      </section>
     </div>
   </aside>
   <div id="sidebar-dimmer"></div>
 
+
+      </header>
+
+      
+  <div class="back-to-top">
+    <i class="fa fa-chevron-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div id="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+      <div class="main-inner">
+        
+
+        <div class="content post posts-expand">
+          
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://qianling.pw/service-worker/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="千灵夙赋">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="千灵">
+    </span>
+
+    
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Hexo 部署 Service Worker
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-02-01 18:18:43" itemprop="dateCreated datePublished" datetime="2018-02-01T18:18:43+08:00">2018-02-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-18 19:26:31" itemprop="dateModified" datetime="2020-02-18T19:26:31+08:00">2020-02-18</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/service-worker/" class="post-meta-item leancloud_visitors" data-flag-title="Hexo 部署 Service Worker" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    <a title="valine" href="/service-worker/#valine-comments" itemprop="discussionUrl">
+    <i class="far fa-comment"></i>评论数
+      <span class="post-comments-count valine-comment-count" data-xid="/service-worker/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p><img data-src="/images/covers/6.png"></p>
+<a id="more"></a>
+
+<hr>
+<h1 id="一-作用"><a href="#一-作用" class="headerlink" title="一. 作用"></a><span style="color:#2aa198">一. 作用</span></h1><p><br />Service workers 本质上充当 Web 应用程序与浏览器之间的代理服务器，为了适应越来越多的网页应用而产生。<br /><br>它可以通过拦截并修改访问和资源请求，缓存特定的网页资源，并可以将网页做到离线可用；<br /><br>同时 Service Workers 也能做到定期后台同步与信息推送。<br /><br>部署成功后，可以节省用户流量、提升页面二次加载速度等。<br><br /><br><br /></p>
+<h1 id="二-须知"><a href="#二-须知" class="headerlink" title="二. 须知"></a><span style="color:#2aa198">二. 须知</span></h1><p><span style="color:#3a87ad;font-weight:600"><strong>需要 Https 支持</strong></span></p>
+<p><span style="color:#3a87ad;font-weight:600">黑客可以通过 Service Worker 劫持连接、伪造和过滤响应，因此只能在 Https 网页上注册 Service Workers</span><br><br /><br><br /></p>
+<h1 id="三-部署"><a href="#三-部署" class="headerlink" title="三. 部署"></a><span style="color:#2aa198">三. 部署</span></h1><h2 id="1-注册-Service-Worker"><a href="#1-注册-Service-Worker" class="headerlink" title="1. 注册 Service Worker"></a><span style="color:#2aa198">1. 注册 Service Worker</span></h2><h3 id="①-创建文件"><a href="#①-创建文件" class="headerlink" title="① 创建文件"></a><span style="color:#2aa198">① 创建文件</span></h3><p><span style="color:#3a87ad;font-weight:600">打开　</span><code>\blog\source\</code></p>
+<p><span style="color:#3a87ad;font-weight:600">新建　</span><code>sw.js</code></p>
+<h3 id="②-跳过渲染"><a href="#②-跳过渲染" class="headerlink" title="② 跳过渲染"></a><span style="color:#2aa198">② 跳过渲染</span></h3><p><span style="color:#3a87ad;font-weight:600">打开　</span><code>\blog\_config.yml</code></p>
+<p><span style="color:#3a87ad;font-weight:600">查找　</span><code>skip_render</code></p>
+<p><span style="color:#3a87ad;font-weight:600">添加　</span><code>  - sw.js</code></p>
+<h3 id="③-注册"><a href="#③-注册" class="headerlink" title="③ 注册"></a><span style="color:#2aa198">③ 注册</span></h3><p><span style="color:#3a87ad;font-weight:600">打开　</span><code>\themes\next\source\js\custom\</code></p>
+<p><span style="color:#3a87ad;font-weight:600">新建　</span><code>custom.js</code></p>
+<p><span style="color:#3a87ad;font-weight:600">写入</span></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Service Workers</span></span><br><span class="line">  <span class="keyword">if</span> (<span class="string">&#x27;serviceWorker&#x27;</span> <span class="keyword">in</span> navigator) &#123;</span><br><span class="line">      <span class="built_in">window</span>.addEventListener(<span class="string">&#x27;load&#x27;</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">          navigator.serviceWorker.register(<span class="string">&#x27;/sw.js&#x27;</span>).then(<span class="function"><span class="keyword">function</span> (<span class="params">registration</span>) </span>&#123;</span><br><span class="line">              <span class="built_in">console</span>.log(<span class="string">&#x27;ServiceWorker registration successful with scope: &#x27;</span>, registration.scope);</span><br><span class="line">          &#125;).catch(<span class="function"><span class="keyword">function</span> (<span class="params">err</span>) </span>&#123;</span><br><span class="line">              <span class="built_in">console</span>.log(<span class="string">&#x27;ServiceWorker registration failed: &#x27;</span>, err);</span><br><span class="line">          &#125;);</span><br><span class="line">      &#125;);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<p><span class="f-fw">打开　</span><code>\blog\source\_data\header.swig</code></p>
+<p><span class="f-fw">添加　</span><code>&lt;script src=&quot;/js/custom/custom.js&quot;&gt;&lt;/script&gt;</code></p>
+<p><span style="color:#3a87ad;font-weight:600">您也可以在其它模块内注册</span></p>
+<p><span style="color:#3a87ad;font-weight:600">注：</span></p>
+<p>将<code>sw.js</code>文件放在网站的根目录下，Service Worker 将会收到网站的所有 fetch 事件。</p>
+<p>如果将 Service Worker 文件注册为<code>/example/sw.js</code>，那么，Service Worker 只能收到<code>/example/</code>路径下的 fetch 事件（例如： <code>/example/page1/</code>, <code>/example/page2/</code>）<br><br /></p>
+<h2 id="2-设定缓存规则"><a href="#2-设定缓存规则" class="headerlink" title="2. 设定缓存规则"></a><span style="color:#2aa198">2. 设定缓存规则</span></h2><p>请打开<code>开发者工具-Source</code>自行定义<br><img data-src="/images/posts/service-worker/service-worker1.png"></p>
+<h3 id="①载入-sw-toolbox-js-与定义缓存版本、名称、最大缓存数量"><a href="#①载入-sw-toolbox-js-与定义缓存版本、名称、最大缓存数量" class="headerlink" title="①载入 sw-toolbox.js 与定义缓存版本、名称、最大缓存数量"></a><span style="color:#2aa198">①载入 sw-toolbox.js 与定义缓存版本、名称、最大缓存数量</span></h3><p><span style="color:#3a87ad;font-weight:600">打开　</span><code>\blog\source\sw.js</code></p>
+<p><span style="color:#3a87ad;font-weight:600">写入</span></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">importScripts(<span class="string">&quot;/js/custom/sw-toolbox.js&quot;</span>);</span><br><span class="line"><span class="keyword">var</span> cacheVersion = <span class="string">&quot;-17104&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> staticImageCacheName = <span class="string">&quot;image&quot;</span> + cacheVersion;</span><br><span class="line"><span class="keyword">var</span> staticAssetsCacheName = <span class="string">&quot;assets&quot;</span> + cacheVersion;</span><br><span class="line"><span class="keyword">var</span> contentCacheName = <span class="string">&quot;content&quot;</span> + cacheVersion;</span><br><span class="line"><span class="keyword">var</span> vendorCacheName = <span class="string">&quot;vendor&quot;</span> + cacheVersion;</span><br><span class="line"><span class="keyword">var</span> maxEntries = <span class="number">100</span>;</span><br></pre></td></tr></table></figure>
+<p>您也可以从 <code>css.net</code> 的公共 CDN 库中载入 <code>sw-toolbox.js</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">self.importScripts(<span class="string">&quot;https://cdnjs.cat.net/ajax/libs/sw-toolbox/3.6.1/sw-toolbox.js&quot;</span>);</span><br><span class="line">self.toolbox.options.debug = <span class="literal">false</span>;</span><br><span class="line">self.toolbox.options.networkTimeoutSeconds = <span class="number">3</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="②图床缓存"><a href="#②图床缓存" class="headerlink" title="②图床缓存"></a><span style="color:#2aa198">②图床缓存</span></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* Static ImageCache */</span></span><br><span class="line">self.toolbox.router.get(<span class="string">&quot;/(.*)&quot;</span>, self.toolbox.cacheFirst, &#123;</span><br><span class="line">    origin: <span class="regexp">/qianling-1254036047\.cos\.ap-chengdu\.myqcloud\.com/</span>,</span><br><span class="line">    cache: &#123;</span><br><span class="line">        name: staticImageCacheName,</span><br><span class="line">        maxEntries: maxEntries</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">self.toolbox.router.get(<span class="string">&quot;/(.*)&quot;</span>, self.toolbox.cacheFirst, &#123;</span><br><span class="line">    origin: <span class="regexp">/t1\.aixinxi\.net/</span>,</span><br><span class="line">    cache: &#123;</span><br><span class="line">        name: staticImageCacheName,</span><br><span class="line">        maxEntries: maxEntries</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">self.toolbox.router.get(<span class="string">&quot;/(.*)&quot;</span>, self.toolbox.cacheFirst, &#123;</span><br><span class="line">    origin: <span class="regexp">/i\.loli\.net/</span>,</span><br><span class="line">    cache: &#123;</span><br><span class="line">        name: staticImageCacheName,</span><br><span class="line">        maxEntries: maxEntries</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="③静态内容缓存"><a href="#③静态内容缓存" class="headerlink" title="③静态内容缓存"></a><span style="color:#2aa198">③静态内容缓存</span></h3><p>公共 CDN 库上调用的文件很少改动，全部使用 <code>cacheFirst</code><br>并使百度统计调用的 <code>js</code> 直接使用缓存</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* Static Cache */</span></span><br><span class="line">self.toolbox.router.get(<span class="string">&quot;/(.*)&quot;</span>, self.toolbox.cacheFirst, &#123;</span><br><span class="line">    origin: <span class="regexp">/cdn\.bootcss\.com/</span>,</span><br><span class="line">    cache: &#123;</span><br><span class="line">        name: staticAssetsCacheName,</span><br><span class="line">        maxEntries: maxEntries</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">self.toolbox.router.get(<span class="string">&quot;/(.*)&quot;</span>, self.toolbox.cacheFirst, &#123;</span><br><span class="line">    origin: <span class="regexp">/cdnjs\.cloudflare\.com/</span>,</span><br><span class="line">    cache: &#123;</span><br><span class="line">        name: staticAssetsCacheName,</span><br><span class="line">        maxEntries: maxEntries</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">self.toolbox.router.get(<span class="string">&quot;/(.*)&quot;</span>, self.toolbox.cacheFirst, &#123;</span><br><span class="line">    origin: <span class="regexp">/cdn1\.lncld\.net/</span>,</span><br><span class="line">    cache: &#123;</span><br><span class="line">        name: staticAssetsCacheName,</span><br><span class="line">        maxEntries: maxEntries</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">self.toolbox.router.get(<span class="string">&quot;/(.*)&quot;</span>, self.toolbox.cacheFirst, &#123;</span><br><span class="line">    origin: <span class="regexp">/api\.imjad\.cn/</span>,</span><br><span class="line">    cache: &#123;</span><br><span class="line">        name: staticAssetsCacheName,</span><br><span class="line">        maxEntries: maxEntries</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">self.toolbox.router.get(<span class="string">&quot;/(.*)&quot;</span>, self.toolbox.cacheFirst, &#123;<span class="attr">origin</span>: <span class="regexp">/(hm\.baidu\.com)/</span>,</span><br><span class="line">    cache: &#123;</span><br><span class="line">        name: vendorCacheName,</span><br><span class="line">        maxEntries: maxEntries</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="④网页内容缓存"><a href="#④网页内容缓存" class="headerlink" title="④网页内容缓存"></a><span style="color:#2aa198">④网页内容缓存</span></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* ContentCache */</span></span><br><span class="line">self.toolbox.router.get(<span class="string">&quot;/(.*)&quot;</span>, self.toolbox.networkFirst, &#123;</span><br><span class="line">    origin: <span class="regexp">/qianling\.pw/</span>,</span><br><span class="line">    cache: &#123;</span><br><span class="line">       name: contentCacheName,</span><br><span class="line">       maxEntries: maxEntries</span><br><span class="line">&#125;</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="⑤不缓存"><a href="#⑤不缓存" class="headerlink" title="⑤不缓存"></a><span style="color:#2aa198">⑤不缓存</span></h3><p>对于 <code>sw.js</code> 采取 <code>networkFirst</code> 策略，使访客网络状态正常时更新 <code>sw.js</code>，离线时也能正常使用 <code>Service Worker</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* NoCache */</span></span><br><span class="line">self.toolbox.router.get(<span class="string">&quot;/sw.js&quot;</span>,self.toolbox.networkFirst);</span><br></pre></td></tr></table></figure>
+
+<h3 id="⑥预缓存"><a href="#⑥预缓存" class="headerlink" title="⑥预缓存"></a><span style="color:#2aa198">⑥预缓存</span></h3><p>每次页面加载时强制更新 <code>Service Worker</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;* PreCache *&#x2F;</span><br><span class="line">self.addEventListener(&quot;install&quot;,</span><br><span class="line">function(event) &#123;return event.waitUntil(self.skipWaiting())</span><br><span class="line">&#125;);</span><br><span class="line">self.addEventListener(&quot;activate&quot;,</span><br><span class="line">function(event) &#123;return event.waitUntil(self.clients.claim())</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<br />
+<br />
+
+<h1 id="四-缓存管理"><a href="#四-缓存管理" class="headerlink" title="四. 缓存管理"></a><span style="color:#2aa198">四. 缓存管理</span></h1><p><img data-src="/images/posts/service-worker/service-worker2.png"></p>
+<p><span style="color:#3a87ad;word-wrap: break-word;font-weight:600">访问　</span><code>chrome://inspect/#service-workers</code></p>
+<p><span style="color:#3a87ad;font-weight:600">打开　</span><code>Service workers</code><br><br /><br><br /></p>
+<h1 id="五-Demo"><a href="#五-Demo" class="headerlink" title="五. Demo"></a><span style="color:#2aa198">五. Demo</span></h1><p><img data-src="/images/posts/service-worker/service-worker3.png"><br><span style="color:#3a87ad;font-weight:600">打开　</span><code>开发者工具-Appliaction-Service Workers</code></p>
+<p><span style="color:#3a87ad;font-weight:600">勾选　</span><code>Offline</code></p>
+<p><span style="color:#3a87ad;font-weight:600">NetWork 出现 ⚠，刷新即可体验离线版本</span></p>
+<br />
+<br />
+
+<p><strong>参考文档：</strong><br><a href="https://blog.nfz.moe/archives/sw-toolbox-practice.html/">本博客对 sw-toolbox 的实践 – neoFelhz</a><br><a href="https://www.isthnew.com/service-workers/">开始使用 SERVICE WORKERS – 可乐没气的猫</a><br><a href="http://kailian.github.io/2017/03/01/service-worker/">service worker – kailian</a></p>
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\base64-fonts\" rel="bookmark">内联引入 base64 字体</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\hexo-optimization\" rel="bookmark">Hexo 优化汇总</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\changyan\" rel="bookmark">免备案使用畅言</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\custom-web-page\" rel="bookmark">Hexo 跳过渲染，创建自定义网页</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\error-launching-git\" rel="bookmark">关于 'error launching git' 的解决方法</a></div>
+    </li>
+  </ul>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+              <a href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag"># 前端</a>
+          </div>
+
+        
+  <div class="post-widgets">
+    <div class="wp_rating">
+      <div id="wpac-rating"></div>
+    </div>
+  </div>
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/vacation-comes/" rel="prev" title="假期将至">
+      <i class="fa fa-chevron-left"></i> 假期将至
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/base64-fonts/" rel="next" title="内联引入 base64 字体">
+      内联引入 base64 字体 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+        </div>
+        
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
 
       </div>
     </main>
 
     <footer class="footer">
       <div class="footer-inner">
+        
+
         
 
 <div class="copyright">
@@ -650,10 +664,10 @@ var ap = new APlayer({
 
         
 <div class="busuanzi-count">
-  <script pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
       <span class="post-meta-item-icon">
-        <i class="fa fa-"></i>你是第
+        <i class=""></i>你是第
       </span>
       <span class="site-uv" title="总访客量">
         <span id="busuanzi_value_site_uv"></span>位到访的小伙伴喔
@@ -662,7 +676,7 @@ var ap = new APlayer({
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
       <span class="post-meta-item-icon">
-        <i class="fa fa-"></i>本站已被访问
+        <i class=""></i>本站已被访问
       </span>
       <span class="site-pv" title="总访问量">
         <span id="busuanzi_value_site_pv"></span>次啦
@@ -675,30 +689,30 @@ var ap = new APlayer({
 
 
 
-  <script pjax>
-  function leancloudSelector(url) {
-    url = encodeURI(url);
-    return document.getElementById(url).querySelector('.leancloud-visitors-count');
-  }
-  if (CONFIG.page.isPost) {
-    function addCount(Counter) {
-      var visitors = document.querySelector('.leancloud_visitors');
-      var url = decodeURI(visitors.getAttribute('id'));
-      var title = visitors.getAttribute('data-flag-title');
+<script data-pjax>
+  (function() {
+    function leancloudSelector(url) {
+      url = encodeURI(url);
+      return document.getElementById(url).querySelector('.leancloud-visitors-count');
+    }
 
-      Counter('get', `/classes/Counter?where=${JSON.stringify({ url })}`)
+    function addCount(Counter) {
+      const visitors = document.querySelector('.leancloud_visitors');
+      const url = decodeURI(visitors.id);
+      const title = visitors.dataset.flagTitle;
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url })))
         .then(response => response.json())
         .then(({ results }) => {
           if (results.length > 0) {
-            var counter = results[0];
-              leancloudSelector(url).innerText = counter.time + 1;
+            const counter = results[0];
+            leancloudSelector(url).innerText = counter.time + 1;
             Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
-              .then(response => response.json())
               .catch(error => {
                 console.error('Failed to save visitor count', error);
-              })
+              });
           } else {
-              Counter('post', '/classes/Counter', { title: title, url: url, time: 1 })
+              Counter('post', '/classes/Counter', { title, url, time: 1 })
                 .then(response => response.json())
                 .then(() => {
                   leancloudSelector(url).innerText = 1;
@@ -712,48 +726,34 @@ var ap = new APlayer({
           console.error('LeanCloud Counter Error', error);
         });
     }
-  } else {
+
     function showTime(Counter) {
-      var visitors = document.querySelectorAll('.leancloud_visitors');
-      var entries = [...visitors].map(element => {
-        return decodeURI(element.getAttribute('id'));
+      const visitors = document.querySelectorAll('.leancloud_visitors');
+      const entries = [...visitors].map(element => {
+        return decodeURI(element.id);
       });
 
-      Counter('get', `/classes/Counter?where=${JSON.stringify({ url: { '$in': entries } })}`)
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url: { '$in': entries } })))
         .then(response => response.json())
         .then(({ results }) => {
-          if (results.length === 0) {
-            document.querySelectorAll('.leancloud_visitors .leancloud-visitors-count').forEach(element => {
-              element.innerText = 0;
-            });
-            return;
-          }
-          for (let item of results) {
-            let { url, time } = item;
-            leancloudSelector(url).innerText = time;
-          }
           for (let url of entries) {
-            var element = leancloudSelector(url);
-            if (element.innerText == '') {
-              element.innerText = 0;
-            }
+            let target = results.find(item => item.url === url);
+            leancloudSelector(url).innerText = target ? target.time : 0;
           }
         })
         .catch(error => {
           console.error('LeanCloud Counter Error', error);
         });
     }
-  }
 
-  fetch('https://app-router.leancloud.cn/2/route?appId=zulMeib4pyC6zB1a65OmVtHz-gzGzoHsz')
-    .then(response => response.json())
-    .then(({ api_server }) => {
-      var Counter = (method, url, data) => {
-        return fetch(`https://${api_server}/1.1${url}`, {
-          method: method,
+    let { app_id, app_key, server_url } = {"enable":true,"app_id":"zulMeib4pyC6zB1a65OmVtHz-gzGzoHsz","app_key":"TEjUlOUBz3KwSUmDQ35ROxpw","server_url":null,"security":false};
+    function fetchData(api_server) {
+      const Counter = (method, url, data) => {
+        return fetch(`${api_server}/1.1${url}`, {
+          method,
           headers: {
-            'X-LC-Id'     : 'zulMeib4pyC6zB1a65OmVtHz-gzGzoHsz',
-            'X-LC-Key'    : 'TEjUlOUBz3KwSUmDQ35ROxpw',
+            'X-LC-Id'     : app_id,
+            'X-LC-Key'    : app_key,
             'Content-Type': 'application/json',
           },
           body: JSON.stringify(data)
@@ -765,8 +765,21 @@ var ap = new APlayer({
       } else if (document.querySelectorAll('.post-title-link').length >= 1) {
         showTime(Counter);
       }
-    });
-  </script>
+    }
+
+    const api_server = app_id.slice(-9) !== '-MdYXbMMI' ? server_url : `https://${app_id.slice(0, 8).toLowerCase()}.api.lncldglobal.com`;
+
+    if (api_server) {
+      fetchData(api_server);
+    } else {
+      fetch('https://app-router.leancloud.cn/2/route?appId=' + app_id)
+        .then(response => response.json())
+        .then(({ api_server }) => {
+          fetchData('https://' + api_server);
+        });
+    }
+  })();
+</script>
 
 
       </div>
@@ -775,12 +788,10 @@ var ap = new APlayer({
 
   
   <script src="/lib/anime.min.js"></script>
-  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/next-theme/pjax@0/pjax.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
-  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
 
 <script src="/js/utils.js"></script>
 
@@ -796,47 +807,19 @@ var ap = new APlayer({
 var pjax = new Pjax({
   selectors: [
     'head title',
-    '#page-configurations',
-    '.content-wrap',
+    '.page-configurations',
+    '.main-inner',
     '.post-toc-wrap',
-    '#pjax'
+    '.languages',
+    '.pjax'
   ],
-  switches: {
-    '.post-toc-wrap': Pjax.switches.innerHTML
-  },
   analytics: false,
   cacheBust: false,
   scrollTo : !CONFIG.bookmark.enable
 });
 
-window.addEventListener('pjax:success', () => {
-  document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
-    var code = element.text || element.textContent || element.innerHTML || '';
-    var parent = element.parentNode;
-    parent.removeChild(element);
-    var script = document.createElement('script');
-    if (element.id) {
-      script.id = element.id;
-    }
-    if (element.className) {
-      script.className = element.className;
-    }
-    if (element.type) {
-      script.type = element.type;
-    }
-    if (element.src) {
-      script.src = element.src;
-      // Force synchronous loading of peripheral JS.
-      script.async = false;
-    }
-    if (element.getAttribute('pjax') !== null) {
-      script.setAttribute('pjax', '');
-    }
-    if (code !== '') {
-      script.appendChild(document.createTextNode(code));
-    }
-    parent.appendChild(script);
-  });
+document.addEventListener('pjax:success', () => {
+  pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
   NexT.boot.refresh();
   // Define Motion Sequence & Bootstrap Motion.
   if (CONFIG.motion.enable) {
@@ -846,27 +829,19 @@ window.addEventListener('pjax:success', () => {
       .add(NexT.motion.middleWares.postList)
       .bootstrap();
   }
+  const hasTOC = document.querySelector('.post-toc');
+  document.querySelector('.sidebar-inner').classList.toggle('sidebar-nav-active', hasTOC);
+  document.querySelector(hasTOC ? '.sidebar-nav-toc' : '.sidebar-nav-overview').click();
   NexT.utils.updateSidebarPosition();
 });
 </script>
 
 
-
-
   
-  <script pjax>
-    (function(){
-      var bp = document.createElement('script');
-      var curProtocol = window.location.protocol.split(':')[0];
-      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(bp, s);
-    })();
-  </script>
 
 
 
-  <script pjax>
+  <script data-pjax>
   if (CONFIG.page.isPost) {
     wpac_init = window.wpac_init || [];
     wpac_init.push({
@@ -902,46 +877,30 @@ window.addEventListener('pjax:success', () => {
 
 
 
-    <div id="pjax">
+    <div class="pjax">
   
 
   
-  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/quicklink@2/dist/quicklink.umd.js"></script>
   <script>
       window.addEventListener('load', () => {
-      quicklink({
-        timeout: 3000,
+      quicklink.listen({
+        timeout : 3000,
         priority: true,
-        ignores: [uri => uri.includes('#'),uri => uri == 'https://qianling.pw/service-worker/',]
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://qianling.pw/service-worker/',]
       });
       });
   </script>
 
 
 <script>
-NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
-  NexT.utils.getScript('https://qianling-1254036047.cos.ap-chengdu.myqcloud.com/js/Valine.min.js', () => {
-    var GUEST = ['nick', 'mail', 'link'];
-    var guest = 'nick,mail,link';
-    guest = guest.split(',').filter(item => {
-      return GUEST.includes(item);
-    });
-    new Valine({
-      el         : '#valine-comments',
-      verify     : false,
-      notify     : false,
-      appId      : 'zulMeib4pyC6zB1a65OmVtHz-gzGzoHsz',
-      appKey     : 'TEjUlOUBz3KwSUmDQ35ROxpw',
-      placeholder: "biu biu~　||ヽ(*￣▽￣*)ノミ|Ю",
-      avatar     : 'wavatar',
-      meta       : guest,
-      pageSize   : '10' || 10,
-      visitor    : false,
-      lang       : 'zh-cn' || 'zh-cn',
-      path       : location.pathname,
-      recordIP   : false,
-      serverURLs : ''
-    });
+NexT.utils.loadComments('#valine-comments', () => {
+  NexT.utils.getScript('/js/custom/Valine.min.js', () => {
+    new Valine(Object.assign({
+      el  : '#valine-comments',
+      path: location.pathname,
+    }, {"enable":true,"appId":"zulMeib4pyC6zB1a65OmVtHz-gzGzoHsz","appKey":"TEjUlOUBz3KwSUmDQ35ROxpw","placeholder":"biu biu~　||ヽ(*￣▽￣*)ノミ|Ю","avatar":"wavatar","meta":["nick","mail","link"],"pageSize":10,"language":"zh-cn","visitor":false,"comment_count":true,"recordIP":false,"serverURLs":null,"enableQQ":true,"requiredFields":[]}
+    ));
   }, window.Valine);
 });
 </script>
