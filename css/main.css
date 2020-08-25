@@ -3389,7 +3389,7 @@ mark.search-keyword {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #097421;
+  background: #d7c30e;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -3935,6 +3935,9 @@ i.fa.fa-chevron-up:hover {
 .v[data-class=v] .vcards .vcard .vh .vmeta .vat,
 .v[data-class=v] .vwrap .cancel-reply-btn {
   cursor: url("/images/cursor_link.cur"), auto !important;
+}
+.comments {
+  box-shadow: 0 0 4px rgba(0,0,0,0.2);
 }
 .posts-expand .post-title {
   font-weight: 600;
