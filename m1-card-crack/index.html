@@ -301,7 +301,7 @@ if( !/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)){
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9D%E6%9C%9F%E5%87%86%E5%A4%87"><span class="nav-text">初期准备</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E8%BD%AF%E4%BB%B6dump%E5%87%BA%E5%85%8B%E9%9A%86%E5%8D%A1%E7%9A%84%E6%95%B0%E6%8D%AE"><span class="nav-text">使用软件dump出克隆卡的数据</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E5%A7%8B%E7%A0%B4%E8%A7%A3"><span class="nav-text">开始破解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E6%9E%90%E5%AF%BC%E5%87%BA%E7%9A%84Dump%E6%96%87%E4%BB%B6"><span class="nav-text">分析导出的Dump文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E5%B0%9D%E8%AF%95"><span class="nav-text">修改尝试</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-text">总结</span></a></li></ol></div>
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%9F%E7%90%86"><span class="nav-text">原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9D%E6%9C%9F%E5%87%86%E5%A4%87"><span class="nav-text">初期准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E5%A7%8B%E7%A0%B4%E8%A7%A3"><span class="nav-text">开始破解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E6%9E%90%E5%AF%BC%E5%87%BA%E7%9A%84Dump%E6%96%87%E4%BB%B6"><span class="nav-text">分析导出的Dump文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E5%B0%9D%E8%AF%95"><span class="nav-text">修改尝试</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-text">总结</span></a></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -501,8 +501,9 @@ var ap = new APlayer({
 <hr>
 <p>使用ACR-122U积累了几个.dump文件后，尝试破译M1校验码。</p>
 <hr>
-<h2 id="初期准备"><a href="#初期准备" class="headerlink" title="初期准备"></a>初期准备</h2><h3 id="使用软件dump出克隆卡的数据"><a href="#使用软件dump出克隆卡的数据" class="headerlink" title="使用软件dump出克隆卡的数据"></a>使用软件dump出克隆卡的数据</h3><p><img data-src="/images/posts/m1-card-crack/m1.webp"></p>
-<p>dump出克隆卡的数据</p>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>分别将几次消费后的数据 dump 出，统计金额和数据的变化规律，找到所有扇区的含义，修改金额字段的数据。</p>
+<h2 id="初期准备"><a href="#初期准备" class="headerlink" title="初期准备"></a>初期准备</h2><p>使用软件dump出克隆卡的数据</p>
+<p><img data-src="/images/posts/m1-card-crack/m1.webp"></p>
 <h2 id="开始破解"><a href="#开始破解" class="headerlink" title="开始破解"></a>开始破解</h2><h3 id="分析导出的Dump文件"><a href="#分析导出的Dump文件" class="headerlink" title="分析导出的Dump文件"></a>分析导出的Dump文件</h3><p>将原卡数据与克隆卡消费后的数据进行对比</p>
 <p><img data-src="/images/posts/m1-card-crack/m2.webp"></p>
 <p>无明显规律性变化，于是使用<a href="http://tool.oschina.net/hexconvert/">在线进制转换</a>化为10进制，发现3106正对应着余额125.50元。</p>
