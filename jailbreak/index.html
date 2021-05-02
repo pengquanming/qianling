@@ -493,7 +493,7 @@ var ap = new APlayer({
 <p>解决办法：</p>
 <ol>
 <li>添加壹筒天下源：<a href="https://yttxcs.com/">https://yttxcs.com/</a></li>
-<li>安装“软重启补丁「系统」”即可，每次重新越狱后均需再次安装此插件以软重启</li>
+<li>安装“软重启补丁「系统」”，每次重新越狱后均需再次安装此插件以软重启</li>
 </ol>
 <h1 id="装错插件无法再次越狱"><a href="#装错插件无法再次越狱" class="headerlink" title="装错插件无法再次越狱"></a>装错插件无法再次越狱</h1><ol>
 <li>打开「unc0ver」，关闭「Settings-Load Tweaks」，点击 Done 回到首页，点击「Jailbreak」越狱</li>
@@ -506,11 +506,12 @@ var ap = new APlayer({
 <li>更新「RocketBootstrap」至 1.0.10~beta1 版本</li>
 </ol>
 <h1 id="unc0ver-自签"><a href="#unc0ver-自签" class="headerlink" title="unc0ver 自签"></a>unc0ver 自签</h1><p>按步骤操作即可。<br><a href="http://dl.ix10.cn/CIJ">http://dl.ix10.cn/CIJ</a></p>
-<p>取消后台常驻自动签名：launchctl unload -w /Library/LaunchDaemons/jp.soh.reprovisiond.plist<br>恢复自动签名：launchctl load -w /Library/LaunchDaemons/jp.soh.reprovisiond.plist<br>Advanced-Check Expiry Times: Every Other Day</p>
+<p>打开「Settings-Advanced」，将「Check Expiry Times」改为「Every 24 Hours」，可减少耗电。</p>
+<p>取消后台常驻自动签名：<code>launchctl unload -w /Library/LaunchDaemons/jp.soh.reprovisiond.plist</code><br>恢复自动签名：<code>launchctl load -w /Library/LaunchDaemons/jp.soh.reprovisiond.plist</code></p>
 <h1 id="备份黑解"><a href="#备份黑解" class="headerlink" title="备份黑解"></a>备份黑解</h1><ol>
 <li>用「Filza」打开 <code>var/wireless/Library/Preferences/com.apple.commcenter.device_specifi_nobackup.plist</code></li>
 <li>展开 <code>kPostponementTicket</code>，复制 <code>ActivationTicket</code> 的值，留存备份</li>
-<li>刷机、抹除后需要复原黑解时，越狱恢复该串码，重启手机即可</li>
+<li>刷机、抹除后需要复原黑解时，越狱恢复该串码，重启手机后生效</li>
 </ol>
 <h1 id="补丁和插件推荐"><a href="#补丁和插件推荐" class="headerlink" title="补丁和插件推荐"></a>补丁和插件推荐</h1><p><strong>Cydia</strong></p>
 <ul>
