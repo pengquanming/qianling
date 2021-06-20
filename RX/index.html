@@ -32,7 +32,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://qianling.pw/images/covers/238.jpg">
 <meta property="article:published_time" content="2021-06-17T06:02:22.000Z">
-<meta property="article:modified_time" content="2021-06-20T11:00:45.000Z">
+<meta property="article:modified_time" content="2021-06-20T11:15:17.000Z">
 <meta property="article:author" content="千灵夙赋">
 <meta property="article:tag" content="配音">
 <meta name="twitter:card" content="summary">
@@ -451,7 +451,7 @@ var ap = new APlayer({
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-06-20 19:00:45" itemprop="dateModified" datetime="2021-06-20T19:00:45+08:00">2021-06-20</time>
+                <time title="修改时间：2021-06-20 19:15:17" itemprop="dateModified" datetime="2021-06-20T19:15:17+08:00">2021-06-20</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -493,8 +493,8 @@ var ap = new APlayer({
 
 <hr>
 <h1 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h1><p><a href="https://www.bilibili.com/video/BV1By4y1s77H">B站首套全40集RX8音频修复中文教程！</a></p>
-<h1 id="驱动"><a href="#驱动" class="headerlink" title="驱动"></a>驱动</h1><p>有独立声卡：ASIO，延迟低<br>无独立声卡：RX Monitor，优于 MME<br>Buffer size：数字越小，延迟越小，性能要求越高。</p>
-<h1 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h1><p>左下方可调整显示波形、频谱的比例。<br>底部最右侧工具为包络线。<br>左上方箭头可以合并显示左右声道。</p>
+<h1 id="驱动"><a href="#驱动" class="headerlink" title="驱动"></a>驱动</h1><p>有独立声卡：ASIO，延迟低<br>无独立声卡：RX Monitor，优于 MME<br>Buffer size：数字越小，延迟越小，性能要求越高</p>
+<h1 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h1><p>左下方可调整显示波形、频谱的比例<br>底部最右侧工具为包络线<br>左上方箭头可以合并显示左右声道</p>
 <h1 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h1><p>Ctrl + E 导出<br>Shift + S 静音<br>Bit depth（位深度）：一般为 16-bit/24-bit<br>Dither：位深度变动时在缺失频率填充的噪音类型</p>
 <h1 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h1><h2 id="环境音匹配：Ambience-Match"><a href="#环境音匹配：Ambience-Match" class="headerlink" title="环境音匹配：Ambience Match"></a>环境音匹配：Ambience Match</h2><p>把 A 场景的背景噪音采样复制到 B 场景中。<br>Trim [dB] 控制环境音音量。</p>
 <h2 id="呼吸声控制：Breath-Control"><a href="#呼吸声控制：Breath-Control" class="headerlink" title="呼吸声控制：Breath Control"></a>呼吸声控制：Breath Control</h2><p>Gain 增益模式适合呼吸声音量均衡的情况。<br>Target 目标模式对大呼吸声强衰减，小呼吸声弱衰减。</p>
@@ -528,26 +528,30 @@ var ap = new APlayer({
 <li>Sensitivity 灵敏度：探测灵敏度</li>
 </ul>
 <p>不全选应用，避免缺频；使用 Instant process 和 Brush，手动选择区间处理。</p>
-<h2 id="修复削波：De-clip"><a href="#修复削波：De-clip" class="headerlink" title="修复削波：De-clip"></a>修复削波：De-clip</h2><p>修复超过 0 dB 的爆频和削波。<br>Threshold：根据爆音区域选择上或下，参数根据预览情况调整。<br>Post-limiter 限制到 0 dB 内<br>Suggest：不准，手动调整更好。</p>
-<h2 id="去除低电平高频次爆音：De-crackle"><a href="#去除低电平高频次爆音：De-crackle" class="headerlink" title="去除低电平高频次爆音：De-crackle"></a>去除低电平高频次爆音：De-crackle</h2><p>修复短暂的噼啪、点击声、椅子吱呀声。<br>Quality 处理质量：根据电脑性能调整。<br>Strength 处理强度：参数根据预览情况调整。<br>Amplitude skew 幅度偏斜：噪音在人声中则偏左，在空白区域则偏右</p>
-<h2 id="去除嘶声-齿音：De-ess"><a href="#去除嘶声-齿音：De-ess" class="headerlink" title="去除嘶声/齿音：De-ess"></a>去除嘶声/齿音：De-ess</h2><p>Algorithm 算法：</p>
+<h2 id="修复削波：De-clip"><a href="#修复削波：De-clip" class="headerlink" title="修复削波：De-clip"></a>修复削波：De-clip</h2><p>修复超过 0 dB 的爆频和削波。</p>
 <ul>
-<li><p>Classic：全频段嘶声衰减，嘶声种类多时用</p>
+<li>Threshold：根据爆音区域选择上或下，参数根据预览情况调整。</li>
+<li>Post-limiter 限制到 0 dB 内</li>
+<li>Suggest：不准，建议手动调整</li>
+</ul>
+<h2 id="去除低电平高频次爆音：De-crackle"><a href="#去除低电平高频次爆音：De-crackle" class="headerlink" title="去除低电平高频次爆音：De-crackle"></a>去除低电平高频次爆音：De-crackle</h2><p>修复短暂的噼啪、点击声、椅子吱呀声。</p>
+<ul>
+<li>Quality 处理质量：根据电脑性能调整。</li>
+<li>Strength 处理强度：参数根据预览情况调整。</li>
+<li>Amplitude skew 幅度偏斜：噪音在人声中则偏左，在空白区域则偏右</li>
+</ul>
+<h2 id="去除嘶声-齿音：De-ess"><a href="#去除嘶声-齿音：De-ess" class="headerlink" title="去除嘶声/齿音：De-ess"></a>去除嘶声/齿音：De-ess</h2><ul>
+<li>Algorithm 算法：<ul>
+<li>Classic：全频段嘶声衰减，嘶声种类多时用</li>
+<li><strong>Spectral：特定频率衰减，高频嘶声用，齿音就是高频嘶声，常用</strong></li>
+</ul>
 </li>
-<li><p><strong>Spectral：特定频率衰减，高频嘶声用，齿音就是高频嘶声</strong></p>
-</li>
-<li><p>Threshold 阈值：高于阈值的嘶声被衰减</p>
-</li>
-<li><p>Absolute 绝对模式：强压，不自然</p>
-</li>
-<li><p>Cutoff freq 临界频率：指定频率以下不衰减，齿音多时临界频率多降低些 3 kHz-4 kHz</p>
-</li>
-<li><p>Speed：根据嘶声长度、快慢选择，z、c、s 这样短促的选 Fast，zh、ch、sh 这样慢而柔和的选 Slow</p>
-</li>
-<li><p>Spectral shaping：处理深度</p>
-</li>
-<li><p>Spectral tilt：频谱补偿，去掉嘶声后缺频部分填充的噪音类型，一般为白噪音</p>
-</li>
+<li>Threshold 阈值：高于阈值的嘶声被衰减</li>
+<li>Absolute 绝对模式：强压，不自然</li>
+<li>Cutoff freq 临界频率：指定频率以下不衰减，齿音多时临界频率多降低些 3 kHz-4 kHz</li>
+<li>Speed：根据嘶声长度、快慢选择，z、c、s 这样短促的选 Fast，zh、ch、sh 这样慢而柔和的选 Slow</li>
+<li>Spectral shaping：处理深度</li>
+<li>Spectral tilt：频谱补偿，去掉嘶声后缺频部分填充的噪音类型，一般为白噪音</li>
 </ul>
 <h2 id="去嗡嗡声：De-hum"><a href="#去嗡嗡声：De-hum" class="headerlink" title="去嗡嗡声：De-hum"></a>去嗡嗡声：De-hum</h2><p>修复设备产生的电流声之类的粉红噪和红噪。</p>
 <ul>
@@ -581,12 +585,12 @@ var ap = new APlayer({
 <ul>
 <li>Reduction Strength 衰减强度</li>
 <li>Ambience preservation 背景声保护：数值越低背景声保留越少，摩擦声去除越多</li>
-</ul>
-<p>Separation algorithm 分离算法：</p>
-<ul>
+<li>Separation algorithm 分离算法：<ul>
 <li>Channel independent：普通质量处理模式</li>
 <li>Joint channel：适合立体声文件，且左右声道一致</li>
 <li>Advanced joint channel：高质量处理模式，配置要求高</li>
+</ul>
+</li>
 </ul>
 <h2 id="去除风声：​De-wind"><a href="#去除风声：​De-wind" class="headerlink" title="去除风声：​De-wind"></a>去除风声：​De-wind</h2><p>在预览中调整各参数。</p>
 <ul>
@@ -595,18 +599,30 @@ var ap = new APlayer({
 <li>Fundamental recovery：谐波恢复</li>
 <li>Artifact smoothing 平滑度：影响过渡时的自然效果</li>
 </ul>
-<h2 id="信噪分离：Deconstruct"><a href="#信噪分离：Deconstruct" class="headerlink" title="信噪分离：Deconstruct"></a>信噪分离：Deconstruct</h2><p>电吉他刺耳、失真、爆频噪音，将干音分离成噪音和有用信号来调节比例，还可进一步调节瞬态。<br>Tonal gain 音乐增益<br>Noisy gain 噪音增益<br>Transient gain 瞬态增益：勾选 Separate transients 后启用，增强音乐冲击感<br>Tonal/noisy balance 音乐/噪音平衡：偏向音乐还是噪音<br>Artifact smoothing 平滑度</p>
-<h2 id="对话语调调整：Dialogue-Contour"><a href="#对话语调调整：Dialogue-Contour" class="headerlink" title="对话语调调整：Dialogue Contour"></a>对话语调调整：Dialogue Contour</h2><p>​调节局部人声的包络、音高、共振峰。<br>Curve smoothing 平滑度：影响过渡时的自然效果<br>Formant scaling：共振调整，影响音色<br>Pitch offset：整体语调提升或衰减</p>
+<h2 id="信噪分离：Deconstruct"><a href="#信噪分离：Deconstruct" class="headerlink" title="信噪分离：Deconstruct"></a>信噪分离：Deconstruct</h2><p>电吉他刺耳、失真、爆频噪音，将干音分离成噪音和有用信号来调节比例，还可进一步调节瞬态。</p>
+<ul>
+<li>Tonal gain 音乐增益</li>
+<li>Noisy gain 噪音增益</li>
+<li>Transient gain 瞬态增益：勾选 Separate transients 后启用，增强音乐冲击感</li>
+<li>Tonal/noisy balance 音乐/噪音平衡：偏向音乐还是噪音</li>
+<li>Artifact smoothing 平滑度</li>
+</ul>
+<h2 id="对话语调调整：Dialogue-Contour"><a href="#对话语调调整：Dialogue-Contour" class="headerlink" title="对话语调调整：Dialogue Contour"></a>对话语调调整：Dialogue Contour</h2><p>​调节局部人声的包络、音高、共振峰。</p>
+<ul>
+<li>Curve smoothing 平滑度：影响过渡时的自然效果</li>
+<li>Formant scaling：共振调整，影响音色</li>
+<li>Pitch offset：整体语调提升或衰减</li>
+</ul>
 <h2 id="对话去混响：Dialogue-De-reverb"><a href="#对话去混响：Dialogue-De-reverb" class="headerlink" title="对话去混响：Dialogue De-reverb"></a>对话去混响：Dialogue De-reverb</h2><ul>
 <li>Reduction 衰减强度</li>
 <li>Sensitivity 灵敏度</li>
 <li>Ambience preservation 背景声保护：数值越低背景声保留越少，混响去除越多，真实度下降</li>
-</ul>
-<p>Separation algorithm 分离算法：</p>
-<ul>
+<li>Separation algorithm 分离算法：<ul>
 <li>Channel independent：普通质量处理模式</li>
 <li>Joint channel：适合立体声文件，且左右声道一致</li>
 <li>Advanced joint channel：高质量处理模式，配置要求高</li>
+</ul>
+</li>
 </ul>
 <h2 id="对话噪音分离：Dialogue-Isolate"><a href="#对话噪音分离：Dialogue-Isolate" class="headerlink" title="对话噪音分离：Dialogue Isolate"></a>对话噪音分离：Dialogue Isolate</h2><p>调整人声和背景噪音的比例。</p>
 <ul>
@@ -614,12 +630,12 @@ var ap = new APlayer({
 <li>Noise gain：噪音音量</li>
 <li>Dialogue separation sensitivity：左端处理程度最强，右端最弱。</li>
 <li>Ambience preservation 背景声保护：数值越低背景声保留越少，真实感下降</li>
-</ul>
-<p>Separation algorithm 分离算法：</p>
-<ul>
+<li>Separation algorithm 分离算法：<ul>
 <li>Channel independent：普通质量处理模式</li>
 <li>Joint channel：适合立体声文件，且左右声道一致</li>
 <li>Advanced joint channel：高质量处理模式，配置要求高</li>
+</ul>
+</li>
 </ul>
 <h2 id="吉他去除噪音：Guitar-De-noise"><a href="#吉他去除噪音：Guitar-De-noise" class="headerlink" title="吉他去除噪音：Guitar De-noise"></a>吉他去除噪音：Guitar De-noise</h2><ul>
 <li>Amp：适合电吉他，去除电流声，需要先选中噪音样本学习</li>
@@ -662,7 +678,8 @@ var ap = new APlayer({
 <li>Vowel/sibilant balance：声音/嘶声比例</li>
 <li>Smoothing：平滑度</li>
 </ul>
-<h2 id="光谱修复：Spectral-Repair"><a href="#光谱修复：Spectral-Repair" class="headerlink" title="光谱修复：Spectral Repair"></a>光谱修复：Spectral Repair</h2><p>修复无法归类的噪音或解决音频空了一段。能从周围区域采样并且修复选中区域。<br>Attenuate：选区噪音衰减</p>
+<h2 id="光谱修复：Spectral-Repair"><a href="#光谱修复：Spectral-Repair" class="headerlink" title="光谱修复：Spectral Repair"></a>光谱修复：Spectral Repair</h2><p>修复无法归类的噪音或解决音频空了一段。能从周围区域采样并且修复选中区域。</p>
+<p>Attenuate：选区噪音衰减</p>
 <ul>
 <li>Bands：插值频段范围</li>
 <li>Surrounding region length：插值长度</li>
@@ -693,15 +710,19 @@ var ap = new APlayer({
 <li>Before/after weighting：偏向前区域采样还是偏向后区域采样</li>
 <li>Harmonic sensitivity 谐波灵敏度：灵敏度越低检测的谐波越少，声音不自然则减小</li>
 </ul>
-<h2 id="人声降噪：Voice-De-noise"><a href="#人声降噪：Voice-De-noise" class="headerlink" title="人声降噪：Voice De-noise"></a>人声降噪：Voice De-noise</h2><p>选中底噪，Learn。<br>没有底噪留白可供学习，勾选 Adaptive mode 自适应模式。<br>Reduction 衰减强度：先调整阈值，再调整衰减强度<br>Optimize for 优化：</p>
+<h2 id="人声降噪：Voice-De-noise"><a href="#人声降噪：Voice-De-noise" class="headerlink" title="人声降噪：Voice De-noise"></a>人声降噪：Voice De-noise</h2><p>选中底噪，Learn。<br>没有底噪留白可供学习，勾选 Adaptive mode 自适应模式。</p>
 <ul>
+<li>Reduction 衰减强度：先调整阈值，再调整衰减强度</li>
+<li>Optimize for 优化：<ul>
 <li>Dialogue 对话</li>
 <li>Music 音乐</li>
 </ul>
-<p>Filter type 处理风格：</p>
-<ul>
+</li>
+<li>Filter type 处理风格：<ul>
 <li>Surgical 硬朗</li>
 <li>Gentle 柔和</li>
+</ul>
+</li>
 </ul>
 <p>Threshold 阈值：调整到刚好盖住原声，再预览根据实际情况调整<br>Reduction 衰减强度：先调整阈值，再调整衰减强度</p>
 <h2 id="磁带失真修复：Wow-amp-Flutter"><a href="#磁带失真修复：Wow-amp-Flutter" class="headerlink" title="磁带失真修复：Wow &amp; Flutter"></a>磁带失真修复：Wow &amp; Flutter</h2><p>磁带、黑胶<br>Wow rate：依据抖动频率选择，应用后波纹被拉直即可</p>
@@ -728,38 +749,34 @@ var ap = new APlayer({
 <li>Equal Pwr：等功率</li>
 </ul>
 <h2 id="增益：Gain"><a href="#增益：Gain" class="headerlink" title="增益：Gain"></a>增益：Gain</h2><p>使用 Instant process，选择区间自动应用。</p>
-<h2 id="响度标准化：Leveler"><a href="#响度标准化：Leveler" class="headerlink" title="响度标准化：Leveler"></a>响度标准化：Leveler</h2><p>提升整体音量而不爆频。<br>Optimize for 优化：</p>
+<h2 id="响度标准化：Leveler"><a href="#响度标准化：Leveler" class="headerlink" title="响度标准化：Leveler"></a>响度标准化：Leveler</h2><p>提升整体音量而不爆频。</p>
 <ul>
-<li><p>Dialogue：对话</p>
+<li>Optimize for 优化：<ul>
+<li>Dialogue：对话</li>
+<li>Music：音乐</li>
+</ul>
 </li>
-<li><p>Music：音乐</p>
-</li>
-<li><p>Target level：增益量</p>
-</li>
-<li><p>Responsiveness</p>
-</li>
-<li><p>Preserve dynamics</p>
-</li>
-<li><p>Ess reduction：嘶声衰减</p>
-</li>
-<li><p>Breath control：齿音控制</p>
-</li>
+<li>Target level：增益量</li>
+<li>Responsiveness</li>
+<li>Preserve dynamics</li>
+<li>Ess reduction：嘶声衰减</li>
+<li>Breath control：齿音控制</li>
 </ul>
 <h2 id="变调、变音：Variable-Pitch"><a href="#变调、变音：Variable-Pitch" class="headerlink" title="变调、变音：Variable Pitch"></a>变调、变音：Variable Pitch</h2><ul>
 <li>Curve smoothing：曲线平滑度</li>
-</ul>
-<p>Preserve time 维持时间：</p>
-<ul>
+<li>Preserve time 维持时间：<ul>
 <li>Pitch coherence 音调一致性：过高会生硬</li>
 <li>Transient sensitivity 瞬态灵敏度：调整动态感</li>
+</ul>
+</li>
 </ul>
 <h2 id="变速：Variable-Time"><a href="#变速：Variable-Time" class="headerlink" title="变速：Variable Time"></a>变速：Variable Time</h2><ul>
 <li>Curve smoothing：曲线平滑度</li>
-</ul>
-<p>Preserve time 维持时间：</p>
-<ul>
+<li>Preserve time 维持时间：<ul>
 <li>Pitch coherence 音调一致性：过高会生硬</li>
 <li>Transient sensitivity 瞬态灵敏度：调整动态感</li>
+</ul>
+</li>
 </ul>
 <h2 id="相同问题查找：Find-Similar-Event"><a href="#相同问题查找：Find-Similar-Event" class="headerlink" title="相同问题查找：Find Similar Event"></a>相同问题查找：Find Similar Event</h2><p>Similarity：1 为完全相同</p>
 <h2 id="声道：Mixing"><a href="#声道：Mixing" class="headerlink" title="声道：Mixing"></a>声道：Mixing</h2><p>左右声道合并为单声道：50, 50, 50, 50<br>右声道变为单声道：0, 100, 0, 100<br>左声道变为单声道：100, 0, 100, 0</p>
@@ -770,7 +787,10 @@ var ap = new APlayer({
 </ul>
 <h2 id="相位：Phase"><a href="#相位：Phase" class="headerlink" title="相位：Phase"></a>相位：Phase</h2><p>点击 Suggest 调整相位。</p>
 <h2 id="修复助手：Repair-Assistant"><a href="#修复助手：Repair-Assistant" class="headerlink" title="修复助手：Repair Assistant"></a>修复助手：Repair Assistant</h2><p>选择合适方案后调整强度。</p>
-<h1 id="时间和音调：Time-amp-Pitch"><a href="#时间和音调：Time-amp-Pitch" class="headerlink" title="时间和音调：Time &amp; Pitch"></a>时间和音调：Time &amp; Pitch</h1><p>Stretch ratio 拉伸率<br>Pitch shift 音调变化</p>
+<h1 id="时间和音调：Time-amp-Pitch"><a href="#时间和音调：Time-amp-Pitch" class="headerlink" title="时间和音调：Time &amp; Pitch"></a>时间和音调：Time &amp; Pitch</h1><ul>
+<li>Stretch ratio 拉伸率</li>
+<li>Pitch shift 音调变化</li>
+</ul>
 <h2 id="位深度：Dither"><a href="#位深度：Dither" class="headerlink" title="位深度：Dither"></a>位深度：Dither</h2><h2 id="响度控制器：Loudness-Control"><a href="#响度控制器：Loudness-Control" class="headerlink" title="响度控制器：Loudness Control"></a>响度控制器：Loudness Control</h2><h2 id="转换采样率：Resample"><a href="#转换采样率：Resample" class="headerlink" title="转换采样率：Resample"></a>转换采样率：Resample</h2>
     </div>
 
