@@ -494,7 +494,7 @@ var ap = new APlayer({
 <hr>
 <h1 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h1><p><a href="https://www.bilibili.com/video/BV1By4y1s77H">B站首套全40集RX8音频修复中文教程！</a></p>
 <h1 id="驱动"><a href="#驱动" class="headerlink" title="驱动"></a>驱动</h1><p>有独立声卡：ASIO，延迟低<br>无独立声卡：RX Monitor，优于 MME<br>Buffer size：数字越小，延迟越小，性能要求越高</p>
-<h1 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h1><p>左下方可调整显示波形、频谱的比例<br>底部最右侧工具为包络线<br>左上方箭头可以合并显示左右声道</p>
+<h1 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h1><p>左下方可调整显示波形、频谱的比例。<br>底部最右侧工具为包络线。<br>左上方箭头可以合并显示左右声道。</p>
 <h1 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h1><p>Ctrl + E 导出<br>Shift + S 静音<br>Bit depth（位深度）：一般为 16-bit/24-bit<br>Dither：位深度变动时在缺失频率填充的噪音类型</p>
 <h1 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h1><h2 id="环境音匹配：Ambience-Match"><a href="#环境音匹配：Ambience-Match" class="headerlink" title="环境音匹配：Ambience Match"></a>环境音匹配：Ambience Match</h2><p>把 A 场景的背景噪音采样复制到 B 场景中。<br>Trim [dB] 控制环境音音量。</p>
 <h2 id="呼吸声控制：Breath-Control"><a href="#呼吸声控制：Breath-Control" class="headerlink" title="呼吸声控制：Breath Control"></a>呼吸声控制：Breath Control</h2><p>Gain 增益模式适合呼吸声音量均衡的情况。<br>Target 目标模式对大呼吸声强衰减，小呼吸声弱衰减。</p>
@@ -508,12 +508,11 @@ var ap = new APlayer({
 <li>Artifact smoothing 平滑度</li>
 <li>Dry mix 原始声音和处理后声音的混合比</li>
 </ul>
-<h2 id="去除漏音：​De-bleed"><a href="#去除漏音：​De-bleed" class="headerlink" title="去除漏音：​De-bleed"></a>去除漏音：​De-bleed</h2><p>如录入了耳机中背景音乐的漏音，这时对背景音乐采样，就能修复混入的声音。</p>
+<h2 id="去除漏音：​De-bleed"><a href="#去除漏音：​De-bleed" class="headerlink" title="去除漏音：​De-bleed"></a>去除漏音：​De-bleed</h2><p>如录入了耳机中背景音乐的漏音，这时对背景音乐采样，就能修复混入的声音。<br>先调整处理强度，再用平滑度调整细节。</p>
 <ul>
 <li>Reduction strength 处理强度</li>
 <li>Artifact smoothing 平滑度</li>
 </ul>
-<p>先调整处理强度，再用平滑度调整细节。</p>
 <h2 id="去除爆音：De-click"><a href="#去除爆音：De-click" class="headerlink" title="去除爆音：De-click"></a>去除爆音：De-click</h2><p>去除口水音、鼠标声。<br>纯人声用 ​​Mouth De-click。<br>Algorithm 算法：</p>
 <ul>
 <li>Single-band 单波段模式，适合爆音类型都相近的情况</li>
@@ -536,14 +535,14 @@ var ap = new APlayer({
 </ul>
 <h2 id="去除低电平高频次爆音：De-crackle"><a href="#去除低电平高频次爆音：De-crackle" class="headerlink" title="去除低电平高频次爆音：De-crackle"></a>去除低电平高频次爆音：De-crackle</h2><p>修复短暂的噼啪、点击声、椅子吱呀声。</p>
 <ul>
-<li>Quality 处理质量：根据电脑性能调整。</li>
-<li>Strength 处理强度：参数根据预览情况调整。</li>
+<li>Quality 处理质量：根据电脑性能调整</li>
+<li>Strength 处理强度：参数根据预览情况调整</li>
 <li>Amplitude skew 幅度偏斜：噪音在人声中则偏左，在空白区域则偏右</li>
 </ul>
 <h2 id="去除嘶声-齿音：De-ess"><a href="#去除嘶声-齿音：De-ess" class="headerlink" title="去除嘶声/齿音：De-ess"></a>去除嘶声/齿音：De-ess</h2><ul>
 <li>Algorithm 算法：<ul>
 <li>Classic：全频段嘶声衰减，嘶声种类多时用</li>
-<li><strong>Spectral：特定频率衰减，高频嘶声用，齿音就是高频嘶声，常用</strong></li>
+<li><strong>Spectral：特定频率衰减，高频嘶声用，齿音就是高频嘶声（常用）</strong></li>
 </ul>
 </li>
 <li>Threshold 阈值：高于阈值的嘶声被衰减</li>
@@ -555,7 +554,7 @@ var ap = new APlayer({
 </ul>
 <h2 id="去嗡嗡声：De-hum"><a href="#去嗡嗡声：De-hum" class="headerlink" title="去嗡嗡声：De-hum"></a>去嗡嗡声：De-hum</h2><p>修复设备产生的电流声之类的粉红噪和红噪。</p>
 <ul>
-<li>Adaptive mode 自适应模式：电流声有变化时勾选。</li>
+<li>Adaptive mode 自适应模式：电流声有变化时勾选</li>
 <li>Frequency：衰减频率位置</li>
 <li>Filter Q：衰减量，值越小衰减量越大</li>
 <li>HP filter 高通滤波器：低切，作用不大</li>
@@ -628,7 +627,7 @@ var ap = new APlayer({
 <ul>
 <li>Dialogue gain：对话音量</li>
 <li>Noise gain：噪音音量</li>
-<li>Dialogue separation sensitivity：左端处理程度最强，右端最弱。</li>
+<li>Dialogue separation sensitivity：左端处理程度最强，右端最弱</li>
 <li>Ambience preservation 背景声保护：数值越低背景声保留越少，真实感下降</li>
 <li>Separation algorithm 分离算法：<ul>
 <li>Channel independent：普通质量处理模式</li>
