@@ -2806,6 +2806,13 @@ pre code {
     transform: rotateZ(-30deg);
   }
 }
+.post-copyright {
+  background: var(--card-bg-color);
+  border-left: 3px solid #ff2a2a;
+  list-style: none;
+  margin: 2em 0 0;
+  padding: 0.5em 1em;
+}
 .followme {
   align-items: center;
   background: var(--card-bg-color);
@@ -3389,7 +3396,7 @@ mark.search-keyword {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #d55279;
+  background: #01ffcf;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -3601,6 +3608,13 @@ article.post-block {
     bottom: 105px;
     right: -47px;
   }
+}
+.post-copyright {
+  background: none;
+  border-left: 0px;
+  margin: 4em 0 0;
+  padding: 0em;
+  font-size: 1.2rem;
 }
 .menu .menu-item a:hover {
   color: rgba(33,150,243,0.3);

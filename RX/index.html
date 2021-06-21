@@ -606,6 +606,13 @@ var ap = new APlayer({
 <li>Tonal/noisy balance 音乐/噪音平衡：偏向音乐还是噪音</li>
 <li>Artifact smoothing 平滑度</li>
 </ul>
+<p>若从带人声的背景音乐中提取对话，参数：</p>
+<ul>
+<li>Tonal gain：-inf.</li>
+<li>Noisy gain：0</li>
+<li>Tonal/noisy balance：+2.0</li>
+<li>Artifact smoothing：3.3</li>
+</ul>
 <h2 id="对话语调调整：Dialogue-Contour"><a href="#对话语调调整：Dialogue-Contour" class="headerlink" title="对话语调调整：Dialogue Contour"></a>对话语调调整：Dialogue Contour</h2><p>​调节局部人声的包络、音高、共振峰。</p>
 <ul>
 <li>Curve smoothing 平滑度：影响过渡时的自然效果</li>
@@ -627,8 +634,8 @@ var ap = new APlayer({
 <ul>
 <li>Dialogue gain：对话音量</li>
 <li>Noise gain：噪音音量</li>
-<li>Dialogue separation sensitivity：左端处理程度最强，右端最弱</li>
-<li>Ambience preservation 背景声保护：数值越低背景声保留越少，真实感下降</li>
+<li>Dialogue separation sensitivity：左端处理程度最强，右端最弱，一般 5.0</li>
+<li>Ambience preservation 背景声保护：数值越低背景声保留越少，无背景音真实感会下降</li>
 <li>Separation algorithm 分离算法：<ul>
 <li>Channel independent：普通质量处理模式</li>
 <li>Joint channel：适合立体声文件，且左右声道一致</li>
@@ -636,6 +643,7 @@ var ap = new APlayer({
 </ul>
 </li>
 </ul>
+<p>若从带人声的背景音乐中提取对话使用 Deconstruct。</p>
 <h2 id="吉他去除噪音：Guitar-De-noise"><a href="#吉他去除噪音：Guitar-De-noise" class="headerlink" title="吉他去除噪音：Guitar De-noise"></a>吉他去除噪音：Guitar De-noise</h2><ul>
 <li>Amp：适合电吉他，去除电流声，需要先选中噪音样本学习</li>
 <li>Squeak：滑弦噪音，Short 噪音在 200ms 以内，Long 噪音在 1000ms 内</li>
@@ -812,6 +820,23 @@ var ap = new APlayer({
       <div class="popular-posts-title"><a href="\shengyinzhe\" rel="bookmark">《声音者：孙悦斌配音理论及实践技巧》书摘</a></div>
     </li>
   </ul>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>千灵夙赋
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://qianling.pw/RX/" title="RX 8 音频修复指南">https://qianling.pw/RX/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
 
         
 
